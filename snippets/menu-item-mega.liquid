@@ -1,7 +1,7 @@
 <div class="mega-menu" data-mega-menu>
     {%- if block.settings.f_image -%}
     <div class="mega-menu__image" {% if block.settings.f_image_ord == "1" %}style="order: 1"{% endif %}>
-        {{ block.settings.f_image | image_url: width: block.settings.f_image.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
+        <img src="{{ block.settings.f_image | image_url: width: block.settings.f_image.width }}" alt="{{ block.settings.f_image.alt }}" width="{{block.settings.f_image.width}}" height="{{block.settings.f_image.height}}" loading="lazy">
         {% if block.settings.f_title != blank %}
             <div class="mega-menu__imagetext" style="color: {{ block.settings.f_color }}">
                 <h5 class="pretitle">{{ block.settings.f_pretitle }}</h5>

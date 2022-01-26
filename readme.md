@@ -43,6 +43,7 @@ Password: **avex**
 2. SCSS/JS files are divided into modular parts based on the sections
 
 3. Full integration with **Liquid Ajax Cart**. All product forms automatically ajaxified. For more details please visit [https://liquid-ajax-cart.js.org](https://liquid-ajax-cart.js.org)
+    Latest version added with npm support!
 
 3. **Swiper Slider** [Docs](https://swiperjs.com/swiper-api). Please use `window.Swiper` object. 
    Please use only needed modules: 
@@ -156,8 +157,8 @@ Password: **avex**
     }
     ```
 3. **Product Carousel** - `common.js::160(line)`
-	
-    Usage: 
+	Web components with Swiper js not well supported in Safari. Removed.
+    ~~Usage: 
     ```html
     <div is="products-carousel" class="swiper-container" data-limit_per_view_mobile="2" data-limit_per_view="4">
       <div class="swiper-wrapper">
@@ -168,7 +169,7 @@ Password: **avex**
           {% endfor %}
       </div>
     </div>
-    ```
+    ```~~
 4. **Predictive search** - `search.js`
 	
    Usage:

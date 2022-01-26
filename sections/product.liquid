@@ -7,7 +7,7 @@
   {%- render 'breadcrumbs' -%}
     <div class="container-max product-container">
         <div is="product-image-gallery" class="product__gallery">
-            <div class="swiper-container product-thumbnails" data-thumbnail-images>
+            <div class="swiper product-thumbnails" data-thumbnail-images>
                 <div class="swiper-wrapper">
                     {%- for media in product.media -%}
                     <div class="swiper-slide product-thumbnails__item" data-thumbnail-item>
@@ -21,7 +21,7 @@
                 {%- endfor -%}
                 </div>
             </div>
-            <div class="swiper-container product-images" data-main-images>
+            <div class="swiper product-images" data-main-images>
                 <div class="swiper-wrapper">
                     {%- for media in product.media -%}
                     <div class="swiper-slide product-images__item">

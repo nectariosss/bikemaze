@@ -1,27 +1,37 @@
-import { findAncestor, serializeForm } from "./helpers";
-// import "lazysizes";
-// import "lazysizes/plugins/rias/ls.rias";
-// import "lazysizes/plugins/native-loading/ls.native-loading";
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Thumbs,
-  Mousewheel,
-} from "swiper/core";
-// import "./sections/ajax-cart";
+import { findAncestor, swiperArrows } from "./helpers";
+import Swiper, { Navigation, Pagination, Thumbs } from "swiper";
 
 import { configureCart } from "liquid-ajax-cart";
 
 /**
- * Configure Liquid Ajax Cart 
+ * Configure Liquid Ajax Cart
  */
-configureCart('addToCartCssClass', 'js-ajax-cart-opened');
+configureCart("addToCartCssClass", "js-ajax-cart-opened");
 
 /**
  * Configure Swiper Modules
  */
-SwiperCore.use([Navigation, Pagination, Thumbs]);
-window.Swiper = SwiperCore;
+Swiper.use([Navigation, Pagination, Thumbs]);
+window.Swiper = Swiper;
+
+/**
+ * Event Listeners
+ */
+document.addEventListener(
+  "click",
+  (event) => {
+    if (event) {
+      sampleMethod(event);
+    }
+  },
+  false
+);
+
+window.addEventListener("resize", () => {});
+
+document.addEventListener("DOMContentLoaded", () => {
+  productsCarousel();
+});
 
 /**
  * Header menu
@@ -159,13 +169,17 @@ customElements.define("accordion-block", Accordion);
  */
 function productsCarousel() {
   const carouselElements = document.querySelectorAll(
-    ".product-lifestyle-slider"
+    ".products-carousel-swiper"
   );
   if (carouselElements.length) {
     carouselElements.forEach((carousel) => {
+      const limitPerView = carousel.getAttribute("data-limit_per_view");
+      const limitPerViewMobile = carousel.getAttribute(
+        "data-limit_per_view_mobile"
+      );
       new Swiper(carousel, {
         spaceBetween: 0,
-        slidesPerView: 1,
+        slidesPerView: limitPerViewMobile ? limitPerViewMobile : 2,
         allowTouchMove: true,
         autoHeight: true,
         watchOverflow: true,
@@ -179,6 +193,24 @@ function productsCarousel() {
           clickable: true,
         },
         cssMode: false,
+        breakpoints: {
+          768: {
+            slidesPerView: limitPerViewMobile ? limitPerViewMobile : 2,
+          },
+          990: {
+            cssMode: false,
+            allowTouchMove: true,
+            slidesPerView: limitPerView ? limitPerView : 2,
+          },
+        },
+        on: {
+          init: function () {
+            swiperArrows(this, limitPerViewMobile, limitPerView);
+          },
+          resize: function () {
+            swiperArrows(this, limitPerViewMobile, limitPerView);
+          },
+        },
       });
     });
   }
@@ -232,3 +264,11 @@ class ModalOpener extends HTMLElement {
   }
 }
 customElements.define("modal-opener", ModalOpener);
+
+function sampleMethod(event) {
+  const element = event.target.closest("[data-some-attr]"); // add your element class/id/data-attr.
+  if (element) {
+    event.preventDefault();
+    //.... your logic here
+  }
+}

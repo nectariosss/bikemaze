@@ -7,7 +7,7 @@
             {% if section.settings.carousel_title != blank %}
                 <h2 class="products-carousel__title h3">{{ section.settings.carousel_title }}</h2>
             {% endif %}
-            <div class="swiper-container products-carousel-swiper" data-limit_per_view_mobile="{{ section.settings.carousel_mob }}" data-limit_per_view="{{ section.settings.carousel_desk }}">
+            <div class="swiper products-carousel-swiper" data-limit_per_view_mobile="{{ section.settings.carousel_mob }}" data-limit_per_view="{{ section.settings.carousel_desk }}">
                 <div class="swiper-wrapper">
                     {% for product in collections[section.settings.carousel_coll].products limit: limit %}
                       
