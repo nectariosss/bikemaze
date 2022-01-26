@@ -45,11 +45,11 @@
                                     {% endunless %}
                                 </div>
                                 <div class="quantity-picker">
-                                    <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}"  class="quantity-picker__btn quantity-picker__btn--decrease" type="button" aria-label="{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}">&#8212;</a>
+                                    <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}" data-ajax-cart-request-button class="quantity-picker__btn quantity-picker__btn--decrease" type="button" aria-label="{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}">&#8212;</a>
                                     <input class="count" type="number" value="{{ item.quantity }}" data-ajax-cart-quantity-input="{{ forloop.index }}" aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"/>
-                                    <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}" class="quantity-picker__btn quantity-picker__btn--increase" type="button" aria-label="{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}">&#43;</a>
+                                    <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}" data-ajax-cart-request-button class="quantity-picker__btn quantity-picker__btn--increase" type="button" aria-label="{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}">&#43;</a>
                                 </div>
-                                <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0" class="remove-btn" type="button">{{ 'sections.ajax_cart.remove' | t }}</a>
+                                <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0" data-ajax-cart-request-button class="remove-btn" type="button">{{ 'sections.ajax_cart.remove' | t }}</a>
                                 <div class="item-error" data-ajax-cart-messages="{{ item.key }}"></div>
                             </div>
                         </div>
