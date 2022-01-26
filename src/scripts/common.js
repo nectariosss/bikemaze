@@ -160,48 +160,32 @@ customElements.define("accordion-block", Accordion);
 /**
  * Swiper products carousel component
  */
-class ProductCardsCarousel extends HTMLDivElement {
-  constructor() {
-    super();
-    const limitPerView = this.dataset.limit_per_view;
-    const limitPerViewMobile = this.dataset.limit_per_view_mobile;
-    const className = this?.className?.replace(/ /g, ".");
-
-    if (className && window.Swiper) {
-      new Swiper("." + className, {
-        slidesPerView: limitPerViewMobile ? limitPerViewMobile : 2,
+function productsCarousel() {
+  const carouselElements = document.querySelectorAll(
+    ".product-lifestyle-slider"
+  );
+  if (carouselElements.length) {
+    carouselElements.forEach((carousel) => {
+      new Swiper(carousel, {
         spaceBetween: 0,
-        loop: false,
-        observer: true,
-        observeParents: true,
+        slidesPerView: 1,
         allowTouchMove: true,
-        mousewheel: {
-          invert: false,
-          forceToAxis: true,
-        },
+        autoHeight: true,
+        watchOverflow: true,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        cssMode: true,
-        breakpoints: {
-          768: {
-            slidesPerView: limitPerViewMobile ? limitPerViewMobile : 2,
-          },
-          990: {
-            cssMode: false,
-            allowTouchMove: true,
-            slidesPerView: limitPerView ? limitPerView : 2,
-          },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
         },
+        cssMode: false,
       });
-    }
+    });
   }
 }
-customElements.define("products-carousel", ProductCardsCarousel, {
-  extends: "div",
-});
-
 
 /***
  * Modal popup
@@ -210,29 +194,29 @@ class ModalDialog extends HTMLElement {
   constructor() {
     super();
     this.querySelector('[id^="ModalClose-"]').addEventListener(
-      'click',
+      "click",
       this.hide.bind(this)
     );
-    this.addEventListener('keyup', (event) => {
-      if (event.code.toUpperCase() === 'ESCAPE') this.hide();
+    this.addEventListener("keyup", (event) => {
+      if (event.code.toUpperCase() === "ESCAPE") this.hide();
     });
-    this.addEventListener('click', (event) => {
-      if (event.target.nodeName === 'MODAL-DIALOG') this.hide();
+    this.addEventListener("click", (event) => {
+      if (event.target.nodeName === "MODAL-DIALOG") this.hide();
     });
   }
 
   show(opener) {
     this.openedBy = opener;
-    document.body.classList.add('overflow-hidden');
-    this.setAttribute('open', '');
+    document.body.classList.add("overflow-hidden");
+    this.setAttribute("open", "");
   }
 
   hide() {
-    document.body.classList.remove('overflow-hidden');
-    this.removeAttribute('open');
+    document.body.classList.remove("overflow-hidden");
+    this.removeAttribute("open");
   }
 }
-customElements.define('modal-dialog', ModalDialog);
+customElements.define("modal-dialog", ModalDialog);
 
 /***
  * Modal button(opener)
@@ -241,13 +225,13 @@ class ModalOpener extends HTMLElement {
   constructor() {
     super();
 
-    const button = this.querySelector('button');
+    const button = this.querySelector("button");
 
     if (!button) return;
-    button.addEventListener('click', () => {
-      const modal = document.querySelector(this.getAttribute('data-modal'));
+    button.addEventListener("click", () => {
+      const modal = document.querySelector(this.getAttribute("data-modal"));
       if (modal) modal.show(button);
     });
   }
 }
-customElements.define('modal-opener', ModalOpener);
+customElements.define("modal-opener", ModalOpener);
