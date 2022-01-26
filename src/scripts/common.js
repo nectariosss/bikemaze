@@ -10,15 +10,12 @@ import SwiperCore, {
 } from "swiper/core";
 // import "./sections/ajax-cart";
 
-import { subscribeToCartAjaxRequests } from "./ajax-cart";
+import { configureCart } from "liquid-ajax-cart";
 
-subscribeToCartAjaxRequests((requestState, subscribeToResult) => {
-  subscribeToResult((requestState) => {
-    if (requestState.requestType === "add" && requestState.responseData?.ok) {
-      document.body.classList.add("js-ajax-cart-opened");
-    }
-  });
-});
+/**
+ * Configure Liquid Ajax Cart 
+ */
+configureCart('addToCartCssClass', 'js-ajax-cart-opened');
 
 /**
  * Configure Swiper Modules

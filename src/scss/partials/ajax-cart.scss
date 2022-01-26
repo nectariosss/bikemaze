@@ -44,6 +44,9 @@
     }
     &__body-wrapper{
       height: 100%;
+      .js-ajax-cart-request-in-progress & {
+        opacity: .6;
+      }
     }
     form {
       display: grid;
