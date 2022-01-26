@@ -15,9 +15,8 @@
   "license": "ISC",
   "dependencies": {
     "@babel/runtime": "^7.14.0",
-    "bootstrap": "^4.6.0",
     "liquid-ajax-cart": "^1.8.1",
-    "swiper": "^6.6.2"
+    "swiper": "^7.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",

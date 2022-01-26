@@ -1,27 +1,37 @@
-import { findAncestor, serializeForm } from "./helpers";
-// import "lazysizes";
-// import "lazysizes/plugins/rias/ls.rias";
-// import "lazysizes/plugins/native-loading/ls.native-loading";
-import SwiperCore, {
-  Navigation,
-  Pagination,
-  Thumbs,
-  Mousewheel,
-} from "swiper/core";
-// import "./sections/ajax-cart";
+import { findAncestor, swiperArrows } from "./helpers";
+import Swiper, { Navigation, Pagination, Thumbs } from "swiper";
 
 import { configureCart } from "liquid-ajax-cart";
 
 /**
- * Configure Liquid Ajax Cart 
+ * Configure Liquid Ajax Cart
  */
-configureCart('addToCartCssClass', 'js-ajax-cart-opened');
+configureCart("addToCartCssClass", "js-ajax-cart-opened");
 
 /**
  * Configure Swiper Modules
  */
-SwiperCore.use([Navigation, Pagination, Thumbs]);
-window.Swiper = SwiperCore;
+Swiper.use([Navigation, Pagination, Thumbs]);
+window.Swiper = Swiper;
+
+/**
+ * Event Listeners
+ */
+document.addEventListener(
+  "click",
+  (event) => {
+    if (event) {
+      sampleMethod(event);
+    }
+  },
+  false
+);
+
+window.addEventListener("resize", () => {});
+
+document.addEventListener("DOMContentLoaded", () => {
+  productsCarousel();
+});
 
 /**
  * Header menu
@@ -157,30 +167,32 @@ customElements.define("accordion-block", Accordion);
 /**
  * Swiper products carousel component
  */
-class ProductCardsCarousel extends HTMLDivElement {
-  constructor() {
-    super();
-    const limitPerView = this.dataset.limit_per_view;
-    const limitPerViewMobile = this.dataset.limit_per_view_mobile;
-    const className = this?.className?.replace(/ /g, ".");
-
-    if (className && window.Swiper) {
-      new Swiper("." + className, {
-        slidesPerView: limitPerViewMobile ? limitPerViewMobile : 2,
+function productsCarousel() {
+  const carouselElements = document.querySelectorAll(
+    ".products-carousel-swiper"
+  );
+  if (carouselElements.length) {
+    carouselElements.forEach((carousel) => {
+      const limitPerView = carousel.getAttribute("data-limit_per_view");
+      const limitPerViewMobile = carousel.getAttribute(
+        "data-limit_per_view_mobile"
+      );
+      new Swiper(carousel, {
         spaceBetween: 0,
-        loop: false,
-        observer: true,
-        observeParents: true,
+        slidesPerView: limitPerViewMobile ? limitPerViewMobile : 2,
         allowTouchMove: true,
-        mousewheel: {
-          invert: false,
-          forceToAxis: true,
-        },
+        autoHeight: true,
+        watchOverflow: true,
         navigation: {
           nextEl: ".swiper-button-next",
           prevEl: ".swiper-button-prev",
         },
-        cssMode: true,
+        pagination: {
+          el: ".swiper-pagination",
+          type: "bullets",
+          clickable: true,
+        },
+        cssMode: false,
         breakpoints: {
           768: {
             slidesPerView: limitPerViewMobile ? limitPerViewMobile : 2,
@@ -191,14 +203,18 @@ class ProductCardsCarousel extends HTMLDivElement {
             slidesPerView: limitPerView ? limitPerView : 2,
           },
         },
+        on: {
+          init: function () {
+            swiperArrows(this, limitPerViewMobile, limitPerView);
+          },
+          resize: function () {
+            swiperArrows(this, limitPerViewMobile, limitPerView);
+          },
+        },
       });
-    }
+    });
   }
 }
-customElements.define("products-carousel", ProductCardsCarousel, {
-  extends: "div",
-});
-
 
 /***
  * Modal popup
@@ -207,29 +223,29 @@ class ModalDialog extends HTMLElement {
   constructor() {
     super();
     this.querySelector('[id^="ModalClose-"]').addEventListener(
-      'click',
+      "click",
       this.hide.bind(this)
     );
-    this.addEventListener('keyup', (event) => {
-      if (event.code.toUpperCase() === 'ESCAPE') this.hide();
+    this.addEventListener("keyup", (event) => {
+      if (event.code.toUpperCase() === "ESCAPE") this.hide();
     });
-    this.addEventListener('click', (event) => {
-      if (event.target.nodeName === 'MODAL-DIALOG') this.hide();
+    this.addEventListener("click", (event) => {
+      if (event.target.nodeName === "MODAL-DIALOG") this.hide();
     });
   }
 
   show(opener) {
     this.openedBy = opener;
-    document.body.classList.add('overflow-hidden');
-    this.setAttribute('open', '');
+    document.body.classList.add("overflow-hidden");
+    this.setAttribute("open", "");
   }
 
   hide() {
-    document.body.classList.remove('overflow-hidden');
-    this.removeAttribute('open');
+    document.body.classList.remove("overflow-hidden");
+    this.removeAttribute("open");
   }
 }
-customElements.define('modal-dialog', ModalDialog);
+customElements.define("modal-dialog", ModalDialog);
 
 /***
  * Modal button(opener)
@@ -238,13 +254,21 @@ class ModalOpener extends HTMLElement {
   constructor() {
     super();
 
-    const button = this.querySelector('button');
+    const button = this.querySelector("button");
 
     if (!button) return;
-    button.addEventListener('click', () => {
-      const modal = document.querySelector(this.getAttribute('data-modal'));
+    button.addEventListener("click", () => {
+      const modal = document.querySelector(this.getAttribute("data-modal"));
       if (modal) modal.show(button);
     });
   }
 }
-customElements.define('modal-opener', ModalOpener);
+customElements.define("modal-opener", ModalOpener);
+
+function sampleMethod(event) {
+  const element = event.target.closest("[data-some-attr]"); // add your element class/id/data-attr.
+  if (element) {
+    event.preventDefault();
+    //.... your logic here
+  }
+}
