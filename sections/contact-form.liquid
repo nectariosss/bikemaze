@@ -7,7 +7,7 @@
         {%- endif -%}
 
         {% assign formID = section.settings.form_id %}
-        {%- form 'contact', id: '{{ formID }}' -%}
+        {%- form 'contact', id: formID -%}
         {%- if form.posted_successfully? -%}
             <div class="form-status form-status-list form__message" tabindex="-1" autofocus>{% render 'icon-success' %} {{ 'templates.contact.form.post_success' | t }}</div>
         {%- elsif form.errors -%}
