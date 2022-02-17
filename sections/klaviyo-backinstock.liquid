@@ -3,6 +3,7 @@ Usage:
     1. Copy paste {%- section 'klaviyo-backinstock' -%} to theme.liquid
     2. In product.liquid add <script type="application/json" data-bis-variants>{{ product.variants | json }}</script> inside product form. (if you already have it just add data-bis-vaiants attribute)
     3. Adjust klaviyo ID in this section. (in code or create section fields and let the client to edit it)
+    4. Please add data-bis-disabled attribute if you want to disable Notify me button and keep sold out.
 {%- endcomment -%}
 
 {%- style -%}
@@ -243,9 +244,11 @@ class BackInStock{
                     bisButton.remove()
                 }
             }else{
-                submitButton.style.display = 'none'
-                if(!bisButton){
-                    submitButton.after(this.buildBackinStockButton(bisModal.buttonClass, bisModal.buttonText))
+                if(!submitButton.hasAttribute("data-bis-disabled")){
+                    submitButton.style.display = 'none'
+                    if(!bisButton){
+                        submitButton.after(this.buildBackinStockButton(bisModal.buttonClass, bisModal.buttonText))
+                    }
                 }
             }
         })
