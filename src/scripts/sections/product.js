@@ -124,12 +124,16 @@ function initZoom() {
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
+    console.log("Init");
+
     this.addEventListener("change", this.onVariantChange);
     this.productForm = document.getElementById("product-form");
   }
 
   onVariantChange() {
     this.updateOptions();
+    this.setUnavailableOptions();
+    if (this.options && this.options.includes(undefined)) return null;
     this.updateMasterId();
     this.toggleAddButton(true, "", false);
     this.removeErrorMessage();
@@ -150,6 +154,82 @@ class VariantSelects extends HTMLElement {
       this.querySelectorAll("select"),
       (select) => select.value
     );
+  }
+
+  setUnavailableOptions() {
+    const option1Swatches = this.querySelector(`[data-option-position="1"]`);
+    const option2Swatches = this.querySelector(`[data-option-position="2"]`);
+    const option3Swatches = this.querySelector(`[data-option-position="3"]`);
+    const selectedOption1 = option1Swatches?.querySelector(
+      "input[type=radio]:checked"
+    );
+    const selectedOption2 = option2Swatches?.querySelector(
+      "input[type=radio]:checked"
+    );
+
+    this.disableFalseOptions(1, option1Swatches);
+    this.disableFalseOptions(2, option2Swatches, selectedOption1);
+    this.disableFalseOptions(
+      3,
+      option3Swatches,
+      selectedOption1,
+      selectedOption2
+    );
+  }
+
+  disableFalseOptions(
+    option,
+    optionSwatches,
+    selectedOption1 = false,
+    selectedOption2 = false
+  ) {
+    if (!optionSwatches && !option) return null;
+
+    function hashDataCollector(variant, item, hashData, option) {
+      if (
+        variant &&
+        item &&
+        variant.available &&
+        variant["option" + option] === item.value
+      ) {
+        hashData[item.value] = hashData[item.value]
+          ? hashData[item.value] + 1
+          : 1;
+      } else {
+        if (!hashData[item.value]) {
+          hashData[item.value] = 0;
+        }
+      }
+    }
+    optionSwatches?.querySelectorAll("input[type='radio']")?.forEach((item) => {
+      const hashData = {};
+      for (let variant of this.getVariantData()) {
+        if (option === 1) {
+          hashDataCollector(variant, item, hashData, option);
+        }
+        if (
+          option === 2 &&
+          selectedOption1 &&
+          variant.option1 === selectedOption1.value
+        ) {
+          hashDataCollector(variant, item, hashData, option);
+        }
+        if (
+          option === 3 &&
+          selectedOption1 &&
+          selectedOption2 &&
+          variant.option1 === selectedOption1.value &&
+          variant.option2 === selectedOption2.value
+        ) {
+          hashDataCollector(variant, item, hashData, option);
+        }
+      }
+      if (hashData[item.value] === 0) {
+        item.classList.add("unavailable");
+      } else {
+        item.classList.remove("unavailable");
+      }
+    });
   }
 
   updateMasterId() {
@@ -265,7 +345,9 @@ class VariantSelects extends HTMLElement {
   getVariantData() {
     this.variantData =
       this.variantData ||
-      JSON.parse(this.querySelector('[type="application/json"]').textContent);
+      JSON.parse(
+        document.querySelector("[data-product-json-variants]").textContent
+      );
     return this.variantData;
   }
 }
@@ -281,10 +363,11 @@ class VariantRadios extends VariantSelects {
 
   updateOptions() {
     const fieldsets = Array.from(this.querySelectorAll("fieldset"));
+
     this.options = fieldsets.map((fieldset) => {
       return Array.from(fieldset.querySelectorAll("input")).find(
         (radio) => radio.checked
-      ).value;
+      )?.value;
     });
   }
 }
