@@ -1,7 +1,8 @@
 {%- render 'stylesheet', name: 'product' -%}
 <script src="{{ 'product-js.min.js' | asset_url }}" defer="defer"></script>
 
-{%- assign current_variant = product.selected_or_first_available_variant -%}
+{%- comment -%}{%- assign current_variant = product.selected_or_first_available_variant -%}{%- endcomment -%}
+{%- assign current_variant = product.selected_variant -%}
 
 <div class="product">
   {%- render 'breadcrumbs' -%}
@@ -12,10 +13,10 @@
                     {%- for media in product.media -%}
                     <div class="swiper-slide product-thumbnails__item" data-thumbnail-item>
                         {% if media.media_type == 'video' %}
-                          {{ media.preview_image | image_url: width: media.preview_image.width | image_tag: preload: true, loading: "lazy" }}
+                          {{ media.preview_image | image_url: 1500 | image_tag: preload: true, loading: "lazy" }}
                         <span class="video-play">{%- render 'icon-play' -%}</span>
                         {% else %}
-                        {{ media | image_url: width: media.width | image_tag: preload: true, loading: "lazy" }}
+                        {{ media | image_url: width: 1500 | image_tag: preload: true, loading: "lazy" }}
                         {% endif %}
                     </div>
                 {%- endfor -%}
@@ -26,18 +27,19 @@
                     {%- for media in product.media -%}
                     <div class="swiper-slide product-images__item">
                         {% if media.media_type == 'video' %}
-                          {{ media.preview_image | image_url: width: media.preview_image.width | image_tag: preload: true, loading: "lazy" }}
+                          {{ media.preview_image | image_url: width: 1500 | image_tag: preload: true, loading: "lazy" }}
                             <span class="video-play" data-videosrc="{{ media.sources[1].url }}" data-videotype="{{ media.sources[1].mime_type }}">{%- render 'icon-play' -%}</span>
                         {% else %}
                             <div class="swiper-zoom-container">
                                 <figure class="zoom lazyload" data-zoomimg="{{ media.src | img_url: 'x2024' }}">
-                                  {% if forloop.first == true %}
-                                  {% assign lazyload = "eager" %}
-                                  {% else %}
-                                  {% assign lazyload = "lazy" %}
-                                  {% endif %}
+                                 {%- liquid 
+                                    assign lazyload = "lazy"
+                                    if forloop.first == true
+                                      assign lazyload = "eager"
+                                    endif
+                                  -%}
 
-                                  {{ media | image_url: width: media.width | image_tag: preload: true, loading: lazyload, sizes: "(min-width: 540px) 100vw, 40vw" }}
+                                  {{ media | image_url: width: 1500 | image_tag: preload: true, loading: lazyload, sizes: "(min-width: 540px) 100vw, 40vw" }}
                                 </figure>
                             </div>
                         {% endif %}
@@ -77,13 +79,13 @@
                       {%- if block.settings.picker_type == 'button' -%}
                         <variant-radios class="variant-button" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                           {%- for option in product.options_with_values -%}
-                              <fieldset class="variant-button__wrapper">
+                              <fieldset class="variant-button__wrapper" data-option-position="{{option.position}}">
                                 <legend class="variant-button__label">{{ option.name }}</legend>
                                 {%- for value in option.values -%}
                                   <input type="radio" id="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}"
                                         name="{{ option.name }}"
                                         value="{{ value | escape }}"
-                                        {% if option.selected_value == value %}checked{% endif %}
+                                        {% if current_variant and option.selected_value == value %}checked{% endif %}
                                   >
                                   <label for="{{ section.id }}-{{ option.name }}-{{ forloop.index0 }}">
                                     {{ value }}
@@ -91,9 +93,6 @@
                                 {%- endfor -%}
                               </fieldset>
                           {%- endfor -%}
-                          <script type="application/json">
-                            {{ product.variants | json }}
-                          </script>
                         </variant-radios>
                       {%- else -%}
                         <variant-selects class="variant-dropdown" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
@@ -119,10 +118,6 @@
                               </div>
                             </div>
                           {%- endfor -%}
-        
-                          <script type="application/json">
-                            {{ product.variants | json }}
-                          </script>
                         </variant-selects>
                       {%- endif -%}
                     {%- endunless -%}
@@ -134,7 +129,7 @@
                           <select name="id" id="Variants-{{ section.id }}" class="select__select" form="product-form" >
                             {%- for variant in product.variants -%}
                               <option
-                                {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+                                {% if variant == current_variant %}selected="selected"{% endif %}
                                 {% if variant.available == false %}disabled{% endif %}
                                 value="{{ variant.id }}"
                               >
@@ -176,20 +171,24 @@
                       </div>
       
                     
-                        <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+                        <input type="hidden" name="id" value="{{ current_variant.id }}">
                         <div class="product-form__buttons">
                           <button
                             id="AddToCart"
                             type="submit"
                             name="add"
                             class="product-form__submit primary-button"
-                          {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
+                          {% if current_variant == null or current_variant.available == false %}disabled{% endif %}
                           >
-                              {%- if product.selected_or_first_available_variant.available -%}
-                                Add to cart
-                              {%- else -%}
-                                Sold out
-                              {%- endif -%}
+                              {%- liquid 
+                                if current_variant.available == false
+                                  echo 'Sold out'
+                                elsif current_variant.available
+                                  echo 'Add to cart'
+                                else
+                                  echo 'Select an option'
+                                endif
+                                -%}
                           </button>
                           {%- if block.settings.show_dynamic_checkout -%}
                             {{ form | payment_button }}
@@ -205,10 +204,11 @@
 
                 {%- endfor -%}
 
-                <script type="application/json" data-bis-variants>{{ product.variants | json }}</script>
+                <script type="application/json" data-product-json-variants>{{ product.variants | json }}</script>
               {%- endform -%}
 
               {% assign accordion_items = section.blocks | where: "type", "collapsible_tab" %}
+              <!-- [TODO] <details><summary></summary></details> - html tags can replace this -->
               <accordion-block  class="product-details__description" data-allow-multiple-open data-first-open>
                 <ul class="accordion">
                     {%- for item in accordion_items -%}
