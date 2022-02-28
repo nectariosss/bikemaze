@@ -124,10 +124,9 @@ function initZoom() {
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
-    console.log("Init");
-
     this.addEventListener("change", this.onVariantChange);
     this.productForm = document.getElementById("product-form");
+    this.setUnavailableOptions();
   }
 
   onVariantChange() {

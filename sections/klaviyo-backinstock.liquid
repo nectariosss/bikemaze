@@ -233,7 +233,7 @@ class BackInStock{
             }
             
             const submitButton = form.querySelector('[type="submit"]');
-            const variants = form.querySelector('[ddata-product-json-variants]')
+            const variants = form.querySelector('[data-product-json-variants]')
             if(!variants) return null;
             const bisButton = form.querySelector('[data-bis-button]')
             const jsonVariants = JSON.parse(variants.textContent);
