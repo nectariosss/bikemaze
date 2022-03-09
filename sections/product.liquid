@@ -178,7 +178,7 @@
                             type="submit"
                             name="add"
                             class="product-form__submit primary-button"
-                          {% if current_variant == null or current_variant.available == false %}disabled{% endif %}
+                            {% if current_variant == null or current_variant.available == false %}disabled{% endif %}
                           >
                               {%- liquid 
                                 if current_variant.available == false

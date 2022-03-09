@@ -360,6 +360,9 @@
     input[type="radio"].unavailable + label {
         background: linear-gradient(to top right, #fff calc(50% - 1px), #4c4c4c, #fff calc(50% + 1px) )
     }
+    input[type="radio"].hidden + label {
+        display: none;
+    }
     input[type="radio"]:checked + label {
         border-color: #000;
     }

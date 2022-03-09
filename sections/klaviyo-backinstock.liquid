@@ -208,7 +208,9 @@ class BackInStock{
                 const modal = document.querySelector('backinstock-modal');
                
                 if (modal){
+                    if(!modal.querySelector('[name="variant"]')){
                     modal.querySelector('[data-backinstock-body]').appendChild(this.buildBackinStockSelect(jsonVariants, currentVariant.value))
+                    }
                     modal.show()
                 };
             }
@@ -239,16 +241,18 @@ class BackInStock{
             const jsonVariants = JSON.parse(variants.textContent);
             const selectedVariant = jsonVariants.find(item => item.id === Number(variantID.value))
             
-            if(selectedVariant.available){
-                submitButton.style.display = ''
-                if(bisButton){
-                    bisButton.remove()
-                }
-            }else{
-                if(!submitButton.hasAttribute("data-bis-disabled")){
-                    submitButton.style.display = 'none'
-                    if(!bisButton){
-                        submitButton.after(this.buildBackinStockButton(bisModal.buttonClass, bisModal.buttonText))
+            if(selectedVariant){
+                if(selectedVariant.available){
+                    submitButton.style.display = ''
+                    if(bisButton){
+                        bisButton.remove()
+                    }
+                }else{
+                    if(!submitButton.hasAttribute("data-bis-disabled")){
+                        submitButton.style.display = 'none'
+                        if(!bisButton){
+                            submitButton.after(this.buildBackinStockButton(bisModal.buttonClass, bisModal.buttonText))
+                        }
                     }
                 }
             }
