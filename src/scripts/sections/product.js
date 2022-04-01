@@ -185,19 +185,21 @@ class VariantSelects extends HTMLElement {
     if (!optionSwatches && !option) return null;
 
     function hashDataCollector(variant, item, hashData, option) {
-      if (
-        variant &&
-        item &&
-        variant.available &&
-        variant["option" + option] === item.value
-      ) {
-        hashData[item.value] = hashData[item.value]
-          ? hashData[item.value] + 1
-          : 1;
-      } else {
-        if (!hashData[item.value]) {
-          hashData[item.value] = 0;
+      if (!item || !variant) return null;
+      if (variant["option" + option] === item.value) {
+        if (variant.available) {
+          hashData[item.value] = hashData[item.value]
+            ? hashData[item.value] + "1"
+            : "1";
+        } else {
+          hashData[item.value] = hashData[item.value]
+            ? hashData[item.value] + "0"
+            : "0";
         }
+      } else {
+        hashData[item.value] = hashData[item.value]
+          ? hashData[item.value] + "x"
+          : "x";
       }
     }
     optionSwatches?.querySelectorAll("input[type='radio']")?.forEach((item) => {
@@ -223,10 +225,30 @@ class VariantSelects extends HTMLElement {
           hashDataCollector(variant, item, hashData, option);
         }
       }
-      if (hashData[item.value] === 0) {
-        item.classList.add("unavailable");
-      } else {
-        item.classList.remove("unavailable");
+     
+      if (hashData[item.value]) {
+        item.classList.remove("hidden");
+        if (
+          hashData[item.value].includes("0") &&
+          !hashData[item.value].includes("1")
+        ) {
+          item.classList.add("unavailable");
+        } else if (hashData[item.value].includes("1")) {
+          item.classList.remove("unavailable");
+        } else if (
+          !hashData[item.value].includes("0") &&
+          !hashData[item.value].includes("1")
+        ) {
+          item.classList.add("hidden");
+          if (item.checked) {
+            setTimeout(() => {
+              const availableOption = item
+                .closest("[data-option-position]")
+                .querySelector('input[type="radio"]:not(.hidden) + label');
+              availableOption?.click();
+            }, 0);
+          }
+        }
       }
     });
   }
