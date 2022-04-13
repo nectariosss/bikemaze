@@ -66,12 +66,6 @@
                     </div>
                   
                     <div class="minicart__footer-buttonsSection">
-                      {% if additional_checkout_buttons %}
-  <div class="additional-checkout-buttons">
-    {{ content_for_additional_checkout_buttons }}
-  </div>
-{% endif %}
-
                         <a class="secondary-button" href="{{ routes.cart_url }}">
                             {{ 'sections.ajax_cart.go_to_cart' | t }}
                         </a>
