@@ -75,6 +75,7 @@
                 <div class="cart-bottom">
                   <div class="cart-bottom__title">
                     <h4>{{ 'sections.cart.subtotal' | t }}</h4>
+                    <span>{{cart. total_discount | money}}</span>
                     <span>{{ cart.total_price | money }}</span>
                   </div> 
                   {%- capture taxes_shipping_checkout -%}
