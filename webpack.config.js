@@ -140,7 +140,7 @@ const commonFilesConfig = Object.assign({}, config, {
     minimizer:
       mode === "export" ? [] : [new TerserPlugin({ extractComments: false })],
   },
-  stats: "errors-only",
+  // stats: "errors-only",
 });
 
 const criticalCssConfig = Object.assign({}, config, {
@@ -187,7 +187,7 @@ const criticalCssConfig = Object.assign({}, config, {
       filename: "[name].liquid",
     }),
   ],
-  stats: "errors-only",
+  // stats: "errors-only",
 });
 
 module.exports = [commonFilesConfig, criticalCssConfig];
