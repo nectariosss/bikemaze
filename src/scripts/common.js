@@ -3,7 +3,7 @@ import Swiper, { Navigation, Pagination, Thumbs } from "swiper";
 
 import { configureCart } from "liquid-ajax-cart";
 
-console.log('assets in github actions')
+console.log('sssssssss')
 
 /**
  * Configure Liquid Ajax Cart
