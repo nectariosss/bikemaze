@@ -9,28 +9,50 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [16.x]
-    
     steps:
-    - uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v2
 
-    - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v3
-      with:
-        node-version: ${{ matrix.node-version }}
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
 
-    - name: Build
-      run: |
-        npm install
-        npx webpack
-    - name: Push
-      # uses: nicholasgriffintn/github-branch-deployment-action@0.0.1
-      uses: avex-designs/shopify-webpack-build-action@main
-      env:
-        GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_GITHUB_TOKEN }}
-        BRANCH: main
-        FOLDER: assets
-        MESSAGE: 'Build: ({sha}) {msg}'
+      - name: Install
+        run: npm ci
+
+      - name: Build
+        run: npx webpack
+
+      - name: Push
+        uses: avex-designs/shopify-webpack-build-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_GITHUB_TOKEN }}
+          BRANCH: main
+          FOLDER: assets
+          MESSAGE: 'Build: ({sha}) {msg}'
+
+    # strategy:
+    #   matrix:
+    #     node-version: [16.x]
+    
+    # steps:
+    # - uses: actions/checkout@v3
+
+    # - name: Use Node.js ${{ matrix.node-version }}
+    #   uses: actions/setup-node@v3
+    #   with:
+    #     node-version: ${{ matrix.node-version }}
+
+    # - name: Build
+    #   run: |
+    #     npm install
+    #     npx webpack
+    # - name: Push
+    #   # uses: nicholasgriffintn/github-branch-deployment-action@0.0.1
+    #   uses: avex-designs/shopify-webpack-build-action@main
+    #   env:
+    #     GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_GITHUB_TOKEN }}
+    #     BRANCH: main
+    #     FOLDER: assets
+    #     MESSAGE: 'Build: ({sha}) {msg}'
