@@ -10,25 +10,25 @@ jobs:
   build:
     runs-on: ubuntu-latest
     if: ${{ !contains(github.event.head_commit.message, 'Build action:') }}
-      steps:
-        - name: Checkout
-          uses: actions/checkout@v2
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
 
-        - name: Setup Node
-          uses: actions/setup-node@v1
-          with:
-            node-version: 16.x
+      - name: Setup Node
+        uses: actions/setup-node@v1
+        with:
+          node-version: 16.x
 
-        - name: Install
-          run: npm ci
+      - name: Install
+        run: npm ci
 
-        - name: Build
-          run: npx webpack
+      - name: Build
+        run: npx webpack
 
-        - name: Push
-          uses: avex-designs/shopify-webpack-build-action@main
-          env:
-            GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_GITHUB_TOKEN }}
-            BRANCH: main
-            FOLDER: assets
-            MESSAGE: 'Build: ({sha}) {msg}'
+      - name: Push
+        uses: avex-designs/shopify-webpack-build-action@main
+        env:
+          GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_GITHUB_TOKEN }}
+          BRANCH: main
+          FOLDER: assets
+          MESSAGE: 'Build: ({sha}) {msg}'
