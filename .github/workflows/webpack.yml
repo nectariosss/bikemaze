@@ -27,7 +27,8 @@ jobs:
         npm install
         npx webpack
     - name: Push
-      uses: nicholasgriffintn/github-branch-deployment-action@0.0.1
+      # uses: nicholasgriffintn/github-branch-deployment-action@0.0.1
+      uses: avex-designs/shopify-webpack-build-action@main
       env:
         GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_GITHUB_TOKEN }}
         BRANCH: main
