@@ -8,7 +8,7 @@ on:
 
 jobs:
   run_if:
-    if: "!contains(github.event.head_commit.message, 'Build action:')"
+    if: ${{ !contains(github.event.head_commit.message, 'Build action:') }}
       build:
         runs-on: ubuntu-latest
         steps:
