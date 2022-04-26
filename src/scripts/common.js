@@ -1,7 +1,7 @@
 import { findAncestor, swiperArrows } from "./helpers";
 import Swiper, { Navigation, Pagination, Thumbs } from "swiper";
 import { configureCart } from "liquid-ajax-cart";
-console.log('pr from dev')
+console.log('Hello')
 /**
  * Configure Liquid Ajax Cart
  */
