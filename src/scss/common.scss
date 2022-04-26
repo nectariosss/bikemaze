@@ -1,7 +1,9 @@
 @import "./fonts";
 @import "./partials/ajax-cart.scss";
 @import "swiper/css/bundle";
-
+body.test{
+    color: red!important;
+}
 body.js-ajax-cart-opened {
     overflow: hidden;
 }
