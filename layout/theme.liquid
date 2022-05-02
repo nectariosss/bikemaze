@@ -41,7 +41,6 @@
    <!-- Common/Main js file -->
    <script src="{{ 'common.min.js' | asset_url }}" defer="defer"></script>
 
-  {% include 'dynamic_yield' %}
 </head>
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ request.page_type | handle }} template-{{ template.name }}" style="display: none;">
 
