@@ -30,7 +30,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.DEPLOYMENT_GITHUB_TOKEN }}
           BRANCH: main
-          FOLDER: assets
+          FOLDER: assets,snippets
           MESSAGE: 'Build action: ({sha}) {msg}'
 
 
