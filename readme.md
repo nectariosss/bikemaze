@@ -76,27 +76,35 @@ git push -u origin main
   
 
 ## Top Features
+>   🆕 ** Webpack build on "main" branch on push request via [Github Actions](https://github.com/avex-designs/avex-boilerplate/blob/main/.github/workflows/webpack.yml "Github Actions")!** 🆕
 
-  
+Every time you push anything on main branch, you may see github actions run, which will use your webpack.config file and add minified and generated css/js files to the project. Please check github actions folder.
 
-1. Upload ready built and minifed CSS/JS files to Shopify
+##### Implementation:
+Add your user token to Shopify secrets.
+1. 	Go to your profile settings (https://github.com/settings/tokens)
+2. 	Generate new token.
+3. 	Go to your repo settings (https://github.com/avex-designs/your-repo-name/settings/secrets/actions)
+4. 	Click on "New repository secret" and add name as "DEPLOYMENT_GITHUB_TOKEN" and value as your personal token that we generated on step 2.
+5. 	Save and make test push request to main branch. 
 
-  
+##### Ideal flow: 
+1. Connect your main branch to shopify via admin. 
+2. Work on development branch and make any changes you want. 
+3. Once you are ready to push to main branch, create PR to main branch and merge it.
+4. It will merge all files and immmideatly creates a github action which will build your webpack files using your webpack config and pushes it to corresponding folders (configured in your webpack settings).
 
-2. SCSS/JS files are divided into modular parts based on the sections
 
-  
+------------
 
-3. Full integration with **Liquid Ajax Cart**. All product forms automatically ajaxified. For more details please visit [https://liquid-ajax-cart.js.org](https://liquid-ajax-cart.js.org)
+#### Features list:
 
-	✅ Latest version added with npm support!
-
-  
-
-3.  **Swiper Slider**  [Docs](https://swiperjs.com/swiper-api). Please use `window.Swiper` object.
+- Upload ready built and minifed CSS/JS files to Shopify
+- SCSS/JS files are divided into modular parts based on the sections
+- Full integration with **Liquid Ajax Cart**. All product forms automatically ajaxified. For more details please visit [https://liquid-ajax-cart.js.org](https://liquid-ajax-cart.js.org)
+- **Swiper Slider**  [Docs](https://swiperjs.com/swiper-api). Please use `window.Swiper` object.
 
 Please use only needed modules:
-
 ```javascript
 
 import  SwiperCore, { Navigation, Pagination, Thumbs, Mousewheel } from  "swiper/core";
@@ -106,18 +114,13 @@ SwiperCore.use([Navigation, Pagination, Thumbs]);
 window.Swiper = SwiperCore;
 
 ```
-
-4. Based on Shopify [DAWN Theme](https://github.com/Shopify/dawn).
-
-  
-
-5. ⚠️~~Responsive Image using native `loading='lazy'` - `/snippets/image.liquid`~~
-	<br>Use native shopify ``image_tag`` [filter](https://shopify.dev/api/liquid/filters/html-filters#image_tag). 
+- Based on Shopify [DAWN Theme](https://github.com/Shopify/dawn).
+- Use native shopify ``image_tag`` [filter](https://shopify.dev/api/liquid/filters/html-filters#image_tag). 
 	✅Added new `image-acf.liquid` for acf images. 
 
-6. CSS Lazyload - `/snippets/stylesheet.liquid`
+- CSS Lazyload - `/snippets/stylesheet.liquid`
 
-7. JS load using defer -
+- JS load using defer -
 
 ```javascript
 
@@ -127,7 +130,7 @@ window.Swiper = SwiperCore;
 
   
 
-5. Global SCSS Resource Loader. `src/scss/resources.scss`
+- Global SCSS Resource Loader. `src/scss/resources.scss`
 
 ```
 
@@ -139,15 +142,15 @@ window.Swiper = SwiperCore;
 
 ```
 
-6. All scripts loading from Node modules.
+- All scripts loading from Node modules.
 
 Install needed npm package and import it to `common.js`. Please assign your libraries to `window` object for global usage (please look to `common.js` for sample).
 
   
 
-9. ❌ THIS VERSION DOESN'T HAVE SUPPORT OF JQUERY!❌ Vanilla JS only!✅
+- ❌ THIS VERSION DOESN'T HAVE SUPPORT OF JQUERY!❌ Vanilla JS only!✅
 
-10. ❌ DOESN'T SUPPORT IE! ❌
+- ❌ DOESN'T SUPPORT IE! ❌
 
   
 
@@ -155,7 +158,7 @@ Install needed npm package and import it to `common.js`. Please assign your libr
 
   
 
-1.  **Modal popup** - `common.js::206(line)`
+1.  **Modal popup** - `common.js::206(line)` CSS (already added in common.scss)
 
   
 
@@ -177,81 +180,7 @@ Some text or html here....
 
 ```
 
-Sample CSS (already added in common.scss):
-
-```css
-
-.popup-modal {
-
-box-sizing: border-box;
-
-opacity: 0;
-
-position: fixed;
-
-visibility: hidden;
-
-z-index: -1;
-
-margin: 0  auto;
-
-top: 0;
-
-left: 0;
-
-overflow: auto;
-
-width: 100%;
-
-background: #0003;
-
-height: 100%;
-
-}
-
-  
-
-.popup-modal[open] {
-
-opacity: 1;
-
-visibility: visible;
-
-z-index: 101;
-
-}
-
-  
-
-.popup-modal__content {
-
-background-color: #fff;
-
-overflow: auto;
-
-height: 80%;
-
-margin: 0  auto;
-
-left: 50%;
-
-transform: translateX(-50%);
-
-margin-top: 5rem;
-
-width: 92%;
-
-position: absolute;
-
-top: 0;
-
-padding: 0  1.5rem  0  3rem;
-
-}
-
-```
-
-2.  **Accordion** - `common.js::105(line)`
+2.  **Accordion** - `common.js::105(line)` CSS (already added in common.scss)
 
   
 
@@ -293,28 +222,12 @@ Usage:
 
 ```
 
-Sample CSS (already added in common.scss):
-
-```css
-
-[data-accordion="content-container"] {
-
-height: 0;
-
-overflow: hidden;
-
-transition: all  0.1s  linear;
-
-}
-
-```
-
 3.  **Product Carousel** - `common.js::160(line)`
 
 ❌Web components with Swiper js not well supported in Safari. Removed.❌
 
 
-4.  **Predictive search** - `search.js`
+4.  **Predictive search** - `search.js` CSS (already added in common.scss)
 
 Usage:
 
@@ -381,196 +294,6 @@ spellcheck="false">
 </form>
 
 </predictive-search>
-
-```
-
-Sample SCSS
-
-```scss
-
-.predictive-search {
-
-display: none;
-
-position: absolute;
-
-top: calc(100% + 0.1rem);
-
-width: calc(100% + 0.2rem);
-
-left: -0.1rem;
-
-border: 0.1rem  solid  #000;
-
-background-color: #fff;
-
-z-index: 3;
-
-&__item {
-
-display: flex;
-
-padding: 1rem;
-
-text-align: left;
-
-text-decoration: none;
-
-width: 100%;
-
-}
-
-&__item-heading {
-
-font-size: 14px;
-
-text-transform: none;
-
-margin-bottom: 5px;
-
-}
-
-&__item--term {
-
-justify-content: space-between;
-
-align-items: center;
-
-padding: 1.3rem  2rem;
-
-word-break: break-all;
-
-line-height: 1.4;
-
-border: none;
-
-height: 40px;
-
-font-size: 12px;
-
-cursor: pointer;
-
-&:hover {
-
-opacity: 0.7;
-
-}
-
-.icon-arrow {
-
-width: 1.4rem;
-
-height: 1.4rem;
-
-flex-shrink: 0;
-
-margin-left: 2rem;
-
-color: #000;
-
-}
-
-}
-
-&__heading {
-
-border-bottom: 0.1rem  solid  #ccc;
-
-font-size: rem(12px);
-
-text-transform: uppercase;
-
-margin: 0  auto;
-
-padding: 1.5rem  0  0.75rem;
-
-display: flex;
-
-justify-content: space-between;
-
-align-items: center;
-
-width: calc(100% - 2rem);
-
-color: #000;
-
-}
-
-&__results-list {
-
-margin: 0;
-
-padding: 0;
-
-list-style: none;
-
-}
-
-&__item--link {
-
-display: grid;
-
-grid-template-columns: 50px  1fr;
-
-grid-column-gap: 1rem;
-
-grid-template-areas: "product-image product-content";
-
-&:hover {
-
-background-color: #cccccc21;
-
-}
-
-}
-
-&__image {
-
-grid-area: product-image;
-
-object-fit: cover;
-
-width: 50px;
-
-height: 50px;
-
-}
-
-&__item-content {
-
-grid-area: product-content;
-
-display: flex;
-
-flex-direction: column;
-
-}
-
-}
-
-.predictive-search--search-template {
-
-z-index: 2;
-
-}
-
-predictive-search:not([loading]) .predictive-search-status__loading,
-
-predictive-search:not([loading]) .predictive-search__heading  .spinner,
-
-predictive-search:not([loading]) .predictive-search__loading-state {
-
-display: none;
-
-}
-
-predictive-search[loading] .predictive-search,
-
-predictive-search[open] .predictive-search {
-
-display: block;
-
-}
 
 ```
 
