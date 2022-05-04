@@ -79,6 +79,14 @@
     },
     "content_for_index": [
 
-    ]
+    ],
+    "blocks": {
+      "14413030425880915919": {
+        "type": "shopify:\/\/apps\/dy\/blocks\/app-embed\/41edeef1-3bd4-4b46-a59f-40cd8511505f",
+        "disabled": false,
+        "settings": {
+        }
+      }
+    }
   }
 }
