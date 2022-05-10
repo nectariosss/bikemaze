@@ -4,6 +4,12 @@
       "tags": "Tagged \"{{ tags }}\"",
       "page": "Page {{ page }}"
     },
+    "breadcrumbs": {
+      "home": "Home",
+      "search_result": "Search Result",
+      "my_account": "My Account",
+      "sitemap": "Sitemap"
+    },
     "password_page": {
       "login_form_heading": "Enter store using password:",
       "login_password_button": "Enter using password",

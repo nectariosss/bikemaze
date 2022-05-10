@@ -4,12 +4,6 @@
         padding: 0;
         padding-bottom: 2rem;
     }
-    .breadcrumbs-wrap {
-        margin-bottom: 1rem;
-        @include media(tabletL) {
-            display: none;
-        }
-    }
     .product-container {
         display: grid;
         grid-template-columns: 50% 46%;

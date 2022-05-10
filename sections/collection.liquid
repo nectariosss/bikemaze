@@ -14,7 +14,6 @@
   <section class="collection-page__header">
     <div class="container" style="color: {{ section.settings.collection_text_color }};">
       <div class="breadcrumbs">
-        {% render 'breadcrumbs' %}
       </div>
       <h1 class="title">{{- collection.title | escape -}}</h1>
       {%- if section.settings.show_collection_description -%}
