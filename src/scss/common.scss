@@ -170,9 +170,12 @@ img {
         max-width: 100%;
     }
     &__error {
-        padding: 0 1rem;
+        // padding: 0 1rem;
         font-size: 10px;
         color: #d81356;
+        &>div{
+            margin-bottom: 1rem;
+        }
     }
     &__image {
         position: relative;

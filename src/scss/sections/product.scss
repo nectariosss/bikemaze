@@ -399,8 +399,9 @@
     &__error-message {
         font-size: 10px;
         color: $color-red;
-        p {
-            padding: 1rem 0.5rem;
+        // padding: 1rem 0.5rem;
+        &>div{
+            padding-bottom: 1rem;
         }
     }
     &__submit {

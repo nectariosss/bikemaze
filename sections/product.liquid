@@ -6,7 +6,7 @@
 
 <div class="product">
     <div class="container-max product-container">
-        <div is="product-image-gallery" class="product__gallery">
+        <div class="product__gallery">
             <div class="swiper product-thumbnails" data-thumbnail-images>
                 <div class="swiper-wrapper">
                     {%- for media in product.media -%}
@@ -166,7 +166,7 @@
                   {%- when 'buy_buttons' -%}
                     <product-form class="product-form">
                       <div class="product-form__error-message-wrapper" role="alert">
-                        <span class="product-form__error-message" data-ajax-cart-form-error></span>
+                        <div class="product-form__error-message" data-ajax-cart-messages="form"></div>
                       </div>
       
                     
