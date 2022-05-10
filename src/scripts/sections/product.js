@@ -3,87 +3,64 @@ const Swiper = window.Swiper;
 /**
  * Image gallery with Swiperjs
  */
-class ProductImageGallery extends HTMLDivElement {
-  constructor() {
-    super();
-    this.swiperSlidersPerView = 4;
-    this.thumbnailsLength = document.querySelectorAll(
-      "[data-thumbnail-images] [data-thumbnail-item]"
-    )?.length;
+const swiperSlidersPerView = 4;
+const thumbnailsLength = document.querySelectorAll(
+  "[data-thumbnail-images] [data-thumbnail-item]"
+)?.length;
 
-    this.initThumbs();
-    this.initMain();
-  }
+const swiperThumbs = new Swiper("[data-thumbnail-images]", {
+  spaceBetween: 8,
+  observer: true,
+  observeParents: true,
+  slidesPerView: swiperSlidersPerView,
+  preventClicks: false,
+  preventClicksPropagation: false,
+  allowTouchMove: false,
+  watchOverflow: true,
+  watchSlidesVisibility: true,
+  watchSlidesProgress: true,
+  direction: "vertical",
+  loop:
+    thumbnailsLength >= swiperSlidersPerView
+      ? true
+      : false,
+  resizeReInit: true,
+});
 
-  connectedCallback() {
-    // Temporary solution currently swiperjs thumbs not supported asked as feature request
-    setTimeout(() => {
-      window.dispatchEvent(new Event("resize"));
-    }, 500);
-  }
+const swiperImages = new Swiper("[data-main-images]", {
+  thumbs: {
+    swiper: swiperThumbs,
+  },
+  observer: true,
+  observeParents: true,
+  slidesPerView: 1,
+  spaceBetween: 0,
+  loop: true,
+  cssMode: true,
+  resizeReInit: true,
+  allowTouchMove: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  pagination: {
+    el: ".swiper-pagination",
+    type: "bullets",
+    clickable: true,
+  },
 
-  initMain() {
-    this.swiperImages = new Swiper("[data-main-images]", {
-      thumbs: {
-        swiper: this.swiperThumbs,
-      },
-      observer: true,
-      observeParents: true,
+  breakpoints: {
+    990: {
+      loop: false,
       slidesPerView: 1,
       spaceBetween: 0,
-      loop: true,
-      cssMode: true,
-      resizeReInit: true,
-      allowTouchMove: true,
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      pagination: {
-        el: ".swiper-pagination",
-        type: "bullets",
-        clickable: true,
-      },
-
-      breakpoints: {
-        990: {
-          loop: false,
-          slidesPerView: 1,
-          spaceBetween: 0,
-          cssMode: false,
-          pagination: false,
-          navigation: false,
-          allowTouchMove: false,
-        },
-      },
-      watchOverflow: true,
-    });
-  }
-
-  initThumbs() {
-    this.swiperThumbs = new Swiper("[data-thumbnail-images]", {
-      spaceBetween: 8,
-      observer: true,
-      observeParents: true,
-      slidesPerView: this.swiperSlidersPerView,
-      preventClicks: false,
-      preventClicksPropagation: false,
+      cssMode: false,
+      pagination: false,
+      navigation: false,
       allowTouchMove: false,
-      watchOverflow: true,
-      watchSlidesVisibility: true,
-      watchSlidesProgress: true,
-      direction: "vertical",
-      loop:
-        this.thumbnailsLength &&
-        this.thumbnailsLength >= this.swiperSlidersPerView
-          ? true
-          : false,
-      resizeReInit: true,
-    });
-  }
-}
-customElements.define("product-image-gallery", ProductImageGallery, {
-  extends: "div",
+    },
+  },
+  watchOverflow: true,
 });
 
 /**
@@ -225,7 +202,7 @@ class VariantSelects extends HTMLElement {
           hashDataCollector(variant, item, hashData, option);
         }
       }
-     
+
       if (hashData[item.value]) {
         item.classList.remove("hidden");
         if (
