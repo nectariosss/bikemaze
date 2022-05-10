@@ -1,8 +1,8 @@
 @import "./fonts";
 @import "./partials/ajax-cart.scss";
 @import "swiper/css/bundle";
-body.test{
-    color: red!important;
+body.test {
+    color: red !important;
 }
 body.js-ajax-cart-opened {
     overflow: hidden;
@@ -109,6 +109,32 @@ img {
     &__copyrights {
         text-align: center;
         padding-top: 1.5rem;
+    }
+}
+
+.socials {
+    margin-top: 1rem;
+    &__links {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .social-links {
+        &__link {
+            width: 20px;
+            height: 20px;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+            a {
+                transition: opacity 450ms ease;
+                svg {
+                    max-width: rem(24px);
+                    max-height: rem(24px);
+                }
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+        }
     }
 }
 
@@ -333,7 +359,7 @@ img {
             text-decoration: line-through;
         }
     }
-    .bis-notifyme{
+    .bis-notifyme {
         font-size: 12px;
         text-align: center;
     }

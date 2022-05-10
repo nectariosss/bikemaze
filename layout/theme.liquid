@@ -47,7 +47,7 @@
   <a class="skip-to-content-link button visually-hidden" href="#MainContent"> {{ 'accessibility.skip_to_text' | t }}</a>
 
   {%- section 'header' -%} 
-  
+  {%- render 'breadcrumbs' -%}
   <main class="main-content" role="main" id="MainContent">
     {{ content_for_layout }}
   </main>
@@ -77,9 +77,10 @@
       unavailable: `{{ 'products.product.unavailable' | t }}`,
     }
   </script>
-
-{% comment %}theme-check-disable{% endcomment %}
-  <script async type="text/javascript" src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id=WXeasw"></script>
+  
+{%- if settings.klaviyo_id != blank -%}
+  {% comment %}theme-check-disable{% endcomment %}
+  <script async type="text/javascript" src="//static.klaviyo.com/onsite/js/klaviyo.js?company_id={{ settings.klaviyo_id }}"></script>
   <script>
   var _learnq = _learnq || [];
   if ('{{ customer.email }}') {
@@ -89,6 +90,7 @@
   }
   </script>
   {% comment %}theme-check-enable{% endcomment %}
+{%- endif -%}
 
 {%- if template contains 'product' -%}
   <!-- Product Structured Data -->

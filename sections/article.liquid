@@ -1,7 +1,6 @@
 {%- render 'stylesheet', name: 'article' -%}
 
 <div class="article">
-	<div class="article__breadcrumbs container">{% render 'breadcrumbs' %}</div>
 	<article>
 		<div class="article__header container">
 			<time class="h5 article__date" datetime="{{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' }}">{{ article.published_at | date: '%B %d. %Y' }}</time>

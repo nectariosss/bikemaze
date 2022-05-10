@@ -18,6 +18,11 @@
 				{{- section.settings.newsletter_element -}}
 			</div>
 			{%- endif -%}
+			{%- if section.settings.footer_socials != blank and linklists[section.settings.footer_socials] -%}
+				<div class="socials">
+				{%- render 'social-links', socials: linklists[section.settings.footer_socials] -%}
+				</div>
+			{%- endif -%}
 		</div>
 	</div>
 	<div class="footer__copyrights">
@@ -59,6 +64,11 @@
 		"id": "newsletter_element",
 		"label": "Newsletter Snippet",
 		"default": "<div class='klaviyo-form-SJLAFx'></div>"			
+	},
+	{
+		"type": "link_list",
+		"id": "footer_socials",
+		"label": "Social links"
 	}
 			
   ]
