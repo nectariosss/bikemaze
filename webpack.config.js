@@ -41,7 +41,7 @@ function templatesEntry(arr, isJS = false) {
       entries[fileName] = file;
     }
   }
-  
+
   return entries;
 }
 const entries = {
@@ -52,7 +52,7 @@ const entries = {
 };
 
 const config = {
-  mode: "production",
+  mode: mode,
   resolve: {
     // resolve file extensions
     extensions: [".scss", ".js", ".css"],
@@ -72,21 +72,6 @@ const commonFilesConfig = Object.assign({}, config, {
   },
   module: {
     rules: [
-      mode === "export"
-        ? {}
-        : {
-            test: /\.(js|jsx)$/,
-            exclude: /[\\/]node_modules[\\/]/,
-            use: {
-              loader: "babel-loader",
-              options: {
-                presets: ["@babel/preset-env"],
-                plugins: [
-                  ["@babel/transform-runtime"]
-                ]
-              },
-            },
-          },
       {
         test: /\.(scss|css)$/,
         use: [
@@ -138,7 +123,9 @@ const commonFilesConfig = Object.assign({}, config, {
   ],
   optimization: {
     minimizer:
-      mode === "export" ? [] : [new TerserPlugin({ extractComments: false })],
+      mode === "production"
+        ? [new TerserPlugin({ extractComments: false })]
+        : [],
   },
   // stats: "errors-only",
 });
