@@ -1,7 +1,7 @@
 import { findAncestor, swiperArrows } from "./helpers";
 import Swiper, { Navigation, Pagination, Thumbs } from "swiper";
 import { configureCart } from "liquid-ajax-cart";
-console.log('Hello')
+console.log("Hello");
 /**
  * Configure Liquid Ajax Cart
  */
@@ -86,82 +86,10 @@ closeDrawer.forEach((item) => {
 /**
  * Quantity Selector component
  */
-class QuantityInput extends HTMLElement {
-  constructor() {
-    super();
-    this.input = this.querySelector("input");
-    this.changeEvent = new Event("change", { bubbles: true });
-
-    this.querySelectorAll("button").forEach((button) =>
-      button.addEventListener("click", this.onButtonClick.bind(this))
-    );
-  }
-
-  onButtonClick(event) {
-    event.preventDefault();
-    const previousValue = this.input.value;
-
-    event.target.name === "plus" ? this.input.stepUp() : this.input.stepDown();
-    if (previousValue !== this.input.value)
-      this.input.dispatchEvent(this.changeEvent);
-  }
-}
-customElements.define("quantity-input", QuantityInput);
 
 /**
  * Accordion component
  */
-class Accordion extends HTMLElement {
-  constructor() {
-    super();
-    this.canMultipleOpen = this.hasAttribute("data-allow-multiple-open");
-    if (this.hasAttribute("data-first-open")) {
-      const contentHeight = this.querySelectorAll(
-        "[data-accordion='content']"
-      )[0].offsetHeight;
-      const firstButton = this.querySelectorAll(
-        "[data-accordion='trigger']"
-      )[0];
-      if (!firstButton) return;
-      this.openBody(firstButton, firstButton.nextElementSibling, contentHeight);
-    }
-
-    this.querySelectorAll("[data-accordion='trigger']").forEach((button) =>
-      button.addEventListener("click", this.toggleBody.bind(this, button))
-    );
-  }
-
-  openBody(trigger, el, heightLimit) {
-    el.style.height = heightLimit + "px";
-    trigger.classList.add("is-collapsed");
-  }
-
-  closeBody(trigger, el) {
-    el.style.height = "0";
-    trigger.classList.remove("is-collapsed");
-  }
-
-  toggleBody(elem) {
-    if (elem.classList.contains("is-collapsed")) {
-      this.closeBody(elem, elem.nextElementSibling);
-    } else {
-      const contentHeight = elem.nextElementSibling.querySelectorAll(
-        '[data-accordion="content"]'
-      )[0].offsetHeight;
-      if (!this.canMultipleOpen) {
-        for (const e of document.querySelectorAll(
-          '[data-accordion="trigger"]'
-        )) {
-          this.closeBody(elem, e.nextElementSibling);
-          e.classList.remove("is-collapsed");
-        }
-      }
-
-      this.openBody(elem, elem.nextElementSibling, contentHeight);
-    }
-  }
-}
-customElements.define("accordion-block", Accordion);
 
 /**
  * Swiper products carousel component
@@ -214,55 +142,6 @@ function productsCarousel() {
     });
   }
 }
-
-/***
- * Modal popup
- */
-class ModalDialog extends HTMLElement {
-  constructor() {
-    super();
-    this.querySelector('[id^="ModalClose-"]').addEventListener(
-      "click",
-      this.hide.bind(this)
-    );
-    this.addEventListener("keyup", (event) => {
-      if (event.code.toUpperCase() === "ESCAPE") this.hide();
-    });
-    this.addEventListener("click", (event) => {
-      if (event.target.nodeName === "MODAL-DIALOG") this.hide();
-    });
-  }
-
-  show(opener) {
-    this.openedBy = opener;
-    document.body.classList.add("overflow-hidden");
-    this.setAttribute("open", "");
-  }
-
-  hide() {
-    document.body.classList.remove("overflow-hidden");
-    this.removeAttribute("open");
-  }
-}
-customElements.define("modal-dialog", ModalDialog);
-
-/***
- * Modal button(opener)
- */
-class ModalOpener extends HTMLElement {
-  constructor() {
-    super();
-
-    const button = this.querySelector("button");
-
-    if (!button) return;
-    button.addEventListener("click", () => {
-      const modal = document.querySelector(this.getAttribute("data-modal"));
-      if (modal) modal.show(button);
-    });
-  }
-}
-customElements.define("modal-opener", ModalOpener);
 
 function sampleMethod(event) {
   const element = event.target.closest("[data-some-attr]"); // add your element class/id/data-attr.
