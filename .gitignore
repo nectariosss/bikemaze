@@ -23,6 +23,7 @@
 !.eslintignore
 !.prettierrc.json
 !.prettierignore
+!.stylelintrc.json
 !.husky
 !.prettier
 !README.md
