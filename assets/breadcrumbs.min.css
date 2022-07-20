@@ -3,9 +3,9 @@
 }
 
 .breadcrumbs {
-  text-align: left;
   display: flex;
   flex-wrap: wrap;
+  text-align: left;
 }
 .breadcrumbs li a {
   color: inherit;

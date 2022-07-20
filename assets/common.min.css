@@ -1,8 +1,8 @@
 @font-face {
   font-family: "Futura PT Light";
-  src: local("Futura PT Light"), local("Futura-PT-Light"), url(FuturaPT-Light.woff2) format("woff2"), url(FuturaPT-Light.woff) format("woff"), url(FuturaPT-Light.ttf) format("truetype");
-  font-weight: 300;
   font-style: normal;
+  font-weight: 300;
+  src: local("Futura PT Light"), local("Futura-PT-Light"), url(FuturaPT-Light.woff2) format("woff2"), url(FuturaPT-Light.woff) format("woff"), url(FuturaPT-Light.ttf) format("truetype");
   font-display: swap;
 }
 /**
@@ -643,17 +643,16 @@ button.swiper-pagination-bullet {
 }
 
 body.test {
-  color: red !important;
+  color: #f20303;
 }
-
 body.js-ajax-cart-opened {
   overflow: hidden;
 }
 
 /** Main Styles **/
 img.cover {
-  height: 100%;
   width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 img.auto {
@@ -661,66 +660,66 @@ img.auto {
 }
 
 .primary-button {
-  -webkit-appearance: none;
-  cursor: pointer;
-  width: 100%;
-  height: 48px;
-  background: #000;
-  color: #fff;
-  text-transform: uppercase;
-  border: 1px solid #000;
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
+  width: 100%;
+  height: 48px;
+  color: #fff;
   text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #000;
+  border: 1px solid #000;
+  appearance: none;
 }
 .primary-button.loading {
-  background-color: #fff;
   font-size: 1px;
+  background-color: #fff;
 }
 .primary-button.loading::after {
-  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -12px;
-  margin-left: -12px;
   width: 25px;
   height: 25px;
-  border-radius: 50px;
+  margin-top: -12px;
+  margin-left: -12px;
+  content: "";
   border: 4px solid grey;
+  border-radius: 50px;
   animation: loading 1s linear infinite;
 }
 
 .secondary-button {
-  -webkit-appearance: none;
-  cursor: pointer;
-  width: 100%;
-  height: 48px;
-  background: #fff;
-  color: #000;
-  text-transform: uppercase;
-  border: 1px solid #000;
+  display: flex;
   align-items: center;
   justify-content: center;
-  display: flex;
+  width: 100%;
+  height: 48px;
+  color: #000;
   text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #000;
+  appearance: none;
 }
 .secondary-button.loading {
-  background-color: #fff;
   font-size: 1px;
+  background-color: #fff;
 }
 .secondary-button.loading::after {
-  content: "";
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-top: -12px;
-  margin-left: -12px;
   width: 25px;
   height: 25px;
-  border-radius: 50px;
+  margin-top: -12px;
+  margin-left: -12px;
+  content: "";
   border: 4px solid grey;
+  border-radius: 50px;
   animation: loading 1s linear infinite;
 }
 
@@ -748,39 +747,44 @@ img.auto {
   grid-auto-columns: 1fr 30%;
   align-items: baseline;
 }
-.footer__navigation .footer-nav__menu {
+
+.footer__copyrights {
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.footer-nav__menu {
   column-count: 3;
 }
-.footer__logo img {
-  height: auto;
+
+.footer-nav__logo img {
   width: auto;
-}
-.footer__copyrights {
-  text-align: center;
-  padding-top: 1.5rem;
+  height: auto;
 }
 
 .socials {
   margin-top: 1rem;
 }
-.socials__links {
+
+.social__links {
   display: flex;
   flex-wrap: wrap;
 }
-.socials .social-links__link {
+
+.social__link {
   width: 20px;
   height: 20px;
   margin-right: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.socials .social-links__link a {
+.social__link a {
   transition: opacity 450ms ease;
 }
-.socials .social-links__link a svg {
+.social__link a svg {
   max-width: 1.5rem;
   max-height: 1.5rem;
 }
-.socials .social-links__link a:hover {
+.social__link a:hover {
   opacity: 0.5;
 }
 
@@ -790,14 +794,14 @@ img.auto {
   height: 30px;
 }
 
-.lds-dual-ring:after {
-  content: "";
+.lds-dual-ring::after {
   display: block;
   width: 25px;
   height: 25px;
-  border-radius: 50%;
+  content: "";
   border: 3px solid #000;
-  border-color: #000 transparent #000 transparent;
+  border-color: #000 transparent;
+  border-radius: 50%;
   animation: lds-dual-ring 0.6s linear infinite;
 }
 
@@ -826,8 +830,8 @@ img.auto {
 }
 .product-card__image {
   position: relative;
-  overflow: hidden;
   aspect-ratio: 6/9;
+  overflow: hidden;
 }
 .product-card__image .images,
 .product-card__image .main-image {
@@ -837,21 +841,21 @@ img.auto {
   position: absolute;
   top: 0;
   left: 0;
-  opacity: 0;
-  transition: opacity 650ms ease-in-out;
   width: 100%;
   height: 100%;
+  opacity: 0;
+  transition: opacity 650ms ease-in-out;
 }
 .product-card__image .responsive-image__wrapper {
   height: 100%;
 }
 .product-card__image .responsive-image__image {
-  height: fit-content;
-  object-fit: cover;
-  max-height: 100% !important;
-  max-width: 100% !important;
   width: 100%;
+  max-width: 100% !important;
+  height: fit-content;
   height: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover;
 }
 .product-card__label {
   position: absolute;
@@ -859,15 +863,15 @@ img.auto {
   left: 0;
 }
 .product-card__label span {
-  transform: rotate(90deg) translate(-5px, -9px);
   display: inline-block;
-  transform-origin: 0% 100%;
-  font-weight: normal;
+  font-family: "Futura PT Light", sans-serif;
   font-size: 1rem;
+  font-weight: normal;
+  font-weight: 400;
   line-height: 1.1875rem;
   text-transform: uppercase;
-  font-weight: 400;
-  font-family: "Futura PT Light", sans-serif;
+  transform: rotate(90deg) translate(-5px, -9px);
+  transform-origin: 0% 100%;
 }
 @media only screen and (max-width: 767px) {
   .product-card__label span {
@@ -882,15 +886,15 @@ img.auto {
   right: 0;
 }
 .product-card__wishlist button {
-  cursor: pointer;
-  background: none;
-  border: none;
-  width: 16px;
   display: inline-block;
+  width: 16px;
   height: 16px;
   padding: 0;
   margin-top: 8px;
   margin-right: 8px;
+  cursor: pointer;
+  background: none;
+  border: none;
 }
 .product-card__wishlist button svg {
   width: 16px;
@@ -902,16 +906,16 @@ img.auto {
 .product-card__link {
   position: absolute;
   top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
+  left: 0;
   display: block;
 }
 .product-card__actions {
   position: absolute;
+  right: 0;
   bottom: 0;
   left: 0;
-  right: 0;
   display: grid;
   grid-template-columns: 50% 50%;
   opacity: 0;
@@ -923,20 +927,20 @@ img.auto {
   }
 }
 .product-card__actions .add-to-cart-button {
+  height: 100%;
+  min-height: 40px;
+  padding: 0;
   font-family: "Futura PT Light", sans-serif;
-  font-weight: normal;
   font-size: 0.875rem;
+  font-weight: normal;
   line-height: 1.0625rem;
   text-align: center;
-  letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding: 0;
-  min-height: 40px;
-  height: 100%;
+  letter-spacing: 0.1em;
 }
 .product-card__actions .add-to-cart-button:focus {
-  outline: none;
   border: none;
+  outline: none;
 }
 .product-card__actions.only-one {
   grid-template-columns: 100%;
@@ -944,18 +948,10 @@ img.auto {
 .product-card__actions.only-one .select2 {
   display: none;
 }
-@media (min-width: 768px) {
-  .product-card__image:hover .product-card__actions {
-    opacity: 1;
-  }
-  .product-card__image:hover .hover-image {
-    opacity: 1;
-  }
-}
 .product-card .card {
-  padding: 1rem 5px 8px 5px;
   display: grid;
   grid-template-columns: 75% 25%;
+  padding: 1rem 5px 8px;
 }
 @media only screen and (max-width: 767px) {
   .product-card .card {
@@ -964,10 +960,16 @@ img.auto {
   }
 }
 .product-card .card__titleblock .title {
-  font-weight: normal;
-  font-size: 1rem;
-  line-height: 1.1875rem;
   margin-bottom: 8px;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.1875rem;
+}
+@media only screen and (max-width: 767px) {
+  .product-card .card__titleblock .title {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+  }
 }
 .product-card .card__titleblock .title a {
   color: #000;
@@ -977,29 +979,23 @@ img.auto {
 .product-card .card__titleblock .title a:hover {
   opacity: 0.6;
 }
-@media only screen and (max-width: 767px) {
-  .product-card .card__titleblock .title {
-    font-size: 0.75rem;
-    line-height: 0.875rem;
-  }
-}
 .product-card .card__priceblock {
-  font-weight: normal;
+  font-family: "Futura PT Light", sans-serif;
   font-size: 1rem;
+  font-weight: normal;
   line-height: 1.1875rem;
   text-align: right;
-  font-family: "Futura PT Light", sans-serif;
+}
+@media only screen and (max-width: 767px) {
+  .product-card .card__priceblock {
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    text-align: left;
+  }
 }
 .product-card .card__priceblock .old-price {
   color: #5c5c5c;
   text-decoration: line-through;
-}
-@media only screen and (max-width: 767px) {
-  .product-card .card__priceblock {
-    text-align: left;
-    font-size: 0.75rem;
-    line-height: 0.875rem;
-  }
 }
 .product-card.soldout .card__titleblock .title {
   text-decoration: line-through;
@@ -1011,20 +1007,28 @@ img.auto {
   font-size: 12px;
   text-align: center;
 }
+@media (min-width: 768px) {
+  .product-card__image:hover .product-card__actions {
+    opacity: 1;
+  }
+  .product-card__image:hover .hover-image {
+    opacity: 1;
+  }
+}
 
 .newsletter input {
   height: 35px !important;
-  font-size: 12px !important;
   font-family: "Futura PT Light", sans-serif !important;
+  font-size: 12px !important;
   border: none !important;
 }
 .newsletter input::placeholder {
   font-size: 12px !important;
 }
 .newsletter button {
-  font-size: 12px !important;
   padding: 6px 10px !important;
   font-family: "Futura PT Light", sans-serif !important;
+  font-size: 12px !important;
 }
 
 body {

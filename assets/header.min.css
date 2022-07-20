@@ -1,15 +1,15 @@
 .header-infobar {
-  font-style: normal;
-  font-weight: 300;
-  font-size: 0.875rem;
-  line-height: 136%;
-  color: #fff;
   display: flex;
   align-items: center;
-  text-align: center;
   justify-content: center;
   padding: 0.4375rem;
   overflow: hidden;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 136%;
+  color: #fff;
+  text-align: center;
   background: #000;
 }
 .header-infobar a {
@@ -31,11 +31,11 @@
   background-color: #000;
 }
 .header .site-name {
-  color: #fff;
   font-family: "Futura PT Light", sans-serif;
-  font-weight: bold;
-  text-transform: uppercase;
   font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
 }
 .header .container-max {
   position: relative;
@@ -48,67 +48,67 @@
   min-width: 9.375rem;
 }
 .header__main-logo img {
-  height: auto;
   width: auto;
+  height: auto;
 }
 .header__nav > ul {
-  list-style: none;
-  padding: 0;
   display: flex;
   justify-content: center;
+  padding: 0;
   margin: 0;
+  list-style: none;
 }
 .header__nav-link {
   display: inline-block;
+  padding: 1.625rem 1.25rem;
   font-size: 0.875rem;
+  font-weight: 400;
   line-height: 1.0625rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: #fff;
   text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
   transition: opacity 450ms ease;
-  font-weight: 400;
-  padding: 1.625rem 1.25rem;
-}
-.header__nav-link:hover + .mega-menu, .header__nav-link:hover + .header__nav-sub {
-  opacity: 1;
-  visibility: visible;
 }
 @media only screen and (max-width: 1150px) {
   .header__nav-link {
     padding: 1.625rem 0.5rem;
   }
 }
+.header__nav-link:hover + .mega-menu, .header__nav-link:hover + .header__nav-sub {
+  visibility: visible;
+  opacity: 1;
+}
 .header__nav-sub {
   position: absolute;
   top: 100%;
-  text-align: left;
-  padding: 1rem;
-  background: #fff;
   left: auto;
   min-width: 7.5rem;
-  opacity: 0;
+  padding: 1rem;
+  text-align: left;
   visibility: hidden;
+  background: #fff;
+  opacity: 0;
   transition: opacity 450ms ease;
 }
 .header__nav-sub:hover {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
 .header ul.header__nav-sub {
   padding: 0.625rem 1rem 0.625rem;
 }
 .header__nav-sublink {
-  font-weight: normal;
-  font-size: 1rem;
-  line-height: 1.1875rem;
-  font-family: "Futura PT Light", sans-serif;
-  text-transform: capitalize;
-  margin-bottom: 0.625rem;
   display: inline-block;
+  margin-bottom: 0.625rem;
+  font-family: "Futura PT Light", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.1875rem;
   color: #000;
-  transition: opacity 450ms ease;
   text-decoration: none;
+  text-transform: capitalize;
+  transition: opacity 450ms ease;
 }
 .header__nav-sublink:hover {
   opacity: 0.5;
@@ -116,62 +116,62 @@
 .header .mega-menu {
   position: absolute;
   top: 100%;
-  left: 0;
   right: 0;
+  left: 0;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #fff;
-  transition: opacity 450ms ease;
-  opacity: 0;
   visibility: hidden;
+  background-color: #fff;
+  opacity: 0;
+  transition: opacity 450ms ease;
 }
 .header .mega-menu--active {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
 .header .mega-menu:hover {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
 .header .mega-menu__image {
   position: relative;
 }
 .header .mega-menu__image::before {
-  background: #000;
-  content: "";
-  opacity: 0.12;
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  content: "";
+  background: #000;
+  opacity: 0.12;
 }
 .header .mega-menu__image .responsive-image__wrapper {
   height: 100%;
 }
 .header .mega-menu__image img {
   width: 100%;
+  max-width: 100% !important;
   height: 100%;
   max-height: 100% !important;
-  max-width: 100% !important;
 }
 .header .mega-menu__imagetext {
   position: absolute;
-  left: 0;
   bottom: 0;
-  text-align: left;
+  left: 0;
   padding: 2.5rem;
+  text-align: left;
 }
 .header .mega-menu__imagetext .pretitle {
   margin: 0;
-  font-weight: normal;
   font-size: 16px;
+  font-weight: normal;
   line-height: 19px;
   text-transform: uppercase;
 }
 .header .mega-menu__nav-wrapper {
+  padding: 2rem 2.5rem;
   text-align: left;
-  padding: 2rem 2.5rem 2rem;
 }
 .header .mega-menu__nav-wrapper a {
   transition: opacity 450ms ease;
@@ -179,80 +179,85 @@
 .header .mega-menu__nav-wrapper a:hover {
   opacity: 0.5;
 }
-.header .mega-menu .menu-parent:after {
-  content: "";
+.header .mega-menu .menu-parent::after {
   display: table;
   clear: both;
+  content: "";
 }
 .header .mega-menu .menu-parent__item {
-  break-inside: avoid;
-  margin-bottom: 0.875rem;
-  width: 50%;
   float: left;
+  width: 50%;
+  margin-bottom: 0.875rem;
+  break-inside: avoid;
 }
 .header .mega-menu .menu-parent__link {
-  font-style: normal;
-  font-weight: bold;
-  font-size: 1.5rem;
-  line-height: 1.8125rem;
-  text-transform: uppercase;
-  font-family: "Futura PT Light", sans-serif;
-  color: #000;
-  text-decoration: none;
   display: inline-block;
   margin-bottom: 0.625rem;
-}
-.header .mega-menu .menu-child__link {
+  font-family: "Futura PT Light", sans-serif;
+  font-size: 1.5rem;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 1.8125rem;
   color: #000;
   text-decoration: none;
+  text-transform: uppercase;
+}
+.header .mega-menu .menu-child__link {
+  font-family: "Futura PT Light", sans-serif;
+  font-size: 1rem;
   font-style: normal;
   font-weight: normal;
-  font-size: 1rem;
-  font-family: "Futura PT Light", sans-serif;
   line-height: 1.1875rem;
+  color: #000;
+  text-decoration: none;
 }
 .header__quickaccess {
   display: flex;
-  justify-content: flex-end;
   align-items: center;
+  justify-content: flex-end;
 }
 .header__quickaccess a {
   display: inline-block;
 }
 .header__quickaccess button {
+  padding: 0;
+  cursor: pointer;
   background-color: transparent;
   border: none;
-  cursor: pointer;
-  padding: 0;
 }
 .header__quickaccess .wk-count {
   display: none;
 }
 .header__quickaccess .wk-icon svg {
-  height: 16px;
   width: 16px;
+  height: 16px;
 }
 .header__quickaccess-item {
   margin: 0 0.75rem;
+}
+@media only screen and (max-width: 1150px) {
+  .header__quickaccess-item {
+    margin: 0 0.5rem;
+  }
 }
 .header__quickaccess-item .searchlink {
   color: #fff;
 }
 .header__quickaccess-item .searchform {
-  background-color: #fff;
   position: absolute;
-  left: 0;
-  width: 100%;
   bottom: 0;
+  left: 0;
   z-index: -1;
-  transform: translate(0, 100%);
-  opacity: 0;
+  width: 100%;
   visibility: hidden;
+  background-color: #fff;
+  opacity: 0;
   transition: opacity 450ms ease;
+  transform: translate(0, 100%);
 }
 .header__quickaccess-item .searchform--open {
-  opacity: 1;
   visibility: visible;
+  opacity: 1;
 }
 .header__quickaccess-item.miniCart {
   margin-right: 0.1875rem;
@@ -261,25 +266,20 @@
 .header__quickaccess-item.miniCart svg {
   pointer-events: none;
 }
-@media only screen and (max-width: 1150px) {
-  .header__quickaccess-item {
-    margin: 0 0.5rem;
-  }
-}
 .header .cart-total {
   height: 1.625rem;
   font-weight: 300;
   color: #fff;
 }
 .header .mob-main__hamburger {
+  padding: 0.8rem 1rem;
   background: none;
   border: none;
-  padding: 0.8rem 1rem;
 }
 .header .mob-main__logo {
-  padding: 0.5rem;
   display: inline-flex;
   justify-content: center;
+  padding: 0.5rem;
 }
 @media only screen and (max-width: 479px) {
   .header .mob-main__logo {
@@ -288,37 +288,37 @@
   }
 }
 .header .mob-main__logo img {
-  height: auto;
   width: auto;
+  height: auto;
 }
 .header .mob-main__cart-button {
-  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgNS41QzUgNS4wODc5IDUgNC43NTE1NCA1IDQuNDkwOUM1IDQuMjc3NDkgNSAzLjk1NzM3IDUgMy41MzA1NUM1IDEuODU2ODIgNi4zNDMxNSAwLjUgOCAwLjVDOS42NTY4NSAwLjUgMTEgMS44NTY4MiAxMSAzLjUzMDU1QzExIDMuOTI0OTkgMTEgNC4yMjA4MiAxMSA0LjQxODA0QzExIDQuNjg1MTkgMTEgNS4wMjk5NiAxMSA1LjQ1MjM2IiBzdHJva2U9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xNSA1LjVIMVYxNS41SDE1VjUuNVoiIHN0cm9rZT0iYmxhY2siLz4KPC9zdmc+Cg==") 50% 50% no-repeat;
+  position: relative;
+  box-sizing: initial;
   width: 16px;
   height: 22px;
-  border: none;
   padding: 0.8rem 1rem;
-  box-sizing: initial;
-  position: relative;
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTUgNS41QzUgNS4wODc5IDUgNC43NTE1NCA1IDQuNDkwOUM1IDQuMjc3NDkgNSAzLjk1NzM3IDUgMy41MzA1NUM1IDEuODU2ODIgNi4zNDMxNSAwLjUgOCAwLjVDOS42NTY4NSAwLjUgMTEgMS44NTY4MiAxMSAzLjUzMDU1QzExIDMuOTI0OTkgMTEgNC4yMjA4MiAxMSA0LjQxODA0QzExIDQuNjg1MTkgMTEgNS4wMjk5NiAxMSA1LjQ1MjM2IiBzdHJva2U9ImJsYWNrIi8+CjxwYXRoIGQ9Ik0xNSA1LjVIMVYxNS41SDE1VjUuNVoiIHN0cm9rZT0iYmxhY2siLz4KPC9zdmc+Cg==") 50% 50% no-repeat;
+  border: none;
 }
 .header .mob-main__cart-button .cart-total {
   position: absolute;
   top: 12px;
   right: 6px;
+  width: 15px;
+  height: 15px;
   font-size: 10px;
+  color: #000;
   background: #fff;
   border-radius: 100%;
-  height: 15px;
-  width: 15px;
-  color: #000;
 }
 .header .mob-drawer {
-  transform: translateX(-100%);
-  background: #fff;
-  height: 100%;
   position: fixed;
-  width: 100%;
   top: 0;
   z-index: 99999999999;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transform: translateX(-100%);
 }
 .header .mob-drawer.open {
   transition: transform 300ms ease;
@@ -328,16 +328,16 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
-  border-bottom: 1px solid #f4f4f4;
   background-color: #000;
+  border-bottom: 1px solid #f4f4f4;
 }
 .header .mob-drawer__top .mobtop__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
   padding: 0 1rem;
   text-align: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 48px;
   border-left: 1px solid #f4f4f4;
 }
 .header .mob-drawer__top .mobtop__item:first-child {
@@ -351,42 +351,42 @@
   height: auto;
 }
 .header .mob-drawer__top .mobtop .close-button {
-  border: none;
   width: 24px;
   height: 24px;
   background: none;
+  border: none;
 }
 .header .mob-drawer__top .mobtop .close-button svg {
-  color: #fff;
   width: auto;
   height: 100%;
+  color: #fff;
 }
 .header .mob-drawer__menu {
   position: relative;
-  overflow-y: auto;
   height: calc(100vh - 50px);
+  overflow-y: auto;
 }
 .header .mob-drawer__menu .mobmenu__item {
-  border-bottom: 1px solid #f4f4f4;
   padding: 1rem 0;
   margin: 0 1rem;
+  border-bottom: 1px solid #f4f4f4;
 }
 .header .mob-drawer__menu .mobmenu .mainmenu-item {
-  font-weight: normal;
   font-size: 0.875rem;
+  font-weight: normal;
   line-height: 1.0625rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
   color: #000;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 .header .mob-drawer__menu .mobmenu__hasSubCover {
   display: flex;
 }
 .header .mob-drawer__menu .mobmenu__openSubButton {
   width: 100%;
+  text-align: right;
   background: none;
   border: none;
-  text-align: right;
 }
 .header .mob-drawer__menu .mobmenu__link {
   display: inline-block;
@@ -396,27 +396,27 @@
   display: none;
 }
 .header .mob-drawer__menu .mobmenu__child .back-button {
+  display: flex;
   width: calc(100% - 2rem);
+  padding: 1rem 0;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  text-align: left;
   background: none;
   border: none;
-  text-align: left;
-  margin-left: 1rem;
-  margin-right: 1rem;
-  padding: 1rem 0;
-  display: flex;
   border-bottom: 1px solid #f4f4f4;
 }
 .header .mob-drawer__menu .mobmenu__child .parent-title {
-  margin-left: 1rem;
-  margin-right: 1rem;
   padding: 1rem 0;
+  margin-right: 1rem;
+  margin-left: 1rem;
 }
 .header .mob-drawer__menu .mobmenu__child.open {
   display: block;
 }
 .header .mob-drawer__menu .mobmenu__child-menu {
-  margin: 1rem;
   padding: 0;
+  margin: 1rem;
   list-style: none;
 }
 .header .mob-drawer__menu .mobmenu__child-item {
@@ -426,11 +426,11 @@
   margin-bottom: 1rem;
 }
 .header .mob-drawer__menu .mobmenu__child-item.hasGrandSub .mobmenu__child-link {
-  text-decoration: none;
-  color: #000;
-  font-weight: bold;
   font-size: 16px;
+  font-weight: bold;
   line-height: 136%;
+  color: #000;
+  text-decoration: none;
 }
 .header .mob-drawer__menu .mobmenu__grandChild {
   padding: 0;
@@ -441,12 +441,12 @@
   margin-bottom: 0.1875rem;
 }
 .header .mob-drawer__menu .mobmenu__grandChild-link, .header .mob-drawer__menu .mobmenu__child-link {
-  text-decoration: none;
-  color: #000;
-  font-weight: normal;
-  font-size: 0.75rem;
-  line-height: 0.875rem;
   font-family: "Futura PT Light", sans-serif;
+  font-size: 0.75rem;
+  font-weight: normal;
+  line-height: 0.875rem;
+  color: #000;
+  text-decoration: none;
 }
 @media only screen and (max-width: 991px) {
   .header__desktop {

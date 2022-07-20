@@ -1,89 +1,107 @@
-{%- liquid 
-    assign label = ''
-    assign generalClass = ''
-    assign showHover = true
-    if hideHover
-        assign showHover = false
-    endif
-    assign variant = product.selected_or_first_available_variant
-    
-    if variant.inventory_quantity != 0 and variant.inventory_quantity < 5
-        assign label = 'products.labels.almostgone' | t
-    endif
-    if  product.tags contains 'label:back-in-stock'
-        assign label = 'products.labels.backinstock' | t
-    endif
-    if  product.tags contains 'label:new'
-        assign label = 'products.labels.new' | t 
-    endif
-    if variant.inventory_quantity == 0 and variant.available == false
-        assign label = 'products.labels.soldout' | t
-    endif
-    if variant.inventory_quantity == 0 and  product.tags contains 'notifyme'
-        assign label = 'products.labels.getnotified' | t
-    endif
-    if variant.inventory_quantity == 0 and variant.available == false
-        unless  product.tags contains 'notifyme'
-            assign generalClass = 'soldout'
-        endunless
-    endif
-    if  product.tags contains 'label:comingsoon'
-        assign label = 'products.labels.comingsoon' | t
-    endif
-    -%}
-<div class="product-card {{ generalClass }}">
-    {% form "product", product, class: 'quickShop' %}
-    <div class="product-card__image">
-        <div class="images">
-            {%- if product.featured_media != blank -%}
-            <div class="main-image">
-                {{ product.featured_media | image_url: width: product.featured_media.width | image_tag: preload: true, class: 'cover', loading: "lazy", sizes: '(min-width: 990px) 30vw, 50vw' }}
-            </div>
-            {%- endif -%}
-            {%- if product.images[1] and showHover -%}
-                <div class="hover-image">
-                    {{ product.images[1] | image_url: width: product.images[1].width | image_tag: preload: true, class: 'cover', loading: "lazy", sizes: '(min-width: 990px) 30vw, 50vw' }}
-                </div>
-            {%- endif -%}
-        </div>
-        
-        <a href="{{ variant.url }}" class="product-card__link"><span class="visually-hidden">{{ product.title }}</span></a>
+{%- liquid
+  assign label = ''
+  assign generalClass = ''
+  assign showHover = true
+  if hideHover
+      assign showHover = false
+  endif
+  assign variant = product.selected_or_first_available_variant
 
-        {% if label != blank %}
-        <div class="product-card__label">
-            <span>{{ label }}</span>
+  if variant.inventory_quantity != 0 and variant.inventory_quantity < 5
+      assign label = 'products.labels.almostgone' | t
+  endif
+  if  product.tags contains 'label:back-in-stock'
+      assign label = 'products.labels.backinstock' | t
+  endif
+  if  product.tags contains 'label:new'
+      assign label = 'products.labels.new' | t
+  endif
+  if variant.inventory_quantity == 0 and variant.available == false
+      assign label = 'products.labels.soldout' | t
+  endif
+  if variant.inventory_quantity == 0 and  product.tags contains 'notifyme'
+      assign label = 'products.labels.getnotified' | t
+  endif
+  if variant.inventory_quantity == 0 and variant.available == false
+      unless  product.tags contains 'notifyme'
+          assign generalClass = 'soldout'
+      endunless
+  endif
+  if  product.tags contains 'label:comingsoon'
+      assign label = 'products.labels.comingsoon' | t
+  endif
+-%}
+<div class='product-card {{ generalClass }}'>
+  {% form "product", product, class: 'quickShop' %}
+    <div class='product-card__image'>
+      <div class='images'>
+        {%- if product.featured_media != blank -%}
+          <div class='main-image'>
+            {{ product.featured_media | image_url: width: product.featured_media.width | image_tag: preload: true, class: 'cover', loading: "lazy", sizes: '(min-width: 990px) 30vw, 50vw' }}
+          </div>
+        {%- endif -%}
+        {%- if product.images[1] and showHover -%}
+          <div class='hover-image'>
+            {{ product.images[1] | image_url: width: product.images[1].width | image_tag: preload: true, class: 'cover', loading: "lazy", sizes: '(min-width: 990px) 30vw, 50vw' }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      <a
+        href='{{ variant.url }}'
+        class='product-card__link'
+        ><span class='visually-hidden'>{{ product.title }}</span></a
+      >
+
+      {% if label != blank %}
+        <div class='product-card__label'>
+          <span>{{ label }}</span>
         </div>
-        {% endif %}
-        
-        {% unless product.tags contains 'notifyme' and variant.inventory_quantity == 0 or variant.inventory_quantity == 0 %}
-        
-        <input type="hidden" name="quantity" value="1" min="1">
-        <div class="product-card__actions {% if product.variants.size == 1 %}only-one{% endif %}">
-            <select name="id" class="select-tag {% if product.variants.size == 1 %}visually-hidden{% endif %}">
-                {%- for prodVariant in product.variants -%}
-                    <option data-price="{{ prodVariant.price }}" value="{{ prodVariant.id }}" class="select__list-item" {% if allowDisabled == blank %}{% unless prodVariant.available %}{% endunless%} {% endif %} {% if product.selected_or_first_available_variant.id == prodVariant.id %} selected {% endif %} >{{ prodVariant.title }}</option>
-                {%- endfor -%}
-            </select>
-            {% unless product.tags contains 'comingsoon' %}
-                <button class="add-to-cart-button" type="submit">{{ 'products.product.quickadd' | t }}</button>
-            {% else %}
-                <button class="disabled" type="button">{{ 'products.labels.comingsoon' | t }}</button>
-            {% endunless %}
+      {% endif %}
+
+      {% unless product.tags contains 'notifyme' and variant.inventory_quantity == 0 or variant.inventory_quantity == 0 %}
+        <input type='hidden' name='quantity' value='1' min='1'>
+        <div class='product-card__actions {% if product.variants.size == 1 %}only-one{% endif %}'>
+          <select name='id' class='select-tag {% if product.variants.size == 1 %}visually-hidden{% endif %}'>
+            {%- for prodVariant in product.variants -%}
+              <option
+                data-price='{{ prodVariant.price }}'
+                value='{{ prodVariant.id }}'
+                class='select__list-item'
+                {% if allowDisabled == blank %}
+                  {%- unless prodVariant.available %}{% endunless %}
+                {% endif %}
+                {% if product.selected_or_first_available_variant.id == prodVariant.id %}
+                  selected
+                {% endif %}
+              >
+                {{ prodVariant.title }}
+              </option>
+            {%- endfor -%}
+          </select>
+          {% unless product.tags contains 'comingsoon' %}
+            <button class='add-to-cart-button' type='submit'>{{ 'products.product.quickadd' | t }}</button>
+          {% else %}
+            <button class='disabled' type='button'>{{ 'products.labels.comingsoon' | t }}</button>
+          {% endunless %}
         </div>
-        
-        {% endunless %}
+      {% endunless %}
     </div>
-    <div class="product-card__description card">
-        <div class="card__titleblock">
-            <h2 class="h5 title"><a href="{{ variant.url }}">{{ product.title }}</a></h2>
-        </div>
-        <div class="card__priceblock">
-            <span class="current-price">{{ variant.price | money_without_trailing_zeros }}</span>
-            <span class="old-price">{{ variant.compare_at_price | money_without_trailing_zeros }}</span>
-        </div>
+    <div class='product-card__description card'>
+      <div class='card__titleblock'>
+        <h2 class='h5 title'>
+          <a href='{{ variant.url }}'>{{ product.title }}</a>
+        </h2>
+      </div>
+      <div class='card__priceblock'>
+        <span class='current-price'>{{ variant.price | money_without_trailing_zeros }}</span>
+        <span class='old-price'>{{ variant.compare_at_price | money_without_trailing_zeros }}</span>
+      </div>
     </div>
-  
-    <div class="product-card__error error-note" data-ajax-cart-messages="form"></div>
-    <script type="application/json" data-product-json-variants>{{ product.variants | json }}</script>
-    {% endform %}
+
+    <div class='product-card__error error-note' data-ajax-cart-messages='form'></div>
+    <script type='application/json' data-product-json-variants>
+      {{ product.variants | json }}
+    </script>
+  {% endform %}
 </div>

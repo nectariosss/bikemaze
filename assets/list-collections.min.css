@@ -2,14 +2,14 @@
   padding: 2rem 0 4rem;
 }
 .collections__header {
-  text-align: center;
   margin-bottom: 2rem;
+  text-align: center;
 }
 .collections__header .secondary-button {
-  margin-top: 1rem;
   max-width: 200px;
-  margin-left: auto;
+  margin-top: 1rem;
   margin-right: auto;
+  margin-left: auto;
 }
 .collections .collection-list {
   display: flex;
