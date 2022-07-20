@@ -1,0 +1,40 @@
+<script type="text/javascript">
+  const components = {
+    "accordion": "{{ 'component-accordion.min.js' | asset_url }}",
+    "modal-dialog": "{{ 'component-modal-dialog.min.js' | asset_url }}",
+    "modal-opener": "{{ 'component-modal-opener.min.js' | asset_url }}",
+    "quantity-input": "{{ 'component-quantity-input.min.js' | asset_url }}",
+  };
+
+  class ComponentLoader extends HTMLElement {
+    constructor() {
+      super();
+      Object.keys(components).forEach((component) => {
+        if (document.querySelector(component)) {
+          this.injectScript(components[component], component);
+          delete components[component];
+        }
+      });
+      if (this.querySelector("product-card")) this.initWishlistButtons();
+    }
+    injectScript(src, element) {
+      const elScript = document.createElement("script");
+      elScript.type = "module";
+      elScript.src = src;
+      document.body.appendChild(elScript);
+      elScript.addEventListener("error", () =>
+        document
+          .querySelectorAll(element)
+          .forEach((el) => el.classList.add("no-js"))
+      );
+    }
+    initWishlistButtons() {
+      window.SwymCallbacks = window.SwymCallbacks || [];
+      window.SwymCallbacks.push(function (swat) {
+        console.log("SWYM");
+        swat.initializeActionButtons("component-loader");
+      });
+    }
+  }
+  customElements.define("component-loader", ComponentLoader);
+</script>
