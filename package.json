@@ -11,9 +11,9 @@
     "export": "NODE_ENV=production webpack",
     "zip": "shopify theme package",
     "prepare": "husky install",
-    "eslint": "eslint src/**/**/*.js",
-    "prettier": "prettier src/**/**/*.{js,scss}",
-    "stylelint": "stylelint --fix src/**/**/*.scss"
+    "eslint": "eslint src/scripts/*.js",
+    "prettier": "prettier --write */*.{js,scss,liquid}",
+    "stylelint": "stylelint --fix src/scss/*.scss"
   },
   "author": "",
   "license": "ISC",
@@ -43,9 +43,7 @@
     "sass-resources-loader": "^2.2.1",
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^9.0.3",
-    "stylelint-config-recess-order": "^3.0.0",
     "stylelint-config-sass-guidelines": "^9.0.1",
-    "stylelint-config-standard": "^26.0.0",
     "stylelint-order": "^5.0.0",
     "stylelint-prettier": "^2.0.0",
     "terser-webpack-plugin": "^5.1.2",
@@ -56,9 +54,8 @@
     "webpack-remove-empty-scripts": "^0.7.1"
   },
   "lint-staged": {
-    "*.{js,scss,liquid}": "prettier --write",
-    "src/**/**/*.scss": "stylelint --fix",
-    "src/**/**/*.js": "eslint --fix",
-    "*.liquid": "shopify theme check"
+    "**/*.{js,scss,liquid}": "prettier --write",
+    "src/scss/*.scss": "stylelint --fix",
+    "src/scripts/*.js": "eslint --fix"
   }
 }

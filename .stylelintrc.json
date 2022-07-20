@@ -1,8 +1,7 @@
 {
   "extends": [
     "stylelint-config-sass-guidelines",
-    "stylelint-prettier/recommended",
-    "stylelint-config-recess-order"
+    "stylelint-prettier/recommended"
   ],
   "defaultSeverity": "warning",
   "plugins": [
