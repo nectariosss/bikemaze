@@ -20,7 +20,9 @@
 !.gitignore
 !.editorconfig
 !.eslintrc.json
+!.eslintignore
 !.prettierrc.json
+!.prettierignore
 !.husky
 !.prettier
 !README.md

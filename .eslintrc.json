@@ -10,7 +10,8 @@
   },
   "rules": {
     "prettier/prettier": "warn",
-    "indent": ["error", 2],
+    "indent": "off",
+    "no-var": "error",
     "linebreak-style": ["error", "unix"],
     "quotes": ["error", "single"],
     "semi": ["error", "always"]

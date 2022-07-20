@@ -10,7 +10,7 @@
     "deploy": "webpack && theme deploy --env=development",
     "export": "NODE_ENV=production webpack",
     "zip": "shopify theme package",
-    "scriptname": "husky install"
+    "prepare": "husky install"
   },
   "author": "",
   "license": "ISC",
@@ -45,7 +45,7 @@
     "webpack-remove-empty-scripts": "^0.7.1"
   },
   "lint-staged": {
-    "/src/*": "prettier --write",
-    "/src/**/*.{js}": "eslint --fix"
+    "src/*": "prettier --write",
+    "src/**/*.js": "eslint --fix"
   }
 }
