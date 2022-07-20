@@ -5,8 +5,6 @@ const COMPONENTS_PATH = __dirname + "/src/scripts/components"
 const SNIPPETS_PATH = __dirname + "/snippets"
 const mode = process.env.NODE_ENV || "development";
 
-console.log(mode)
-
 populateComponents()
 mode === "development" && watch()
 

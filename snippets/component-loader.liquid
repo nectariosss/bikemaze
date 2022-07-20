@@ -10,7 +10,7 @@
     constructor() {
       super();
       Object.keys(components).forEach((component) => {
-        if (document.querySelector(component)) {
+        if (this.querySelector(component)) {
           this.injectScript(components[component], component);
           delete components[component];
         }
