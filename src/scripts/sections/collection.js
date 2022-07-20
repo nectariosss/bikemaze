@@ -1,4 +1,4 @@
-import { debounce } from "../helpers";
+import { debounce } from '../helpers';
 
 /**
  * Filters and sorting component
@@ -12,8 +12,8 @@ class FilterAndSortForm extends HTMLElement {
       this.onSubmitHandler(event);
     }, 500);
 
-    this.querySelector("form").addEventListener(
-      "input",
+    this.querySelector('form').addEventListener(
+      'input',
       this.debouncedOnSubmit.bind(this)
     );
   }
@@ -25,37 +25,28 @@ class FilterAndSortForm extends HTMLElement {
       if (searchParams === FilterAndSortForm.searchParamsPrev) return;
       FilterAndSortForm.renderPage(searchParams, null, false);
     };
-    window.addEventListener("popstate", onHistoryChange);
+    window.addEventListener('popstate', onHistoryChange);
   }
 
   static updateURLHash(searchParams) {
     history.pushState(
       { searchParams },
-      "",
-      `${window.location.pathname}${searchParams && "?".concat(searchParams)}`
+      '',
+      `${window.location.pathname}${searchParams && '?'.concat(searchParams)}`
     );
   }
 
   static renderProductGridContainer(html) {
-    document.getElementById("ProductsList").innerHTML = new DOMParser()
-      .parseFromString(html, "text/html")
-      .getElementById("ProductsList").innerHTML;
+    document.getElementById('ProductsList').innerHTML = new DOMParser()
+      .parseFromString(html, 'text/html')
+      .getElementById('ProductsList').innerHTML;
   }
 
-  static renderProductCount(html) {
-    const count = new DOMParser()
-      .parseFromString(html, "text/html")
-      .querySelector("#ProductsList [data-products-list]")
-      .dataset.productsCount;
-    const container = document.getElementById("products-count");
-    container.innerHTML = count;
-  }
-
-  static renderFilters(html, event) {
-    const parsedHTML = new DOMParser().parseFromString(html, "text/html");
+  static renderFilters(html) {
+    const parsedHTML = new DOMParser().parseFromString(html, 'text/html');
 
     const filtersDetailsElements = parsedHTML.querySelectorAll(
-      "#FiltersForm .js-filter"
+      '#FiltersForm .js-filter'
     );
     filtersDetailsElements.forEach((element) => {
       document.querySelector(
@@ -85,19 +76,19 @@ class FilterAndSortForm extends HTMLElement {
 
   static renderProductCount(html) {
     const count = new DOMParser()
-      .parseFromString(html, "text/html")
-      .getElementById("ProductsCount").innerHTML;
-    const container = document.getElementById("ProductsCount");
+      .parseFromString(html, 'text/html')
+      .getElementById('ProductsCount').innerHTML;
+    const container = document.getElementById('ProductsCount');
     container.innerHTML = count;
   }
 
   static renderPage(searchParams, event, updateURLHash = true) {
     FilterAndSortForm.searchParamsPrev = searchParams;
-    const section = document.getElementById("ProductsList").dataset.id;
+    const section = document.getElementById('ProductsList').dataset.id;
     document
-      .getElementById("ProductsList")
-      .querySelector("[data-products-list]")
-      .classList.add("loading");
+      .getElementById('ProductsList')
+      .querySelector('[data-products-list]')
+      .classList.add('loading');
     const url = `${window.location.pathname}?section_id=${section}&${searchParams}`;
     const filterDataUrl = (element) => element.url === url;
 
@@ -110,7 +101,7 @@ class FilterAndSortForm extends HTMLElement {
 
   onSubmitHandler(event) {
     event.preventDefault();
-    const formData = new FormData(event.target.closest("form"));
+    const formData = new FormData(event.target.closest('form'));
     const searchParams = new URLSearchParams(formData).toString();
     FilterAndSortForm.renderPage(searchParams, event);
   }
@@ -126,9 +117,8 @@ class FilterAndSortForm extends HTMLElement {
 FilterAndSortForm.data = [];
 FilterAndSortForm.searchParamsInitial = window.location.search.slice(1);
 FilterAndSortForm.searchParamsPrev = window.location.search.slice(1);
-customElements.define("filter-and-sort-form", FilterAndSortForm);
+customElements.define('filter-and-sort-form', FilterAndSortForm);
 FilterAndSortForm.setListeners();
-
 
 /**
  * Clear filters component
@@ -136,37 +126,36 @@ FilterAndSortForm.setListeners();
 class ClearFilters extends HTMLElement {
   constructor() {
     super();
-    this.querySelector("a").addEventListener("click", (event) => {
+    this.querySelector('a').addEventListener('click', (event) => {
       event.preventDefault();
       const form =
-        this.closest("filter-and-sort-form") ||
-        document.querySelector("filter-and-sort-form");
+        this.closest('filter-and-sort-form') ||
+        document.querySelector('filter-and-sort-form');
       form.resetActiveFilter(event);
     });
   }
 }
-customElements.define("filter-reset", ClearFilters);
+customElements.define('filter-reset', ClearFilters);
 
 /**
  * Filters toggler
  */
-const filterToggler = document.querySelector("[data-filters-toggler]");
+const filterToggler = document.querySelector('[data-filters-toggler]');
 filterToggler.addEventListener(
-  "click",
+  'click',
   function () {
-    const filterSlider = document.querySelector("[data-filters]");
+    const filterSlider = document.querySelector('[data-filters]');
     if (filterSlider) {
       if (window.innerWidth <= 768) {
-        filterSlider.classList.toggle("open");
-        document.body.classList.toggle("filters-mobile-open");
+        filterSlider.classList.toggle('open');
+        document.body.classList.toggle('filters-mobile-open');
       } else {
-        filterSlider.classList.toggle("close");
+        filterSlider.classList.toggle('close');
       }
     }
   },
   false
 );
-
 
 /**
  * Mobile aside filters
@@ -174,15 +163,15 @@ filterToggler.addEventListener(
 function mobileFiltersAside() {
   if (window.innerWidth <= 768) {
     const closeElements = document.querySelectorAll(
-      "[data-mobile-filter-close]"
+      '[data-mobile-filter-close]'
     );
     if (closeElements && closeElements.length) {
       closeElements.forEach((item) => {
         item.addEventListener(
-          "click",
-          function (item) {
-            document.querySelector("[data-filters]").classList.remove("open");
-            document.body.classList.remove("filters-mobile-open");
+          'click',
+          function () {
+            document.querySelector('[data-filters]').classList.remove('open');
+            document.body.classList.remove('filters-mobile-open');
           },
           false
         );
@@ -194,14 +183,14 @@ function mobileFiltersAside() {
 /**
  * Sort dropdown imitator
  */
-const sortImitator = document.getElementById("SortBy-imitator");
-const sortOrigin = document.getElementById("SortBy");
+const sortImitator = document.getElementById('SortBy-imitator');
+const sortOrigin = document.getElementById('SortBy');
 
 sortImitator.addEventListener(
-  "change",
+  'change',
   function (item) {
     sortOrigin.value = item.target.value;
-    sortOrigin.closest("form").dispatchEvent(new Event("input"));
+    sortOrigin.closest('form').dispatchEvent(new Event('input'));
   },
   false
 );
@@ -210,20 +199,20 @@ sortImitator.addEventListener(
  * Sidebar top calculator
  */
 function calculateAsideTop() {
-  const header = document.getElementById("shopify-section-header");
+  const header = document.getElementById('shopify-section-header');
   if (
-    header.classList.contains("sticky-header") &&
-    document.querySelector("[data-filters]")
+    header.classList.contains('sticky-header') &&
+    document.querySelector('[data-filters]')
   ) {
-    document.querySelector("[data-filters]").style.top =
-      header.offsetHeight + "px";
+    document.querySelector('[data-filters]').style.top =
+      header.offsetHeight + 'px';
   }
 }
 
 /**
  * Add all load events here
  */
-window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener('DOMContentLoaded', function () {
   calculateAsideTop();
   mobileFiltersAside();
 });
@@ -231,7 +220,7 @@ window.addEventListener("DOMContentLoaded", function () {
 /**
  * Add all resize events here
  */
-window.addEventListener("resize", function () {
+window.addEventListener('resize', function () {
   calculateAsideTop();
   mobileFiltersAside();
 });

@@ -5,10 +5,10 @@ const Swiper = window.Swiper;
  */
 const swiperSlidersPerView = 4;
 const thumbnailsLength = document.querySelectorAll(
-  "[data-thumbnail-images] [data-thumbnail-item]"
+  '[data-thumbnail-images] [data-thumbnail-item]'
 )?.length;
 
-const swiperThumbs = new Swiper("[data-thumbnail-images]", {
+const swiperThumbs = new Swiper('[data-thumbnail-images]', {
   spaceBetween: 8,
   observer: true,
   observeParents: true,
@@ -19,15 +19,12 @@ const swiperThumbs = new Swiper("[data-thumbnail-images]", {
   watchOverflow: true,
   watchSlidesVisibility: true,
   watchSlidesProgress: true,
-  direction: "vertical",
-  loop:
-    thumbnailsLength >= swiperSlidersPerView
-      ? true
-      : false,
+  direction: 'vertical',
+  loop: thumbnailsLength >= swiperSlidersPerView ? true : false,
   resizeReInit: true,
 });
 
-const swiperImages = new Swiper("[data-main-images]", {
+new Swiper('[data-main-images]', {
   thumbs: {
     swiper: swiperThumbs,
   },
@@ -40,12 +37,12 @@ const swiperImages = new Swiper("[data-main-images]", {
   resizeReInit: true,
   allowTouchMove: true,
   navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
   },
   pagination: {
-    el: ".swiper-pagination",
-    type: "bullets",
+    el: '.swiper-pagination',
+    type: 'bullets',
     clickable: true,
   },
 
@@ -75,19 +72,19 @@ function initZoom() {
 
     const x = (offsetX / zoomer.offsetWidth) * 100;
     const y = (offsetY / zoomer.offsetHeight) * 100;
-    zoomer.style.backgroundPosition = x + "% " + y + "%";
+    zoomer.style.backgroundPosition = x + '% ' + y + '%';
   }
   if (window.innerWidth > 768) {
-    const zoomElems = document.getElementsByClassName("zoom");
+    const zoomElems = document.getElementsByClassName('zoom');
     if (zoomElems && zoomElems.length) {
       [...zoomElems].forEach((item) => {
-        item.addEventListener("mouseenter", function (e) {
+        item.addEventListener('mouseenter', function () {
           const img = item.dataset.zoomimg;
           if (img) {
             item.style.backgroundImage = `url(${img})`;
           }
         });
-        item.addEventListener("mousemove", function (e) {
+        item.addEventListener('mousemove', function (e) {
           zoom(e);
         });
       });
@@ -101,8 +98,8 @@ function initZoom() {
 class VariantSelects extends HTMLElement {
   constructor() {
     super();
-    this.addEventListener("change", this.onVariantChange);
-    this.productForm = document.getElementById("product-form");
+    this.addEventListener('change', this.onVariantChange);
+    this.productForm = document.getElementById('product-form');
     this.setUnavailableOptions();
   }
 
@@ -111,11 +108,11 @@ class VariantSelects extends HTMLElement {
     this.setUnavailableOptions();
     if (this.options && this.options.includes(undefined)) return null;
     this.updateMasterId();
-    this.toggleAddButton(true, "", false);
+    this.toggleAddButton(true, '', false);
     this.removeErrorMessage();
 
     if (!this.currentVariant) {
-      this.toggleAddButton(true, "", true);
+      this.toggleAddButton(true, '', true);
       this.setUnavailable();
     } else {
       this.updateMedia();
@@ -127,20 +124,20 @@ class VariantSelects extends HTMLElement {
 
   updateOptions() {
     this.options = Array.from(
-      this.querySelectorAll("select"),
+      this.querySelectorAll('select'),
       (select) => select.value
     );
   }
 
   setUnavailableOptions() {
-    const option1Swatches = this.querySelector(`[data-option-position="1"]`);
-    const option2Swatches = this.querySelector(`[data-option-position="2"]`);
-    const option3Swatches = this.querySelector(`[data-option-position="3"]`);
+    const option1Swatches = this.querySelector('[data-option-position="1"]');
+    const option2Swatches = this.querySelector('[data-option-position="2"]');
+    const option3Swatches = this.querySelector('[data-option-position="3"]');
     const selectedOption1 = option1Swatches?.querySelector(
-      "input[type=radio]:checked"
+      'input[type=radio]:checked'
     );
     const selectedOption2 = option2Swatches?.querySelector(
-      "input[type=radio]:checked"
+      'input[type=radio]:checked'
     );
 
     this.disableFalseOptions(1, option1Swatches);
@@ -163,23 +160,23 @@ class VariantSelects extends HTMLElement {
 
     function hashDataCollector(variant, item, hashData, option) {
       if (!item || !variant) return null;
-      if (variant["option" + option] === item.value) {
+      if (variant['option' + option] === item.value) {
         if (variant.available) {
           hashData[item.value] = hashData[item.value]
-            ? hashData[item.value] + "1"
-            : "1";
+            ? hashData[item.value] + '1'
+            : '1';
         } else {
           hashData[item.value] = hashData[item.value]
-            ? hashData[item.value] + "0"
-            : "0";
+            ? hashData[item.value] + '0'
+            : '0';
         }
       } else {
         hashData[item.value] = hashData[item.value]
-          ? hashData[item.value] + "x"
-          : "x";
+          ? hashData[item.value] + 'x'
+          : 'x';
       }
     }
-    optionSwatches?.querySelectorAll("input[type='radio']")?.forEach((item) => {
+    optionSwatches?.querySelectorAll('input[type="radio"]')?.forEach((item) => {
       const hashData = {};
       for (let variant of this.getVariantData()) {
         if (option === 1) {
@@ -204,23 +201,23 @@ class VariantSelects extends HTMLElement {
       }
 
       if (hashData[item.value]) {
-        item.classList.remove("hidden");
+        item.classList.remove('hidden');
         if (
-          hashData[item.value].includes("0") &&
-          !hashData[item.value].includes("1")
+          hashData[item.value].includes('0') &&
+          !hashData[item.value].includes('1')
         ) {
-          item.classList.add("unavailable");
-        } else if (hashData[item.value].includes("1")) {
-          item.classList.remove("unavailable");
+          item.classList.add('unavailable');
+        } else if (hashData[item.value].includes('1')) {
+          item.classList.remove('unavailable');
         } else if (
-          !hashData[item.value].includes("0") &&
-          !hashData[item.value].includes("1")
+          !hashData[item.value].includes('0') &&
+          !hashData[item.value].includes('1')
         ) {
-          item.classList.add("hidden");
+          item.classList.add('hidden');
           if (item.checked) {
             setTimeout(() => {
               const availableOption = item
-                .closest("[data-option-position]")
+                .closest('[data-option-position]')
                 .querySelector('input[type="radio"]:not(.hidden) + label');
               availableOption?.click();
             }, 0);
@@ -259,22 +256,22 @@ class VariantSelects extends HTMLElement {
     modalContent.prepend(newMediaModal);
     parent.prepend(newMedia);
     this.stickyHeader =
-      this.stickyHeader || document.querySelector("sticky-header");
+      this.stickyHeader || document.querySelector('sticky-header');
     if (this.stickyHeader) {
-      this.stickyHeader.dispatchEvent(new Event("preventHeaderReveal"));
+      this.stickyHeader.dispatchEvent(new Event('preventHeaderReveal'));
     }
     window.setTimeout(() => {
       parent
-        .querySelector("li.product__media-item")
-        .scrollIntoView({ behavior: "smooth" });
+        .querySelector('li.product__media-item')
+        .scrollIntoView({ behavior: 'smooth' });
     });
   }
 
   updateURL() {
-    if (!this.currentVariant || this.dataset.updateUrl === "false") return;
+    if (!this.currentVariant || this.dataset.updateUrl === 'false') return;
     window.history.replaceState(
       {},
-      "",
+      '',
       `${this.dataset.url}?variant=${this.currentVariant.id}`
     );
   }
@@ -282,13 +279,13 @@ class VariantSelects extends HTMLElement {
   updateVariantInput() {
     const input = this.productForm.querySelector('input[name="id"]');
     input.value = this.currentVariant.id;
-    input.dispatchEvent(new Event("change", { bubbles: true }));
+    input.dispatchEvent(new Event('change', { bubbles: true }));
   }
 
   removeErrorMessage() {
     if (!this.productForm) return;
-    this.productForm.querySelector("[data-ajax-cart-form-error]").innerHTML =
-      "";
+    this.productForm.querySelector('[data-ajax-cart-form-error]').innerHTML =
+      '';
   }
 
   renderProductInfo() {
@@ -297,8 +294,8 @@ class VariantSelects extends HTMLElement {
     )
       .then((response) => response.text())
       .then((responseText) => {
-        const elem = `[data-price]`;
-        const html = new DOMParser().parseFromString(responseText, "text/html");
+        const elem = '[data-price]';
+        const html = new DOMParser().parseFromString(responseText, 'text/html');
         const destination = document.querySelector(elem);
         const source = html.querySelector(elem);
 
@@ -306,7 +303,7 @@ class VariantSelects extends HTMLElement {
 
         const price = document.querySelector(elem);
 
-        if (price) price.classList.remove("visibility-hidden");
+        if (price) price.classList.remove('visibility-hidden');
         this.toggleAddButton(
           !this.currentVariant.available,
           window.variantStrings.soldOut
@@ -322,10 +319,10 @@ class VariantSelects extends HTMLElement {
     if (!addButton) return;
 
     if (disable) {
-      addButton.setAttribute("disabled", true);
+      addButton.setAttribute('disabled', true);
       if (text) addButton.textContent = text;
     } else {
-      addButton.removeAttribute("disabled");
+      addButton.removeAttribute('disabled');
       addButton.textContent = window.variantStrings.addToCart;
     }
 
@@ -334,22 +331,22 @@ class VariantSelects extends HTMLElement {
 
   setUnavailable() {
     const addButton = document.querySelector('[name="add"]');
-    const priceWrapper = document.querySelector(`[data-price]`);
+    const priceWrapper = document.querySelector('[data-price]');
     if (!addButton) return;
     addButton.textContent = window.variantStrings.unavailable;
-    if (priceWrapper) priceWrapper.classList.add("visibility-hidden");
+    if (priceWrapper) priceWrapper.classList.add('visibility-hidden');
   }
 
   getVariantData() {
     this.variantData =
       this.variantData ||
       JSON.parse(
-        document.querySelector("[data-product-json-variants]").textContent
+        document.querySelector('[data-product-json-variants]').textContent
       );
     return this.variantData;
   }
 }
-customElements.define("variant-selects", VariantSelects);
+customElements.define('variant-selects', VariantSelects);
 
 /**
  * Variant Selector Radio component
@@ -360,27 +357,27 @@ class VariantRadios extends VariantSelects {
   }
 
   updateOptions() {
-    const fieldsets = Array.from(this.querySelectorAll("fieldset"));
+    const fieldsets = Array.from(this.querySelectorAll('fieldset'));
 
     this.options = fieldsets.map((fieldset) => {
-      return Array.from(fieldset.querySelectorAll("input")).find(
+      return Array.from(fieldset.querySelectorAll('input')).find(
         (radio) => radio.checked
       )?.value;
     });
   }
 }
-customElements.define("variant-radios", VariantRadios);
+customElements.define('variant-radios', VariantRadios);
 
 /**
  * Add all load events here
  */
-window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener('DOMContentLoaded', function () {
   initZoom();
 });
 
 /**
  * Add all resize events here
  */
-window.addEventListener("resize", function () {
+window.addEventListener('resize', function () {
   initZoom();
 });

@@ -32,7 +32,7 @@
 
   <!-- Critical CSS -->
   {%- style -%}
-    {%- render 'critical-css' -%}
+    {%- render 'critical.css' -%}
   {%- endstyle -%}
 
    <!-- Common/Main css file -->
@@ -65,6 +65,8 @@
       "lineItemQuantityErrorText": "{{ 'sections.cart.cart_quantity_error' | t }}"
     }
   </script>
+
+  {%- render 'component-loader' -%}
   
   <script>
     window.routes = {

@@ -19,6 +19,13 @@
 # track these files, if they exist
 !.gitignore
 !.editorconfig
+!.eslintrc.json
+!.eslintignore
+!.prettierrc.json
+!.prettierignore
+!.stylelintrc.json
+!.husky
+!.prettier
 !README.md
 !CHANGELOG.md
 !composer.json
