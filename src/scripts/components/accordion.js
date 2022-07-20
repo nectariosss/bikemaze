@@ -33,11 +33,11 @@ class Accordion extends HTMLElement {
       this.closeBody(elem, elem.nextElementSibling);
     } else {
       const contentHeight = elem.nextElementSibling.querySelectorAll(
-        '[data-accordion="content"]'
+        `[data-accordion="content"]`
       )[0].offsetHeight;
       if (!this.canMultipleOpen) {
         for (const e of document.querySelectorAll(
-          '[data-accordion="trigger"]'
+          `[data-accordion="trigger"]`
         )) {
           this.closeBody(elem, e.nextElementSibling);
           e.classList.remove("is-collapsed");
