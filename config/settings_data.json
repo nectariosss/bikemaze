@@ -8,13 +8,13 @@
             "type": "menu",
             "settings": {
               "menuitem": "shop",
-              "f_image": "shopify:\/\/shop_images\/210210215637-best-jewelry-under-100-lead.jpg",
+              "f_image": "shopify://shop_images/210210215637-best-jewelry-under-100-lead.jpg",
               "f_image_ord": "0",
               "f_color": "#202020",
               "f_pretitle": "Handmade",
               "f_title": "Just for you...",
               "f_urltext": "Shop",
-              "f_url": "shopify:\/\/collections\/all"
+              "f_url": "shopify://collections/all"
             }
           },
           "a91fe195-ec38-4cc2-b888-16179535d20d": {
@@ -48,11 +48,11 @@
           "072412a3-aba4-4d32-8022-cfe7a5cb9d9e"
         ],
         "settings": {
-          "infobar": "<p>FREE SHIPPING ON ALL DOMESTIC ORDERS OVER $250<\/p>",
+          "infobar": "<p>FREE SHIPPING ON ALL DOMESTIC ORDERS OVER $250</p>",
           "infobar_bg": "#f2f2f2",
           "infobar_textcolor": "#000000",
           "nav_show": true,
-          "main_logo": "https:\/\/cdn.shopify.com\/s\/files\/1\/0580\/9379\/7582\/files\/avex-logo_white.svg?v=1630438078",
+          "main_logo": "https://cdn.shopify.com/s/files/1/0580/9379/7582/files/avex-logo_white.svg?v=1630438078",
           "search_icon": true,
           "wish_icon": true,
           "user_icon": true,
@@ -65,7 +65,7 @@
           "footer_linklist": "footer",
           "copyrights": "Avex Designs",
           "newsletter_title": "Newsletter",
-          "newsletter_element": "<div class=\"klaviyo-form-SJLAFx\"><\/div>"
+          "newsletter_element": "<div class=\"klaviyo-form-SJLAFx\"></div>"
         }
       },
       "ajax-cart": {
@@ -77,15 +77,12 @@
         }
       }
     },
-    "content_for_index": [
-
-    ],
+    "content_for_index": [],
     "blocks": {
       "855628211100114053": {
-        "type": "shopify:\/\/apps\/klaviyo-email-marketing-sms\/blocks\/klaviyo-onsite-embed\/2632fe16-c075-4321-a88b-50b567f42507",
+        "type": "shopify://apps/klaviyo-email-marketing-sms/blocks/klaviyo-onsite-embed/2632fe16-c075-4321-a88b-50b567f42507",
         "disabled": false,
-        "settings": {
-        }
+        "settings": {}
       }
     }
   }

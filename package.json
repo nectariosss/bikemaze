@@ -5,15 +5,16 @@
   "main": "webpack.config.js",
   "scripts": {
     "webpack-watch": "webpack --watch",
+    "components-watch": "node watch.js",
     "theme-watch": "theme watch",
-    "watch": "npm-run-all --parallel webpack-watch theme-watch",
+    "watch": "npm-run-all --parallel webpack-watch theme-watch components-watch",
     "deploy": "webpack && theme deploy --env=development",
     "export": "NODE_ENV=production webpack",
     "zip": "shopify theme package",
     "prepare": "husky install",
-    "eslint": "eslint src/scripts/*.js",
-    "prettier": "prettier --write */*.{js,scss,liquid}",
-    "stylelint": "stylelint --fix src/scss/*.scss"
+    "eslint": "eslint src/**/*.js",
+    "prettier": "prettier --write .",
+    "stylelint": "stylelint --fix src/**/*.scss"
   },
   "author": "",
   "license": "ISC",
@@ -54,8 +55,8 @@
     "webpack-remove-empty-scripts": "^0.7.1"
   },
   "lint-staged": {
-    "**/*.{js,scss,liquid}": "prettier --write",
-    "src/scss/*.scss": "stylelint --fix",
-    "src/scripts/*.js": "eslint --fix"
+    "*": "prettier --write",
+    "src/**/*.scss": "stylelint --fix",
+    "src/**/*.js": "eslint --fix"
   }
 }

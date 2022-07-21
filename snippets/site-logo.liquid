@@ -4,18 +4,18 @@
 {% endcomment %}
 
 {%- capture site_logo -%}
-  <a href='{{ routes.root_url }}'>
+  <a href="{{ routes.root_url }}">
     {%- if logo_image != blank -%}
       {% comment %} theme-check-disable {% endcomment %}
       <img
-        src='{{ logo_image }}'
-        alt='{{ shop.name }}'
-        height='{%- if height -%}{{height}}{%- else -%}200{%- endif -%}'
-        width='{%- if width -%}{{width}}{%- else -%}200{%- endif -%}'
+        src="{{ logo_image }}"
+        alt="{{ shop.name }}"
+        height="{%- if height -%}{{height}}{%- else -%}200{%- endif -%}"
+        width="{%- if width -%}{{width}}{%- else -%}200{%- endif -%}"
       >
       {% comment %} theme-check-enable {% endcomment %}
     {%- else -%}
-      <span class='site-name'>
+      <span class="site-name">
         {%- if logo_text != blank -%}
           {{- logo_text -}}
         {%- else -%}

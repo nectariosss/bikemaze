@@ -25,16 +25,16 @@
   -%}
 
   <img
-    class='{{ imageClass }}'
-    src='{{ image.cloudinary_src | append: 'w_1440' }}'
-    srcset='{{ srcSet }}'
+    class="{{ imageClass }}"
+    src="{{ image.cloudinary_src | append: 'w_1440' }}"
+    srcset="{{ srcSet }}"
     {% unless notLazy %}
-      loading='lazy'
+      loading="lazy"
     {% endunless %}
-    width='{{ image.width }}'
-    height='{{ image.height }}'
-    alt='{{ image.alt }}'
-    sizes='{{ sizes }}'
+    width="{{ image.width }}"
+    height="{{ image.height }}"
+    alt="{{ image.alt }}"
+    sizes="{{ sizes }}"
     {{ imageAttributes }}
   >
 {%- endif -%}

@@ -104,9 +104,9 @@
         display: grid;
 
         grid-template-areas:
-          'title price'
-          'details details'
-          'picker remove';
+          "title price"
+          "details details"
+          "picker remove";
         grid-template-columns: 4fr 1fr;
 
         padding-top: 1rem;
@@ -189,7 +189,7 @@
             appearance: none;
           }
 
-          input[type='number'] {
+          input[type="number"] {
             appearance: textfield; /* Firefox */
           }
         }

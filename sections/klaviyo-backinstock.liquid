@@ -113,17 +113,17 @@
       text-decoration: none;
   }
 {%- endstyle -%}
-<backinstock-modal data-backinstock-modal class='backinstock-modal'>
-  <div role='dialog' aria-label='' aria-modal='true' class='backinstock-modal__content' tabindex='-1'>
-    <button data-backinstock-close type='button' class='backinstock-modal__close'>×</button>
-    <div class='backinstock-modal__body'>
-      <form method='post' action='/'>
+<backinstock-modal data-backinstock-modal class="backinstock-modal">
+  <div role="dialog" aria-label="" aria-modal="true" class="backinstock-modal__content" tabindex="-1">
+    <button data-backinstock-close type="button" class="backinstock-modal__close">×</button>
+    <div class="backinstock-modal__body">
+      <form method="post" action="/">
         <div data-backinstock-body></div>
-        <input name='a' value='WXeasw' type='hidden'>
-        <input name='platform' value='shopify' type='hidden'>
-        <input type='email' required name='email' placeholder='Email'>
-        <button type='submit' class='primary-button klaviyo-form-submit'>{{ 'products.product.notify_me' | t }}</button>
-        <div class='backinstock-alert-success backinstock-hidden' data-backinstock-success>
+        <input name="a" value="WXeasw" type="hidden">
+        <input name="platform" value="shopify" type="hidden">
+        <input type="email" required name="email" placeholder="Email">
+        <button type="submit" class="primary-button klaviyo-form-submit">{{ 'products.product.notify_me' | t }}</button>
+        <div class="backinstock-alert-success backinstock-hidden" data-backinstock-success>
           {{ 'products.product.notify_me_success' | t }}
         </div>
       </form>

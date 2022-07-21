@@ -1,15 +1,15 @@
 const selectors = {
-  customerAddresses: '[data-customer-addresses]',
-  addressCountrySelect: '[data-address-country-select]',
-  addressContainer: '[data-address]',
-  toggleAddressButton: 'button[aria-expanded]',
-  cancelAddressButton: 'button[type="reset"]',
-  deleteAddressButton: 'button[data-confirm-message]',
+  customerAddresses: "[data-customer-addresses]",
+  addressCountrySelect: "[data-address-country-select]",
+  addressContainer: "[data-address]",
+  toggleAddressButton: "button[aria-expanded]",
+  cancelAddressButton: "button[type='reset']",
+  deleteAddressButton: "button[data-confirm-message]",
 };
 
 const attributes = {
-  expanded: 'aria-expanded',
-  confirmMessage: 'data-confirm-message',
+  expanded: "aria-expanded",
+  confirmMessage: "data-confirm-message",
 };
 
 const Shopify = window.Shopify;
@@ -48,10 +48,10 @@ class CustomerAddresses {
     if (Shopify && Shopify.CountryProvinceSelector) {
       // eslint-disable-next-line no-new
       new Shopify.CountryProvinceSelector(
-        'AddressCountryNew',
-        'AddressProvinceNew',
+        "AddressCountryNew",
+        "AddressProvinceNew",
         {
-          hideElement: 'AddressProvinceContainerNew',
+          hideElement: "AddressProvinceContainerNew",
         }
       );
       this.elements.countrySelects.forEach((select) => {
@@ -70,20 +70,20 @@ class CustomerAddresses {
 
   _setupEventListeners() {
     this.elements.toggleButtons.forEach((element) => {
-      element.addEventListener('click', this._handleAddEditButtonClick);
+      element.addEventListener("click", this._handleAddEditButtonClick);
     });
     this.elements.cancelButtons.forEach((element) => {
-      element.addEventListener('click', this._handleCancelButtonClick);
+      element.addEventListener("click", this._handleCancelButtonClick);
     });
     this.elements.deleteButtons.forEach((element) => {
-      element.addEventListener('click', this._handleDeleteButtonClick);
+      element.addEventListener("click", this._handleDeleteButtonClick);
     });
   }
 
   _toggleExpanded(target) {
     target.setAttribute(
       attributes.expanded,
-      (target.getAttribute(attributes.expanded) === 'false').toString()
+      (target.getAttribute(attributes.expanded) === "false").toString()
     );
   }
 
@@ -103,7 +103,7 @@ class CustomerAddresses {
     // eslint-disable-next-line no-alert
     if (confirm(currentTarget.getAttribute(attributes.confirmMessage))) {
       Shopify.postLink(currentTarget.dataset.target, {
-        parameters: { _method: 'delete' },
+        parameters: { _method: "delete" },
       });
     }
   };
@@ -114,7 +114,7 @@ window.CustomerAddresses = CustomerAddresses;
  * Shopify Common JS
  *
  */
-if (typeof window.Shopify == 'undefined') {
+if (typeof window.Shopify == "undefined") {
   window.Shopify = {};
 }
 
@@ -137,23 +137,23 @@ Shopify.setSelectorByValue = function (selector, value) {
 Shopify.addListener = function (target, eventName, callback) {
   target.addEventListener
     ? target.addEventListener(eventName, callback, false)
-    : target.attachEvent('on' + eventName, callback);
+    : target.attachEvent("on" + eventName, callback);
 };
 
 Shopify.postLink = function (path, options) {
   options = options || {};
-  let method = options['method'] || 'post';
-  let params = options['parameters'] || {};
+  let method = options["method"] || "post";
+  let params = options["parameters"] || {};
 
-  let form = document.createElement('form');
-  form.setAttribute('method', method);
-  form.setAttribute('action', path);
+  let form = document.createElement("form");
+  form.setAttribute("method", method);
+  form.setAttribute("action", path);
 
   for (let key in params) {
-    let hiddenField = document.createElement('input');
-    hiddenField.setAttribute('type', 'hidden');
-    hiddenField.setAttribute('name', key);
-    hiddenField.setAttribute('value', params[key]);
+    let hiddenField = document.createElement("input");
+    hiddenField.setAttribute("type", "hidden");
+    hiddenField.setAttribute("name", key);
+    hiddenField.setAttribute("value", params[key]);
     form.appendChild(hiddenField);
   }
   document.body.appendChild(form);
@@ -169,12 +169,12 @@ Shopify.CountryProvinceSelector = function (
   this.countryEl = document.getElementById(country_domid);
   this.provinceEl = document.getElementById(province_domid);
   this.provinceContainer = document.getElementById(
-    options['hideElement'] || province_domid
+    options["hideElement"] || province_domid
   );
 
   Shopify.addListener(
     this.countryEl,
-    'change',
+    "change",
     Shopify.bind(this.countryHandler, this)
   );
 
@@ -184,13 +184,13 @@ Shopify.CountryProvinceSelector = function (
 
 Shopify.CountryProvinceSelector.prototype = {
   initCountry: function () {
-    let value = this.countryEl.getAttribute('data-default');
+    let value = this.countryEl.getAttribute("data-default");
     Shopify.setSelectorByValue(this.countryEl, value);
     this.countryHandler();
   },
 
   initProvince: function () {
-    let value = this.provinceEl.getAttribute('data-default');
+    let value = this.provinceEl.getAttribute("data-default");
     if (value && this.provinceEl.options.length > 0) {
       Shopify.setSelectorByValue(this.provinceEl, value);
     }
@@ -198,21 +198,21 @@ Shopify.CountryProvinceSelector.prototype = {
 
   countryHandler: function () {
     const opt = this.countryEl.options[this.countryEl.selectedIndex];
-    const raw = opt.getAttribute('data-provinces');
+    const raw = opt.getAttribute("data-provinces");
     const provinces = JSON.parse(raw);
 
     this.clearOptions(this.provinceEl);
     if (provinces && provinces.length == 0) {
-      this.provinceContainer.style.display = 'none';
+      this.provinceContainer.style.display = "none";
     } else {
       for (let i = 0; i < provinces.length; i++) {
-        const opt = document.createElement('option');
+        const opt = document.createElement("option");
         opt.value = provinces[i][0];
         opt.innerHTML = provinces[i][1];
         this.provinceEl.appendChild(opt);
       }
 
-      this.provinceContainer.style.display = '';
+      this.provinceContainer.style.display = "";
     }
   },
 
@@ -224,7 +224,7 @@ Shopify.CountryProvinceSelector.prototype = {
 
   setOptions: function (selector, values) {
     for (let i = 0; i < values.length; i++) {
-      let opt = document.createElement('option');
+      let opt = document.createElement("option");
       opt.value = values[i];
       opt.innerHTML = values[i];
       selector.appendChild(opt);

@@ -1,6 +1,6 @@
-@import './fonts';
+@import "./fonts";
 
-@import 'swiper/css/bundle';
+@import "swiper/css/bundle";
 
 body {
   &.test {
@@ -41,9 +41,9 @@ img {
       margin-top: -12px;
       margin-left: -12px;
 
-      content: '';
+      content: "";
 
-      border: 4px solid grey;
+      border: 4px solid #808080;
       border-radius: 50px;
 
       animation: loading 1s linear infinite;
@@ -182,7 +182,7 @@ img {
   width: 25px;
   height: 25px;
 
-  content: '';
+  content: "";
 
   border: 3px solid #000;
   border-color: #000 transparent;
@@ -201,259 +201,6 @@ img {
   }
 }
 
-.product-card {
-  display: grid;
-  // max-width: 360px;
-
-  @include media($tablet) {
-    max-width: 100%;
-  }
-
-  &__error {
-    // padding: 0 1rem;
-    font-size: 10px;
-    color: #d81356;
-
-    & > div {
-      margin-bottom: 1rem;
-    }
-  }
-
-  &__image {
-    position: relative;
-
-    aspect-ratio: 6/9;
-    // max-height: 470px;
-    overflow: hidden;
-
-    .images,
-    .main-image {
-      height: 100%;
-    }
-
-    .hover-image {
-      position: absolute;
-      top: 0;
-      left: 0;
-
-      width: 100%;
-      height: 100%;
-
-      opacity: 0;
-
-      transition: opacity 650ms ease-in-out;
-    }
-
-    .responsive-image__wrapper {
-      height: 100%;
-    }
-
-    .responsive-image__image {
-      width: 100%;
-      max-width: 100% !important;
-      height: fit-content;
-      height: 100% !important;
-      max-height: 100% !important;
-
-      object-fit: cover;
-    }
-  }
-
-  &__label {
-    position: absolute;
-    top: 0;
-    left: 0;
-
-    span {
-      display: inline-block;
-
-      font-family: $font-extended;
-      font-size: rem(16px);
-      font-weight: normal;
-      font-weight: 400;
-      line-height: rem(19px);
-      text-transform: uppercase;
-
-      transform: rotate(90deg) translate(-5px, -9px);
-      transform-origin: 0% 100%;
-      @include media($tablet) {
-        font-size: rem(12px);
-        line-height: rem(14px);
-
-        transform: rotate(90deg) translate(-10px, -6px);
-      }
-    }
-  }
-
-  &__wishlist {
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    button {
-      display: inline-block;
-
-      width: 16px;
-      height: 16px;
-      padding: 0;
-      margin-top: 8px;
-      margin-right: 8px;
-
-      cursor: pointer;
-
-      background: none;
-      border: none;
-
-      svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .wk-label {
-        display: none;
-      }
-    }
-  }
-
-  &__link {
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    display: block;
-  }
-
-  &__actions {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-
-    display: grid;
-
-    grid-template-columns: 50% 50%;
-
-    opacity: 0;
-
-    transition: opacity 400ms ease;
-    @include media($tablet) {
-      display: none;
-    }
-
-    .add-to-cart-button {
-      height: 100%;
-      min-height: 40px;
-      padding: 0;
-
-      font-family: $font-main;
-      font-size: rem(14px);
-      font-weight: normal;
-      line-height: rem(17px);
-      text-align: center;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-
-      &:focus {
-        border: none;
-        outline: none;
-      }
-    }
-
-    &.only-one {
-      grid-template-columns: 100%;
-
-      .select2 {
-        display: none;
-      }
-    }
-  }
-
-  .card {
-    display: grid;
-
-    grid-template-columns: 75% 25%;
-
-    padding: 1rem 5px 8px;
-    @include media($tablet) {
-      grid-template-columns: none;
-      padding: 8px;
-    }
-
-    &__titleblock {
-      .title {
-        margin-bottom: 8px;
-
-        font-size: rem(16px);
-        font-weight: normal;
-        line-height: rem(19px);
-        @include media($tablet) {
-          font-size: rem(12px);
-          line-height: rem(14px);
-        }
-
-        a {
-          color: $color-black;
-          text-decoration: none;
-
-          transition: opacity 400ms ease;
-
-          &:hover {
-            opacity: 0.6;
-          }
-        }
-      }
-    }
-
-    &__priceblock {
-      font-family: $font-extended;
-      font-size: rem(16px);
-      font-weight: normal;
-      line-height: rem(19px);
-      text-align: right;
-      @include media($tablet) {
-        font-size: rem(12px);
-        line-height: rem(14px);
-        text-align: left;
-      }
-
-      .old-price {
-        // opacity: 0.5;
-        color: #5c5c5c;
-        text-decoration: line-through;
-      }
-    }
-  }
-
-  &.soldout {
-    .card__titleblock .title {
-      text-decoration: line-through;
-    }
-
-    .card__priceblock .current-price {
-      text-decoration: line-through;
-    }
-  }
-
-  .bis-notifyme {
-    font-size: 12px;
-    text-align: center;
-  }
-
-  @media (min-width: 768px) {
-    &__image:hover {
-      .product-card__actions {
-        opacity: 1;
-      }
-
-      .hover-image {
-        opacity: 1;
-      }
-    }
-  }
-}
-
 .newsletter {
   input {
     height: 35px !important;
@@ -461,7 +208,7 @@ img {
     font-family: $font-main !important;
     font-size: 12px !important;
 
-    border: none !important;
+    border: 0 !important;
 
     &::placeholder {
       font-size: 12px !important;

@@ -22,12 +22,12 @@
 -%}
 
 <dl
-  class='
+  class="
     price
     {% if available == false %} price--sold-out {% endif %}
     {% if compare_at_price > price %} price--on-sale {% endif %}
     {% if variant.unit_price_measurement %} price--unit-available {% endif %}
-  '
+  "
   data-price
 >
   {%- comment -%}
@@ -37,18 +37,18 @@
       - div.price__unit: Displayed when the first variant has a unit price
       - div.price__availability: Displayed when the product is sold out
   {%- endcomment -%}
-  <div class='price__pricing-group'>
-    <div class='price__regular row'>
-      <div class='col-12'>
-        <span class='visually-hidden visually-hidden--inline'>{{ 'products.product.price.regular_price' | t }}</span>
+  <div class="price__pricing-group">
+    <div class="price__regular row">
+      <div class="col-12">
+        <span class="visually-hidden visually-hidden--inline">{{ 'products.product.price.regular_price' | t }}</span>
       </div>
-      <div class='col-6'>
-        <span class='price-item price-item--regular' data-regular-price>
+      <div class="col-6">
+        <span class="price-item price-item--regular" data-regular-price>
           {{ price | money_without_trailing_zeros }}
         </span>
       </div>
-      <div class='col-6'>
-        <s class='price-item price-item--regular' data-regular-price>
+      <div class="col-6">
+        <s class="price-item price-item--regular" data-regular-price>
           {{ compare_at_price | money }}
         </s>
       </div>

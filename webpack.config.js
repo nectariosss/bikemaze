@@ -1,28 +1,28 @@
-const TerserPlugin = require('terser-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const glob = require('glob');
-const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
-const WebpackHookPlugin = require('webpack-hook-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const glob = require("glob");
+const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts");
+const WebpackHookPlugin = require("webpack-hook-plugin");
 
 const files = {
   // templates_scssPath: "./src/scss/templates/*.scss",
-  blocks_scssPath: './src/scss/blocks/*.scss',
-  critical_scssPath: './src/scss/critical.scss',
-  common_scssPath: './src/scss/common.scss',
+  blocks_scssPath: "./src/scss/blocks/*.scss",
+  critical_scssPath: "./src/scss/critical.scss",
+  common_scssPath: "./src/scss/common.scss",
   // vendor_scssPath: "./src/scss/vendor.scss",
   // layout_scssPath: "./src/scss/layouts/*.scss",
 
   // templates_jsPath: "./src/scripts/templates/*.js",
-  sections_jsPath: './src/scripts/sections/*.js',
-  components_jsPath: './src/scripts/components/*.js',
+  sections_jsPath: "./src/scripts/sections/*.js",
+  components_jsPath: "./src/scripts/components/*.js",
   // critical_jsPath: "./src/scripts/critical.js",
-  common_jsPath: './src/scripts/common.js',
+  common_jsPath: "./src/scripts/common.js",
 
   // vendor_jsPath: "./src/scripts/vendor.js",
 
-  assetsDir: __dirname + '/assets',
-  snippetsDir: __dirname + '/snippets',
-  resources: __dirname + '/src/scss/resources.scss',
+  assetsDir: __dirname + "/assets",
+  snippetsDir: __dirname + "/snippets",
+  resources: __dirname + "/src/scss/resources.scss",
 };
 
 function mergePaths(arr) {
@@ -39,32 +39,32 @@ function getFileName(path) {
   const rgx = /[^\\\/]+(?=\.)/g;
   let fileName = path.match(rgx)[0];
 
-  if (path.includes('scripts/components')) {
+  if (path.includes("scripts/components")) {
     fileName = `component-${fileName}`;
   }
 
   /* create a snippet rather than an asset */
-  const snippetRgx = new RegExp('\\.snippet$');
+  const snippetRgx = new RegExp("\\.snippet$");
   if (fileName.match(snippetRgx)) {
     isSnippet = true;
     isAsset = false;
-    fileName = fileName.replace(snippetRgx, '');
+    fileName = fileName.replace(snippetRgx, "");
   }
 
   /* create both: a snippet and an asset */
-  const snippetOnlyRgx = new RegExp('\\.snippet-asset$');
+  const snippetOnlyRgx = new RegExp("\\.snippet-asset$");
   if (fileName.match(snippetOnlyRgx)) {
     isSnippet = true;
     isAsset = true;
-    fileName = fileName.replace(snippetOnlyRgx, '');
+    fileName = fileName.replace(snippetOnlyRgx, "");
   }
 
   /* don't create neither an asset nor a snippet  */
-  const ignoreRgx = new RegExp('\\.ignore$');
+  const ignoreRgx = new RegExp("\\.ignore$");
   if (fileName.match(ignoreRgx)) {
     isAsset = false;
     isSnippet = false;
-    fileName = fileName.replace(ignoreRgx, '');
+    fileName = fileName.replace(ignoreRgx, "");
   }
 
   return [fileName, isSnippet, isAsset];
@@ -92,7 +92,7 @@ const entries = {
 };
 
 const criticalEntries = {
-  'critical.css': files.critical_scssPath,
+  "critical.css": files.critical_scssPath,
 };
 
 for (let file of glob.sync(files.blocks_scssPath)) {
@@ -102,25 +102,25 @@ for (let file of glob.sync(files.blocks_scssPath)) {
 }
 
 module.exports = (env, argv) => {
-  const mode = argv.mode || 'development';
+  const mode = argv.mode || "development";
 
   const config = {
     mode: mode,
     devtool: false, //disable sourcemap for js
     resolve: {
       // resolve file extensions
-      extensions: ['.scss', '.js', '.css'],
+      extensions: [".scss", ".js", ".css"],
     },
     watchOptions: {
-      ignored: '**/node_modules',
+      ignored: "**/node_modules",
     },
   };
 
   const commonFilesConfig = Object.assign({}, config, {
-    name: 'Common',
+    name: "Common",
     entry: entries,
     output: {
-      filename: '[name].min.js',
+      filename: "[name].min.js",
       path: files.assetsDir,
     },
     module: {
@@ -129,21 +129,21 @@ module.exports = (env, argv) => {
           test: /\.(scss|css)$/,
           use: [
             MiniCssExtractPlugin.loader,
-            'css-loader',
+            "css-loader",
             {
-              loader: 'sass-loader',
+              loader: "sass-loader",
               options:
-                mode === 'development'
+                mode === "development"
                   ? {
                       sourceMap: true,
                       sassOptions: {
-                        outputStyle: 'expanded',
+                        outputStyle: "expanded",
                       },
                     }
                   : {},
             },
             {
-              loader: 'sass-resources-loader',
+              loader: "sass-resources-loader",
               options: {
                 sourceMap: false,
                 resources: [files.resources],
@@ -155,10 +155,10 @@ module.exports = (env, argv) => {
           test: /\.(woff(2)?|ttf|eot|svg|jpe?g|png|gif)(\?v=\d+\.\d+\.\d+)?$/,
           use: [
             {
-              loader: 'file-loader',
+              loader: "file-loader",
               options: {
-                name: '[name].[ext]',
-                outputPath: './',
+                name: "[name].[ext]",
+                outputPath: "./",
               },
             },
           ],
@@ -168,23 +168,23 @@ module.exports = (env, argv) => {
     plugins: [
       new RemoveEmptyScriptsPlugin(),
       new MiniCssExtractPlugin({
-        filename: '[name].min.css',
+        filename: "[name].min.css",
       }),
       new WebpackHookPlugin({
-        onBuildExit: ['node clean.js'],
+        onBuildExit: ["node clean.js"],
       }),
     ],
     optimization: {
       minimizer:
-        mode === 'production'
+        mode === "production"
           ? [new TerserPlugin({ extractComments: false })]
           : [],
     },
-    stats: 'errors-only',
+    stats: "errors-only",
   });
 
   const criticalCssConfig = Object.assign({}, config, {
-    name: 'Liquid CSS',
+    name: "Liquid CSS",
     entry: criticalEntries,
     output: {
       path: files.snippetsDir,
@@ -195,21 +195,21 @@ module.exports = (env, argv) => {
           test: /\.(scss|css)$/,
           use: [
             MiniCssExtractPlugin.loader,
-            'css-loader',
+            "css-loader",
             {
-              loader: 'sass-loader',
+              loader: "sass-loader",
               options:
-                mode === 'production'
+                mode === "production"
                   ? {}
                   : {
                       sourceMap: true,
                       sassOptions: {
-                        outputStyle: 'expanded',
+                        outputStyle: "expanded",
                       },
                     },
             },
             {
-              loader: 'sass-resources-loader',
+              loader: "sass-resources-loader",
               options: {
                 sourceMap: false,
                 resources: [files.resources],
@@ -222,10 +222,10 @@ module.exports = (env, argv) => {
     plugins: [
       new RemoveEmptyScriptsPlugin(),
       new MiniCssExtractPlugin({
-        filename: '[name].liquid',
+        filename: "[name].liquid",
       }),
     ],
-    stats: 'errors-only',
+    stats: "errors-only",
   });
 
   return [commonFilesConfig, criticalCssConfig];

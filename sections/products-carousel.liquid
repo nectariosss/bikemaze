@@ -2,40 +2,40 @@
 
 {% if section.settings.carousel_coll != blank %}
   {% assign limit = section.settings.carousel_coll_lm | plus: 0 %}
-  <div class='container-max'>
+  <div class="container-max">
     {% if collections[section.settings.carousel_coll].products_count != 0 %}
       {% if section.settings.carousel_title != blank %}
-        <h2 class='products-carousel__title h3'>{{ section.settings.carousel_title }}</h2>
+        <h2 class="products-carousel__title h3">{{ section.settings.carousel_title }}</h2>
       {% endif %}
       <div
-        class='swiper products-carousel-swiper'
-        data-limit_per_view_mobile='{{ section.settings.carousel_mob }}'
-        data-limit_per_view='{{ section.settings.carousel_desk }}'
+        class="swiper products-carousel-swiper"
+        data-limit_per_view_mobile="{{ section.settings.carousel_mob }}"
+        data-limit_per_view="{{ section.settings.carousel_desk }}"
       >
-        <div class='swiper-wrapper'>
+        <div class="swiper-wrapper">
           {% for product in collections[section.settings.carousel_coll].products limit: limit %}
-            <div class='swiper-slide'>
+            <div class="swiper-slide">
               {%- render 'product-card', product: product -%}
             </div>
           {% endfor %}
         </div>
 
         {% if collections[section.settings.carousel_coll].products_count > section.settings.carousel_desk and limit > section.settings.carousel_desk %}
-          <button class='swiper-button-prev swiper-button' aria-label='{{ 'accessibility.previous_slide' | t }}'>
+          <button class="swiper-button-prev swiper-button" aria-label="{{ 'accessibility.previous_slide' | t }}">
             {%- render 'icon-carousel-arrow' -%}
           </button>
-          <button class='swiper-button-next swiper-button' aria-label='{{ 'accessibility.next_slide' | t }}'>
+          <button class="swiper-button-next swiper-button" aria-label="{{ 'accessibility.next_slide' | t }}">
             {%- render 'icon-carousel-arrow' -%}
           </button>
         {% endif %}
       </div>
 
       {% if section.settings.carousel_b_text != blank %}
-        <div class='products-carousel__button'>
+        <div class="products-carousel__button">
           <a
-            href='{{ collections[section.settings.carousel_coll].url }}'
-            class='secondary-button'
-            style='--sec-color: #000'
+            href="{{ collections[section.settings.carousel_coll].url }}"
+            class="secondary-button"
+            style="--sec-color: #000"
           >
             {{- section.settings.carousel_b_text -}}
           </a>

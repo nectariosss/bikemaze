@@ -3,6 +3,13 @@
   "tabWidth": 2,
   "useTabs": false,
   "semi": true,
-  "singleQuote": true,
-  "plugins": ["@shopify/prettier-plugin-liquid"]
+  "singleQuote": false,
+  "overrides": [
+    {
+      "files": "*.liquid",
+      "options": {
+        "plugins": ["@shopify/prettier-plugin-liquid"]
+      }
+    }
+  ]
 }

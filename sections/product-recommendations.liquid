@@ -1,35 +1,35 @@
 {%- render 'stylesheet', name: 'products-carousel' -%}
-<script src='{{ 'product-recommendations-js.min.js' | asset_url }}' defer='defer'></script>
+<script src="{{ 'product-recommendations-js.min.js' | asset_url }}" defer="defer"></script>
 
 {%- assign limit = section.settings.recc_coll_lm | plus: 0 -%}
 <product-recommendations
-  class='product-recommendations products-carousel'
-  data-url='{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ limit }}'
+  class="product-recommendations products-carousel"
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ limit }}"
 >
-  <div class='container-max'>
+  <div class="container-max">
     {%- if recommendations.performed and recommendations.products_count > 0 -%}
       {% if section.settings.recc_title != blank %}
-        <h2 class='product-recommendations__title h4'>{{ section.settings.recc_title }}</h2>
+        <h2 class="product-recommendations__title h4">{{ section.settings.recc_title }}</h2>
       {% endif %}
 
       <div
-        class='swiper products-recommendations-swiper'
-        data-limit_per_view_mobile='{{ section.settings.recc_mob }}'
-        data-limit_per_view='{{ section.settings.recc_desk }}'
+        class="swiper products-recommendations-swiper"
+        data-limit_per_view_mobile="{{ section.settings.recc_mob }}"
+        data-limit_per_view="{{ section.settings.recc_desk }}"
       >
-        <div class='swiper-wrapper'>
+        <div class="swiper-wrapper">
           {%- for product in recommendations.products -%}
-            <div class='swiper-slide'>
+            <div class="swiper-slide">
               {%- render 'product-card', product: product -%}
             </div>
           {% endfor %}
         </div>
 
         {% if recommendations.products_count > section.settings.recc_desk and limit > section.settings.recc_desk %}
-          <button class='swiper-button-prev swiper-button' aria-label='{{ 'accessibility.previous_slide' | t }}'>
+          <button class="swiper-button-prev swiper-button" aria-label="{{ 'accessibility.previous_slide' | t }}">
             {%- render 'icon-carousel-arrow' -%}
           </button>
-          <button class='swiper-button-next swiper-button' aria-label='{{ 'accessibility.next_slide' | t }}'>
+          <button class="swiper-button-next swiper-button" aria-label="{{ 'accessibility.next_slide' | t }}">
             {%- render 'icon-carousel-arrow' -%}
           </button>
         {% endif %}

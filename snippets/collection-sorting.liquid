@@ -1,11 +1,11 @@
-<select id='sort-by'>
+<select id="sort-by">
   {% assign sort_by = collection.sort_by | default: collection.default_sort_by %}
 
   {% for option in collection.sort_options %}
     <option
-      value='{{ option.value | escape }}'
+      value="{{ option.value | escape }}"
       {% if option.value == sort_by %}
-        selected='selected'
+        selected="selected"
       {% endif %}
     >
       {{ option.name | escape }}

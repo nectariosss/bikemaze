@@ -1,3 +1,8 @@
+.*
+*.json
+*.md
+*.config
+
 /assets
-/node_modules
 /locales
+

@@ -1,31 +1,31 @@
-<div class='container'>
-  <div class='grid-container'>
-    <div class='grid-item'>
-      <nav class='footer__navigation' role='navigation'>
-        <ul class='footer-nav__menu'>
+<div class="container">
+  <div class="grid-container">
+    <div class="grid-item">
+      <nav class="footer__navigation" role="navigation">
+        <ul class="footer-nav__menu">
           {% for link in section.settings.footer_linklist.links %}
-            <li class='footer-nav__item'>
-              <a href='{{ link.url }}' class='footer-nav__link'>{{ link.title }}</a>
+            <li class="footer-nav__item">
+              <a href="{{ link.url }}" class="footer-nav__link">{{ link.title }}</a>
             </li>
           {% endfor %}
         </ul>
       </nav>
     </div>
-    <div class='grid-item'>
+    <div class="grid-item">
       {%- if section.settings.newsletter_element != blank -%}
-        <div class='newsletter'>
+        <div class="newsletter">
           <span>{{ section.settings.newsletter_title }}</span>
           {{- section.settings.newsletter_element -}}
         </div>
       {%- endif -%}
       {%- if section.settings.footer_socials != blank and linklists[section.settings.footer_socials] -%}
-        <div class='socials'>
+        <div class="socials">
           {%- render 'social-links', socials: linklists[section.settings.footer_socials] -%}
         </div>
       {%- endif -%}
     </div>
   </div>
-  <div class='footer__copyrights'>
+  <div class="footer__copyrights">
     <small>&copy; {{ 'now' | date: "%Y" }}, {{ section.settings.copyrights }}</small>
   </div>
 </div>

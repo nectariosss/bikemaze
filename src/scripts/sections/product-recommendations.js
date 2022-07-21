@@ -1,4 +1,4 @@
-import { swiperArrows } from '../helpers';
+import { swiperArrows } from "../helpers";
 
 /**
  * Shopify Product Recommendations
@@ -14,25 +14,25 @@ class ProductRecommendations extends HTMLElement {
       fetch(this.dataset.url)
         .then((response) => response.text())
         .then((text) => {
-          const html = document.createElement('div');
+          const html = document.createElement("div");
           html.innerHTML = text;
-          const recommendations = html.querySelector('product-recommendations');
+          const recommendations = html.querySelector("product-recommendations");
           if (recommendations && recommendations.innerHTML.trim().length) {
             this.innerHTML = recommendations.innerHTML;
 
-            if (typeof Swiper !== 'undefined') {
+            if (typeof Swiper !== "undefined") {
               const swiperElement = document.querySelector(
-                '.products-recommendations-swiper'
+                ".products-recommendations-swiper"
               );
               if (swiperElement) {
                 const limitPerView = swiperElement.getAttribute(
-                  'data-limit_per_view'
+                  "data-limit_per_view"
                 );
                 const limitPerViewMobile = swiperElement.getAttribute(
-                  'data-limit_per_view_mobile'
+                  "data-limit_per_view_mobile"
                 );
                 // eslint-disable-next-line no-undef
-                new Swiper('.products-recommendations-swiper', {
+                new Swiper(".products-recommendations-swiper", {
                   slidesPerView: limitPerViewMobile ? limitPerViewMobile : 2,
                   spaceBetween: 0,
                   loop: false,
@@ -42,8 +42,8 @@ class ProductRecommendations extends HTMLElement {
                     forceToAxis: true,
                   },
                   navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
                   },
                   shortSwipes: false,
                   cssMode: true,
@@ -78,9 +78,9 @@ class ProductRecommendations extends HTMLElement {
     };
 
     new IntersectionObserver(handleIntersection.bind(this), {
-      rootMargin: '0px 0px 200px 0px',
+      rootMargin: "0px 0px 200px 0px",
     }).observe(this);
   }
 }
 
-customElements.define('product-recommendations', ProductRecommendations);
+customElements.define("product-recommendations", ProductRecommendations);

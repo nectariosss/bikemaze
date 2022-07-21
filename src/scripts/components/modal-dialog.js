@@ -1,27 +1,27 @@
 class ModalDialog extends HTMLElement {
   constructor() {
     super();
-    this.querySelector('[id^="ModalClose-"]').addEventListener(
-      'click',
+    this.querySelector("[id^='ModalClose-']").addEventListener(
+      "click",
       this.hide.bind(this)
     );
-    this.addEventListener('keyup', (event) => {
-      if (event.code.toUpperCase() === 'ESCAPE') this.hide();
+    this.addEventListener("keyup", (event) => {
+      if (event.code.toUpperCase() === "ESCAPE") this.hide();
     });
-    this.addEventListener('click', (event) => {
-      if (event.target.nodeName === 'MODAL-DIALOG') this.hide();
+    this.addEventListener("click", (event) => {
+      if (event.target.nodeName === "MODAL-DIALOG") this.hide();
     });
   }
 
   show(opener) {
     this.openedBy = opener;
-    document.body.classList.add('overflow-hidden');
-    this.setAttribute('open', '');
+    document.body.classList.add("overflow-hidden");
+    this.setAttribute("open", "");
   }
 
   hide() {
-    document.body.classList.remove('overflow-hidden');
-    this.removeAttribute('open');
+    document.body.classList.remove("overflow-hidden");
+    this.removeAttribute("open");
   }
 }
-customElements.define('modal-dialog', ModalDialog);
+customElements.define("modal-dialog", ModalDialog);
