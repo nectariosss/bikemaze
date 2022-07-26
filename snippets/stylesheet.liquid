@@ -12,7 +12,7 @@
 {% liquid
   assign stylesheet_path = name
   unless name contains '.css'
-    assign stylesheet_path = stylesheet_path | append: '.min.css' | asset_url
+    assign stylesheet_path = stylesheet_path | append: '.min.css' | prepend: 'css-' | asset_url
   endunless
 -%}
 

@@ -98,7 +98,7 @@ const criticalEntries = {
 for (let file of glob.sync(files.blocks_scssPath)) {
   const [fileName, isSnippet] = getFileName(file);
   if (!isSnippet) continue;
-  criticalEntries[`${fileName}.css`] = file;
+  criticalEntries[`css-${fileName}.css`] = file;
 }
 
 module.exports = (env, argv) => {
@@ -120,7 +120,7 @@ module.exports = (env, argv) => {
     name: "Common",
     entry: entries,
     output: {
-      filename: "[name].min.js",
+      filename: "js-[name].min.js",
       path: files.assetsDir,
     },
     module: {
@@ -168,7 +168,7 @@ module.exports = (env, argv) => {
     plugins: [
       new RemoveEmptyScriptsPlugin(),
       new MiniCssExtractPlugin({
-        filename: "[name].min.css",
+        filename: "css-[name].min.css",
       }),
       new WebpackHookPlugin({
         onBuildExit: ["node clean.js"],

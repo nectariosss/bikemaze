@@ -35,7 +35,7 @@ async function getComponents() {
 }
 
 function getAssetUrl(name) {
-  return `{{ 'component-${name}.min.js' | asset_url }}`;
+  return `{{ 'js-component-${name}.min.js' | asset_url }}`;
 }
 
 function writeSnippet(components) {
