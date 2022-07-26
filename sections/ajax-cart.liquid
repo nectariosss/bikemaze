@@ -1,103 +1,112 @@
-<div class="minicart-wrapper {% if cart.item_count == 0 %}empty{% endif %}">
-  <div class="overlay" data-ajax-cart-toggle-class-button="js-ajax-cart-opened"></div>
+{%- render "stylesheet", name: "ajax-cart", defer: true -%}
+
+<div style="display: none" class="minicart">
+  <div class="minicart__overlay" data-ajax-cart-toggle-class-button="js-ajax-cart-opened"></div>
   <div
     aria-modal="true"
-    class="minicart"
+    class="minicart__inner"
     role="dialog"
   >
-    <div class="minicart__header">
-      <h3 class="title">{{ section.settings.cart_title }}</h3>
-      {%- if section.settings.cart_text != blank -%}
-        <p class="cart-info">{{ section.settings.cart_text }}</p>
-      {%- endif -%}
-      <button
-        class="close-button"
-        data-ajax-cart-toggle-class-button="js-ajax-cart-opened"
-        type="button"
-        aria-label="{{ 'accessibility.close' | t }}"
-      ></button>
-    </div>
-    <div class="minicart__body-wrapper" data-ajax-cart-section>
-      <form action="/cart" method="post">
+    {%- if cart.item_count == 0 -%}
+      <div class="minicart__empty">
+        <div>
+          <h4 style="margin-bottom: 1rem;">{{ section.settings.cart_empty }}</h4>
+          <a class="primary-button" href=" {{ routes.all_products_collection_url }}">
+            {{- 'sections.ajax_cart.shop_now' | t -}}
+          </a>
+        </div>
+      </div>
+    {%- else -%}
+      <form class="minicart__form" action="/cart" method="post" data-ajax-cart-section>
+        <div class="minicart__header">
+          <h3 class="title">{{ section.settings.cart_title }}</h3>
+          {%- if section.settings.cart_text != blank -%}
+            <p class="cart-info">{{ section.settings.cart_text }}</p>
+          {%- endif -%}
+          <button
+            class="close-button"
+            data-ajax-cart-toggle-class-button="js-ajax-cart-opened"
+            type="button"
+            aria-label="{{ 'accessibility.close' | t }}"
+          ></button>
+        </div>
         <div class="minicart__body">
-          <div class="cart-items">
-            {% for item in cart.items %}
-              <div class="cart-items__item">
-                <div class="cart-items__image">
-                  <img
-                    alt="{{ item.image.alt }}"
-                    class="cover"
-                    loading="lazy"
-                    sizes="auto"
-                    src="{{ item.image | img_url: '250x' }}"
-                    width="100"
-                    height="150"
-                  >
-                </div>
-                <div class="cart-items__details">
-                  <h6 class="title">
-                    <a href="{{ item.url }}">{{ item.product.title }}</a>
-                  </h6>
-                  <div class="price">
-                    <div class="price__wrapper">
-                      <span class="price__original">{{ item.product.compare_at_price | money }}</span>
-                      <span class="price__current">{{ item.product.price | money }}</span>
-                    </div>
-                  </div>
-                  <div class="details">
-                    {% unless item.product.has_only_default_variant %}
-                      <ul class="details__options">
-                        {% for option in item.options_with_values %}
-                          <li>{{ option.name }}: {{ option.value }}</li>
-                        {% endfor %}
-                      </ul>
-                    {% endunless %}
-                    {% unless item.properties == empty %}
-                      <ul class="details__properties">
-                        {% for property in item.properties %}
-                          <li>{{ property.first }}: {{ property.last }}</li>
-                        {% endfor %}
-                      </ul>
-                    {% endunless %}
-                  </div>
-                  <div class="quantity-picker">
-                    <a
-                      href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}"
-                      data-ajax-cart-request-button
-                      class="quantity-picker__btn quantity-picker__btn--decrease"
-                      type="button"
-                      aria-label="{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}"
-                      >&#8212;</a
-                    >
-                    <input
-                      class="count"
-                      type="number"
-                      value="{{ item.quantity }}"
-                      data-ajax-cart-quantity-input="{{ forloop.index }}"
-                      aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
-                    >
-                    <a
-                      href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}"
-                      data-ajax-cart-request-button
-                      class="quantity-picker__btn quantity-picker__btn--increase"
-                      type="button"
-                      aria-label="{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}"
-                      >&#43;</a
-                    >
-                  </div>
-                  <a
-                    href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0"
-                    data-ajax-cart-request-button
-                    class="remove-btn"
-                    type="button"
-                  >
-                    {{- 'sections.ajax_cart.remove' | t -}}
-                  </a>
-                  <div class="item-error" data-ajax-cart-messages="{{ item.key }}"></div>
-                </div>
+          {% for item in cart.items %}
+            <div class="cart-item">
+              <div class="cart-item__image">
+                <img
+                  alt="{{ item.image.alt }}"
+                  class="cover"
+                  loading="lazy"
+                  sizes="auto"
+                  src="{{ item.image | img_url: '250x' }}"
+                  width="100"
+                  height="150"
+                >
               </div>
-            {% endfor %}
-          </div>
+              <div class="cart-items__details">
+                <h6 class="cart-item__title">
+                  <a href="{{ item.url }}">{{ item.product.title }}</a>
+                </h6>
+                <div class="cart-item__price">
+                  {%- if item.product.compare_at_price != nil -%}
+                    <span class="cart-item__price-original">{{ item.product.compare_at_price | money }}</span>
+                  {%- endif -%}
+                  <span class="cart-item__price-current">{{ item.product.price | money }}</span>
+                </div>
+                <div class="cart-item__details">
+                  {% unless item.product.has_only_default_variant %}
+                    <ul class="cart-item__options">
+                      {% for option in item.options_with_values %}
+                        <li>{{ option.name }}: {{ option.value }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endunless %}
+                  {% unless item.properties == empty %}
+                    <ul class="cart-item__properties">
+                      {% for property in item.properties %}
+                        <li>{{ property.first }}: {{ property.last }}</li>
+                      {% endfor %}
+                    </ul>
+                  {% endunless %}
+                </div>
+                <div class="quantity-picker">
+                  <a
+                    href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | minus: 1 }}"
+                    data-ajax-cart-request-button
+                    class="quantity-picker__btn quantity-picker__btn--decrease"
+                    type="button"
+                    aria-label="{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}"
+                    >&#8212;</a
+                  >
+                  <input
+                    class="count"
+                    type="number"
+                    value="{{ item.quantity }}"
+                    data-ajax-cart-quantity-input="{{ forloop.index }}"
+                    aria-label="{{ 'products.product.quantity.input_label' | t: product: item.product.title | escape }}"
+                  >
+                  <a
+                    href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity={{ item.quantity | plus: 1 }}"
+                    data-ajax-cart-request-button
+                    class="quantity-picker__btn quantity-picker__btn--increase"
+                    type="button"
+                    aria-label="{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}"
+                    >&#43;</a
+                  >
+                </div>
+                <a
+                  href="{{ routes.cart_change_url }}?line={{ forloop.index }}&quantity=0"
+                  data-ajax-cart-request-button
+                  class="remove-btn"
+                  type="button"
+                >
+                  {{- 'sections.ajax_cart.remove' | t -}}
+                </a>
+                <div class="item-error" data-ajax-cart-messages="{{ item.key }}"></div>
+              </div>
+            </div>
+          {% endfor %}
         </div>
 
         <div class="minicart__footer">
@@ -118,15 +127,7 @@
           </div>
         </div>
       </form>
-      <div class="empty-cartnote">
-        <div>
-          <h4 style="margin-bottom: 1rem;">{{ section.settings.cart_empty }}</h4>
-          <a class="primary-button" href=" {{ routes.all_products_collection_url }}">
-            {{- 'sections.ajax_cart.shop_now' | t -}}
-          </a>
-        </div>
-      </div>
-    </div>
+    {%- endif -%}
   </div>
 </div>
 

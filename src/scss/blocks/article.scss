@@ -20,9 +20,7 @@
   &__excerpt {
     padding: 2rem 0;
     margin-bottom: 2rem;
-
     font-size: rem(18px);
-
     border-bottom: 1px solid;
   }
 
@@ -44,9 +42,7 @@
 
   &__related-articles {
     display: grid;
-
     grid-template-columns: 50% 50%;
-
     margin-top: 1rem;
     @include media($mobile) {
       display: block;
@@ -75,7 +71,6 @@
 
     &__title {
       margin-bottom: 0.5rem;
-
       font-size: rem(20px);
       text-transform: none;
     }

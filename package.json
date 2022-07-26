@@ -20,6 +20,7 @@
   "license": "ISC",
   "dependencies": {
     "liquid-ajax-cart": "^1.10.0",
+    "stylelint-config-standard": "^26.0.0",
     "swiper": "^7.4.1"
   },
   "devDependencies": {
@@ -45,7 +46,6 @@
     "stylelint": "^14.9.1",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-sass-guidelines": "^9.0.1",
-    "stylelint-order": "^5.0.0",
     "stylelint-prettier": "^2.0.0",
     "terser-webpack-plugin": "^5.1.2",
     "transform-runtime": "0.0.0",

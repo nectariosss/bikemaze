@@ -41,10 +41,8 @@
 
     &__row {
       display: grid;
-
       grid-template-columns: 12% 1fr 12% 12% 12%;
       grid-gap: 1rem;
-
       padding: 1rem 0;
       @include media($tablet) {
         grid-template-columns: 100px 1fr 65px;
@@ -105,7 +103,6 @@
           .quantity-picker__btn {
             padding: 0;
             margin: 0;
-
             font-size: 18px;
             text-decoration: none;
           }
@@ -126,7 +123,6 @@
         ul {
           padding: 0;
           margin: rem(8px) 0;
-
           font-size: 16px;
           font-weight: 300;
           line-height: 136%;
@@ -147,9 +143,7 @@
 
       &__price {
         display: flex;
-
         flex-direction: column;
-
         justify-content: center;
         @include media($tablet) {
           display: block;
@@ -157,9 +151,7 @@
 
         .original-price {
           margin: 0;
-
           text-decoration: line-through;
-
           opacity: 0.3;
         }
 
@@ -167,7 +159,6 @@
           margin: 10px 0;
           @include media($tablet) {
             margin-top: 1rem;
-
             font-size: 12px;
             font-weight: 300;
             line-height: 14px;
@@ -185,9 +176,7 @@
 
         .quantity-picker {
           position: relative;
-
           margin: 0 auto;
-
           font-family: $font-extended;
           font-size: 16px;
           line-height: 19px;
@@ -210,11 +199,8 @@
 
       &__total {
         position: relative;
-
         display: flex;
-
         align-items: center;
-
         margin-left: auto;
         @include media($tablet) {
           display: none;
@@ -224,14 +210,11 @@
           position: absolute;
           right: 0;
           bottom: 0;
-
           padding: 0;
-
           font-size: 16px;
           font-weight: 300;
           line-height: 136%;
           text-decoration-line: underline;
-
           background: none;
           border: none;
         }
@@ -256,9 +239,7 @@
 
       &__title {
         display: flex;
-
         justify-content: space-between;
-
         margin-bottom: 0.5rem;
 
         h4,
@@ -272,7 +253,6 @@
 
       &__shipping {
         margin-bottom: 1rem;
-
         font-size: rem(16px);
         font-weight: 300;
         line-height: 136%;

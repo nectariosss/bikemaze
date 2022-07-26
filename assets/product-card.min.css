@@ -83,7 +83,7 @@
   margin-right: 8px;
   cursor: pointer;
   background: none;
-  border: none;
+  border: 0;
 }
 .product-card__wishlist button svg {
   width: 16px;
@@ -129,49 +129,48 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-.product-card__actions .add-to-cart-button .product-card:focus {
-  border: none;
-  outline: none;
-}
-.product-card__actions .product-card.only-one {
+.product-card__actions--only-one {
   grid-template-columns: 100%;
 }
-.product-card__actions .product-card.only-one .select2 {
+.product-card__actions--only-one .select-tag {
   display: none;
 }
 
-.card {
+.product-card__description {
   display: grid;
   grid-template-columns: 75% 25%;
   padding: 1rem 5px 8px;
 }
 @media only screen and (max-width: 767px) {
-  .card {
+  .product-card__description {
     grid-template-columns: none;
     padding: 8px;
   }
 }
-.card .product-card__titleblock .title {
+.product-card__description--soldout .title,
+.product-card__description--soldout .current-price {
+  text-decoration: line-through;
+}
+
+.product-card__titleblock .title {
   margin-bottom: 8px;
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.1875rem;
 }
 @media only screen and (max-width: 767px) {
-  .card .product-card__titleblock .title {
+  .product-card__titleblock .title {
     font-size: 0.75rem;
     line-height: 0.875rem;
   }
 }
-.card .product-card__titleblock .title a {
+.product-card__titleblock .title a {
   color: #000;
   text-decoration: none;
   transition: opacity 400ms ease;
 }
-.card .product-card__titleblock .title a .product-card:hover {
-  opacity: 0.6;
-}
-.card .product-card__priceblock {
+
+.product-card__priceblock {
   font-family: "Futura PT Light", sans-serif;
   font-size: 1rem;
   font-weight: normal;
@@ -179,21 +178,14 @@
   text-align: right;
 }
 @media only screen and (max-width: 767px) {
-  .card .product-card__priceblock {
+  .product-card__priceblock {
     font-size: 0.75rem;
     line-height: 0.875rem;
     text-align: left;
   }
 }
-.card .product-card__priceblock .old-price {
+.product-card__priceblock .old-price {
   color: #5c5c5c;
-  text-decoration: line-through;
-}
-
-.product-card.soldout .card__titleblock .title {
-  text-decoration: line-through;
-}
-.product-card.soldout .card__priceblock .current-price {
   text-decoration: line-through;
 }
 

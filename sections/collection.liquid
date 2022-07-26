@@ -212,10 +212,11 @@
           {%- else -%}
             <div class="products-list" data-products-list data-productsCount="{{ totalProducts }} products">
               <div class="loading-overlay"></div>
+              {% render 'stylesheet', name: 'product-card' %}
               {% paginate collection.products by 8 %}
                 <div class="products-list__products">
                   {% for product in collection.products %}
-                    {%- render 'product-card' product: product, hideHover: section.settings.show_secondary_image -%}
+                    {%- render 'product-card' product: product, hideHover: section.settings.show_secondary_image, withous_css: true -%}
                   {% endfor %}
                 </div>
                 <div class="products-list__pagination">

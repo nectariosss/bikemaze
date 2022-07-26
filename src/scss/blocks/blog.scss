@@ -19,7 +19,6 @@
     select {
       width: rem(150px);
       padding: rem(4px) rem(10px);
-
       border: 1px solid #000;
     }
   }
@@ -48,7 +47,6 @@
           &__excerpt {
             max-width: 70%;
             margin: 0 auto;
-
             text-align: center;
           }
 
@@ -77,7 +75,6 @@
 
         &__title {
           margin-bottom: 0.5rem;
-
           font-size: rem(20px);
           text-transform: none;
         }

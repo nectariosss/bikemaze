@@ -28,10 +28,8 @@
 
     #ProductsCount {
       display: inline-block;
-
       margin-top: 0.5rem;
       margin-bottom: 1rem;
-
       font-size: 14px;
       color: #909090;
     }
@@ -54,14 +52,11 @@
       #SortBy-imitator {
         padding-right: 2rem;
         padding-left: 0.5rem;
-
         cursor: pointer;
-
         background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTQgN0w4IDExTDEyIDciIHN0cm9rZT0iYmxhY2siIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPgo8L3N2Zz4K")
           97% 50% no-repeat;
         border: none;
         border-bottom: 1px solid #000;
-
         appearance: none; /* Firefox */
         appearance: none; /* Safari and Chrome */
         appearance: none;
@@ -78,17 +73,13 @@
         bottom: 0;
         left: 0;
         z-index: 99;
-
         display: none;
-
         background: #00000082;
       }
 
       .mobile-close-wrapper {
         display: none;
-
         margin-bottom: 1rem;
-
         text-align: right;
         @include media($tablet) {
           display: block;
@@ -99,7 +90,6 @@
           height: 16px;
           padding: 0;
           margin-left: auto;
-
           background: none;
           border: none;
 
@@ -114,21 +104,16 @@
         position: sticky;
         top: 0;
         z-index: 1;
-
         flex-direction: column;
         flex-wrap: wrap;
-
         align-content: flex-start;
         align-items: flex-start;
         justify-content: flex-start;
-
         width: 300px;
         height: 100%;
         padding: 1rem 1rem 1rem 0;
         margin-left: -300px;
-
         background: #fff;
-
         animation: 300ms ease 0s 1 normal forwards running
           animation-slideleft-open;
         @include media($tablet) {
@@ -136,10 +121,8 @@
           top: 0 !important;
           left: 0;
           z-index: 999;
-
           padding-left: 1rem;
           overflow: auto;
-
           animation: 300ms ease 0s 1 normal forwards running
             animation-slideleft-close;
         }
@@ -164,7 +147,6 @@
 
               .title {
                 margin-bottom: 0.5rem;
-
                 font-weight: 600;
                 text-transform: uppercase;
                 letter-spacing: 0.08em;
@@ -176,11 +158,8 @@
                 li {
                   .filter-checkbox {
                     position: relative;
-
                     display: flex;
-
                     align-items: center;
-
                     cursor: pointer;
 
                     input {
@@ -188,13 +167,10 @@
                       top: 0;
                       left: 0;
                       z-index: -1;
-
                       width: rem(16px);
                       height: rem(16px);
                       margin: 0;
-
                       opacity: 1;
-
                       appearance: none;
                       appearance: none;
                     }
@@ -209,7 +185,6 @@
                       top: 8px;
                       left: 3px;
                       z-index: 5;
-
                       visibility: hidden;
                     }
 
@@ -232,7 +207,6 @@
                 .field {
                   label {
                     display: block;
-
                     font-size: 12px;
                     text-transform: lowercase;
                   }
@@ -240,7 +214,6 @@
 
                 .range-sign {
                   align-self: flex-end;
-
                   height: 30px;
                   margin: 0 5px;
                 }
@@ -252,7 +225,6 @@
 
       &__listing {
         position: relative;
-
         width: 100%;
         max-width: 1920px;
       }
@@ -270,9 +242,7 @@
 
       &__products {
         display: grid;
-
         grid-template-columns: repeat(4, 25%);
-
         justify-content: space-between;
         @include media($tablet) {
           grid-template-columns: repeat(2, 50%);
@@ -295,9 +265,7 @@
         bottom: 0;
         left: 0;
         z-index: 2;
-
         visibility: hidden;
-
         background-color: #ffffff75;
       }
 
@@ -308,9 +276,7 @@
 
     .filter-toggle-button {
       font-weight: bold;
-
       cursor: pointer;
-
       background: transparent;
       border: none;
       border-bottom: 1px solid;

@@ -7,7 +7,6 @@
 
   .product-container {
     display: grid;
-
     grid-template-columns: 50% 46%;
     grid-gap: 4%;
     @include media($tablet-l) {
@@ -19,7 +18,6 @@
   .title {
     margin-top: 0;
     margin-bottom: 1rem;
-
     font-family: $font-extended;
     font-size: rem(16px);
     line-height: rem(19px);
@@ -27,9 +25,7 @@
 
   &__gallery {
     position: relative;
-
     display: grid;
-
     grid-template-columns: rem(99px) 1fr;
     grid-gap: 24px;
     @include media($tablet-l) {
@@ -62,10 +58,8 @@
         position: absolute;
         top: 50%;
         left: 50%;
-
         width: 40px;
         height: 40px;
-
         transform: translate(-50%, -50%);
       }
     }
@@ -89,12 +83,9 @@
         position: absolute;
         top: 50%;
         left: 50%;
-
         width: 120px;
         height: 120px;
-
         cursor: pointer;
-
         transform: translate(-50%, -50%);
 
         &:hover {
@@ -106,9 +97,7 @@
         svg {
           width: 120px;
           height: 120px;
-
           pointer-events: none;
-
           transition: filter 450ms ease;
         }
       }
@@ -128,15 +117,12 @@
 
       figure.zoom {
         position: relative;
-
         width: 100%;
         height: 100%;
         // max-height: 898px;
         aspect-ratio: 6/9;
         overflow: hidden;
-
         cursor: zoom-in;
-
         background-position: 50% 50%;
 
         & img:hover {
@@ -148,24 +134,18 @@
 
         img {
           display: block;
-
           width: 100%;
           height: 100%;
-
           transition: opacity 0.5s;
-
           object-fit: cover;
         }
       }
 
       .swiper-button {
         display: none;
-
         padding: 0;
         margin: 0;
-
         cursor: pointer;
-
         background: none;
         border: none;
         @include media($tablet-l) {
@@ -199,7 +179,6 @@
       .swiper-pagination-bullet {
         width: 14px;
         height: 14px;
-
         background: none;
         border: 1px solid $color-white;
         opacity: 1;
@@ -233,7 +212,6 @@
         margin-bottom: rem(14px);
         @include media($tablet-l) {
           margin-bottom: 5px;
-
           font-size: rem(32px);
           line-height: rem(38px);
         }
@@ -241,7 +219,6 @@
 
       &__price {
         display: flex;
-
         margin-top: 0;
         margin-bottom: 2rem;
 
@@ -264,7 +241,6 @@
 
       &__shopPay {
         margin-bottom: 1rem;
-
         font-size: rem(14px);
         font-weight: 300;
         line-height: 136%;
@@ -276,7 +252,6 @@
         [data-accordion="content-container"] {
           height: 0;
           overflow: hidden;
-
           transition: all 0.1s linear;
         }
 
@@ -287,12 +262,9 @@
 
           &__trigger {
             position: relative;
-
             display: block;
-
             width: 100%;
             padding-left: 0;
-
             font-family: $font-extended;
             // padding: 10px 12px;
             font-size: rem(16px);
@@ -300,25 +272,19 @@
             text-align: left;
             text-decoration: none;
             text-transform: uppercase;
-
             cursor: pointer;
-
             background: none;
             border: none;
 
             &::after {
               position: absolute;
               top: 2px;
-
               width: 16px;
               height: 16px;
               margin-left: 1rem;
-
               content: "";
-
               background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeT0iNyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIGZpbGw9ImJsYWNrIi8+CjxyZWN0IHg9IjciIHk9IjE0IiB3aWR0aD0iMTIiIGhlaWdodD0iMiIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDcgMTQpIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K")
                 0 0 no-repeat;
-
               transition: all 0.2s linear;
             }
 
@@ -330,7 +296,6 @@
 
           &__content {
             padding: 10px 0 0;
-
             font-size: rem(14px);
             font-weight: 300;
             line-height: 136%;
@@ -342,7 +307,6 @@
             ul {
               padding-left: 22px;
               margin: 1rem 0 0;
-
               list-style: disc;
 
               li {
@@ -358,47 +322,36 @@
 
         .quantity {
           display: flex;
-
           flex: 1;
-
           justify-content: space-between;
-
           max-width: 192px;
           height: 50px;
-
           text-align: center;
-
           border: 1px solid $color-grey;
 
           &__title {
             margin-top: 0;
             margin-bottom: 0.5rem;
-
             font-size: 1rem;
             text-transform: initial;
           }
 
           &__button {
             width: 100%;
-
             font-family: $font-extended;
             font-size: 1.5rem;
             line-height: rem(19px);
-
             cursor: pointer;
-
             background: none;
             border: none;
           }
 
           input[type="number"] {
             max-width: 50%;
-
             font-family: $font-extended;
             font-size: rem(16px);
             line-height: rem(19px);
             text-align: center;
-
             border: none;
           }
 
@@ -424,7 +377,6 @@
     padding: 0;
     margin-bottom: 1rem;
     margin-left: 0;
-
     border: none;
   }
 
@@ -434,7 +386,6 @@
 
   input[type="radio"] {
     position: absolute;
-
     width: 1px;
     height: 1px;
     overflow: hidden;
@@ -442,14 +393,10 @@
 
   input[type="radio"] + label {
     display: inline-block;
-
     padding: 0.5rem 2rem;
-
     cursor: pointer;
-
     background: transparent;
     border: 1px solid #e7e6e6;
-
     transition: border-color 300ms ease;
   }
 
@@ -486,19 +433,14 @@
 
     select {
       box-sizing: border-box;
-
       width: 100%;
       height: rem(48px);
       padding: 0 4rem 0 1.5rem;
-
       font-size: 1rem;
       line-height: 1.6;
-
       cursor: pointer;
-
       border-color: #c4c4c4;
       border-radius: 0;
-
       appearance: none;
       appearance: none;
     }
@@ -507,10 +449,8 @@
       position: absolute;
       top: calc(50% - 0.2rem);
       right: 1.5rem;
-
       width: 10px;
       height: 0.6rem;
-
       pointer-events: none;
     }
   }
@@ -536,7 +476,6 @@
 
   .shopify-payment-button__button {
     text-transform: uppercase;
-
     background-color: #795548;
     border-radius: 0;
 
@@ -554,44 +493,31 @@
     position: absolute;
     top: 50%;
     left: 50%;
-
     width: 25px;
     height: 25px;
     margin-top: -12px;
     margin-left: -12px;
-
     content: "";
-
     border: 4px solid grey;
     border-radius: 50px;
-
     animation: loading 0.5s linear infinite;
   }
 }
 
 .option-select {
   display: flex;
-
   flex-wrap: wrap;
-
   align-items: center;
-
   padding: 0;
-
   border: none;
 
   .product-form__field {
     position: relative;
-
     flex: 0 0 calc(20% - 8px);
-
     margin: 0 rem(8px) rem(8px) 0;
-
     line-height: rem(40px);
     text-align: center;
-
     cursor: pointer;
-
     border: 1px solid $color-grey;
     @include media($tablet) {
       flex: 0 0 calc(33% - 8px);
@@ -614,13 +540,10 @@
       &[type="radio"] {
         position: absolute;
         left: 0;
-
         width: 100%;
         height: 100%;
         margin: 0;
-
         cursor: pointer;
-
         opacity: 0;
 
         & + label {

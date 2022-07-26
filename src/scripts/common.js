@@ -28,7 +28,7 @@ document.addEventListener(
 
 window.addEventListener("resize", () => {});
 
-document.addEventListener("DOMContentLoaded ", () => {
+document.addEventListener("DOMContentLoaded", () => {
   productsCarousel();
 });
 
@@ -84,14 +84,6 @@ closeDrawer.forEach((item) => {
 });
 
 /**
- * Quantity Selector component
- */
-
-/**
- * Accordion component
- */
-
-/**
  * Swiper products carousel component
  */
 function productsCarousel() {
@@ -99,6 +91,7 @@ function productsCarousel() {
     ".products-carousel-swiper"
   );
   if (carouselElements.length) {
+    console.log(carouselElements);
     carouselElements.forEach((carousel) => {
       const limitPerView = carousel.getAttribute("data-limit_per_view");
       const limitPerViewMobile = carousel.getAttribute(

@@ -12,7 +12,6 @@
 .customer ul {
   padding-left: 4.4rem;
   margin-bottom: 4rem;
-
   line-height: 1.6;
   text-align: left;
 }
@@ -41,14 +40,10 @@
 /* Customer Table */
 .customer table {
   position: relative;
-
   width: 100%;
-
   font-size: 1rem;
-
   table-layout: auto;
   border-collapse: collapse;
-
   border-bottom: 0.01rem solid #000;
   box-shadow: none;
 }
@@ -74,10 +69,8 @@
 .customer th,
 .customer td {
   padding: 0;
-
   font-weight: 400;
   line-height: 1;
-
   border: none;
 }
 
@@ -111,7 +104,6 @@
   .customer td:first-of-type {
     padding-right: 1rem;
     padding-left: 0;
-
     text-align: left;
   }
 
@@ -198,14 +190,10 @@
 .customer tfoot::before {
   position: absolute;
   left: 0;
-
   display: block;
-
   width: 100%;
   height: 0.1rem;
-
   content: " ";
-
   background: #000;
 }
 
@@ -232,14 +220,11 @@
 
   .customer td::before {
     flex-grow: 1;
-
     padding-right: 2rem;
-
     font-size: 1.4rem;
     color: #000;
     text-align: left;
     text-transform: uppercase;
-
     content: attr(data-label);
   }
 
@@ -250,11 +235,8 @@
 
   .customer tr {
     display: flex;
-
     flex-direction: column;
-
     justify-content: flex-start;
-
     width: 100%;
   }
 }
@@ -274,11 +256,8 @@
 
 .customer .pagination ul {
   display: flex;
-
   justify-content: center;
-
   padding: 0;
-
   list-style: none;
 }
 
@@ -293,16 +272,12 @@
 
 .customer .pagination li :first-child {
   position: relative;
-
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   width: 100%;
   height: 4rem;
   padding: 0;
-
   text-decoration: none;
 }
 
@@ -324,23 +299,17 @@
   position: absolute;
   bottom: 0.08rem;
   left: 50%;
-
   display: block;
-
   width: 2rem;
   height: 0.01rem;
-
   content: "";
-
   background-color: currentcolor;
-
   transform: translateX(-50%);
 }
 
 /* Login */
 .login a {
   display: block;
-
   width: fit-content;
   margin: 0 auto;
 }
@@ -360,7 +329,6 @@
 
 .login h3 {
   margin-top: 1.5rem;
-
   font-size: 1rem;
   text-align: left;
 }
@@ -400,7 +368,6 @@
 .addresses li > button,
 .addresses form button[type] {
   color: #000;
-
   background-color: transparent;
   box-shadow: 0 0 0 0.1rem #000;
 }
@@ -460,7 +427,6 @@
 :is(.account, .order) h2 {
   margin-top: 4rem;
   margin-bottom: 1rem;
-
   font-size: rem(27px);
 }
 
@@ -501,7 +467,6 @@
 .account table td:first-of-type a {
   font-size: 1rem;
   text-decoration: underline;
-
   border: 0.1rem solid transparent;
 }
 
@@ -520,7 +485,6 @@
 .order tfoot tr:last-of-type th {
   padding-top: 1rem;
   padding-bottom: 1rem;
-
   font-size: 1rem;
 }
 
@@ -545,11 +509,8 @@
 
 .order .item-props {
   display: flex;
-
   flex-direction: column;
-
   margin-top: 0.05px;
-
   font-size: 1rem;
 }
 
@@ -562,10 +523,8 @@
   width: fit-content;
   padding: 1rem;
   margin-top: 1rem;
-
   font-size: 1rem;
   text-align: left;
-
   border: 0.01rem solid #000;
 }
 
@@ -579,10 +538,8 @@
 
 .order .cart-discount {
   display: block;
-
   margin-top: 1rem;
   margin-bottom: 0.5rem;
-
   font-size: 1rem;
 }
 
@@ -596,7 +553,6 @@
   padding-left: 0;
   margin-top: 1rem;
   margin-bottom: 0;
-
   font-size: 1rem;
   text-align: right;
   list-style: none;
@@ -614,9 +570,7 @@
 
 .order tbody tr:first-of-type td:first-of-type > div {
   display: flex;
-
   flex-direction: column;
-
   align-items: flex-end;
 }
 
@@ -639,7 +593,6 @@
 .order svg {
   width: 1.1rem;
   margin-right: 0.5rem;
-
   color: #000;
 }
 
@@ -658,7 +611,6 @@
 
 .order .unit-price {
   margin-top: 0.2rem;
-
   font-size: 1rem;
   line-height: 1.2;
   color: #000;
@@ -698,9 +650,7 @@
 label[for="AddressCountryNew"],
 label[for="AddressProvinceNew"] {
   display: block;
-
   margin-bottom: 0.6rem;
-
   font-size: 1.4rem;
 }
 
@@ -716,11 +666,8 @@ label[for="AddressProvinceNew"] {
 
 .addresses ul {
   display: flex;
-
   flex-wrap: wrap;
-
   padding-left: 0;
-
   text-align: center;
   list-style: none;
 }
@@ -731,7 +678,6 @@ label[for="AddressProvinceNew"] {
 
 li[data-address] {
   flex: 0 0 25%;
-
   width: 25%;
   padding-top: 2rem;
   margin-top: 2rem;
@@ -751,7 +697,6 @@ li[data-address] {
 
 li[data-address] > h2 {
   margin-bottom: 0;
-
   font-size: 1.8rem;
   text-align: center;
 }
@@ -795,26 +740,19 @@ li[data-address] > h2 {
 .customer .button {
   box-sizing: border-box;
   display: inline-flex;
-
   align-items: center;
   justify-content: center;
-
   padding: 0 10px;
   margin: 2rem 5px 1.5rem;
-
   font: inherit;
   color: #000;
   text-decoration: none;
-
   cursor: pointer;
-
   background-color: #fff;
   border: 0.1rem solid transparent;
   border-radius: 0;
   box-shadow: 0 0 0 0.1rem #000;
-
   transition: box-shadow 300ms ease;
-
   appearance: none;
   appearance: none;
 }
@@ -829,9 +767,7 @@ li[data-address] > h2 {
   margin-top: 2rem;
   margin-right: auto;
   margin-left: auto;
-
   color: #fff;
-
   background-color: #000;
 }
 

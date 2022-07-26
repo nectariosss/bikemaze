@@ -5,6 +5,70 @@
   src: local("Futura PT Light"), local("Futura-PT-Light"), url(FuturaPT-Light.woff2) format("woff2"), url(FuturaPT-Light.woff) format("woff"), url(FuturaPT-Light.ttf) format("truetype");
   font-display: swap;
 }
+.primary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #000;
+  border: 1px solid #000;
+  appearance: none;
+}
+.primary-button.loading {
+  font-size: 1px;
+  background-color: #fff;
+}
+.primary-button.loading::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  margin-top: -12px;
+  margin-left: -12px;
+  content: "";
+  border: 4px solid #808080;
+  border-radius: 50px;
+  animation: loading 1s linear infinite;
+}
+
+.secondary-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 48px;
+  color: #000;
+  text-decoration: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  background: #fff;
+  border: 1px solid #000;
+  appearance: none;
+}
+.secondary-button.loading {
+  font-size: 1px;
+  background-color: #fff;
+}
+.secondary-button.loading::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 25px;
+  margin-top: -12px;
+  margin-left: -12px;
+  content: "";
+  border: 4px solid #808080;
+  border-radius: 50px;
+  animation: loading 1s linear infinite;
+}
+
 /**
  * Swiper 7.4.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -659,78 +723,6 @@ img.auto {
   height: auto;
 }
 
-.primary-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 48px;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  background: #000;
-  border: 1px solid #000;
-  appearance: none;
-}
-.primary-button.loading {
-  font-size: 1px;
-  background-color: #fff;
-}
-.primary-button.loading::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 25px;
-  height: 25px;
-  margin-top: -12px;
-  margin-left: -12px;
-  content: "";
-  border: 4px solid grey;
-  border-radius: 50px;
-  animation: loading 1s linear infinite;
-}
-
-.secondary-button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 48px;
-  color: #000;
-  text-decoration: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  background: #fff;
-  border: 1px solid #000;
-  appearance: none;
-}
-.secondary-button.loading {
-  font-size: 1px;
-  background-color: #fff;
-}
-.secondary-button.loading::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 25px;
-  height: 25px;
-  margin-top: -12px;
-  margin-left: -12px;
-  content: "";
-  border: 4px solid grey;
-  border-radius: 50px;
-  animation: loading 1s linear infinite;
-}
-
-@keyframes loading {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
 .main-content {
   min-height: calc(100vh - 180px);
 }
@@ -805,6 +797,14 @@ img.auto {
   animation: lds-dual-ring 0.6s linear infinite;
 }
 
+@keyframes loading {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 @keyframes lds-dual-ring {
   0% {
     transform: rotate(0deg);
@@ -817,7 +817,7 @@ img.auto {
   height: 35px !important;
   font-family: "Futura PT Light", sans-serif !important;
   font-size: 12px !important;
-  border: none !important;
+  border: 0 !important;
 }
 .newsletter input::placeholder {
   font-size: 12px !important;

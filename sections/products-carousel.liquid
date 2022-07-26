@@ -12,10 +12,11 @@
         data-limit_per_view_mobile="{{ section.settings.carousel_mob }}"
         data-limit_per_view="{{ section.settings.carousel_desk }}"
       >
+        {%- render 'stylesheet', name: 'product-card' -%}
         <div class="swiper-wrapper">
           {% for product in collections[section.settings.carousel_coll].products limit: limit %}
             <div class="swiper-slide">
-              {%- render 'product-card', product: product -%}
+              {%- render 'product-card', product: product, without_css: true -%}
             </div>
           {% endfor %}
         </div>
