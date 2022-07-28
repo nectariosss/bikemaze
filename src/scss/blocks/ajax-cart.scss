@@ -112,15 +112,8 @@
 
 .minicart__body {
   overflow-y: auto;
-}
-
-.minicart__form {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  height: 100%;
 
   .js-ajax-cart-request-in-progress & {
-    opacity: 0.6;
+    @include loading;
   }
 }

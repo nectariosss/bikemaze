@@ -102,6 +102,28 @@
   display: block;
 }
 
+.product-card__form.js-ajax-cart-form-in-progress .secondary-button {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
+}
+.product-card__form.js-ajax-cart-form-in-progress .secondary-button::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  left: auto;
+  bottom: auto;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000 #000 #000 transparent;
+  animation: loading 0.5s linear infinite;
+}
+
 .product-card__actions {
   position: absolute;
   right: 0;
@@ -116,18 +138,6 @@
   .product-card__actions {
     display: none;
   }
-}
-.product-card__actions .add-to-cart-button {
-  height: 100%;
-  min-height: 40px;
-  padding: 0;
-  font-family: "Futura PT Light", sans-serif;
-  font-size: 0.875rem;
-  font-weight: normal;
-  line-height: 1.0625rem;
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
 }
 .product-card__actions--only-one {
   grid-template-columns: 100%;

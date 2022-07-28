@@ -46,7 +46,7 @@
   endif
 -%}
 <div class="product-card">
-  {% form "product", product, class: 'quickShop' %}
+  {% form "product", product, class: 'quickShop product-card__form' %}
     <div class="product-card__image">
       <div class="images">
         {%- if product.featured_media != blank -%}
@@ -94,7 +94,7 @@
             {%- endfor -%}
           </select>
           {% unless product.tags contains "comingsoon" %}
-            <button class="add-to-cart-button" type="submit">{{ 'products.product.quickadd' | t }}</button>
+            <button class="secondary-button" type="submit">{{ 'products.product.quickadd' | t }}</button>
           {% else %}
             <button class="disabled" type="button">{{ 'products.labels.comingsoon' | t }}</button>
           {% endunless %}

@@ -109,6 +109,12 @@
   display: block;
 }
 
+.product-card__form {
+  &.js-ajax-cart-form-in-progress .secondary-button {
+    @include loading;
+  }
+}
+
 .product-card__actions {
   position: absolute;
   right: 0;
@@ -120,19 +126,6 @@
   transition: opacity 400ms ease;
   @include media($tablet) {
     display: none;
-  }
-
-  .add-to-cart-button {
-    height: 100%;
-    min-height: 40px;
-    padding: 0;
-    font-family: $font-main;
-    font-size: rem(14px);
-    font-weight: normal;
-    line-height: rem(17px);
-    text-align: center;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
   }
 
   &--only-one {

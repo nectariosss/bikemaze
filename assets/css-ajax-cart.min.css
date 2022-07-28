@@ -35,13 +35,13 @@
   transform: translateX(100%);
   transition: 0.3s ease;
 }
-.js-ajax-cart-opened .minicart__inner {
-  transform: translateX(0);
-}
 @media only screen and (max-width: 479px) {
   .minicart__inner {
     width: 100%;
   }
+}
+.js-ajax-cart-opened .minicart__inner {
+  transform: translateX(0);
 }
 
 .minicart__section {
@@ -108,13 +108,24 @@
 .minicart__body {
   overflow-y: auto;
 }
-
-.minicart__form {
-  display: flex;
-  flex-grow: 1;
-  flex-direction: column;
-  height: 100%;
+.js-ajax-cart-request-in-progress .minicart__body {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
 }
-.js-ajax-cart-request-in-progress .minicart__form {
-  opacity: 0.6;
+.js-ajax-cart-request-in-progress .minicart__body::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  left: auto;
+  bottom: auto;
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000 #000 #000 transparent;
+  animation: loading 0.5s linear infinite;
 }

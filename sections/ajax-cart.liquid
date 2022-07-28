@@ -30,31 +30,30 @@
           </div>
         </div>
       {%- else -%}
-        <form class="minicart__form" action="/cart" method="post">
-          <div class="minicart__body">
-            {% for item in cart.items %}
-              {% render 'cart-item', item: item, index: forloop.index %}
-            {% endfor %}
+        <form class="minicart__body" action="/cart" method="post">
+          {% for item in cart.items %}
+            {% render 'cart-item', item: item, index: forloop.index %}
+          {% endfor %}
+        </form>
+        <div class="minicart__footer">
+          <div class="minicart__footer-title-section">
+            <h5 class="title">{{ 'sections.ajax_cart.subtotal' | t }}</h5>
+            <span class="subtotal">
+              {{ cart.total_price | money }}
+            </span>
           </div>
 
-          <div class="minicart__footer">
-            <div class="minicart__footer-title-section">
-              <h5 class="title">{{ 'sections.ajax_cart.subtotal' | t }}</h5>
-              <span class="subtotal">
-                {{ cart.total_price | money }}
-              </span>
-            </div>
-
-            <div class="minicart__footer-buttons-section">
-              <a class="secondary-button" href="{{ routes.cart_url }}">
-                {{ 'sections.ajax_cart.go_to_cart' | t }}
-              </a>
+          <div class="minicart__footer-buttons-section">
+            <a class="secondary-button" href="{{ routes.cart_url }}">
+              {{ 'sections.ajax_cart.go_to_cart' | t }}
+            </a>
+            <form action="/cart" method="post">
               <button class="primary-button" name="checkout" type="submit">
                 {{ 'sections.ajax_cart.checkout' | t }}
               </button>
-            </div>
+            </form>
           </div>
-        </form>
+        </div>
       {%- endif -%}
     </div>
   </div>

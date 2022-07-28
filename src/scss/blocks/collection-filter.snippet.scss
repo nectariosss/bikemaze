@@ -1,0 +1,140 @@
+@import "./form.scss";
+
+.collection-filter {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: flex-start;
+  justify-content: flex-start;
+  min-width: 300px;
+  width: 300px;
+  height: 100%;
+  padding: 1rem 1rem 1rem 0;
+  background: #fff;
+  opacity: 1;
+  transition: $transition-1;
+
+  @include media($tablet) {
+    position: absolute;
+    top: 0 !important;
+    left: 0;
+    z-index: 999;
+    padding-left: 1rem;
+    overflow: auto;
+  }
+
+  .collection-filter-close & {
+    margin-left: -300px;
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.collection-filter__item {
+  margin-bottom: 1.5rem;
+
+  .summary {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .title {
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+}
+
+.collection-filter__item-details {
+  .list {
+    li {
+      .filter-checkbox {
+        position: relative;
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+
+        input {
+          position: absolute;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          width: rem(16px);
+          height: rem(16px);
+          margin: 0;
+          opacity: 1;
+          appearance: none;
+          appearance: none;
+        }
+
+        & > svg {
+          margin-right: 0.5rem;
+          background-color: #fff;
+        }
+
+        .icon-checkmark {
+          position: absolute;
+          top: 8px;
+          left: 3px;
+          z-index: 5;
+          visibility: hidden;
+        }
+
+        input[type="checkbox"]:checked ~ .icon-checkmark {
+          visibility: visible;
+        }
+
+        &--disabled {
+          pointer-events: none;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  .price {
+    display: flex;
+    align-items: center;
+
+    .field {
+      label {
+        display: block;
+        font-size: 12px;
+        text-transform: lowercase;
+      }
+    }
+
+    .range-sign {
+      align-self: flex-end;
+      height: 30px;
+      margin: 0 5px;
+    }
+  }
+}
+
+.collection-filter__mobile-close {
+  display: none;
+  margin-bottom: 1rem;
+  text-align: right;
+  @include media($tablet) {
+    display: block;
+  }
+
+  button {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin-left: auto;
+    background: none;
+    border: 0;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+  }
+}

@@ -1,238 +1,180 @@
-.field__input,
-.select__select,
-.customer .field input,
-.customer select {
-  box-sizing: border-box;
-  width: 100%;
-  height: 3.6rem;
-  font-size: 1rem;
-  color: #000;
-  background-color: transparent;
-  border: 0.1rem solid transparent;
-  border-radius: 0;
-  box-shadow: 0 0 0 0.1rem #000;
-  transition: box-shadow 300ms ease;
-  appearance: none;
-  appearance: none;
-}
-
-.select__select {
-  font-size: 1rem;
-  color: #000;
-}
-
-.field__input:hover,
-.select__select:hover,
-.customer .field input:hover,
-.customer select:hover,
-.localization-form__select:hover {
-  box-shadow: 0 0 0 0.2rem #000;
-}
-
-.field__input:focus,
-.select__select:focus,
-.customer .field input:focus,
-.customer select:focus,
-.localization-form__select:focus {
-  outline: transparent;
-  box-shadow: 0 0 0 0.2rem #000;
-}
-
-.text-area,
-.select {
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-
-/* Select */
-
-.select .icon-caret,
-.customer select + svg {
-  position: absolute;
-  top: calc(50% - 0.2rem);
-  right: 1.5rem;
-  height: 0.6rem;
-  pointer-events: none;
-}
-
-.select__select,
-.customer select {
-  padding: 0 4rem 0 1.5rem;
-  line-height: 1.6;
-  cursor: pointer;
-}
-
-/* Field */
-
-.field {
-  position: relative;
-  display: flex;
-  width: 100%;
-}
-
-.customer .field {
+advanced-form {
   display: block;
 }
 
-.field--with-error {
-  flex-wrap: wrap;
+.form__fields-wrapper {
+  margin: 0 rem(-12px);
+
+  @media (min-width: $tablet) {
+    white-space: nowrap;
+  }
 }
 
-.field__input,
-.customer .field input {
-  flex-grow: 1;
-  padding: 1rem;
-  text-align: left;
+.form__field {
+  position: relative;
+  padding: rem(12px);
+  margin-bottom: rem(12px);
+  width: 100%;
+
+  &--no-bottom-space {
+    margin-bottom: 0;
+  }
+
+  &--half {
+    display: inline-block;
+    width: 100%;
+
+    @media (min-width: $tablet) {
+      width: 50%;
+    }
+  }
+
+  small {
+    display: block;
+    margin-top: rem(8px);
+    color: $color-grey;
+  }
+
+  input {
+    border: none;
+    padding: rem(12px) 0;
+    background-color: transparent;
+    width: 100%;
+    outline: transparent;
+    box-shadow: 0 2px 0 -1px rgba($color: #000, $alpha: 20%);
+    transition: $transition-1;
+    appearance: none;
+    border-radius: 0;
+
+    &::placeholder {
+      opacity: 0;
+      color: $color-grey;
+      transition: $transition-1;
+    }
+
+    &[aria-invalid="true"] {
+      box-shadow: 0 3px 0 -1px rgba($color: $color-error, $alpha: 20%);
+
+      + label {
+        color: $color-error;
+      }
+    }
+
+    &:focus {
+      box-shadow: 0 3px 0 -1px $color-brand;
+
+      &::placeholder {
+        opacity: 1;
+      }
+
+      & + label {
+        bottom: auto;
+        color: $color-brand;
+        transform: translateY(0);
+      }
+    }
+
+    &:not(:placeholder-shown) {
+      & + label {
+        bottom: auto;
+        transform: translateY(0);
+      }
+    }
+
+    &[required] + label {
+      &::after {
+        content: "*";
+      }
+    }
+  }
+
+  label {
+    transition: $transition-1;
+    position: absolute;
+    color: $color-grey;
+    top: 0;
+    left: rem(12px);
+    transform: translateY(100%);
+  }
 }
 
-.field__label,
-.customer .field label {
-  position: absolute;
-  top: 0.8rem;
-  left: 1rem;
-  margin-bottom: 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  color: #000;
-  letter-spacing: 0.1rem;
-  pointer-events: none;
-  transition: top 300ms ease, font-size 300ms ease;
+.form__checkbox {
+  padding: 0 rem(12px);
+  margin-bottom: rem(12px);
+  width: 100%;
+
+  input {
+    @include visually-hidden;
+
+    &:checked + label {
+      &::before {
+        @include icon(tick, $color-brand);
+      }
+    }
+  }
+
+  label {
+    display: flex;
+    align-items: flex-start;
+
+    &::before {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      border: 1px solid $color-black;
+      margin-right: rem(8px);
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+  }
 }
 
-.field__input:focus ~ .field__label,
-.field__input:not(:placeholder-shown) ~ .field__label,
-.field__input:-webkit-autofill ~ .field__label,
-.customer .field input:focus ~ label,
-.customer .field input:not(:placeholder-shown) ~ label,
-.customer .field input:-webkit-autofill ~ label {
-  top: 0.3em;
-  font-size: rem(10px);
-  letter-spacing: 0.04rem;
-}
+.form__select {
+  padding: 0 rem(12px);
+  margin-bottom: rem(12px);
+  width: 100%;
 
-// .field__input:focus,
-// .field__input:not(:placeholder-shown),
-// .field__input:-webkit-autofill,
-// .customer .field input:focus,
-// .customer .field input:not(:placeholder-shown),
-// .customer .field input:-webkit-autofill {
-//     padding: 2.2rem 1.5rem 0.8rem;
-// }
+  select {
+    @include icon(arrowBottom);
 
-.field__input::-webkit-search-cancel-button,
-.customer .field input::-webkit-search-cancel-button {
-  display: none;
-}
+    appearance: none;
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+    padding: rem(12px) 0;
+    padding-right: rem(24px);
+    border: none;
+    box-shadow: 0 2px 0 -1px rgba($color: #000, $alpha: 20%);
+    transition: $transition-1;
+    outline: transparent;
+    background-position: center right;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    color: inherit;
 
-.field__input::placeholder,
-.customer .field input::placeholder {
-  opacity: 0;
-}
+    &:focus {
+      @include icon(arrowTop);
 
-.field__button {
-  position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3rem;
-  height: 3rem;
-  padding: 0;
-  overflow: hidden;
-  color: currentcolor;
-  cursor: pointer;
-  background-color: transparent;
-  border: 0;
-}
+      box-shadow: 0 3px 0 -1px $color-brand;
+    }
+  }
 
-.field__button > svg {
-  width: 2.5rem;
-  height: 2.5rem;
-}
-
-.field__input:-webkit-autofill ~ .field__button,
-.field__input:-webkit-autofill ~ .field__label,
-.customer .field input:-webkit-autofill ~ label {
-  color: rgb(0 0 0);
-}
-
-/* Text area */
-
-.text-area {
-  min-height: 10rem;
-  padding: 1.2rem;
-  resize: none;
-}
-
-.text-area--resize-vertical {
-  resize: vertical;
-}
-
-input[type="checkbox"] {
-  display: inline-block;
-  width: auto;
-  margin-right: 0.5rem;
-}
-
-/* Form global */
-
-.form__label {
-  display: block;
-  margin-bottom: 0.6rem;
+  label {
+    padding-top: rem(12px);
+    color: $color-grey;
+    display: block;
+  }
 }
 
 .form__message {
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-  font-size: 1rem;
-  line-height: 1;
-}
+  padding: 0 rem(8px);
+  text-align: center;
+  display: block;
 
-.form__message--large {
-  font-size: 1.2rem;
-}
-
-.customer .field .form__message {
-  font-size: 1rem;
-  text-align: left;
-}
-
-.form__message .icon,
-.customer .form__message svg {
-  flex-shrink: 0;
-  width: 1.3rem;
-  height: 1.3rem;
-  margin-right: 0.5rem;
-}
-
-.form__message--large .icon,
-.customer .form__message svg {
-  width: 1.5rem;
-  height: 1.5rem;
-  margin-right: 1rem;
-}
-
-.customer .field .form__message svg {
-  align-self: start;
-}
-
-.form-status {
-  margin: 0;
-  font-size: 1rem;
-}
-
-.form-status-list {
-  padding: 0;
-  margin: 2rem 0 4rem;
-}
-
-.form-status-list li {
-  list-style-position: inside;
-}
-
-.form-status-list .link::first-letter {
-  text-transform: capitalize;
+  &--error {
+    color: $color-error;
+  }
 }

@@ -1,6 +1,4 @@
 .primary-button {
-  @include loading;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -16,8 +14,6 @@
 }
 
 .secondary-button {
-  @include loading;
-
   display: flex;
   align-items: center;
   justify-content: center;
