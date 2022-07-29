@@ -60,24 +60,25 @@ class SomeRandomComponent extends HTMLElement {
 
 customElements.define("some-random-component", SomeRandomComponent );
 ```
+
 **Including css files** - to include css files there are two ways:
 1. Use `stylesheet` snippet when section is not visible on the first render for e.g footer:
 
-	```
+```
 {%- render "stylesheet", name: "css-file-name-in-assets-without-min-css", defer: false -%}
 ```
 2. Use `{%- style -%}` tag in liquid to render html style tag here for sections that are visible on first page load. e.g header, here section.
 In order to generate css snippet from scss, you need to add .snippet at the and of the filename. e.g `some-file.snippet.scss`
 
-	```
+```
 {%- style -%}
 		{%- render "css-snippet-file-name" -%}
 {%- endstyle -%}
 ```
 
-	**P.S**
-	- if you add *.snippet-asset* at the and of the scss file name, webpack will generate both snippet and asset.
-	- if you add *.ignore* at the end of the scss file name, webpack will ignore it.
+**P.S**
+- if you add *.snippet-asset* at the and of the scss file name, webpack will generate both snippet and asset.
+- if you add *.ignore* at the end of the scss file name, webpack will ignore it.
 	
 	
 
