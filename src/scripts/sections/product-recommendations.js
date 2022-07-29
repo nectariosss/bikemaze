@@ -1,5 +1,6 @@
 import { swiperArrows } from "../helpers";
 
+// TODO: move this components
 /**
  * Shopify Product Recommendations
  */

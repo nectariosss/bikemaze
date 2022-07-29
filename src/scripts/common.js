@@ -32,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
   productsCarousel();
 });
 
+// TODO: refactor event listener and menu-items
 /**
  * Header menu
  */

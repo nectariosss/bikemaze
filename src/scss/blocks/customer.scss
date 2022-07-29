@@ -1,3 +1,5 @@
+// TODO: refactor nested selectors
+
 @import "./form";
 
 .customer:not(.account, .order) {

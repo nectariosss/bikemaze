@@ -1,5 +1,7 @@
 import { debounce } from "../helpers";
 
+// TODO: move this to components
+
 class PredictiveSearch extends HTMLElement {
   constructor() {
     super();

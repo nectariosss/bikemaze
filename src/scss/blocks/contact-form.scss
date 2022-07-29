@@ -1,4 +1,6 @@
-@import "./form.scss";
+// TODO: refactor nested selectors
+
+@import "./form";
 
 .contact-form {
   form {
@@ -14,15 +16,5 @@
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
-
-    .field {
-      &.half-width {
-        width: calc(50% - 1rem);
-      }
-    }
-
-    .field-inner {
-      margin: 1rem;
-    }
   }
 }

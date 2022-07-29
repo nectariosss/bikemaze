@@ -1,3 +1,5 @@
+// TODO: refactor nested selectors
+
 .product {
   padding: 4rem rem(40px);
   @include media($tablet-l) {

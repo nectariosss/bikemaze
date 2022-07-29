@@ -1,3 +1,5 @@
+// TODO: rewrite the whole logic to a single web component
+
 const selectors = {
   customerAddresses: "[data-customer-addresses]",
   addressCountrySelect: "[data-address-country-select]",

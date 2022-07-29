@@ -1,7 +1,4 @@
 {%- render 'stylesheet', name: 'contact-form' -%}
-{% comment %}
-  TODO: change form class names
-{% endcomment %}
 
 <div class="container-min">
   <div class="contact-form__body">
@@ -10,7 +7,7 @@
     {%- endif -%}
 
     {% assign formID = section.settings.form_id %}
-    {%- form 'contact', id: formID -%}
+    {%- form 'contact', id: formID, class: "form" -%}
       {%- if form.posted_successfully? -%}
         <div class="form-status form-status-list form__message" tabindex="-1" autofocus>
           {% render 'icon-success' %}
@@ -36,12 +33,11 @@
         {%- for block in section.blocks -%}
           {%- case block.type -%}
             {%- when 'email' -%}
-              <div class="field {% if block.settings.half_width %}half-width{% endif %}">
+              <div class="form__field {% if block.settings.half_width %}form__field--half{% endif %}">
                 <input
                   autocomplete="email"
                   type="email"
                   id="{{ formID }}-email"
-                  class="field__input"
                   name="contact[email]"
                   spellcheck="false"
                   autocapitalize="off"
@@ -53,10 +49,7 @@
                   {% endif %}
                   placeholder="{{ block.settings.label }}"
                 >
-                <label class="field__label" for="{{ formID }}-email">
-                  {{- block.settings.label }}
-                  <span aria-hidden="true">*</span></label
-                >
+                <label for="{{ formID }}-email">{{- block.settings.label }}</label>
                 {%- if form.errors contains 'email' -%}
                   <small class="contact__field-error" id="{{ formID }}-email-error">
                     <span class="visually-hidden">{{ 'accessibility.error' | t }}</span>
@@ -69,7 +62,7 @@
                 {%- endif -%}
               </div>
             {%- when 'msg' -%}
-              <div class="field {% if block.settings.half_width %}half-width{% endif %}">
+              <div class="form__field {% if block.settings.half_width %}form__field--half{% endif %}">
                 <textarea
                   rows="10"
                   id="{{ formID }}-body"
@@ -79,7 +72,7 @@
                 >
                     {{- form.body -}}
                 </textarea>
-                <label class="form__label field__label" for="{{ formID }}-body">{{ block.settings.label }}</label>
+                <label for="{{ formID }}-body">{{ block.settings.label }}</label>
               </div>
             {%- when 'custom_field' -%}
               <div class="field {% if block.settings.half_width %}half-width{% endif %}">
@@ -96,7 +89,6 @@
                   endunless
                 -%}
                 <input
-                  class="field__input"
                   type="{{ block.settings.field }}"
                   {% if block.settings.pattern != blank %}
                     pattern="{{ block.settings.pattern }}"
@@ -106,7 +98,7 @@
                   value="{{ value }}"
                   placeholder="{{ block.settings.label }}"
                 >
-                <label class="field__label" for="{{ formID }}-{{ block.settings.label | handleize }}">
+                <label for="{{ formID }}-{{ block.settings.label | handleize }}">
                   {{- block.settings.label -}}
                 </label>
               </div>
