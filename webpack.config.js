@@ -3,6 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const glob = require("glob");
 const RemoveEmptyScriptsPlugin = require("webpack-remove-empty-scripts");
 const WebpackHookPlugin = require("webpack-hook-plugin");
+const mode = process.env.NODE_ENV || "development";
 
 const files = {
   // templates_scssPath: "./src/scss/templates/*.scss",
@@ -38,6 +39,7 @@ function getFileName(path) {
   let isAsset = true;
   const rgx = /[^\\\/]+(?=\.)/g;
   let fileName = path.match(rgx)[0];
+  const fileExtension = path.split(".").pop();
 
   if (path.includes("scripts/components")) {
     fileName = `component-${fileName}`;
@@ -67,14 +69,16 @@ function getFileName(path) {
     fileName = fileName.replace(ignoreRgx, "");
   }
 
-  return [fileName, isSnippet, isAsset];
+  return [fileName, isSnippet, isAsset, fileExtension];
 }
 
 function templatesEntry(arr) {
   let entries = {};
   for (let i = 0; i < arr.length; i++) {
     for (let file of glob.sync(arr[i])) {
-      const [fileName, , isAsset] = getFileName(file);
+      let [fileName, , isAsset, fileExtension] = getFileName(file);
+      if (fileExtension === "js") fileName = `js-${fileName}.min`;
+      if (fileExtension === "scss") fileName = `css-${fileName}.min`;
       if (!isAsset) continue;
       entries[fileName] = file;
     }
@@ -101,9 +105,7 @@ for (let file of glob.sync(files.blocks_scssPath)) {
   criticalEntries[`css-${fileName}.css`] = file;
 }
 
-module.exports = (env, argv) => {
-  const mode = argv.mode || "development";
-
+module.exports = () => {
   const config = {
     mode: mode,
     devtool: false, //disable sourcemap for js
@@ -120,7 +122,6 @@ module.exports = (env, argv) => {
     name: "Common",
     entry: entries,
     output: {
-      filename: "js-[name].min.js",
       path: files.assetsDir,
     },
     module: {
@@ -168,7 +169,7 @@ module.exports = (env, argv) => {
     plugins: [
       new RemoveEmptyScriptsPlugin(),
       new MiniCssExtractPlugin({
-        filename: "css-[name].min.css",
+        filename: "[name].css",
       }),
       new WebpackHookPlugin({
         onBuildExit: ["node clean.js"],

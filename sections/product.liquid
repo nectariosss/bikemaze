@@ -1,5 +1,5 @@
 {%- render 'stylesheet', name: 'product' -%}
-<script src="{{ 'product-js.min.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'js-product.min.js' | asset_url }}" defer="defer"></script>
 
 {%- comment -%}{%- assign current_variant = product.selected_or_first_available_variant -%}{%- endcomment -%}
 {%- assign current_variant = product.selected_variant -%}
@@ -255,23 +255,17 @@
 
         {% assign accordion_items = section.blocks | where: "type", "collapsible_tab" %}
         <!-- [TODO] <details><summary></summary></details> - html tags can replace this -->
-        <accordion-block class="product-details__description" data-allow-multiple-open data-first-open>
-          <ul class="accordion">
-            {%- for item in accordion_items -%}
-              <li class="accordion__item">
-                <button data-accordion="trigger" class="accordion__trigger">
-                  {{ item.settings.heading | default: item.settings.page.title }}
-                </button>
-                <div data-accordion="content-container">
-                  <div data-accordion="content" class="accordion__content">
-                    {{ item.settings.content }}
-                    {{ item.settings.page.content }}
-                  </div>
-                </div>
-              </li>
-            {%- endfor -%}
-          </ul>
-        </accordion-block>
+        {%- for item in accordion_items -%}
+          <accordion-block class="product-details__description">
+            <details>
+              <summary>{{ item.settings.heading | default: item.settings.page.title }}</summary>
+              <div>
+                {{ item.settings.content }}
+                {{ item.settings.page.content }}
+              </div>
+            </details>
+          </accordion-block>
+        {%- endfor -%}
       </div>
     </div>
   </div>

@@ -459,7 +459,7 @@
 .product-form {
   &__error-message {
     font-size: 10px;
-    color: $color-red;
+    color: $color-error;
     // padding: 1rem 0.5rem;
     & > div {
       padding-bottom: 1rem;

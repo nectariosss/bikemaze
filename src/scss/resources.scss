@@ -1,5 +1,5 @@
 @import "~sass-rem/rem";
-@import "./icon.scss";
+@import "./icon";
 
 // Primary Colors
 $color-black: #000;
@@ -62,6 +62,7 @@ $transition-1: 0.3s ease;
     border-style: solid;
     border-color: $color-black $color-black $color-black transparent;
     animation: loading 0.5s linear infinite;
+    @content;
   }
 }
 

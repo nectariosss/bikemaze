@@ -3,9 +3,7 @@
 @import "swiper/css/bundle";
 
 body {
-  &.test {
-    color: rgb(242 3 3);
-  }
+  display: block !important;
 
   &.js-ajax-cart-opened {
     overflow: hidden;
@@ -143,8 +141,4 @@ img {
     font-family: $font-main !important;
     font-size: 12px !important;
   }
-}
-
-body {
-  display: block !important;
 }

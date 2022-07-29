@@ -59,14 +59,16 @@
 
     {%- section 'header' -%}
     {%- render 'breadcrumbs' -%}
-    <main class="main-content" role="main" id="MainContent">
-      {{ content_for_layout }}
-    </main>
+    <component-loader>
+      <main class="main-content" role="main" id="MainContent">
+        {{ content_for_layout }}
+      </main>
 
-    {%- section 'footer' -%}
+      {%- section 'footer' -%}
 
-    {%- section 'ajax-cart' -%}
-    {%- section 'klaviyo-backinstock' -%}
+      {%- section 'ajax-cart' -%}
+      {%- section 'klaviyo-backinstock' -%}
+    </component-loader>
 
     <!-- Cart JSON -->
     <script type="application/json" data-ajax-cart-initial-state>

@@ -35,8 +35,17 @@ advanced-form {
     color: $color-grey;
   }
 
+  label {
+    transition: $transition-1;
+    position: absolute;
+    color: $color-grey;
+    top: 0;
+    left: rem(12px);
+    transform: translateY(100%);
+  }
+
   input {
-    border: none;
+    border: 0;
     padding: rem(12px) 0;
     background-color: transparent;
     width: 100%;
@@ -67,7 +76,7 @@ advanced-form {
         opacity: 1;
       }
 
-      & + label {
+      + label {
         bottom: auto;
         color: $color-brand;
         transform: translateY(0);
@@ -75,7 +84,7 @@ advanced-form {
     }
 
     &:not(:placeholder-shown) {
-      & + label {
+      + label {
         bottom: auto;
         transform: translateY(0);
       }
@@ -87,15 +96,6 @@ advanced-form {
       }
     }
   }
-
-  label {
-    transition: $transition-1;
-    position: absolute;
-    color: $color-grey;
-    top: 0;
-    left: rem(12px);
-    transform: translateY(100%);
-  }
 }
 
 .form__checkbox {
@@ -103,6 +103,7 @@ advanced-form {
   margin-bottom: rem(12px);
   width: 100%;
 
+  /* stylelint-disable-next-line no-descending-specificity */
   input {
     @include visually-hidden;
 
@@ -111,12 +112,18 @@ advanced-form {
         @include icon(tick, $color-brand);
       }
     }
+
+    &:disabled + label {
+      opacity: 0.5;
+    }
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   label {
     display: flex;
-    align-items: flex-start;
+    align-items: center;
 
+    /* stylelint-disable-next-line no-descending-specificity */
     &::before {
       content: "";
       display: inline-block;
@@ -140,12 +147,11 @@ advanced-form {
     @include icon(arrowBottom);
 
     appearance: none;
-    appearance: none;
     cursor: pointer;
     width: 100%;
     padding: rem(12px) 0;
     padding-right: rem(24px);
-    border: none;
+    border: 0;
     box-shadow: 0 2px 0 -1px rgba($color: #000, $alpha: 20%);
     transition: $transition-1;
     outline: transparent;
@@ -162,6 +168,7 @@ advanced-form {
     }
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   label {
     padding-top: rem(12px);
     color: $color-grey;
