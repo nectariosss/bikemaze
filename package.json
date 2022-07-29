@@ -54,7 +54,7 @@
     "webpack-hook-plugin": "^1.0.7",
     "webpack-remove-empty-scripts": "^0.7.1"
   },
-  "lint-staged": {
+  "lint-staged --allow-empty": {
     "*": "prettier --write",
     "src/**/*.scss": "stylelint --fix",
     "src/**/*.js": "eslint --fix"
