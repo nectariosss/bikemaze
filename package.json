@@ -12,7 +12,7 @@
     "export": "NODE_ENV=production webpack",
     "zip": "shopify theme package",
     "prepare": "husky install",
-    "eslint": "eslint src/**/*.js",
+    "eslint": "eslint --fix src/**/*.js",
     "prettier": "prettier --write .",
     "stylelint": "stylelint --fix src/**/*.scss"
   },
