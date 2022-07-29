@@ -25,11 +25,14 @@
     padding-left: 1rem;
     overflow: auto;
     transform: translateX(-120%);
-    width: 100%;
 
     .collection-filter-close & {
       transform: translateX(0);
     }
+  }
+
+  @include media($mobile) {
+    width: 100%;
   }
 
   @include media($tablet, min) {

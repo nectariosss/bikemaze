@@ -46,9 +46,9 @@ color: #c4c4c4; display: block; }
 flex-start; align-items: flex-start; justify-content: flex-start; min-width: 300px; width: 300px; height: 100%; padding:
 1rem 1rem 1rem 0; background: #fff; opacity: 1; transition: 0.3s ease; } @media only screen and (max-width: 767px) {
 .collection-filter { position: fixed; top: 0 !important; left: 0; z-index: 100; padding-left: 1rem; overflow: auto;
-transform: translateX(-120%); width: 100%; } .collection-filter-close .collection-filter { transform: translateX(0); } }
-@media only screen and (min-width: 767px) { .collection-filter-close .collection-filter { margin-left: -300px; opacity:
-0; visibility: hidden; } }
+transform: translateX(-120%); } .collection-filter-close .collection-filter { transform: translateX(0); } } @media only
+screen and (max-width: 479px) { .collection-filter { width: 100%; } } @media only screen and (min-width: 767px) {
+.collection-filter-close .collection-filter { margin-left: -300px; opacity: 0; visibility: hidden; } }
 
 .collection-filter__mobile-overlay { display: none; opacity: 0; visibility: hidden; transition: 0.3s ease; } @media only
 screen and (max-width: 767px) { .collection-filter__mobile-overlay { display: block; position: fixed; inset: 0; z-index:
