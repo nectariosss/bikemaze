@@ -200,14 +200,14 @@ module.exports = () => {
             {
               loader: "sass-loader",
               options:
-                mode === "production"
-                  ? {}
-                  : {
+                mode === "development"
+                  ? {
                       sourceMap: true,
                       sassOptions: {
                         outputStyle: "expanded",
                       },
-                    },
+                    }
+                  : {},
             },
             {
               loader: "sass-resources-loader",

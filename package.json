@@ -55,7 +55,7 @@
     "webpack-remove-empty-scripts": "^0.7.1"
   },
   "lint-staged": {
-    "*": "prettier --write",
+    "src/**/*.{scss,js}": "prettier --write",
     "src/**/*.scss": "stylelint --fix",
     "src/**/*.js": "eslint --fix"
   }
