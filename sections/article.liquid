@@ -44,12 +44,12 @@
   <div class="article__related-articles">
     {%- liquid
       assign related_article_counter = 0
-                                                                                                                                                                        			for related_article in blog.articles limit: 3
-                                                                                                                                                                        				if related_article.handle != article.handle and related_article_counter < 2
-                                                                                                                                                                        					render 'article-card', article: related_article, show_image: true
-                                                                                                                                                                        					assign related_article_counter = related_article_counter | plus: 1
-                                                                                                                                                                        				endif
-                                                                                                                                                                        			endfor
+                                                                                                                                                                                    			for related_article in blog.articles limit: 3
+                                                                                                                                                                                    				if related_article.handle != article.handle and related_article_counter < 2
+                                                                                                                                                                                    					render 'article-card', article: related_article, show_image: true
+                                                                                                                                                                                    					assign related_article_counter = related_article_counter | plus: 1
+                                                                                                                                                                                    				endif
+                                                                                                                                                                                    			endfor
     -%}
   </div>
 </div>
