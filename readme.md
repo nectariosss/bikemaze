@@ -72,7 +72,7 @@ In order to generate css snippet from scss, you need to add .snippet at the and 
 
 ```
 {%- style -%}
-		{%- render "css-snippet-file-name" -%}
+  {%- render "css-snippet-file-name" -%}
 {%- endstyle -%}
 ```
 
