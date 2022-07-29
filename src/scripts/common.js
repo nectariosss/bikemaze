@@ -1,11 +1,11 @@
-import { findAncestor, swiperArrows } from './helpers';
-import Swiper, { Navigation, Pagination, Thumbs } from 'swiper';
-import { configureCart } from 'liquid-ajax-cart';
-console.log('Hello');
+import { findAncestor, swiperArrows } from "./helpers";
+import Swiper, { Navigation, Pagination, Thumbs } from "swiper";
+import { configureCart } from "liquid-ajax-cart";
+console.log("Hello");
 /**
  * Configure Liquid Ajax Cart
  */
-configureCart('addToCartCssClass', 'js-ajax-cart-opened');
+configureCart("addToCartCssClass", "js-ajax-cart-opened");
 
 /**
  * Configure Swiper Modules
@@ -17,7 +17,7 @@ window.Swiper = Swiper;
  * Event Listeners
  */
 document.addEventListener(
-  'click',
+  "click",
   (event) => {
     if (event) {
       sampleMethod(event);
@@ -26,27 +26,27 @@ document.addEventListener(
   false
 );
 
-window.addEventListener('resize', () => {});
+window.addEventListener("resize", () => {});
 
-document.addEventListener('DOMContentLoaded ', () => {
+document.addEventListener("DOMContentLoaded", () => {
   productsCarousel();
 });
 
 /**
  * Header menu
  */
-const menuItemsWithSub = document.querySelectorAll('[data-mainmenu-hassub]');
+const menuItemsWithSub = document.querySelectorAll("[data-mainmenu-hassub]");
 
 menuItemsWithSub.forEach((item) => {
-  item.addEventListener('mouseenter', function () {
-    this.querySelector('[data-mega-menu]')?.classList.add('mega-menu--active');
+  item.addEventListener("mouseenter", function () {
+    this.querySelector("[data-mega-menu]")?.classList.add("mega-menu--active");
   });
   // Navigation menu mouse leave delay
-  item.addEventListener('mouseleave', function () {
+  item.addEventListener("mouseleave", function () {
     setTimeout(() => {
-      const elem = this.querySelector('[data-mega-menu]');
+      const elem = this.querySelector("[data-mega-menu]");
       if (elem?.classList) {
-        elem.classList.remove('mega-menu--active');
+        elem.classList.remove("mega-menu--active");
       }
     }, 300);
   });
@@ -55,54 +55,47 @@ menuItemsWithSub.forEach((item) => {
 /**
  * Mobile menu
  */
-const mobileMenuItems = document.querySelectorAll('[data-drawer-itemtoggle]');
+const mobileMenuItems = document.querySelectorAll("[data-drawer-itemtoggle]");
 
 mobileMenuItems.forEach((item) => {
-  const parentItem = findAncestor(item, '.hasSub');
+  const parentItem = findAncestor(item, ".hasSub");
 
-  item.addEventListener('click', function () {
-    parentItem.querySelector('[data-drawer-child]').classList.toggle('open');
+  item.addEventListener("click", function () {
+    parentItem.querySelector("[data-drawer-child]").classList.toggle("open");
   });
 });
 
-const drawer = document.querySelector('[data-drawer]');
-const openDrawer = document.querySelectorAll('[data-open-drawer]');
-const closeDrawer = document.querySelectorAll('[data-close-drawer]');
+const drawer = document.querySelector("[data-drawer]");
+const openDrawer = document.querySelectorAll("[data-open-drawer]");
+const closeDrawer = document.querySelectorAll("[data-close-drawer]");
 
 openDrawer.forEach((item) => {
-  item.addEventListener('click', function () {
-    drawer.classList.add('open');
-    document.body.classList.add('disable-body');
+  item.addEventListener("click", function () {
+    drawer.classList.add("open");
+    document.body.classList.add("disable-body");
   });
 });
 
 closeDrawer.forEach((item) => {
-  item.addEventListener('click', function () {
-    drawer.classList.remove('open');
-    document.body.classList.remove('disable-body');
+  item.addEventListener("click", function () {
+    drawer.classList.remove("open");
+    document.body.classList.remove("disable-body");
   });
 });
-
-/**
- * Quantity Selector component
- */
-
-/**
- * Accordion component
- */
 
 /**
  * Swiper products carousel component
  */
 function productsCarousel() {
   const carouselElements = document.querySelectorAll(
-    '.products-carousel-swiper'
+    ".products-carousel-swiper"
   );
   if (carouselElements.length) {
+    console.log(carouselElements);
     carouselElements.forEach((carousel) => {
-      const limitPerView = carousel.getAttribute('data-limit_per_view');
+      const limitPerView = carousel.getAttribute("data-limit_per_view");
       const limitPerViewMobile = carousel.getAttribute(
-        'data-limit_per_view_mobile'
+        "data-limit_per_view_mobile"
       );
       new Swiper(carousel, {
         spaceBetween: 0,
@@ -111,12 +104,12 @@ function productsCarousel() {
         autoHeight: true,
         watchOverflow: true,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
         pagination: {
-          el: '.swiper-pagination',
-          type: 'bullets',
+          el: ".swiper-pagination",
+          type: "bullets",
           clickable: true,
         },
         cssMode: false,
@@ -144,7 +137,7 @@ function productsCarousel() {
 }
 
 function sampleMethod(event) {
-  const element = event.target.closest('[data-some-attr]'); // add your element class/id/data-attr.
+  const element = event.target.closest("[data-some-attr]"); // add your element class/id/data-attr.
   if (element) {
     event.preventDefault();
     //.... your logic here

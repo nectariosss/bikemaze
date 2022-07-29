@@ -1,15 +1,17 @@
 @import "~sass-rem/rem";
+@import "./icon";
 
 // Primary Colors
 $color-black: #000;
+$color-brand: #000;
 $color-light-grey: #f4f4f4;
 $color-grey: #c4c4c4;
 $color-dark-grey: #d9d9d9;
 $color-white: #fff;
 
 // System Colors
-$color-red: #e31818;
-$color-green: #00c236;
+$color-error: #e31818;
+$color-success: #00c236;
 
 // Font family
 $font-main: "Futura PT Light", sans-serif;
@@ -20,6 +22,11 @@ $desktop-s: 1150px;
 $tablet-l: 991px;
 $tablet: 767px;
 $mobile: 479px;
+
+//z-index
+$z-index-drawer: 100; //100-200
+
+$transition-1: 0.3s ease;
 
 @mixin media($breakpoint, $name: max) {
   @if ($name == max) {
@@ -33,4 +40,40 @@ $mobile: 479px;
   } @else {
     @error "Unknown query name: #{$name}";
   }
+}
+
+@mixin loading($top: 5px, $left: auto, $bottom: auto, $right: 5px) {
+  position: relative;
+  pointer-events: none;
+  opacity: 0.8;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: $top;
+    right: $right;
+    left: $left;
+    bottom: $bottom;
+    display: block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $color-black $color-black $color-black transparent;
+    animation: loading 0.5s linear infinite;
+    @content;
+  }
+}
+
+@mixin visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }

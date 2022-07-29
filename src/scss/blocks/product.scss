@@ -7,28 +7,27 @@
 
   .product-container {
     display: grid;
-    grid-gap: 4%;
     grid-template-columns: 50% 46%;
+    grid-gap: 4%;
     @include media($tablet-l) {
-      grid-gap: initial;
       grid-template-columns: auto;
+      grid-gap: initial;
     }
   }
 
   .title {
+    margin-top: 0;
+    margin-bottom: 1rem;
     font-family: $font-extended;
     font-size: rem(16px);
     line-height: rem(19px);
-    margin-bottom: 1rem;
-    margin-top: 0;
   }
 
   &__gallery {
-    display: grid;
-    grid-gap: 24px;
-    grid-template-columns: rem(99px) 1fr;
     position: relative;
-
+    display: grid;
+    grid-template-columns: rem(99px) 1fr;
+    grid-gap: 24px;
     @include media($tablet-l) {
       grid-template-columns: auto;
     }
@@ -42,8 +41,8 @@
       }
 
       &__item {
-        cursor: pointer;
         max-height: 200px;
+        cursor: pointer;
 
         &.swiper-slide-thumb-active {
           border: 1px solid $color-black;
@@ -56,19 +55,19 @@
       }
 
       .video-play {
-        height: 40px;
-        left: 50%;
         position: absolute;
         top: 50%;
-        transform: translate(-50%, -50%);
+        left: 50%;
         width: 40px;
+        height: 40px;
+        transform: translate(-50%, -50%);
       }
     }
 
     .product-images {
-      margin-left: 0;
       // max-width: 557px;
       width: 100%;
+      margin-left: 0;
       @include media($tablet) {
         .swiper-slide {
           // height: auto;
@@ -81,13 +80,13 @@
       }
 
       .video-play {
-        cursor: pointer;
-        height: 120px;
-        left: 50%;
         position: absolute;
         top: 50%;
-        transform: translate(-50%, -50%);
+        left: 50%;
         width: 120px;
+        height: 120px;
+        cursor: pointer;
+        transform: translate(-50%, -50%);
 
         &:hover {
           svg {
@@ -96,16 +95,16 @@
         }
 
         svg {
+          width: 120px;
           height: 120px;
           pointer-events: none;
           transition: filter 450ms ease;
-          width: 120px;
         }
       }
 
       img {
-        object-fit: cover;
         width: 100%;
+        object-fit: cover;
       }
 
       .swiper-zoom-container {
@@ -117,14 +116,14 @@
       }
 
       figure.zoom {
-        // max-height: 898px;
-        aspect-ratio: 6/9;
-        background-position: 50% 50%;
-        cursor: zoom-in;
-        height: 100%;
-        overflow: hidden;
         position: relative;
         width: 100%;
+        height: 100%;
+        // max-height: 898px;
+        aspect-ratio: 6/9;
+        overflow: hidden;
+        cursor: zoom-in;
+        background-position: 50% 50%;
 
         & img:hover {
           opacity: 0;
@@ -135,20 +134,20 @@
 
         img {
           display: block;
-          height: 100%;
-          object-fit: cover;
-          transition: opacity 0.5s;
           width: 100%;
+          height: 100%;
+          transition: opacity 0.5s;
+          object-fit: cover;
         }
       }
 
       .swiper-button {
+        display: none;
+        padding: 0;
+        margin: 0;
+        cursor: pointer;
         background: none;
         border: none;
-        cursor: pointer;
-        display: none;
-        margin: 0;
-        padding: 0;
         @include media($tablet-l) {
           display: block;
         }
@@ -178,11 +177,11 @@
       }
 
       .swiper-pagination-bullet {
+        width: 14px;
+        height: 14px;
         background: none;
         border: 1px solid $color-white;
-        height: 14px;
         opacity: 1;
-        width: 14px;
       }
 
       .swiper-pagination-bullet-active {
@@ -195,9 +194,10 @@
     display: flex;
     padding-top: 5%;
     @include media($tablet-l) {
-      margin: 0 auto;
       max-width: 538px;
+      margin: 0 auto;
     }
+
     @include media($tablet) {
       padding-top: 1rem;
     }
@@ -211,20 +211,20 @@
       &__title {
         margin-bottom: rem(14px);
         @include media($tablet-l) {
+          margin-bottom: 5px;
           font-size: rem(32px);
           line-height: rem(38px);
-          margin-bottom: 5px;
         }
       }
 
       &__price {
         display: flex;
-        margin-bottom: 2rem;
         margin-top: 0;
+        margin-bottom: 2rem;
 
         h5 {
-          font-weight: 400;
           margin: 0;
+          font-weight: 400;
         }
 
         .sale-price {
@@ -240,16 +240,16 @@
       }
 
       &__shopPay {
+        margin-bottom: 1rem;
         font-size: rem(14px);
         font-weight: 300;
         line-height: 136%;
-        margin-bottom: 1rem;
       }
 
       &__description {
         margin-bottom: 1rem;
 
-        [data-accordion='content-container'] {
+        [data-accordion="content-container"] {
           height: 0;
           overflow: hidden;
           transition: all 0.1s linear;
@@ -261,53 +261,53 @@
           }
 
           &__trigger {
-            background: none;
-            border: none;
-            cursor: pointer;
+            position: relative;
             display: block;
+            width: 100%;
+            padding-left: 0;
             font-family: $font-extended;
             // padding: 10px 12px;
             font-size: rem(16px);
             line-height: rem(19px);
-            padding-left: 0;
-            position: relative;
             text-align: left;
             text-decoration: none;
             text-transform: uppercase;
-            width: 100%;
+            cursor: pointer;
+            background: none;
+            border: none;
 
             &::after {
-              background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeT0iNyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIGZpbGw9ImJsYWNrIi8+CjxyZWN0IHg9IjciIHk9IjE0IiB3aWR0aD0iMTIiIGhlaWdodD0iMiIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDcgMTQpIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K')
-                0 0 no-repeat;
-              content: '';
-              height: 16px;
-              margin-left: 1rem;
               position: absolute;
               top: 2px;
-              transition: all 0.2s linear;
               width: 16px;
+              height: 16px;
+              margin-left: 1rem;
+              content: "";
+              background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeT0iNyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIGZpbGw9ImJsYWNrIi8+CjxyZWN0IHg9IjciIHk9IjE0IiB3aWR0aD0iMTIiIGhlaWdodD0iMiIgdHJhbnNmb3JtPSJyb3RhdGUoLTkwIDcgMTQpIiBmaWxsPSJibGFjayIvPgo8L3N2Zz4K")
+                0 0 no-repeat;
+              transition: all 0.2s linear;
             }
 
             &.is-collapsed::after {
-              background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeT0iNyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=')
+              background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTYiIGhlaWdodD0iMTYiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3QgeT0iNyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIGZpbGw9ImJsYWNrIi8+Cjwvc3ZnPgo=")
                 0 0 no-repeat;
             }
           }
 
           &__content {
+            padding: 10px 0 0;
             font-size: rem(14px);
             font-weight: 300;
             line-height: 136%;
-            padding: 10px 0 0;
 
             p {
               margin-bottom: 4px;
             }
 
             ul {
-              list-style: disc;
-              margin: 1rem 0 0;
               padding-left: 22px;
+              margin: 1rem 0 0;
+              list-style: disc;
 
               li {
                 margin-bottom: 3px;
@@ -321,49 +321,49 @@
         margin-bottom: 1rem;
 
         .quantity {
-          border: 1px solid $color-grey;
           display: flex;
           flex: 1;
-          height: 50px;
           justify-content: space-between;
           max-width: 192px;
+          height: 50px;
           text-align: center;
+          border: 1px solid $color-grey;
 
           &__title {
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
             margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
             text-transform: initial;
           }
 
           &__button {
-            background: none;
-            border: none;
-            cursor: pointer;
+            width: 100%;
             font-family: $font-extended;
             font-size: 1.5rem;
             line-height: rem(19px);
-            width: 100%;
+            cursor: pointer;
+            background: none;
+            border: none;
           }
 
-          input[type='number'] {
-            border: none;
+          input[type="number"] {
+            max-width: 50%;
             font-family: $font-extended;
             font-size: rem(16px);
             line-height: rem(19px);
-            max-width: 50%;
             text-align: center;
+            border: none;
           }
 
           /* Chrome, Safari, Edge, Opera */
-          input[type='number']::-webkit-outer-spin-button,
-          input[type='number']::-webkit-inner-spin-button {
-            appearance: none;
+          input[type="number"]::-webkit-outer-spin-button,
+          input[type="number"]::-webkit-inner-spin-button {
             margin: 0;
+            appearance: none;
           }
 
           /* Firefox */
-          input[type='number'] {
+          input[type="number"] {
             appearance: textfield;
           }
         }
@@ -374,33 +374,33 @@
 
 .variant-button {
   &__wrapper {
-    border: none;
+    padding: 0;
     margin-bottom: 1rem;
     margin-left: 0;
-    padding: 0;
+    border: none;
   }
 
   &__label {
     margin-bottom: 0.5rem;
   }
 
-  input[type='radio'] {
-    height: 1px;
-    overflow: hidden;
+  input[type="radio"] {
     position: absolute;
     width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
 
-  input[type='radio'] + label {
-    background: transparent;
-    border: 1px solid #e7e6e6;
-    cursor: pointer;
+  input[type="radio"] + label {
     display: inline-block;
     padding: 0.5rem 2rem;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #e7e6e6;
     transition: border-color 300ms ease;
   }
 
-  input[type='radio'].unavailable + label {
+  input[type="radio"].unavailable + label {
     background: linear-gradient(
       to top right,
       #fff calc(50% - 1px),
@@ -409,11 +409,11 @@
     );
   }
 
-  input[type='radio'].hidden + label {
+  input[type="radio"].hidden + label {
     display: none;
   }
 
-  input[type='radio']:checked + label {
+  input[type="radio"]:checked + label {
     border-color: #000;
   }
 }
@@ -428,38 +428,38 @@
   }
 
   .select {
-    max-width: rem(192px);
     position: relative;
+    max-width: rem(192px);
 
     select {
-      appearance: none;
-      appearance: none;
+      box-sizing: border-box;
+      width: 100%;
+      height: rem(48px);
+      padding: 0 4rem 0 1.5rem;
+      font-size: 1rem;
+      line-height: 1.6;
+      cursor: pointer;
       border-color: #c4c4c4;
       border-radius: 0;
-      box-sizing: border-box;
-      cursor: pointer;
-      font-size: 1rem;
-      height: rem(48px);
-      line-height: 1.6;
-      padding: 0 4rem 0 1.5rem;
-      width: 100%;
+      appearance: none;
+      appearance: none;
     }
 
     .icon-caret {
+      position: absolute;
+      top: calc(50% - 0.2rem);
+      right: 1.5rem;
+      width: 10px;
       height: 0.6rem;
       pointer-events: none;
-      position: absolute;
-      right: 1.5rem;
-      top: calc(50% - 0.2rem);
-      width: 10px;
     }
   }
 }
 
 .product-form {
   &__error-message {
-    color: $color-red;
     font-size: 10px;
+    color: $color-error;
     // padding: 1rem 0.5rem;
     & > div {
       padding-bottom: 1rem;
@@ -475,9 +475,9 @@
   }
 
   .shopify-payment-button__button {
+    text-transform: uppercase;
     background-color: #795548;
     border-radius: 0;
-    text-transform: uppercase;
 
     &:hover {
       background-color: #af725d;
@@ -486,39 +486,39 @@
 }
 
 .js-ajax-cart-form-in-progress .product-form__submit {
-  background-color: #fff;
   font-size: 1px;
+  background-color: #fff;
 
   &::after {
-    animation: loading 0.5s linear infinite;
-    border: 4px solid grey;
-    border-radius: 50px;
-    content: '';
-    height: 25px;
-    left: 50%;
-    margin-left: -12px;
-    margin-top: -12px;
     position: absolute;
     top: 50%;
+    left: 50%;
     width: 25px;
+    height: 25px;
+    margin-top: -12px;
+    margin-left: -12px;
+    content: "";
+    border: 4px solid grey;
+    border-radius: 50px;
+    animation: loading 0.5s linear infinite;
   }
 }
 
 .option-select {
-  align-items: center;
-  border: none;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   padding: 0;
+  border: none;
 
   .product-form__field {
-    border: 1px solid $color-grey;
-    cursor: pointer;
-    flex: 0 0 calc(20% - 8px);
-    line-height: rem(40px);
-    margin: 0 rem(8px) rem(8px) 0;
     position: relative;
+    flex: 0 0 calc(20% - 8px);
+    margin: 0 rem(8px) rem(8px) 0;
+    line-height: rem(40px);
     text-align: center;
+    cursor: pointer;
+    border: 1px solid $color-grey;
     @include media($tablet) {
       flex: 0 0 calc(33% - 8px);
     }
@@ -528,8 +528,8 @@
     }
 
     &.disabled {
-      opacity: 0.4;
       pointer-events: auto;
+      opacity: 0.4;
 
       label {
         text-decoration: line-through;
@@ -537,14 +537,14 @@
     }
 
     input {
-      &[type='radio'] {
-        cursor: pointer;
-        height: 100%;
-        left: 0;
-        margin: 0;
-        opacity: 0;
+      &[type="radio"] {
         position: absolute;
+        left: 0;
         width: 100%;
+        height: 100%;
+        margin: 0;
+        cursor: pointer;
+        opacity: 0;
 
         & + label {
           margin-bottom: 0;

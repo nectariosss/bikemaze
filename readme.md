@@ -58,11 +58,11 @@ Every time you push anything on main branch, you may see github actions run, whi
 
 Add your user token to Shopify secrets.
 
-1.      Go to your profile settings (https://github.com/settings/tokens)
-2.      Generate new token.
-3.      Go to your repo settings (https://github.com/avex-designs/your-repo-name/settings/secrets/actions)
-4.      Click on "New repository secret" and add name as "DEPLOYMENT_GITHUB_TOKEN" and value as your personal token that we generated on step 2.
-5.      Save and make test push request to main branch.
+1.        Go to your profile settings (https://github.com/settings/tokens)
+2.        Generate new token.
+3.        Go to your repo settings (https://github.com/avex-designs/your-repo-name/settings/secrets/actions)
+4.        Click on "New repository secret" and add name as "DEPLOYMENT_GITHUB_TOKEN" and value as your personal token that we generated on step 2.
+5.        Save and make test push request to main branch.
 
 ##### Ideal flow:
 

@@ -1,13 +1,13 @@
 {% comment %}
-    Renders a list of product's price (regular, sale, unit)
-    Accompanies product forms and meant to be updated dynamically
-    Accepts:
-    - variant: {Object} Variant Liquid object (optional)
-    - product: {Object} Product Liquid object (optional)
-    - show_vendor: {Boolean} Show the product's vendor depending on the section setting (optional)
+  Renders a list of product's price (regular, sale, unit)
+  Accompanies product forms and meant to be updated dynamically
+  Accepts:
+  - variant: {Object} Variant Liquid object (optional)
+  - product: {Object} Product Liquid object (optional)
+  - show_vendor: {Boolean} Show the product's vendor depending on the section setting (optional)
 
-    Usage:
-    {% render 'product-price', variant: current_variant, product: product %}
+  Usage:
+  {% render 'product-price', variant: current_variant, product: product %}
 {% endcomment %}
 {%- liquid
   if variant.title
@@ -21,10 +21,13 @@
   endif
 -%}
 
-<dl class="price
-  {% if available == false %} price--sold-out {% endif %}
-  {% if compare_at_price > price %} price--on-sale {% endif %}
-  {% if variant.unit_price_measurement %} price--unit-available {% endif %}"
+<dl
+  class="
+    price
+    {% if available == false %} price--sold-out {% endif %}
+    {% if compare_at_price > price %} price--on-sale {% endif %}
+    {% if variant.unit_price_measurement %} price--unit-available {% endif %}
+  "
   data-price
 >
   {%- comment -%}

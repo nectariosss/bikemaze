@@ -4,10 +4,12 @@
 ::before {
   box-sizing: border-box;
 }
+
 ol[class],
 ul[class] {
   padding: 0;
 }
+
 blockquote,
 body,
 dd,
@@ -24,46 +26,57 @@ p,
 ul[class] {
   margin: 0;
 }
+
 body {
   min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
   line-height: 1.5;
+  scroll-behavior: smooth;
+  text-rendering: optimizespeed;
 }
+
 ol[class],
 ul[class] {
   list-style: none;
 }
+
 a:not([class]) {
   text-decoration-skip-ink: auto;
 }
+
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
 }
+
 article > * + * {
   margin-top: 1em;
 }
+
 button,
 input,
 select,
 textarea {
   font: inherit;
 }
+
+button[type] {
+  cursor: pointer;
+}
+
 @media (prefers-reduced-motion: reduce) {
   * {
+    transition-duration: 0s !important;
     animation-duration: 0s !important;
     animation-iteration-count: 1 !important;
-    transition-duration: 0s !important;
     scroll-behavior: auto !important;
   }
 }
 
 html {
   font-family: $font-main;
-  line-height: 136%;
-  font-weight: 300;
   font-size: 16px;
+  font-weight: 300;
+  line-height: 136%;
   scroll-behavior: smooth;
 }
 
@@ -88,17 +101,19 @@ h4,
   font-weight: bold;
   text-transform: uppercase;
 }
+
 h5,
 .h5 {
   font-family: $font-extended;
   font-weight: normal;
   text-transform: uppercase;
 }
+
 h6,
 .h6 {
   font-family: $font-main;
-  text-transform: uppercase;
   font-weight: normal;
+  text-transform: uppercase;
 }
 
 h1,
@@ -106,26 +121,31 @@ h1,
   font-size: rem(88px);
   line-height: 95%;
 }
+
 h2,
 .h2 {
   font-size: rem(60px);
   line-height: 95%;
 }
+
 h3,
 .h3 {
   font-size: rem(40px);
   line-height: rem(48px);
 }
+
 h4,
 .h4 {
   font-size: rem(24px);
   line-height: rem(29px);
 }
+
 h5,
 .h5 {
   font-size: rem(16px);
   line-height: rem(19px);
 }
+
 h6,
 .h6,
 .small {
@@ -138,25 +158,30 @@ h6,
   .h1 {
     font-size: rem(72px);
   }
+
   h2,
   .h2 {
     font-size: rem(40px);
   }
+
   h4,
   .h4 {
     font-size: rem(20px);
   }
 }
+
 @include media($tablet) {
   h1,
   .h1 {
     font-size: rem(48px);
   }
+
   h3,
   .h3 {
     font-size: rem(32px);
     line-height: 1.186;
   }
+
   h4,
   .h4 {
     font-size: rem(18px);
@@ -166,8 +191,10 @@ h6,
 .container-max {
   margin: 0 auto;
 }
+
 .container {
   @extend .container-max;
+
   padding: 0 rem(40px);
 
   @include media($tablet-l) {
@@ -178,6 +205,7 @@ h6,
     padding: 0 rem(16px);
   }
 }
+
 .container-min {
   max-width: 982px;
   padding: 0 2.5rem;
@@ -185,29 +213,34 @@ h6,
 }
 
 .disabled {
+  text-decoration: line-through;
   pointer-events: none;
   opacity: 0.5;
-  text-decoration: line-through;
 }
+
 .visually-disabled {
-  opacity: 0.5;
   text-decoration: line-through;
+  opacity: 0.5;
 }
+
 .grid-container {
   display: grid;
-  align-items: center;
   grid-auto-columns: 1fr;
+  align-items: center;
 
   &--w-gaps {
     grid-column-gap: rem(16px);
   }
 }
+
 .grid-item {
   grid-row: 1;
 }
+
 .hidden {
   display: none !important;
 }
+
 .visually-hidden {
   position: absolute !important;
   width: 1px !important;
@@ -219,12 +252,15 @@ h6,
   white-space: nowrap !important;
   border: 0 !important;
 }
+
 .text-center {
   text-align: center !important;
 }
+
 .text-left {
   text-align: left !important;
 }
+
 .text-right {
   text-align: right !important;
 }

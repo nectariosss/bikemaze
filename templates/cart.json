@@ -2,11 +2,8 @@
   "sections": {
     "main": {
       "type": "cart-page",
-      "settings": {
-      }
+      "settings": {}
     }
   },
-  "order": [
-    "main"
-  ]
+  "order": ["main"]
 }

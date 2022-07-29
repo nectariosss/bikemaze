@@ -17,9 +17,9 @@
     }
 
     select {
-      border: 1px solid #000;
-      padding: rem(4px) rem(10px);
       width: rem(150px);
+      padding: rem(4px) rem(10px);
+      border: 1px solid #000;
     }
   }
 
@@ -37,16 +37,16 @@
         grid-column: 1 / -1;
 
         .article-card {
-          border-bottom: 1px solid #d3d3d3;
           padding-bottom: 2rem;
+          border-bottom: 1px solid #d3d3d3;
 
           &__info {
             text-align: center;
           }
 
           &__excerpt {
-            margin: 0 auto;
             max-width: 70%;
+            margin: 0 auto;
             text-align: center;
           }
 
@@ -74,8 +74,8 @@
         }
 
         &__title {
-          font-size: rem(20px);
           margin-bottom: 0.5rem;
+          font-size: rem(20px);
           text-transform: none;
         }
 

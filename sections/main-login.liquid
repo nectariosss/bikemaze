@@ -13,7 +13,8 @@
       {%- form 'recover_customer_password' -%}
         {% assign recover_success = form.posted_successfully? %}
         <div class="field">
-          <input type="email"
+          <input
+            type="email"
             value=""
             name="email"
             id="RecoverEmail"
@@ -82,7 +83,7 @@
           {{ form.errors | default_errors }}
         {%- endif -%}
 
-        <div class="field">        
+        <div class="field">
           <input
             type="email"
             name="customer[email]"
@@ -101,7 +102,7 @@
         </div>
 
         {%- if form.password_needed -%}
-          <div class="field">          
+          <div class="field">
             <input
               type="password"
               value=""
@@ -130,10 +131,9 @@
         <a href="{{ routes.account_register_url }}">
           {{ 'customer.login_page.create_account' | t }}
         </a>
-        
       {%- endform -%}
     </div>
-    
+
     {%- if shop.checkout.guest_login -%}
       <div>
         <hr>
@@ -148,7 +148,6 @@
     {%- endif -%}
   </div>
 </div>
-
 
 {% schema %}
 {

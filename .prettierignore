@@ -1,2 +1,8 @@
-/*
-!/src
+.*
+*.json
+*.md
+*.config
+
+/assets
+/locales
+

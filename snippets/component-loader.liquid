@@ -1,16 +1,13 @@
+{%- render "components" -%}
+
 <script type="text/javascript">
-  const components = {
-    "accordion": "{{ 'component-accordion.min.js' | asset_url }}",
-    "modal-dialog": "{{ 'component-modal-dialog.min.js' | asset_url }}",
-    "modal-opener": "{{ 'component-modal-opener.min.js' | asset_url }}",
-    "quantity-input": "{{ 'component-quantity-input.min.js' | asset_url }}",
-  };
+  const components = window.components || {}
 
   class ComponentLoader extends HTMLElement {
     constructor() {
       super();
       Object.keys(components).forEach((component) => {
-        if (document.querySelector(component)) {
+        if (this.querySelector(component)) {
           this.injectScript(components[component], component);
           delete components[component];
         }

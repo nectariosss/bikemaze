@@ -1,13 +1,16 @@
-.giftcard{
-    text-align: center;
-    padding: 2rem 1rem;
-    img{
-        margin: 0 auto 2rem auto;
-    }
-    &__header{
-        margin-bottom: 2rem;
-    }
-    &__wrap{
-        margin-bottom: 2rem;
-    }
+.giftcard {
+  padding: 2rem 1rem;
+  text-align: center;
+
+  img {
+    margin: 0 auto 2rem;
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+  }
+
+  &__wrap {
+    margin-bottom: 2rem;
+  }
 }

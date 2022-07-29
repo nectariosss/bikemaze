@@ -32,13 +32,13 @@
                 {{ form.errors.translated_fields[field] | capitalize }}
                 {{ form.errors.messages[field] }}
               </a>
-            {%- endif-%}
+            {%- endif -%}
           </li>
         {%- endfor -%}
       </ul>
     {%- endif -%}
 
-    <div class="field">     
+    <div class="field">
       <input
         type="password"
         name="customer[password]"
@@ -58,12 +58,13 @@
           <svg aria-hidden="true" focusable="false" role="presentation">
             <use href="#icon-error" />
           </svg>
-          {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}
+          {{ form.errors.translated_fields['password'] | capitalize }}
+          {{ form.errors.messages['password'] }}
         </small>
       {%- endif -%}
     </div>
 
-    <div class="field">     
+    <div class="field">
       <input
         type="password"
         name="customer[password_confirmation]"
@@ -83,7 +84,8 @@
           <svg aria-hidden="true" focusable="false" role="presentation">
             <use href="#icon-error" />
           </svg>
-          {{ form.errors.translated_fields['password_confirmation'] | capitalize }} {{ form.errors.messages['password_confirmation'] }}
+          {{ form.errors.translated_fields['password_confirmation'] | capitalize }}
+          {{ form.errors.messages['password_confirmation'] }}
         </small>
       {%- endif -%}
     </div>
@@ -96,7 +98,6 @@
     </button>
   {%- endform -%}
 </div>
-
 
 {% schema %}
 {
