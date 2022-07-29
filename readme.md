@@ -38,6 +38,54 @@ git push -u origin main
 
 7. Run `npm run watch` to simultaneously watch, build and upload changes to Shopify
 
+## Get familiar with folder structure
+- src
+	- scripts
+		- components
+		- sections
+		- common js files
+	- scss
+		- blocks
+		- fonts
+		- images
+		- partials
+		- common scss files
+
+**Components folder** - any js file that consist of web component should go to this folder and keep in mind that component name and file name should be the same e.g
+for `some-random-component.js`
+```js
+class SomeRandomComponent extends HTMLElement {
+	 // class definition here
+}
+
+customElements.define("some-random-component", SomeRandomComponent );
+```
+**Including css files** - to include css files there are two ways:
+1. Use `stylesheet` snippet when section is not visible on the first render for e.g footer:
+
+	```
+{%- render "stylesheet", name: "css-file-name-in-assets-without-min-css", defer: false -%}
+```
+2. Use `{%- style -%}` tag in liquid to render html style tag here for sections that are visible on first page load. e.g header, here section.
+In order to generate css snippet from scss, you need to add .snippet at the and of the filename. e.g `some-file.snippet.scss`
+
+	```
+{%- style -%}
+		{%- render "css-snippet-file-name" -%}
+{%- endstyle -%}
+```
+
+	**P.S**
+	- if you add *.snippet-asset* at the and of the scss file name, webpack will generate both snippet and asset.
+	- if you add *.ignore* at the end of the scss file name, webpack will ignore it.
+	
+	
+
+## Linters and formatters
+We connected css, js and **liquid**(it uses experimental [formatter](http://https://shopify.dev/themes/tools/liquid-prettier-plugin "formatter") from Shopify) formatters and linters using prettier, eslint and stylelint. The root directory consist of config files and you are free to update them for your needs.
+
+Whenever you commit to a git, all linters and formatters will run to fix and beatify you code, but, you can use VSCode features to highlight warnings and errors.
+
 ## NPM Commands
 
 1.  `npm run zip` - creates archived theme files, ready for manual theme upload.
@@ -47,6 +95,14 @@ git push -u origin main
 3.  `npm run build` - runs webpack build command, to compile scss/js files.
 
 4.  `npm run export` - to unminify and un-uglify css/js files. (file names will stay .min extension)
+
+5.  `npm run components-watch` - to watch components folder and generate global components list
+
+6.  `npm run eslint` - to run eslint fixes
+
+7.  `npm run prettier` - to run prettier fixes
+
+8.  `npm run stylelint` - to run stylelint fixes
 
 ## Top Features
 
@@ -129,7 +185,22 @@ Install needed npm package and import it to `common.js`. Please assign your libr
 
 ## Reusable Web Components
 
-1.  **Modal popup** - `common.js::206(line)` CSS (already added in common.scss)
+**Components loder** - `components-loader.liquid`
+
+Description:
+It should be used to load web components defined in components folder dynamically(lazely). If you are using ajax to add html, please wrap your web components inside `components-loader` web component
+
+Usage:
+
+```html
+<components-loader>
+  ...
+  <some-other-web-component-that-should-be-loaded />
+</components-loader>
+```
+
+
+1.  **Modal popup**
 
 Usage:
 
@@ -141,26 +212,20 @@ Usage:
 <modal-dialog id="PopupModal"> Some text or html here.... </modal-dialog>
 ```
 
-2.  **Accordion** - `common.js::105(line)` CSS (already added in common.scss)
-
+2.  **Accordion** - feel free to apply styles, by default it uses html5 details style
 Usage:
 
 ```html
-<accordion-block data-allow-multiple-open data-first-open>
-  <ul class="accordion">
-    {%- for item in accordion_items -%}
-
-    <li class="accordion__item">
-      <button data-accordion="trigger">{{ item.title }}</button>
-
-      <div data-accordion="content-container">
-        <div data-accordion="content">{{ item.content }}</div>
+{%- for item in accordion_items -%}
+  <accordion-block>
+    <details>
+      <summary>{{ item.title }}</summary>
+      <div>
+        {{ item.content }}
       </div>
-    </li>
-
-    {%- endfor -%}
-  </ul>
-</accordion-block>
+    </details>
+  </accordion-block>
+{%- endfor -%}
 ```
 
 3.  **Product Carousel** - `common.js::160(line)`
@@ -279,6 +344,12 @@ fields and let the client to edit it)
 <a  href="https://github.com/EvgeniyMukhamedjanov">
 
 <img  src="https://github.com/EvgeniyMukhamedjanov.png?size=50"/>
+
+</a>
+
+<a  href="https://github.com/vecume">
+
+<img  src="https://github.com/vecume.png?size=50"/>
 
 </a>
 
