@@ -92,6 +92,7 @@ function initZoom() {
   }
 }
 
+// TODO: move this components
 /**
  * Variant Selector Select (dropdown) component
  */
@@ -348,6 +349,7 @@ class VariantSelects extends HTMLElement {
 }
 customElements.define("variant-selects", VariantSelects);
 
+// TODO: move this components
 /**
  * Variant Selector Radio component
  */

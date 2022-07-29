@@ -1,3 +1,5 @@
+// TODO: refactor nested selectors
+
 .hero-banner {
   .responsive-image__wrapper img {
     @include media($mobile) {
