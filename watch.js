@@ -31,7 +31,7 @@ async function populateComponents() {
 
 async function getComponents() {
   const files = await fsAsync.readdir(COMPONENTS_PATH);
-  return files.map((file) => file.replace(".js", ""));
+  return files.filter(file => file.includes("js")).map((file) => file.replace(".js", ""));
 }
 
 function getAssetUrl(name) {
