@@ -35,7 +35,7 @@ sortImitator.addEventListener(
 function calculateAsideTop() {
   const header = document.getElementById("shopify-section-header");
   if (
-    header.classList.contains("sticky-header") &&
+    header.classList.contains("header--sticky") &&
     document.querySelector("[data-filters]")
   ) {
     document.querySelector("[data-filters]").style.top =
