@@ -1,34 +1,15 @@
-.header-infobar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0.4375rem;
-  overflow: hidden;
-  font-size: 0.875rem;
-  font-style: normal;
-  font-weight: 300;
-  line-height: 136%;
-  color: #fff;
-  text-align: center;
-  background: #000;
+.header {
+  background-color: #000;
 }
-.header-infobar a {
-  color: inherit;
-}
-
-.sticky-header {
+.header--sticky {
   position: sticky;
   top: 0;
   z-index: 99;
 }
 @media print {
-  .sticky-header {
+  .header--sticky {
     position: relative;
   }
-}
-
-.header {
-  background-color: #000;
 }
 .header .site-name {
   font-family: "Futura PT Light", sans-serif;
@@ -43,75 +24,6 @@
 }
 .header .grid-container {
   grid-template-columns: 1fr 2fr 1fr;
-}
-.header__main-logo {
-  min-width: 9.375rem;
-}
-.header__main-logo img {
-  width: auto;
-  height: auto;
-}
-.header__nav > ul {
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-.header__nav-link {
-  display: inline-block;
-  padding: 1.625rem 1.25rem;
-  font-size: 0.875rem;
-  font-weight: 400;
-  line-height: 1.0625rem;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
-  transition: opacity 450ms ease;
-}
-@media only screen and (max-width: 1150px) {
-  .header__nav-link {
-    padding: 1.625rem 0.5rem;
-  }
-}
-.header__nav-link:hover + .mega-menu, .header__nav-link:hover + .header__nav-sub {
-  visibility: visible;
-  opacity: 1;
-}
-.header__nav-sub {
-  position: absolute;
-  top: 100%;
-  left: auto;
-  min-width: 7.5rem;
-  padding: 1rem;
-  text-align: left;
-  visibility: hidden;
-  background: #fff;
-  opacity: 0;
-  transition: opacity 450ms ease;
-}
-.header__nav-sub:hover {
-  visibility: visible;
-  opacity: 1;
-}
-.header ul.header__nav-sub {
-  padding: 0.625rem 1rem 0.625rem;
-}
-.header__nav-sublink {
-  display: inline-block;
-  margin-bottom: 0.625rem;
-  font-family: "Futura PT Light", sans-serif;
-  font-size: 1rem;
-  font-weight: normal;
-  line-height: 1.1875rem;
-  color: #000;
-  text-decoration: none;
-  text-transform: capitalize;
-  transition: opacity 450ms ease;
-}
-.header__nav-sublink:hover {
-  opacity: 0.5;
 }
 .header .mega-menu {
   position: absolute;
@@ -448,11 +360,13 @@
   color: #000;
   text-decoration: none;
 }
+
 @media only screen and (max-width: 991px) {
   .header__desktop {
     display: none;
   }
 }
+
 .header__mobile {
   display: none;
 }
@@ -460,4 +374,97 @@
   .header__mobile {
     display: block;
   }
+}
+
+.header__main-logo {
+  min-width: 9.375rem;
+}
+.header__main-logo img {
+  width: auto;
+  height: auto;
+}
+
+.header__nav > ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.header__nav-link {
+  display: inline-block;
+  padding: 1.625rem 1.25rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  line-height: 1.0625rem;
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: opacity 450ms ease;
+}
+@media only screen and (max-width: 1150px) {
+  .header__nav-link {
+    padding: 1.625rem 0.5rem;
+  }
+}
+.header__nav-link:hover + .mega-menu, .header__nav-link:hover + .header__nav-sub {
+  visibility: visible;
+  opacity: 1;
+}
+
+.header__nav-sub {
+  position: absolute;
+  top: 100%;
+  left: auto;
+  min-width: 7.5rem;
+  padding: 1rem;
+  text-align: left;
+  visibility: hidden;
+  background: #fff;
+  opacity: 0;
+  transition: opacity 450ms ease;
+}
+.header__nav-sub:hover {
+  visibility: visible;
+  opacity: 1;
+}
+
+.header__nav-sub {
+  padding: 0.625rem 1rem 0.625rem;
+}
+
+.header__nav-sublink {
+  display: inline-block;
+  margin-bottom: 0.625rem;
+  font-family: "Futura PT Light", sans-serif;
+  font-size: 1rem;
+  font-weight: normal;
+  line-height: 1.1875rem;
+  color: #000;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: opacity 450ms ease;
+}
+.header__nav-sublink:hover {
+  opacity: 0.5;
+}
+
+.header__infobar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4375rem;
+  overflow: hidden;
+  font-size: 0.875rem;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 136%;
+  color: #fff;
+  text-align: center;
+  background: #000;
+}
+.header__infobar a {
+  color: inherit;
 }

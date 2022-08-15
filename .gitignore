@@ -17,6 +17,7 @@
 *.zip
 
 # track these files, if they exist
+!.vscode
 !.gitignore
 !.editorconfig
 !.eslintrc.json
