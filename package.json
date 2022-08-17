@@ -1,5 +1,5 @@
 {
-  "name": "shopifytheme",
+  "name": "avex-shopify-theme",
   "version": "2.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -16,7 +16,7 @@
     "prettier": "prettier --write .",
     "stylelint": "stylelint --fix src/**/*.scss"
   },
-  "author": "",
+  "author": "avexdesigns",
   "license": "ISC",
   "dependencies": {
     "liquid-ajax-cart": "^1.10.0",
