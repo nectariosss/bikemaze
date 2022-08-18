@@ -53,9 +53,7 @@
     class="{% if customer %}customer-logged-in {% endif %}template-{{ request.page_type | handle }} template-{{ template.name }}"
     style="display: none;"
   >
-    <a class="skip-to-content-link button visually-hidden" href="#MainContent">
-      {{ 'accessibility.skip_to_text' | t -}}
-    </a>
+    <a class="skip-to-content-link button visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_text' | t -}}</a>
 
     {%- section 'header' -%}
     {%- render 'breadcrumbs' -%}
