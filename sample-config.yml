@@ -1,7 +1,9 @@
 development:
- password: 
- theme_id: 
- store: 
+ password: shptka_81d01fa6f5144848a9970dbd6d7ff83d
+ theme_id: "142175011084"
+ store: bikemaze-7535.myshopify.com
  ignore_files:
     - config/settings_data.json 
     - templates/*.json
+    
+   
