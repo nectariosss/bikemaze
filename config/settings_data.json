@@ -72,9 +72,9 @@
       "ajax-cart": {
         "type": "ajax-cart",
         "settings": {
-          "cart_title": "My Bag",
-          "cart_text": "Free shipping on all domestic orders over $150",
-          "cart_empty": "Oops, There’s nothing in your cart"
+          "cart_title": "",
+          "cart_text": "",
+          "cart_empty": ""
         }
       },
       "klaviyo-backinstock": {
