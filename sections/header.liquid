@@ -27,10 +27,15 @@
           <nav class="header__nav" role="navigation">
             <ul>
 
-
-
-
             {}
+
+
+
+
+
+
+
+            {%comment%}
               {% for block in section.blocks %}
                 {% assign menuItem = linklists[block.settings.menuitem].links[0] %}
                 <li
@@ -50,7 +55,7 @@
                   {% endif %}
                 </li>
               {% endfor %}
-
+            {%endcomment%}
 
             </ul>
           </nav>
