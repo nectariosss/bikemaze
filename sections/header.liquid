@@ -26,12 +26,11 @@
         <div class="grid-item text-center">
           <nav class="header__nav" role="navigation">
             <ul>
-
             {%for link in linklists.main-menu.links%}
               <a href={{link.url}}><li>{{link.title}}</li></a>
             {%endfor%}
-
-
+            </ul>
+          </nav>
 
 
 
@@ -57,8 +56,6 @@
               {% endfor %}
             {%endcomment%}
 
-            </ul>
-          </nav>
         </div>
         <div class="grid-item text-right">
           <div class="header__quickaccess">
