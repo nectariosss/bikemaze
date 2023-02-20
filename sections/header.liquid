@@ -28,7 +28,7 @@
             <ul>
 
             {%for link in linklists.main-menu.links%}
-              <a href=""><li>{{link.title}}</li></a>
+              <a href={{link.url}}><li>{{link.title}}</li></a>
             {%endfor%}
 
 
