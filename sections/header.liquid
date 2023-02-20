@@ -7,8 +7,8 @@
   color: blue;
  }
 
- .ng-navigation {
-  
+ .ng-navigation > li {
+
  }
 {%endstyle%}
 
@@ -20,7 +20,7 @@
 
           <div class="header__main-logo">
             <a href="/">
-            <img src={{section.settings.main_logo}} style="width: 90px;">
+            <img src={{section.settings.main_logo}} style="width: 90px; height: auto;">
             </a>
             {%comment%}
             {%- render 'site-logo', logo_image: section.settings.main_logo, logo_text: section.settings.main_logo_text, width: 200, height: 200 -%}
