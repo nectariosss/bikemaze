@@ -14,8 +14,10 @@
       <div class="grid-container">
         <div class="grid-item">
           <div class="header__main-logo">
-            <img src={{section.settings.main_logo}}>
+            <img src={{section.settings.main_logo}} width="50px">
+            {%comment%}
             {%- render 'site-logo', logo_image: section.settings.main_logo, logo_text: section.settings.main_logo_text, width: 200, height: 200 -%}
+            {%endcomment%}
           </div>
         </div>
         <div class="grid-item text-center">
