@@ -23,15 +23,16 @@
             {%endcomment%}
           </div>
         </div>
-        
+
         <div class="grid-item text-center">
           <nav class="header__nav" role="navigation">
-            <ul>
+            <ul class="">
             {%for link in linklists.main-menu.links%}
               <a href={{link.url}}><li>{{link.title}}</li></a>
             {%endfor%}
             </ul>
           </nav>
+          </div>
 
 
 
@@ -57,7 +58,6 @@
               {% endfor %}
             {%endcomment%}
 
-        </div>
         <div class="grid-item text-right">
           <div class="header__quickaccess">
             {% if section.settings.search_icon %}
