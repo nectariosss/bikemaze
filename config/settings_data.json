@@ -3,6 +3,24 @@
     "sections": {
       "header": {
         "type": "header",
+        "blocks": {
+          "d5ef9ab5-b35d-482a-bc87-82997fa85ec2": {
+            "type": "menu",
+            "settings": {
+              "menuitem": "main-menu",
+              "f_image": "shopify:\/\/shop_images\/image00003.png",
+              "f_image_ord": "0",
+              "f_color": "#ffffff",
+              "f_pretitle": "",
+              "f_title": "",
+              "f_urltext": "",
+              "f_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "d5ef9ab5-b35d-482a-bc87-82997fa85ec2"
+        ],
         "settings": {
           "infobar": "",
           "infobar_bg": "#f2f2f2",
