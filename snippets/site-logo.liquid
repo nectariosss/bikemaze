@@ -10,8 +10,8 @@
       <img
         src="{{ logo_image }}"
         alt="{{ shop.name }}"
-        height="50px"
-        width="50px"
+        height="{%- if height -%}{{height}}{%- else -%}200{%- endif -%}"
+        width="{%- if width -%}{{width}}{%- else -%}200{%- endif -%}"
       >
       {% comment %} theme-check-enable {% endcomment %}
     {%- else -%}
