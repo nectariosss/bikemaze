@@ -13,7 +13,7 @@
     <div class="container">
       <div class="grid-container">
         <div class="grid-item">
-          
+
           <div class="header__main-logo">
             <a href="/">
             <img src={{section.settings.main_logo}} style="width: 90px;">
@@ -26,6 +26,11 @@
         <div class="grid-item text-center">
           <nav class="header__nav" role="navigation">
             <ul>
+
+
+
+
+            {}
               {% for block in section.blocks %}
                 {% assign menuItem = linklists[block.settings.menuitem].links[0] %}
                 <li
@@ -45,6 +50,8 @@
                   {% endif %}
                 </li>
               {% endfor %}
+
+
             </ul>
           </nav>
         </div>
