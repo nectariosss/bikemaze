@@ -6,9 +6,6 @@
  h1{
   color: blue;
  }
- .header__main-logo {
-  width: 50px!important;
- }
 {%endstyle%}
 
 <header class="header header--sticky">
@@ -17,7 +14,7 @@
       <div class="grid-container">
         <div class="grid-item">
           <div class="header__main-logo">
-            <img src={{section.settings.main_logo}}>
+            <img src={{section.settings.main_logo}} style="width: 50px;">
             {%comment%}
             {%- render 'site-logo', logo_image: section.settings.main_logo, logo_text: section.settings.main_logo_text, width: 200, height: 200 -%}
             {%endcomment%}
