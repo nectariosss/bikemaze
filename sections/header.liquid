@@ -31,6 +31,9 @@
       <div class="grid-container">
         <div class="grid-item">
           <div class="header__main-logo">
+            <a>
+              <img src=>              
+            </a>
             {%- render 'site-logo', logo_image: section.settings.main_logo, logo_text: section.settings.main_logo_text, width: 200, height: 200 -%}
           </div>
         </div>
@@ -94,7 +97,7 @@
           {%- render 'site-logo', logo_image: section.settings.main_logo, logo_text: section.settings.main_logo_text, width: 200, height: 200 -%}
         </div>
       </div>
-      
+
       <div class="grid-item text-right">
         <button class="mob-main__cart-button miniCart" data-ajax-cart-toggle-class-button="js-ajax-cart-opened">
           {% render 'icon-bag' %}
