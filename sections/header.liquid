@@ -36,9 +36,6 @@
             <a href="/">
             <img src={{section.settings.main_logo}} style="width: 90px; height: auto;">
             </a>
-            {%comment%}
-            {%- render 'site-logo', logo_image: section.settings.main_logo, logo_text: section.settings.main_logo_text, width: 200, height: 200 -%}
-            {%endcomment%}
           </div>
         </div>
 
@@ -51,30 +48,7 @@
             </ul>
           </nav>
           </div>
-
-
-
-            {%comment%}
-              {% for block in section.blocks %}
-                {% assign menuItem = linklists[block.settings.menuitem].links[0] %}
-                <li
-                  class="header__nav-item"
-                  menu
-                  {% if menuItem.links != blank %}
-                    data-mainmenu-hassub
-                  {% endif %}
-                >
-                  <a class="header__nav-link" href="{{ menuItem.url }}">{{ menuItem.title }}</a>
-                  {% if menuItem.links != blank %}
-                    {% if block.settings.f_image %}
-                      {% render 'menu-item-mega', block: block, menuItem: menuItem %}
-                    {% else %}
-                      {% render 'menu-item-simple', block: block, menuItem: menuItem %}
-                    {% endif %}
-                  {% endif %}
-                </li>
-              {% endfor %}
-            {%endcomment%}
+            
 
         <div class="grid-item text-right">
           
