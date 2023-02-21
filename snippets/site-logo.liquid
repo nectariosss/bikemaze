@@ -4,32 +4,32 @@
 {% endcomment %}
 
 {%- capture site_logo -%}
-  <a href="{{ routes.root_url }}">
-    {%- if logo_image != blank -%}
-      {% comment %} theme-check-disable {% endcomment %}
-      <img
-        src="{{ logo_image }}"
-        alt="{{ shop.name }}"
-        height="{%- if height -%}{{height}}{%- else -%}200{%- endif -%}"
-        width="{%- if width -%}{{width}}{%- else -%}200{%- endif -%}"
-      >
-      {% comment %} theme-check-enable {% endcomment %}
-    {%- else -%}
-      <span class="site-name">
-        {%- if logo_text != blank -%}
-          {{- logo_text -}}
-        {%- else -%}
-          {{- shop.name -}}
-        {%- endif -%}
-      </span>
-    {%- endif -%}
-  </a>
-{%- endcapture -%}
-
-{%- unless neverH1 or request.page_type != 'index' -%}
-  {%- capture site_logo -%}
-    <h1>{{ site_logo }}</h1>
+    <a href="{{ routes.root_url }}">
+      {%- if logo_image != blank -%}
+        {% comment %} theme-check-disable {% endcomment %}
+        <img
+          src="{{ logo_image }}"
+          alt="{{ shop.name }}"
+          height="{%- if height -%}{{height}}{%- else -%}200{%- endif -%}"
+          width="{%- if width -%}{{width}}{%- else -%}200{%- endif -%}"
+        >
+        {% comment %} theme-check-enable {% endcomment %}
+      {%- else -%}
+        <span class="site-name">
+          {%- if logo_text != blank -%}
+            {{- logo_text -}}
+          {%- else -%}
+            {{- shop.name -}}
+          {%- endif -%}
+        </span>
+      {%- endif -%}
+    </a>
   {%- endcapture -%}
-{%- endunless -%}
-
-{{- site_logo -}}
+  
+  {%- unless neverH1 or request.page_type != 'index' -%}
+    {%- capture site_logo -%}
+      <h1>{{ site_logo }}</h1>
+    {%- endcapture -%}
+  {%- endunless -%}
+  
+  {{- site_logo -}}
