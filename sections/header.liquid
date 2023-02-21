@@ -32,7 +32,7 @@
         <div class="grid-item">
           <div class="header__main-logo">
             <a href="/">
-            <img src={{section.settings.main_logo}} style="width: 100px; height: auto;">
+            <img src={{section.settings.main_logo}} style="width: 0px; height: auto;">
             </a>
           </div>
         </div>
@@ -41,7 +41,7 @@
           <nav class="header__nav" role="navigation">
             <ul class="ng-navigation">
             {%for link in linklists.main-menu.links%}
-              <a href={{link.url}}><li class="ng-header-links">{{link.title}}</li></a>
+              <a href={{link.url}}><li>{{link.title}}</li></a>
             {%endfor%}
             </ul>
           </nav>
