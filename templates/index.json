@@ -6,13 +6,13 @@
         "hero_img": "shopify:\/\/shop_images\/image00003.png",
         "hero_img_mob": "shopify:\/\/shop_images\/image00003.png",
         "hero_video": "",
-        "hero_pre_title": "NYC SHOPIFY PLUS ECOMMERCE AGENCY",
-        "hero_title": "eCommerce",
-        "hero_text": "<p>... agency that builds & optimizes customer experiences for high-growth brands.<\/p>",
-        "hero_b_text": "Shop now",
+        "hero_pre_title": "SHOP NOW",
+        "hero_title": "BIKEMAZE",
+        "hero_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum erat lacus, in consequat.<\/p>",
+        "hero_b_text": "SHOP NOW",
         "hero_b_url": "shopify:\/\/collections\/all",
         "hero_text_color": "#ffffff",
-        "hero_cover_color": "",
+        "hero_cover_color": "#000000",
         "hero_cover_opacity": 34,
         "text_align": "left",
         "vertical_alignment": "flex-end",
@@ -62,6 +62,7 @@
     },
     "164486929730ceebea": {
       "type": "contact-form",
+      "disabled": true,
       "blocks": {
         "d9048421-4d95-4631-afe7-3b523ba249e1": {
           "type": "email",
