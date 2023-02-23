@@ -4,9 +4,27 @@
   {% assign limit = section.settings.carousel_coll_lm | plus: 0 %}
   <div class="container-max">
     {% if collections[section.settings.carousel_coll].products_count != 0 %}
+
+
+
+
+
+
       {% if section.settings.carousel_title != blank %}
         <h2 class="products-carousel__title h3">{{ section.settings.carousel_title }}</h2>
       {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+      
       <div
         class="swiper products-carousel-swiper"
         data-limit_per_view_mobile="{{ section.settings.carousel_mob }}"
