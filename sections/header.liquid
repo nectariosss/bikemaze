@@ -2,30 +2,29 @@
   {%- render "css-header.css" -%}
 {%- endstyle -%}
 
-{%style%}
+{% style %}
 
-.bikemaze-logo{
-  width: 80px!important;
-  height: auto;
-  margin-left: 0.5rem;
-  margin-top: 0.2rem;
-  margin-bottom: 0.2rem;
-}
+  .bikemaze-logo {
+    width: 80px !important;
+    height: auto;
+    margin-left:  2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+  }
 
-.ng-navigation > a{
-  color: white;
-  margin: 0rem 1.5rem;
-  text-decoration: none;
+  .ng-navigation > a {
+    color: white;
+    margin: 0 1.5rem;
+    text-decoration: none;
 
-}
+  }
 
 
 
-.ng-logo-container-mobile{
-  display: flex;
-  justify-content: center;
-}
-
+  .ng-logo-container-mobile {
+    display: flex;
+    justify-content: center;
+  }
 {%endstyle%}
 
 <header class="header header--sticky">
@@ -35,23 +34,25 @@
         <div class="grid-item">
           <div class="header__main-logo">
             <a href="/">
-              <img class="bikemaze-logo" src={{section.settings.main_logo}}>              
+              <img class="bikemaze-logo" src={{section.settings.main_logo}}>
             </a>
           </div>
         </div>
         <div class="grid-item">
           <nav class="header__nav" role="navigation">
             <ul class="ng-navigation">
-            {%for link in linklists.main-menu.links%}
-              <a href={{link.url}}><li>{{link.title}}</li></a>
-            {%endfor%}
+              {% for link in linklists.main-menu.links %}
+                <a href={{link.url}}>
+                  <li>{{ link.title }}</li>
+                </a>
+              {% endfor %}
             </ul>
           </nav>
-          </div>
-            
+        </div>
+
 
         <div class="grid-item text-right">
-          
+
           <div class="header__quickaccess">
             {% if section.settings.search_icon %}
               <div class="header__quickaccess-item">
@@ -59,19 +60,13 @@
               </div>
             {% endif %}
             {% if section.settings.user_icon %}
-              <a
-                href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}"
-                class="header__quickaccess-item"
-              >
+              <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="header__quickaccess-item">
                 {%- render 'icon-account' -%}
               </a>
             {% endif %}
             {% if template != 'cart' %}
               {% if section.settings.cart_icon %}
-                <button
-                  class="header__quickaccess-item miniCart"
-                  data-ajax-cart-toggle-class-button="js-ajax-cart-opened"
-                >
+                <button class="header__quickaccess-item miniCart" data-ajax-cart-toggle-class-button="js-ajax-cart-opened">
                   {% render 'icon-bag' %}
                 </button>
                 <span class="cart-total" data-ajax-cart-bind-state="cart.item_count">{{ cart.item_count }}</span>
@@ -86,21 +81,41 @@
   <div class="header__mobile">
     <div class="grid-container mob-main">
       <div class="grid-item">
-        <button class="mob-main__hamburger" data-open-drawer aria-label="{{ 'accessibility.menu' | t }}">
-          <svg width="24" height="24" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <line y1="4.5" x2="16" y2="4.5" stroke="#fff"/>
-            <line y1="8.5" x2="16" y2="8.5" stroke="#fff"/>
-            <line y1="12.5" x2="16" y2="12.5" stroke="#fff"/>
+        <button
+          class="mob-main__hamburger"
+          data-open-drawer
+          aria-label="{{ 'accessibility.menu' | t }}">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 16 16"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <line
+              y1="4.5"
+              x2="16"
+              y2="4.5"
+              stroke="#fff" />
+            <line
+              y1="8.5"
+              x2="16"
+              y2="8.5"
+              stroke="#fff" />
+            <line
+              y1="12.5"
+              x2="16"
+              y2="12.5"
+              stroke="#fff" />
           </svg>
         </button>
       </div>
-      
+
       <div class="grid-item text-center">
         <div class="ng-mobile-logo">
           <div class="ng-logo-container-mobile">
-          <a href="/">
-            <img class="bikemaze-logo" src={{section.settings.main_logo}}>              
-          </a>
+            <a href="/">
+              <img class="bikemaze-logo" src={{section.settings.main_logo}}>
+            </a>
           </div>
         </div>
       </div>
@@ -124,7 +139,10 @@
           </li>
 
           <li class="mobtop__item">
-            <button class="close-button" data-close-drawer aria-label="{{ 'accessibility.close' | t }}">
+            <button
+              class="close-button"
+              data-close-drawer
+              aria-label="{{ 'accessibility.close' | t }}">
               {% render 'icon-close' %}
             </button>
           </li>
@@ -142,10 +160,18 @@
                     <button
                       data-drawer-itemtoggle
                       class="mobmenu__openSubButton"
-                      aria-label="{{ 'accessibility.open_sub' | t }}"
-                    >
-                      <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M7 12L11 8.00003L7 4.00003" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+                      aria-label="{{ 'accessibility.open_sub' | t }}">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7 12L11 8.00003L7 4.00003"
+                          stroke="black"
+                          stroke-linecap="round"
+                          stroke-linejoin="round" />
                       </svg>
                     </button>
                   </div>
@@ -188,159 +214,144 @@
   {% assign potential_action_target = shop.url | append: routes.search_url | append: "?q={search_term_string}" %}
   <script type="application/ld+json">
     {
-      "@context": "http://schema.org",
-      "@type": "WebSite",
-      "name": {{ shop.name | json }},
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": {{ potential_action_target | json }},
-        "query-input": "required name=search_term_string"
-      },
-      "url": {{ shop.url | append: page.url | json }}
+    "@context": "http://schema.org",
+              "@type": "WebSite",
+              "name": {{ shop.name | json }},
+    "potentialAction": {
+                "@type": "SearchAction",
+                "target": {{ potential_action_target | json }},
+    "query-input": "required name=search_term_string"
+              },
+              "url": {{ shop.url | append: page.url | json }}
     }
   </script>
 {% endif %}
 
 {% schema %}
-{
-  "name": {
-    "en": "Header"
-  },
-  "settings": [
-    {
-      "type": "header",
-      "content": "Infobar settings"
+  {
+    "name": {
+      "en": "Header"
     },
-    {
-      "type": "richtext",
-      "id": "infobar",
-      "label": "Infobar",
-      "default": "<p>FREE SHIPPING ON ALL DOMESTIC ORDERS OVER $150</p>"
-    },
-    {
-      "type": "color",
-      "id": "infobar_bg",
-      "label": "Infobar Background Color",
-      "default": "#000"
-    },
-    {
-      "type": "color",
-      "id": "infobar_textcolor",
-      "label": "Infobar Text Color",
-      "default": "#fff"
-    },
-    {
-      "type": "header",
-      "content": "Global Navigation"
-    },
-    {
-      "type": "checkbox",
-      "id": "nav_show",
-      "default": true,
-      "label": "Show"
-    },
-    {
-      "type": "header",
-      "content": "Header settings"
-    },
-    {
-      "type": "text",
-      "id": "main_logo",
-      "label": "Logo Path (svg)"
-    },
-    {
-      "type": "text",
-      "id": "main_logo_text",
-      "label": "Logo Custom text"
-    },
-    {
-      "type": "header",
-      "content": "Quick access"
-    },
-    {
-      "type": "checkbox",
-      "id": "search_icon",
-      "default": true,
-      "label": "Search"
-    },
-    {
-      "type": "checkbox",
-      "id": "wish_icon",
-      "default": true,
-      "label": "Wishlist"
-    },
-    {
-      "type": "checkbox",
-      "id": "user_icon",
-      "default": true,
-      "label": "Account"
-    },
-    {
-      "type": "checkbox",
-      "id": "cart_icon",
-      "default": true,
-      "label": "Cart"
-    }
-  ],
-  "blocks": [
-    {
-      "type": "menu",
-      "name": "Menu",
-      "settings": [
-        {
-          "id": "menuitem",
-          "type": "link_list",
-          "label": "Menu Item"
-        },
-        {
-          "id": "f_image",
-          "type": "image_picker",
-          "label": "Featured block Image"
-        },
-        {
-          "id": "f_image_ord",
-          "type": "select",
-          "label": "Featured block Image Order",
-          "options": [
-            {
-              "value": "0",
-              "label": "First"
-            },
-            {
-              "value": "1",
-              "label": "Second"
-            }
-          ],
-          "default": "0"
-        },
-        {
-          "id": "f_color",
-          "type": "color",
-          "label": "Featured text Color",
-          "default": "#ffffff"
-        },
-        {
-          "id": "f_pretitle",
-          "type": "text",
-          "label": "Featured block Pre-Title"
-        },
-        {
-          "id": "f_title",
-          "type": "text",
-          "label": "Featured block Title"
-        },
-        {
-          "id": "f_urltext",
-          "type": "text",
-          "label": "Featured block Button Text"
-        },
-        {
-          "id": "f_url",
-          "type": "url",
-          "label": "Featured block Button Url"
-        }
-      ]
-    }
-  ]
-}
+    "settings": [
+      {
+        "type": "header",
+        "content": "Infobar settings"
+      },
+      {
+        "type": "richtext",
+        "id": "infobar",
+        "label": "Infobar",
+        "default": "<p>FREE SHIPPING ON ALL DOMESTIC ORDERS OVER $150</p>"
+      },
+      {
+        "type": "color",
+        "id": "infobar_bg",
+        "label": "Infobar Background Color",
+        "default": "#000"
+      },
+      {
+        "type": "color",
+        "id": "infobar_textcolor",
+        "label": "Infobar Text Color",
+        "default": "#fff"
+      }, {
+        "type": "header",
+        "content": "Global Navigation"
+      }, {
+        "type": "checkbox",
+        "id": "nav_show",
+        "default": true,
+        "label": "Show"
+      }, {
+        "type": "header",
+        "content": "Header settings"
+      }, {
+        "type": "text",
+        "id": "main_logo",
+        "label": "Logo Path (svg)"
+      }, {
+        "type": "text",
+        "id": "main_logo_text",
+        "label": "Logo Custom text"
+      }, {
+        "type": "header",
+        "content": "Quick access"
+      }, {
+        "type": "checkbox",
+        "id": "search_icon",
+        "default": true,
+        "label": "Search"
+      }, {
+        "type": "checkbox",
+        "id": "wish_icon",
+        "default": true,
+        "label": "Wishlist"
+      }, {
+        "type": "checkbox",
+        "id": "user_icon",
+        "default": true,
+        "label": "Account"
+      }, {
+        "type": "checkbox",
+        "id": "cart_icon",
+        "default": true,
+        "label": "Cart"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "menu",
+        "name": "Menu",
+        "settings": [
+          {
+            "id": "menuitem",
+            "type": "link_list",
+            "label": "Menu Item"
+          },
+          {
+            "id": "f_image",
+            "type": "image_picker",
+            "label": "Featured block Image"
+          },
+          {
+            "id": "f_image_ord",
+            "type": "select",
+            "label": "Featured block Image Order",
+            "options": [
+              {
+                "value": "0",
+                "label": "First"
+              }, {
+                "value": "1",
+                "label": "Second"
+              }
+            ],
+            "default": "0"
+          },
+          {
+            "id": "f_color",
+            "type": "color",
+            "label": "Featured text Color",
+            "default": "#ffffff"
+          }, {
+            "id": "f_pretitle",
+            "type": "text",
+            "label": "Featured block Pre-Title"
+          }, {
+            "id": "f_title",
+            "type": "text",
+            "label": "Featured block Title"
+          }, {
+            "id": "f_urltext",
+            "type": "text",
+            "label": "Featured block Button Text"
+          }, {
+            "id": "f_url",
+            "type": "url",
+            "label": "Featured block Button Url"
+          }
+        ]
+      }
+    ]
+  }
 {% endschema %}
