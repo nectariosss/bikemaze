@@ -3,6 +3,7 @@
     "1633298769daf14fc7": {
       "type": "hero-banner",
       "settings": {
+        "hero_img": "shopify:\/\/shop_images\/9443f9f5d1a35455e3567f7e1fe4bcea.jpg",
         "hero_video": "",
         "hero_pre_title": "NYC SHOPIFY PLUS ECOMMERCE AGENCY",
         "hero_title": "eCommerce",
@@ -30,6 +31,7 @@
     },
     "16332987808e571964": {
       "type": "half-media-text",
+      "disabled": true,
       "settings": {
         "half_image_p": "1",
         "half_video": "",
@@ -44,6 +46,7 @@
     },
     "16332987823b33b422": {
       "type": "half-media-text",
+      "disabled": true,
       "settings": {
         "half_image_p": "2",
         "half_video": "",
@@ -58,7 +61,6 @@
     },
     "164486929730ceebea": {
       "type": "contact-form",
-      "disabled": true,
       "blocks": {
         "d9048421-4d95-4631-afe7-3b523ba249e1": {
           "type": "email",
