@@ -1,9 +1,16 @@
 {%- render 'stylesheet', name: 'products-carousel' -%}
 
+<
+
 {% if section.settings.carousel_coll != blank %}
   {% assign limit = section.settings.carousel_coll_lm | plus: 0 %}
   <div class="container-max">
     {% if collections[section.settings.carousel_coll].products_count != 0 %}
+
+
+
+
+
 
 
 
@@ -24,7 +31,7 @@
 
 
 
-      
+
       <div
         class="swiper products-carousel-swiper"
         data-limit_per_view_mobile="{{ section.settings.carousel_mob }}"
