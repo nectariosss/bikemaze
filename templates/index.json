@@ -38,22 +38,7 @@
         "half_video": "",
         "half_title": "Shopify Plus UX Design & Development",
         "half_title_tag": "h3",
-        "half_text": "<p>As a Shopify agency, we build and optimized completely custom, on-brand eCommerce user-experiences powered by Shopify Plus. Our themes are scalable, fast and optimized for conversions, so you can have complete control over your brand's customer experience and grow your business.<\/p>",
-        "half_b_text": "Shop Now",
-        "half_b_url": "",
-        "half_text_color": "#000000",
-        "half_bg_color": "#ffffff"
-      }
-    },
-    "16332987823b33b422": {
-      "type": "half-media-text",
-      "disabled": true,
-      "settings": {
-        "half_image_p": "2",
-        "half_video": "",
-        "half_title": "eCommerce Platform Migrations.",
-        "half_title_tag": "h3",
-        "half_text": "<p>With Shopify Plus, you can launch your store 50% faster than with traditional enterprise platforms. Our team will safely replatform your data to Shopify Plus, setup 301 redirects, and ensure zero downtime.<\/p>",
+        "half_text": "<p>In bibendum risus eget iaculis interdum. Phasellus sed varius eros, eget sodales velit. Curabitur maximus enim sit amet lorem imperdiet molestie. Phasellus consectetur ornare fermentum. In tempus fermentum justo. Pellentesque dictum molestie arcu, at elementum lacus pharetra vitae. Sed nec dignissim ex. Cras vulputate, libero eget ultricies convallis, justo elit facilisis massa, non commodo diam lacus ac lacus. Suspendisse id bibendum odio. Vestibulum vitae tincidunt leo. Donec varius quis nunc ac laoreet. Nam pretium eleifend augue, et volutpat velit semper vel.<\/p>",
         "half_b_text": "Shop Now",
         "half_b_url": "",
         "half_text_color": "#000000",
@@ -93,7 +78,6 @@
     "1633298769daf14fc7",
     "163329877533384385",
     "16332987808e571964",
-    "16332987823b33b422",
     "164486929730ceebea"
   ]
 }
