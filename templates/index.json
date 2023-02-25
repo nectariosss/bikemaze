@@ -44,21 +44,6 @@
         "half_bg_color": "#ffffff"
       }
     },
-    "16342987823b33b422": {
-      "type": "half-media-text",
-      "settings": {
-        "half_image": "shopify:\/\/shop_images\/Seamless_Migration-1.jpg",
-        "half_image_p": "2",
-        "half_video": "",
-        "half_title": "eCommerce Platform Migrations.",
-        "half_title_tag": "h3",
-        "half_text": "<p>With Shopify Plus, you can launch your store 50% faster than with traditional enterprise platforms. Our team will safely replatform your data to Shopify Plus, setup 301 redirects, and ensure zero downtime.<\/p>",
-        "half_b_text": "Shop Now",
-        "half_b_url": "",
-        "half_text_color": "#000000",
-        "half_bg_color": "#ffffff"
-      }
-    },
     "16335987823b33b422": {
       "type": "two-side-pictures",
       "settings": {
@@ -107,7 +92,6 @@
     "163329877533384385",
     "16332987808e571964",
     "164486929730ceebea",
-    "16342987823b33b422",
     "16335987823b33b422"
   ]
 }
