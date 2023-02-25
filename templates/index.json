@@ -32,8 +32,8 @@
     },
     "16332987808e571964": {
       "type": "half-media-text",
-      "disabled": true,
       "settings": {
+        "half_image": "shopify:\/\/shop_images\/9443f9f5d1a35455e3567f7e1fe4bcea.jpg",
         "half_image_p": "1",
         "half_video": "",
         "half_title": "Shopify Plus UX Design & Development",
