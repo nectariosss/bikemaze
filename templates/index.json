@@ -3,16 +3,15 @@
     "1633298769daf14fc7": {
       "type": "hero-banner",
       "settings": {
-        "hero_img": "shopify:\/\/shop_images\/image00003.png",
-        "hero_img_mob": "shopify:\/\/shop_images\/image00003.png",
+        "hero_img": "shopify:\/\/shop_images\/avex-home-hugo-boss.jpg",
         "hero_video": "",
-        "hero_pre_title": "SHOP NOW",
-        "hero_title": "BIKEMAZE",
-        "hero_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer rutrum erat lacus, in consequat.<\/p>",
-        "hero_b_text": "SHOP NOW",
+        "hero_pre_title": "NYC SHOPIFY PLUS ECOMMERCE AGENCY",
+        "hero_title": "eCommerce",
+        "hero_text": "<p>... agency that builds & optimizes customer experiences for high-growth brands.<\/p>",
+        "hero_b_text": "Shop now",
         "hero_b_url": "shopify:\/\/collections\/all",
         "hero_text_color": "#ffffff",
-        "hero_cover_color": "#000000",
+        "hero_cover_color": "",
         "hero_cover_opacity": 34,
         "text_align": "left",
         "vertical_alignment": "flex-end",
@@ -22,8 +21,8 @@
     "163329877533384385": {
       "type": "products-carousel",
       "settings": {
-        "carousel_title": "NEW ARRIVALS",
-        "carousel_coll": "frontpage",
+        "carousel_title": "New arrivals",
+        "carousel_coll": "necklace",
         "carousel_coll_lm": 15,
         "carousel_desk": 5,
         "carousel_mob": 2,
@@ -33,12 +32,42 @@
     "16332987808e571964": {
       "type": "half-media-text",
       "settings": {
-        "half_image": "shopify:\/\/shop_images\/9443f9f5d1a35455e3567f7e1fe4bcea.jpg",
+        "half_image": "shopify:\/\/shop_images\/Customization___Design_-_1.jpg",
+        "half_image_p": "1",
+        "half_video": "",
+        "half_title": "Shopify Plus UX Design & Development",
+        "half_title_tag": "h3",
+        "half_text": "<p>As a Shopify agency, we build and optimized completely custom, on-brand eCommerce user-experiences powered by Shopify Plus. Our themes are scalable, fast and optimized for conversions, so you can have complete control over your brand's customer experience and grow your business.<\/p>",
+        "half_b_text": "Shop Now",
+        "half_b_url": "",
+        "half_text_color": "#000000",
+        "half_bg_color": "#ffffff"
+      }
+    },
+    "16342987823b33b422": {
+      "type": "half-media-text",
+      "settings": {
+        "half_image": "shopify:\/\/shop_images\/Seamless_Migration-1.jpg",
         "half_image_p": "2",
         "half_video": "",
-        "half_title": "breathing life into the bike scene",
+        "half_title": "eCommerce Platform Migrations.",
         "half_title_tag": "h3",
-        "half_text": "<p>In bibendum risus eget iaculis interdum. Phasellus sed varius eros, eget sodales velit. Curabitur maximus enim sit amet lorem imperdiet molestie. Phasellus consectetur ornare fermentum. In tempus fermentum justo. Pellentesque dictum molestie arcu, at elementum lacus pharetra vitae. Sed nec dignissim ex. Cras vulputate, libero eget ultricies convallis, justo elit facilisis massa, non commodo diam lacus ac lacus. Suspendisse id bibendum odio. Vestibulum vitae tincidunt leo. Donec varius quis nunc ac laoreet. Nam pretium eleifend augue, et volutpat velit semper vel.<\/p>",
+        "half_text": "<p>With Shopify Plus, you can launch your store 50% faster than with traditional enterprise platforms. Our team will safely replatform your data to Shopify Plus, setup 301 redirects, and ensure zero downtime.<\/p>",
+        "half_b_text": "Shop Now",
+        "half_b_url": "",
+        "half_text_color": "#000000",
+        "half_bg_color": "#ffffff"
+      }
+    },
+    "16335987823b33b422": {
+      "type": "two-side-pictures",
+      "settings": {
+        "half_image": "shopify:\/\/shop_images\/Seamless_Migration-1.jpg",
+        "half_image_p": "2",
+        "half_video": "",
+        "half_title": "eCommerce Platform Migrations.",
+        "half_title_tag": "h3",
+        "half_text": "<p>With Shopify Plus, you can launch your store 50% faster than with traditional enterprise platforms. Our team will safely replatform your data to Shopify Plus, setup 301 redirects, and ensure zero downtime.<\/p>",
         "half_b_text": "Shop Now",
         "half_b_url": "",
         "half_text_color": "#000000",
@@ -47,7 +76,6 @@
     },
     "164486929730ceebea": {
       "type": "contact-form",
-      "disabled": true,
       "blocks": {
         "d9048421-4d95-4631-afe7-3b523ba249e1": {
           "type": "email",
@@ -78,6 +106,8 @@
     "1633298769daf14fc7",
     "163329877533384385",
     "16332987808e571964",
-    "164486929730ceebea"
+    "164486929730ceebea",
+    "16342987823b33b422",
+    "16335987823b33b422"
   ]
 }
