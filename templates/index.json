@@ -3,11 +3,11 @@
     "1633298769daf14fc7": {
       "type": "hero-banner",
       "settings": {
-        "hero_img": "",
+        "hero_img": "shopify:\/\/shop_images\/image00003.png",
         "hero_video": "",
         "hero_pre_title": "Shop",
         "hero_title": "Bikemaze",
-        "hero_text": "<p><\/p>",
+        "hero_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac nisi laoreet, varius sapien id, suscipit eros. Praesent scelerisque <\/p>",
         "hero_b_text": "Shop now",
         "hero_b_url": "shopify:\/\/collections\/all",
         "hero_text_color": "#ffffff",
@@ -22,37 +22,35 @@
       "type": "products-carousel",
       "settings": {
         "carousel_title": "New arrivals",
-        "carousel_coll": "home page",
+        "carousel_coll": "frontpage",
         "carousel_coll_lm": 15,
         "carousel_desk": 5,
         "carousel_mob": 2,
         "carousel_b_text": "Shop Now"
       }
     },
-    "16332987808e571964": {
-      "type": "half-media-text",
+    "16335987823b33b422": {
+      "type": "two-side-pictures",
       "settings": {
-        "half_image": "shopify:\/\/shop_images\/Customization___Design_-_1.jpg",
-        "half_image_p": "1",
+        "half_image_p": "2",
         "half_video": "",
-        "half_title": "Breathe life into bike culture",
+        "half_title": "",
         "half_title_tag": "h3",
-        "half_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac nisi laoreet, varius sapien id, suscipit eros. Praesent scelerisque condimentum justo ac aliquam. Etiam tincidunt lacus vitae lacus fringilla, condimentum pulvinar est mollis. Integer volutpat nunc metus, a egestas dolor varius at. Phasellus dolor risus,<\/p>",
+        "half_text": "<p><\/p>",
         "half_b_text": "Shop Now",
         "half_b_url": "",
         "half_text_color": "#000000",
         "half_bg_color": "#ffffff"
       }
     },
-    "16335987823b33b422": {
-      "type": "two-side-pictures",
+    "16332987808e571964": {
+      "type": "half-media-text",
       "settings": {
-        "half_image": "shopify:\/\/shop_images\/Seamless_Migration-1.jpg",
-        "half_image_p": "2",
+        "half_image_p": "1",
         "half_video": "",
-        "half_title": "",
+        "half_title": "Breathe life into bike culture",
         "half_title_tag": "h3",
-        "half_text": "<p><\/p>",
+        "half_text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ac nisi laoreet, varius sapien id, suscipit eros. Praesent scelerisque condimentum justo ac aliquam. Etiam tincidunt lacus vitae lacus fringilla, condimentum pulvinar est mollis. Integer volutpat nunc metus, a egestas dolor varius at. Phasellus dolor risus,<\/p>",
         "half_b_text": "Shop Now",
         "half_b_url": "",
         "half_text_color": "#000000",
