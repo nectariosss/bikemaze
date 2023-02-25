@@ -3,7 +3,6 @@
     "1633298769daf14fc7": {
       "type": "hero-banner",
       "settings": {
-        "hero_img": "",
         "hero_video": "",
         "hero_pre_title": "Shop",
         "hero_title": "Bikemaze",
@@ -22,7 +21,7 @@
       "type": "products-carousel",
       "settings": {
         "carousel_title": "New arrivals",
-        "carousel_coll": "necklace",
+        "carousel_coll": "frontpage",
         "carousel_coll_lm": 15,
         "carousel_desk": 5,
         "carousel_mob": 2,
@@ -32,42 +31,11 @@
     "16332987808e571964": {
       "type": "half-media-text",
       "settings": {
-        "half_image": "shopify:\/\/shop_images\/Customization___Design_-_1.jpg",
         "half_image_p": "1",
         "half_video": "",
         "half_title": "Shopify Plus UX Design & Development",
         "half_title_tag": "h3",
         "half_text": "<p>As a Shopify agency, we build and optimized completely custom, on-brand eCommerce user-experiences powered by Shopify Plus. Our themes are scalable, fast and optimized for conversions, so you can have complete control over your brand's customer experience and grow your business.<\/p>",
-        "half_b_text": "Shop Now",
-        "half_b_url": "",
-        "half_text_color": "#000000",
-        "half_bg_color": "#ffffff"
-      }
-    },
-    "16342987823b33b422": {
-      "type": "half-media-text",
-      "settings": {
-        "half_image": "shopify:\/\/shop_images\/Seamless_Migration-1.jpg",
-        "half_image_p": "2",
-        "half_video": "",
-        "half_title": "eCommerce Platform Migrations.",
-        "half_title_tag": "h3",
-        "half_text": "<p>With Shopify Plus, you can launch your store 50% faster than with traditional enterprise platforms. Our team will safely replatform your data to Shopify Plus, setup 301 redirects, and ensure zero downtime.<\/p>",
-        "half_b_text": "Shop Now",
-        "half_b_url": "",
-        "half_text_color": "#000000",
-        "half_bg_color": "#ffffff"
-      }
-    },
-    "16335987823b33b422": {
-      "type": "two-side-pictures",
-      "settings": {
-        "half_image": "shopify:\/\/shop_images\/Seamless_Migration-1.jpg",
-        "half_image_p": "2",
-        "half_video": "",
-        "half_title": "eCommerce Platform Migrations.",
-        "half_title_tag": "h3",
-        "half_text": "<p>With Shopify Plus, you can launch your store 50% faster than with traditional enterprise platforms. Our team will safely replatform your data to Shopify Plus, setup 301 redirects, and ensure zero downtime.<\/p>",
         "half_b_text": "Shop Now",
         "half_b_url": "",
         "half_text_color": "#000000",
@@ -99,6 +67,34 @@
       "settings": {
         "title": "Contact form",
         "form_id": "ContactForm"
+      }
+    },
+    "16342987823b33b422": {
+      "type": "half-media-text",
+      "settings": {
+        "half_image_p": "2",
+        "half_video": "",
+        "half_title": "eCommerce Platform Migrations.",
+        "half_title_tag": "h3",
+        "half_text": "<p>With Shopify Plus, you can launch your store 50% faster than with traditional enterprise platforms. Our team will safely replatform your data to Shopify Plus, setup 301 redirects, and ensure zero downtime.<\/p>",
+        "half_b_text": "Shop Now",
+        "half_b_url": "",
+        "half_text_color": "#000000",
+        "half_bg_color": "#ffffff"
+      }
+    },
+    "16335987823b33b422": {
+      "type": "two-side-pictures",
+      "settings": {
+        "half_image_p": "2",
+        "half_video": "",
+        "half_title": "eCommerce Platform Migrations.",
+        "half_title_tag": "h3",
+        "half_text": "<p>With Shopify Plus, you can launch your store 50% faster than with traditional enterprise platforms. Our team will safely replatform your data to Shopify Plus, setup 301 redirects, and ensure zero downtime.<\/p>",
+        "half_b_text": "Shop Now",
+        "half_b_url": "",
+        "half_text_color": "#000000",
+        "half_bg_color": "#ffffff"
       }
     }
   },
