@@ -36,7 +36,7 @@
         "half_video": "",
         "half_title": "",
         "half_title_tag": "h3",
-        "half_text": "<p><\/p>",
+        "half_text": "",
         "half_b_text": "Shop Now",
         "half_b_url": "",
         "half_text_color": "#000000",
@@ -46,6 +46,7 @@
     "16332987808e571964": {
       "type": "half-media-text",
       "settings": {
+        "half_image": "shopify:\/\/shop_images\/9443f9f5d1a35455e3567f7e1fe4bcea.jpg",
         "half_image_p": "1",
         "half_video": "",
         "half_title": "Breathe life into bike culture",
