@@ -24,7 +24,7 @@
 
 @keyframes animate {
     0% {
-      transform: translateX(100%);
+      transform: translateX(0%);
     }
     100% {
       transform: translateX(-100%);
@@ -60,17 +60,17 @@
 
       {% if section.settings.carousel_title != blank %}
         <div class="marquee">
-          <div class="products-carousel__title h3">{{ section.settings.carousel_title }}
+          <h2 class="products-carousel__title h3">{{ section.settings.carousel_title }}
             {{ section.settings.carousel_title }}
             {{ section.settings.carousel_title }}
             {{ section.settings.carousel_title }}
-          </div>
+          </h2>
 
-          <div class="products-carousel__title2 h3">{{ section.settings.carousel_title }}
+          <h2 class="products-carousel__title2 h3">{{ section.settings.carousel_title }}
             {{ section.settings.carousel_title }}
             {{ section.settings.carousel_title }}
             {{ section.settings.carousel_title }}
-          </div>
+          </h2>
         </div>
       {% endif %}
 
