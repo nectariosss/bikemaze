@@ -34,10 +34,10 @@
       "type": "half-media-text",
       "settings": {
         "half_image": "shopify:\/\/shop_images\/9443f9f5d1a35455e3567f7e1fe4bcea.jpg",
-        "half_image_p": "1",
+        "half_image_p": "2",
         "half_video": "",
         "half_title": "Shopify Plus UX Design & Development",
-        "half_title_tag": "h3",
+        "half_title_tag": "h2",
         "half_text": "<p>As a Shopify agency, we build and optimized completely custom, on-brand eCommerce user-experiences powered by Shopify Plus. Our themes are scalable, fast and optimized for conversions, so you can have complete control over your brand's customer experience and grow your business.<\/p>",
         "half_b_text": "Shop Now",
         "half_b_url": "",
