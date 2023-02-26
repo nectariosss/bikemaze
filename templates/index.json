@@ -35,6 +35,7 @@
         "half_image": "shopify:\/\/shop_images\/image00006.png",
         "half_image_2": "shopify:\/\/shop_images\/image00032.jpg",
         "half_image_3": "shopify:\/\/shop_images\/image00003.png",
+        "half_image_p": "1",
         "half_b_text": "COntact",
         "half_b_url": "shopify:\/\/pages\/contact",
         "half_b_text_2": "view all",
@@ -47,7 +48,7 @@
       "type": "half-media-text",
       "settings": {
         "half_image": "shopify:\/\/shop_images\/9443f9f5d1a35455e3567f7e1fe4bcea.jpg",
-        "half_image_p": "1",
+        "half_image_p": "2",
         "half_video": "",
         "half_title": "Breathe life into bike culture",
         "half_title_tag": "h3",
