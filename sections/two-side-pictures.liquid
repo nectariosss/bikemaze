@@ -64,9 +64,6 @@
                 {% endif %}
               >
                   {{ section.settings.half_image | image_url: width: section.settings.half_image.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
-                  <div>
-                  <a  href="{{ section.settings.half_b_url }}" class="ng-buttons-float">{{ section.settings.half_b_text }}</a>
-                  </div>
               </div>
               <div class="ng-box-nested">
                   <div
@@ -86,6 +83,7 @@
                 {% endif %}
               >
                   {{ section.settings.half_image_3 | image_url: width: section.settings.half_image_3.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
+                  <a  href="{{ section.settings.half_b_url }}" class="ng-buttons-float">{{ section.settings.half_b_text }}</a>
 
               </div>
             </div>
