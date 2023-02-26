@@ -1,7 +1,13 @@
 {%- if section.settings.half_image != blank or section.settings.half_video != blank -%}
   {%- render 'stylesheet', name: 'half-media-text' -%}
 
-  {}
+  {%style%}
+
+  .grid-item {
+    height: 200px
+  }
+
+  {%endstyle%}
 
   <section class="half-media-text">
     <div class="container-max">
