@@ -32,6 +32,7 @@
     "16335987823b33b422": {
       "type": "two-side-pictures",
       "settings": {
+        "half_image": "shopify:\/\/shop_images\/image00006.png",
         "half_image_p": "2",
         "half_video": "",
         "half_title": "",
