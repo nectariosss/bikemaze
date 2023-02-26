@@ -3,6 +3,7 @@
 
   <section class="half-media-text">
     <div class="container-max">
+      
       <div class="grid-container">
         <div
           class="grid-item half-media-text__media"
@@ -27,19 +28,6 @@
             {{ section.settings.half_image | image_url: width: section.settings.half_image.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
           {%- endif -%}
         </div>
-        <div class="grid-item half-media-text__body" style="background-color:{{ section.settings.half_bg_color }};">
-          <div class="half-media-text__content" style="color: {{ section.settings.half_text_color }};">
-            {%- assign hTag = 'h2' -%}
-            {%- if section.settings.half_title_tag -%}
-              {% assign hTag = section.settings.half_title_tag -%}
-            {%- endif -%}
-            <h2 class="{{ hTag }} half-media-text__title">{{ section.settings.half_title }}</h2>
-            {%- if section.settings.half_text != blank -%}
-              <div class="half-media-text__text">
-                {{- section.settings.half_text -}}
-              </div>
-            {%- endif -%}
-
 
             {%- if section.settings.half_b_text != blank -%}
             {%comment%}
@@ -55,9 +43,7 @@
                 </div>
             {%endcomment%}
             {%- endif -%}
-            
-          </div>
-        </div>
+
       </div>
     </div>
   </section>
