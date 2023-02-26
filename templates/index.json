@@ -33,6 +33,7 @@
       "type": "two-side-pictures",
       "settings": {
         "half_image": "shopify:\/\/shop_images\/image00006.png",
+        "half_image_2": "shopify:\/\/shop_images\/invertlogo.jpg",
         "half_image_p": "2",
         "half_video": "",
         "half_title": "",
