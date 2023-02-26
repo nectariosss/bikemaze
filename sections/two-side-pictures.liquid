@@ -12,6 +12,15 @@
         >
             {{ section.settings.half_image | image_url: width: section.settings.half_image.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
         </div>
+        
+        <div
+        class="grid-item half-media-text__media"
+        {% if section.settings.half_image_p %}
+          style="order: {{ section.settings.half_image_p }}"
+        {% endif %}
+      >
+          {{ section.settings.half_image | image_url: width: section.settings.half_image.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
+      </div>
 
             {%- if section.settings.half_b_text != blank -%}
             {%comment%}
@@ -50,6 +59,11 @@
     {
       "type": "image_picker",
       "id": "half_image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "half_image_2",
       "label": "Image"
     },
     {
