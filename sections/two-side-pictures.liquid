@@ -15,6 +15,10 @@
   .half-media-text__link.secondary-button {
     position: absolute;
   }
+
+  .ng-box {
+    display
+  }
 }
 
   {%endstyle%}
@@ -41,7 +45,6 @@
             >
                 {{ section.settings.half_image_2 | image_url: width: section.settings.half_image_2.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
             </div>
-      </div>
               <div
               class=""
               {% if section.settings.half_image_p %}
@@ -51,6 +54,7 @@
                 {{ section.settings.half_image_3 | image_url: width: section.settings.half_image_3.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
             </div>
 
+        </div>
           {%comment%}
           "grid-item half-image-item half-media-text__media
           {%endcomment%}
