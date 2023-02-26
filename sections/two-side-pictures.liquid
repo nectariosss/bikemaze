@@ -22,6 +22,10 @@
     grid-template-columns: 1fr 1fr;
   }
 
+  .ng-box-item-big {
+    height: 200px
+  }
+
   .ng-box-nested {
     display: grid;
     grid-template-columns: 1fr;
@@ -54,7 +58,7 @@
                 </div>
 
                   <div
-                class=""
+                class="ng-box-item-small"
                 {% if section.settings.half_image_p %}
                   style="order: {{ section.settings.half_image_p }}"
                 {% endif %}
