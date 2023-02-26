@@ -51,7 +51,9 @@
                 {{ section.settings.half_image_3 | image_url: width: section.settings.half_image_3.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
             </div>
 
-
+          {%comment%}
+          "grid-item half-image-item half-media-text__media
+            {%endcomment%}
 
 
             {%- if section.settings.half_b_text != blank -%}
