@@ -28,6 +28,8 @@
       grid-template-rows:1fr 1fr;
     }
 
+    
+
   @media only screen and (max-width: 767px) {
   .ng-box {
     grid-template-columns: 1fr;
@@ -57,7 +59,7 @@
                   {% endif %}
                 >
                     {{ section.settings.half_image_2 | image_url: width: section.settings.half_image_2.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
-                    <button class="secondary-button">TEST BUTTON</button>
+                    <button class="ng-buttons-float">TEST BUTTON</button>
                 </div>
 
                   <div
