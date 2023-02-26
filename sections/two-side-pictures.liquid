@@ -3,7 +3,7 @@
 
   <section class="half-media-text">
     <div class="container-max">
-      
+
       <div class="grid-container">
         <div
           class="grid-item half-media-text__media"
@@ -11,22 +11,7 @@
             style="order: {{ section.settings.half_image_p }}"
           {% endif %}
         >
-          {%- if section.settings.half_video != blank -%}
-            <video
-              class="video"
-              crossorigin="anonymous"
-              autoplay
-              playsinline
-              muted
-              loop
-              poster="{{ section.settings.half_image | img_url: 'master' }}"
-              preload="none"
-              type="video/mp4"
-              src="{{ section.settings.half_video }}"
-            ></video>
-          {%- else -%}
             {{ section.settings.half_image | image_url: width: section.settings.half_image.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
-          {%- endif -%}
         </div>
 
             {%- if section.settings.half_b_text != blank -%}
@@ -48,6 +33,7 @@
     </div>
   </section>
 {%- endif -%}
+
 
 {% javascript %}
   // The content from {% javascript %} tags across all sections is concatenated into a single file by Shopify, and then injected into the theme through the content_for_header global Liquid object.
