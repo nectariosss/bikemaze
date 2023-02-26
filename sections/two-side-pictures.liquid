@@ -7,6 +7,27 @@
     height: 500px;
   }
 
+  .ng-box {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .ng-box-item-big {
+      width:auto;
+      height: 600px
+    }
+
+    .ng-box-item-small {
+      width:auto;
+      height: 300px
+    }
+
+    .ng-box-nested {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows:1fr 1fr;
+    }
+
   @media only screen and (max-width: 767px) {
   .ng-box {
     grid-template-columns: 1fr;
@@ -17,27 +38,6 @@
     position: absolute;
   }
 }
-
-.ng-box {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .ng-box-item-big {
-    width:auto;
-    height: 600px
-  }
-
-  .ng-box-item-small {
-    width:auto;
-    height: 300px
-  }
-
-  .ng-box-nested {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-rows:1fr 1fr;
-  }
 
   {%endstyle%}
 
