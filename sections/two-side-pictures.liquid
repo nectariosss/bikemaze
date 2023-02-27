@@ -176,7 +176,8 @@
     </div>
 
     <div>
-      
+      {{ section.settings.half_image_3 | image_url: width: section.settings.half_image_4.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
+
     </div>
 
 
@@ -286,6 +287,7 @@
       "id": "half_b_url_3",
       "label": "Button Url 3"
     },
+    
     {
       "type": "text",
       "id": "marquee_title",
