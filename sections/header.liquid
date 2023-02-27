@@ -154,17 +154,19 @@
       </div>
     </div>
 
-    <div class="ng-close-button">
-      <button
-        class="close-button"
-        data-close-drawer
-        aria-label="{{ 'accessibility.close' | t }}">
-        {% render 'icon-close' %}
-      </button>
-    </div>
-    
+
     <div class="header__mob-drawer" data-drawer>
       <div class="mob-drawer__top">
+
+        <div class="ng-close-button">
+          <button
+            class="close-button"
+            data-close-drawer
+            aria-label="{{ 'accessibility.close' | t }}">
+            {% render 'icon-close' %}
+          </button>
+        </div>
+        
         <ul class="ng-navigation_mobile">
           {% for link in linklists.main-menu.links %}
             <a href={{link.url}}>
