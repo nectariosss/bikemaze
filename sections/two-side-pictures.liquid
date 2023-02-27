@@ -111,9 +111,33 @@
             {%- endif -%}
           {%endcomment%}
 
-          
+
       </div>
     </div>
+
+
+      {% if section.settings.carousel_title != blank %}
+      <div class="marquee">
+        <div class="products-carousel__title">
+          <span class="h3">
+            <span>{{ section.settings.carousel_title }} </span>
+            <span>{{ section.settings.carousel_title }} </span>
+            <span>{{ section.settings.carousel_title }} </span>
+            <span>{{ section.settings.carousel_title }} </span>
+          </span>
+        </div>
+
+        <div class="products-carousel__title2">
+          <span class="h3">
+            <span>{{ section.settings.carousel_title }} </span>
+            <span>{{ section.settings.carousel_title }} </span>
+            <span>{{ section.settings.carousel_title }} </span>
+            <span>{{ section.settings.carousel_title }} </span>
+          </span>
+        </div>
+      </div>
+    {% endif %}
+
   </section>
 {%- endif -%}
 
