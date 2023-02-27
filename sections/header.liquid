@@ -138,7 +138,15 @@
           {% endfor %}
         </ul>
 
-
+          <li class="mobtop__item">
+            <button
+              class="close-button"
+              data-close-drawer
+              aria-label="{{ 'accessibility.close' | t }}">
+              {% render 'icon-close' %}
+            </button>
+          </li>
+          
       </div>
       <div class="mob-drawer__menu" data-drawer-menuwrap>
         <nav>
