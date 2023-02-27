@@ -132,13 +132,8 @@
       <div class="mob-drawer__top">
         <ul class="mobtop">
           <li class="mobtop__item">
-            {% if section.settings.nav_show %}
-              <div class="mobtop__link">
-                {%- render 'site-logo', logo_image: section.settings.main_logo, logo_text: section.settings.main_logo_text, width: 150, height: 150, neverH1: true -%}
-              </div>
-            {% endif %}
           </li>
-          
+
           <li class="mobtop__item">
             <button
               class="close-button"
