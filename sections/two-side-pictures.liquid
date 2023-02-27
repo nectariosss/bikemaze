@@ -176,7 +176,7 @@
     </div>
 
     <div>
-      {{ section.settings.half_image_3 | image_url: width: section.settings.half_image_4.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
+      {{ section.settings.half_image_4 | image_url: width: section.settings.half_image_4.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
 
     </div>
 
@@ -236,6 +236,11 @@
     {
       "type": "image_picker",
       "id": "half_image_3",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "half_image_4",
       "label": "Image"
     },
     {
