@@ -71,6 +71,7 @@
                   <li>{{ link.title }}</li>
                 </a>
               {% endfor %}
+
             </ul>
           </nav>
         </div>
@@ -159,17 +160,10 @@
             <a href={{link.url}}>
               <li>{{ link.title }}</li>
             </a>
+
+            
           {% endfor %}
         </ul>
-
-          <li class="ng-close-button">
-            <button
-              class="close-button"
-              data-close-drawer
-              aria-label="{{ 'accessibility.close' | t }}">
-              {% render 'icon-close' %}
-            </button>
-          </li>
 
       </div>
 
