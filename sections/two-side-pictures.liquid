@@ -128,7 +128,7 @@
               </a>
 
               <div class="ng-box-nested">
-                  <div
+                <div
                   class="ng-box-item-small"
                   {% if section.settings.half_image_p %}
                     style="order: {{ section.settings.half_image_p }}"
@@ -137,8 +137,7 @@
                     {{ section.settings.half_image_2 | image_url: width: section.settings.half_image_2.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
                     <a  href="{{ section.settings.half_b_url_2 }}" class="ng-buttons-float">{{ section.settings.half_b_text_2 }}</a>
                 </div>
-
-                  <div
+                <div
                 class="ng-box-item-small"
                 {% if section.settings.half_image_p %}
                   style="order: {{ section.settings.half_image_p }}"
@@ -150,24 +149,6 @@
               </div>
             </div>
         </div>
-          {%comment%}
-          "grid-item half-image-item half-media-text__media
-          {%endcomment%}
-
-
-          {%comment%}
-            {%- if section.settings.half_b_text != blank -%}
-                <div style="margin: 1rem">
-                 <a
-                  href="{{ section.settings.half_b_url_3 }}"
-                  class="half-media-text__link secondary-button"
-                  style="--sec-color: {% if section.settings.half_text_color != blank %}{{ section.settings.half_text_color }}{% else %}#fff{% endif %}"
-                  >
-                    {{- section.settings.half_b_text_3 -}}
-                  </a>
-                </div>
-            {%- endif -%}
-          {%endcomment%}
       </div>
     </div>
 
