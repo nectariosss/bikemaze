@@ -57,7 +57,7 @@
 .products-marquee__title {
   color: white;
   display: inline-block;
-  animation: animate 40s linear infinite;
+  animation: animate_marq 40s linear infinite;
   animation-delay: -40s;
 }
 
@@ -94,10 +94,10 @@
 }
 
 @keyframes animate_marq {
-    0% {
+    100% {
       transform: translateX(100%);
     }
-    100% {
+    0% {
       transform: translateX(-100%);
     }
   }
