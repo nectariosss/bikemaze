@@ -130,9 +130,13 @@
     </div>
     <div class="header__mob-drawer" data-drawer>
       <div class="mob-drawer__top">
-        <ul class="mobtop">
-          <li class="mobtop__item">
-          </li>
+        <ul class="ng-navigation_mobile">
+          {% for link in linklists.main-menu.links %}
+            <a href={{link.url}}>
+              <li>{{ link.title }}</li>
+            </a>
+          {% endfor %}
+        </ul>
 
           <li class="mobtop__item">
             <button
