@@ -40,8 +40,8 @@
   }
 
   .ng-close-button {
-    position: absolute;
-    text-decoration: none;
+    display: flex;
+    justify-content: flex-end;
   }
 
 
@@ -153,6 +153,16 @@
         </button>
       </div>
     </div>
+
+    <div class="ng-close-button">
+      <button
+        class="close-button"
+        data-close-drawer
+        aria-label="{{ 'accessibility.close' | t }}">
+        {% render 'icon-close' %}
+      </button>
+    </div>
+    
     <div class="header__mob-drawer" data-drawer>
       <div class="mob-drawer__top">
         <ul class="ng-navigation_mobile">
@@ -162,15 +172,6 @@
             </a>
           {% endfor %}
         </ul>
-        
-        <div class="ng-close-button">
-          <button
-            class="close-button"
-            data-close-drawer
-            aria-label="{{ 'accessibility.close' | t }}">
-            {% render 'icon-close' %}
-          </button>
-        </div>
 
       </div>
 
