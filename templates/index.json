@@ -35,13 +35,15 @@
         "half_image": "shopify:\/\/shop_images\/image00006.png",
         "half_image_2": "shopify:\/\/shop_images\/image00032.jpg",
         "half_image_3": "shopify:\/\/shop_images\/image00003.png",
+        "half_image_4": "shopify:\/\/shop_images\/invertlogo.jpg",
         "half_image_p": "1",
         "half_b_text": "COntact",
         "half_b_url": "shopify:\/\/pages\/contact",
         "half_b_text_2": "view all",
         "half_b_url_2": "shopify:\/\/collections",
         "half_b_text_3": "explore more",
-        "half_b_url_3": "shopify:\/\/collections\/frontpage"
+        "half_b_url_3": "shopify:\/\/collections\/frontpage",
+        "marquee_title": "marquee"
       }
     },
     "16332987808e571964": {
