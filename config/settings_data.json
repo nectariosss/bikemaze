@@ -47,9 +47,9 @@
       "ajax-cart": {
         "type": "ajax-cart",
         "settings": {
-          "cart_title": "",
-          "cart_text": "",
-          "cart_empty": ""
+          "cart_title": "CART",
+          "cart_text": "shop amazing stuff here",
+          "cart_empty": "Looks like your cart is empty..."
         }
       },
       "klaviyo-backinstock": {
