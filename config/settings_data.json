@@ -38,10 +38,10 @@
         "type": "footer",
         "settings": {
           "footer_linklist": "footer",
-          "copyrights": "Avex Designs",
+          "copyrights": "",
           "newsletter_title": "Newsletter",
           "newsletter_element": "<div class=\"klaviyo-form-SJLAFx\"><\/div>",
-          "footer_socials": ""
+          "footer_socials": "footer"
         }
       },
       "ajax-cart": {
