@@ -2,8 +2,24 @@
   "sections": {
     "main": {
       "type": "list-collections",
-      "settings": {}
+      "settings": {
+        "title": "Collections"
+      }
+    },
+    "0e427dfb-6cc1-4b64-abb8-6e169fa34843": {
+      "type": "products-carousel",
+      "settings": {
+        "carousel_title": "New arrivals",
+        "carousel_coll": "",
+        "carousel_coll_lm": 15,
+        "carousel_desk": 4,
+        "carousel_mob": 2,
+        "carousel_b_text": "Shop Now"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "0e427dfb-6cc1-4b64-abb8-6e169fa34843"
+  ]
 }
