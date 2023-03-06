@@ -7,9 +7,9 @@
         "show_collection_description": true,
         "collection_text_color": "#202020",
         "show_secondary_image": true,
-        "show_vendor": true,
+        "show_vendor": false,
         "enable_filtering": false,
-        "enable_sorting": true,
+        "enable_sorting": false,
         "tag_filters": ""
       }
     }
