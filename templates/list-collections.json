@@ -11,10 +11,17 @@
       "settings": {
         "carousel_title": "Collections"
       }
+    },
+    "fc405c52-5b95-4ea6-b4b6-858c07e79ce8": {
+      "type": "marquee-right",
+      "settings": {
+        "carousel_title": "add your text"
+      }
     }
   },
   "order": [
     "main",
-    "7bfa5ced-14af-44aa-8d15-2d3c0981f04c"
+    "7bfa5ced-14af-44aa-8d15-2d3c0981f04c",
+    "fc405c52-5b95-4ea6-b4b6-858c07e79ce8"
   ]
 }
