@@ -1,20 +1,20 @@
 {
   "sections": {
+    "3d281def-3e0f-49e5-af97-7669a7826292": {
+      "type": "marquee",
+      "settings": {
+        "carousel_title": "Collections"
+      }
+    },
     "main": {
       "type": "list-collections",
       "settings": {
         "title": "Collections"
       }
-    },
-    "3d281def-3e0f-49e5-af97-7669a7826292": {
-      "type": "marquee",
-      "settings": {
-        "carousel_title": "New arrivals"
-      }
     }
   },
   "order": [
-    "main",
-    "3d281def-3e0f-49e5-af97-7669a7826292"
+    "3d281def-3e0f-49e5-af97-7669a7826292",
+    "main"
   ]
 }
