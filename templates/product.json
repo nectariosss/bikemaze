@@ -80,11 +80,12 @@
     "1634690105fbe44cb6": {
       "type": "half-media-text",
       "settings": {
+        "half_image": "shopify:\/\/shop_images\/invertlogo.jpg",
         "half_image_p": "1",
         "half_video": "https:\/\/cdn.shopify.com\/s\/files\/1\/0580\/9379\/7582\/files\/file_example_MP4_1280_10MG.mp4?v=1634690190",
-        "half_title": "FEATURED WORK",
+        "half_title": "SOMETHING ELSE",
         "half_title_tag": "h3",
-        "half_text": "<p>Avex is a <a href=\"https:\/\/avexdesigns.com\/shopify-agency-partner-services\">NYC Shopify Partner Agency<\/a>. We design, develop and optimize eCommerce websites & email marketing campaigns for some of the world's most popular brands.<\/p>",
+        "half_text": "",
         "half_b_text": "",
         "half_b_url": "",
         "half_text_color": "#000000",
