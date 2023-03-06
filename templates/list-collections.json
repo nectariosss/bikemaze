@@ -6,20 +6,15 @@
         "title": "Collections"
       }
     },
-    "0e427dfb-6cc1-4b64-abb8-6e169fa34843": {
-      "type": "products-carousel",
+    "3d281def-3e0f-49e5-af97-7669a7826292": {
+      "type": "marquee",
       "settings": {
-        "carousel_title": "New arrivals",
-        "carousel_coll": "",
-        "carousel_coll_lm": 15,
-        "carousel_desk": 4,
-        "carousel_mob": 2,
-        "carousel_b_text": "Shop Now"
+        "carousel_title": "New arrivals"
       }
     }
   },
   "order": [
     "main",
-    "0e427dfb-6cc1-4b64-abb8-6e169fa34843"
+    "3d281def-3e0f-49e5-af97-7669a7826292"
   ]
 }
