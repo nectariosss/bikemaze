@@ -1,20 +1,20 @@
 {
   "sections": {
-    "3d281def-3e0f-49e5-af97-7669a7826292": {
-      "type": "marquee",
-      "settings": {
-        "carousel_title": "Collections"
-      }
-    },
     "main": {
       "type": "list-collections",
       "settings": {
         "title": "Collections"
       }
+    },
+    "7bfa5ced-14af-44aa-8d15-2d3c0981f04c": {
+      "type": "marquee-left",
+      "settings": {
+        "carousel_title": "Collections"
+      }
     }
   },
   "order": [
-    "3d281def-3e0f-49e5-af97-7669a7826292",
-    "main"
+    "main",
+    "7bfa5ced-14af-44aa-8d15-2d3c0981f04c"
   ]
 }
