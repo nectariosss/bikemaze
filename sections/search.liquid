@@ -1,5 +1,11 @@
 {% render 'stylesheet', name: 'search' %}
 
+
+{style}
+
+
+
+
 <script src="{{ 'search-js.min.js' | asset_url }}" defer="defer"></script>
 
 <div class="search {% unless search.performed and search.results_count > 0 %}search--empty{% endunless %}">
