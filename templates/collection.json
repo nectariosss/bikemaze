@@ -1,5 +1,11 @@
 {
   "sections": {
+    "3e42186e-1c9c-463d-b8c3-8b236c317022": {
+      "type": "marquee-left",
+      "settings": {
+        "carousel_title": "add your text"
+      }
+    },
     "main": {
       "type": "collection",
       "settings": {
@@ -15,6 +21,7 @@
     }
   },
   "order": [
+    "3e42186e-1c9c-463d-b8c3-8b236c317022",
     "main"
   ]
 }
