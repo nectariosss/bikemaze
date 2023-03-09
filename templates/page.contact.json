@@ -1,0 +1,51 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {
+      }
+    },
+    "02fd7934-1919-4682-afee-149ae730c2c0": {
+      "type": "contact-form",
+      "blocks": {
+        "7d27c866-1c5b-463a-bd2d-d8e057e92779": {
+          "type": "email",
+          "settings": {
+            "label": "",
+            "half_width": false
+          }
+        },
+        "8b056ee9-40a0-46bb-b583-9ee67d71a6fb": {
+          "type": "msg",
+          "settings": {
+            "label": "",
+            "half_width": false
+          }
+        },
+        "7cf16bdd-8af3-449c-b46d-65dcf81b0135": {
+          "type": "custom_field",
+          "settings": {
+            "label": "",
+            "field": "text",
+            "prefilled": "-",
+            "pattern": "",
+            "half_width": false
+          }
+        }
+      },
+      "block_order": [
+        "7d27c866-1c5b-463a-bd2d-d8e057e92779",
+        "8b056ee9-40a0-46bb-b583-9ee67d71a6fb",
+        "7cf16bdd-8af3-449c-b46d-65dcf81b0135"
+      ],
+      "settings": {
+        "title": "Contact form",
+        "form_id": "ContactForm"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "02fd7934-1919-4682-afee-149ae730c2c0"
+  ]
+}
