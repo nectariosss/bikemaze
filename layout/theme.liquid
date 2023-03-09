@@ -56,8 +56,9 @@
     <a class="skip-to-content-link button visually-hidden" href="#MainContent">{{ 'accessibility.skip_to_text' | t -}}</a>
 
     {%- section 'header' -%}
-    {}
+    {%comment%}
     {%- render 'breadcrumbs' -%}
+    {%endcomment%}
 
     <component-loader>
       <main class="main-content" role="main" id="MainContent">
