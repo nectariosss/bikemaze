@@ -60,7 +60,7 @@
           {%- case block.type -%}
             {%- when 'email' -%}
               <div class="form__field {% if block.settings.half_width %}form__field--half{% endif %}">
-                <h4>Email</h3>
+                <h4>Email</h4>
                 <input
                   autocomplete="email"
                   type="email"
@@ -90,6 +90,7 @@
               </div>
             {%- when 'msg' -%}
               <div class="form__field {% if block.settings.half_width %}form__field--half{% endif %}">
+                <h4>Message</h4>
                 <textarea
                   rows="10"
                   id="{{ formID }}-body"
