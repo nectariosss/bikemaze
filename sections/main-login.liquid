@@ -47,9 +47,9 @@
             {% endif %}
             placeholder="{{ 'customer.login_page.email' | t }}"
           >
-          <label for="RecoverEmail">
+          <h5 for="RecoverEmail">
             {{ 'customer.login_page.email' | t }}
-          </label>
+          </h5>
         </div>
         {%- if form.errors -%}
           <small id="RecoverEmail-email-error" class="form__message">
@@ -115,9 +115,9 @@
             {% endif %}
             placeholder="{{ 'customer.login_page.email' | t }}"
           >
-          <label for="CustomerEmail">
+          <h5 for="CustomerEmail">
             {{ 'customer.login_page.email' | t }}
-          </label>
+          </h5>
         </div>
 
         {%- if form.password_needed -%}
@@ -133,9 +133,9 @@
               {% endif %}
               placeholder="{{ 'customer.login_page.password' | t }}"
             >
-            <label for="CustomerPassword">
+            <h5 for="CustomerPassword">
               {{ 'customer.login_page.password' | t }}
-            </label>
+            </h5>
           </div>
 
           <a href="#recover">
