@@ -185,5 +185,4 @@ advanced-form {
 .contact-form__fields {
   display: flex;
   flex-wrap: wrap;
-  gap: 2rem;
 }
