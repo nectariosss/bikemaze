@@ -104,8 +104,8 @@ HERE YOU HAVE TO MAKE IT TO BE ABLE TO DO PRE ORDER
               <button class=secondary-button type="submit">PRE-ORDER</button>
             {%else%}
             <button class="secondary-button" type="submit">
-            
               ADD TO CART
+              {{variant.inventory_quantity}}
               </button>
               {%endif%}
           {% else %}
