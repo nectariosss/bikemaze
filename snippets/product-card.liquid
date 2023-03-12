@@ -103,7 +103,6 @@ HERE YOU HAVE TO MAKE IT TO BE ABLE TO DO PRE ORDER
             {% if variant.inventory_quantity <= 0 %}
               <button class=secondary-button type="submit">PRE-ORDER
                 {{variant.inventory_quantity}}
-                {{product.variant}}
               </button>
             {%else%}
             <button class="secondary-button" type="submit">
@@ -114,11 +113,8 @@ HERE YOU HAVE TO MAKE IT TO BE ABLE TO DO PRE ORDER
           {% else %}
             <button class="disabled" type="button">{{ 'products.labels.comingsoon' | t }}</button>
           {% endunless %}
-
-
-
-
-
+          hey
+          {{product.variant}}
         </div>
       {% endunless %}
     </div>
