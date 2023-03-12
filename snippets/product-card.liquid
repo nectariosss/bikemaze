@@ -95,9 +95,6 @@
           </select>
 
 
-          {%comment%}
-HERE YOU HAVE TO MAKE IT TO BE ABLE TO DO PRE ORDER
-          {%endcomment%}
 
           {% unless product.tags contains "comingsoon" %}
             {% if variant.inventory_quantity <= 0 %}
@@ -116,6 +113,11 @@ HERE YOU HAVE TO MAKE IT TO BE ABLE TO DO PRE ORDER
           {{product.variants}}
         </div>
       {% endunless %}
+
+
+
+
+      
     </div>
     <div class="product-card__description {{ generalClass }}">
       <div class="product-card__titleblock">
