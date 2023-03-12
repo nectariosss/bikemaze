@@ -18,6 +18,7 @@ justify-content: center;
 .ng-cover:hover {
   filter: blur(10px);
 }
+.ng-cover-title
 
 
 {%endstyle%}
@@ -52,7 +53,7 @@ justify-content: center;
                       {% endif %}
                     >
                       {{ collection.featured_image | image_url: width: collection.featured_image.width | image_tag: preload: true, class: 'cover ng-cover', loading: "lazy" }}
-                      <h5 class="">{{- collection.title -}}</h5>
+                      <h5 class="ng-cover-title">{{- collection.title -}}</h5>
                     </div>
                   </div>
                   <div class="card__text card__text-spacing card__text-hover">
