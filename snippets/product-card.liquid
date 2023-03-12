@@ -100,18 +100,17 @@ HERE YOU HAVE TO MAKE IT TO BE ABLE TO DO PRE ORDER
           {%endcomment%}
 
           {% unless product.tags contains "comingsoon" %}
-          {% if current_variant.available and current_variant.inventory_quantity <= 0 %}
-          <button class=secondary-button type="submit"> </button>
+            {% if current_variant.available and current_variant.inventory_quantity <= 0 %}
+          <button class=secondary-button type="submit"> PRE-ORDER</button>
           {%else%}
           <button class="secondary-button" type="submit">
         {%comment%}
 {{ 'products.product.quickadd' | t }}
         {%endcomment%}
-
         ADD TO CART
              </button>
-
         {%endif%}
+
           {% else %}
             <button class="disabled" type="button">{{ 'products.labels.comingsoon' | t }}</button>
           {% endunless %}
