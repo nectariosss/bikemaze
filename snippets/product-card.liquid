@@ -99,12 +99,10 @@
           {% unless product.tags contains "comingsoon" %}
             {% if variant.inventory_quantity <= 0 %}
               <button class=secondary-button type="submit">PRE-ORDER
-                {{variant.inventory_quantity}}
               </button>
             {%else%}
             <button class="secondary-button" type="submit">
               ADD TO CART
-              {{variant.inventory_quantity}}
               </button>
               {%endif%}
           {% else %}
@@ -117,7 +115,7 @@
 
 
 
-        
+
     </div>
     <div class="product-card__description {{ generalClass }}">
       <div class="product-card__titleblock">
