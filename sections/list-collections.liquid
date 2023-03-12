@@ -51,7 +51,7 @@ img:hover {
                         style="padding-bottom: {{ 1 | divided_by: collection.featured_image.aspect_ratio | times: 100 }}%;"
                       {% endif %}
                     >
-                      {{ collection.featured_image | image_url: width: collection.featured_image.width | image_tag: preload: true, class: 'cover', loading: "lazy" }}
+                      {{ collection.featured_image | image_url: width: collection.featured_image.width | image_tag: preload: true, class: 'cover ng-cover', loading: "lazy" }}
                     </div>
                   </div>
                   <div class="card__text card__text-spacing card__text-hover">
