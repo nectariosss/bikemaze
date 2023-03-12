@@ -9,7 +9,7 @@
     "main": {
       "type": "collection",
       "settings": {
-        "products_per_page": 8,
+        "products_per_page": 24,
         "show_collection_description": true,
         "collection_text_color": "#202020",
         "show_secondary_image": true,
