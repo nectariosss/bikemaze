@@ -108,6 +108,9 @@
           {% else %}
             <button class="disabled" type="button">{{ 'products.labels.comingsoon' | t }}</button>
           {% endunless %}
+
+          {%comment%}
+        {%endcomment%}
           {{product.variants}}
         </div>
       {% endunless %}
