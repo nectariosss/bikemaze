@@ -31,10 +31,17 @@
         "title": "",
         "form_id": "ContactForm"
       }
+    },
+    "0316d7c8-597e-4a7d-ba7e-b487bf05d407": {
+      "type": "marquee-right",
+      "settings": {
+        "carousel_title": "THANK YOU"
+      }
     }
   },
   "order": [
     "main",
-    "02fd7934-1919-4682-afee-149ae730c2c0"
+    "02fd7934-1919-4682-afee-149ae730c2c0",
+    "0316d7c8-597e-4a7d-ba7e-b487bf05d407"
   ]
 }
