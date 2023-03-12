@@ -97,13 +97,14 @@
 
 
           {% unless product.tags contains "comingsoon" %}
+          <h1>KATERINA</h1>
             <button class="secondary-button" type="submit">{{ 'products.product.quickadd' | t }}</button>
           {% else %}
             <button class="disabled" type="button">{{ 'products.labels.comingsoon' | t }}</button>
           {% endunless %}
 
 
-          
+
         </div>
       {% endunless %}
     </div>
