@@ -95,6 +95,9 @@
           </select>
 
 
+          {%comment%}
+
+          {%endcomment%}
 
           {% unless product.tags contains "comingsoon" %}
             <button class="secondary-button" type="submit">{{ 'products.product.quickadd' | t }} </button>
@@ -102,7 +105,7 @@
             <button class="disabled" type="button">{{ 'products.labels.comingsoon' | t }}</button>
           {% endunless %}
 
-          
+
 
 
 
