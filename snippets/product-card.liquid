@@ -104,11 +104,8 @@ HERE YOU HAVE TO MAKE IT TO BE ABLE TO DO PRE ORDER
               <button class=secondary-button type="submit"> PRE-ORDER</button>
             {%else%}
             <button class="secondary-button" type="submit">
-              {%comment%}
-      {{ 'products.product.quickadd' | t }}
-              {%endcomment%}
               ADD TO CART
-                  </button>
+              </button>
               {%endif%}
           {% else %}
             <button class="disabled" type="button">{{ 'products.labels.comingsoon' | t }}</button>
