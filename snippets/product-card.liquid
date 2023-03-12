@@ -100,7 +100,13 @@ HERE YOU HAVE TO MAKE IT TO BE ABLE TO DO PRE ORDER
           {%endcomment%}
 
           {% unless product.tags contains "comingsoon" %}
-            <button class="secondary-button" type="submit">{{ 'products.product.quickadd' | t }} </button>
+            <button class="secondary-button" type="submit">
+
+          {%comment%}
+{{ 'products.product.quickadd' | t }}
+          {%endcomment%}
+
+               </button>
           {% else %}
             <button class="disabled" type="button">{{ 'products.labels.comingsoon' | t }}</button>
           {% endunless %}
