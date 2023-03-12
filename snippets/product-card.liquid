@@ -100,7 +100,7 @@ HERE YOU HAVE TO MAKE IT TO BE ABLE TO DO PRE ORDER
           {%endcomment%}
 
           {% unless product.tags contains "comingsoon" %}
-            {% if product.tags cotains <= 0 %}
+            {% if product.inventory_quantity <= 0 %}
               <button class=secondary-button type="submit"> PRE-ORDER</button>
             {%else%}
             <button class="secondary-button" type="submit">
