@@ -101,7 +101,9 @@ HERE YOU HAVE TO MAKE IT TO BE ABLE TO DO PRE ORDER
 
           {% unless product.tags contains "comingsoon" %}
             {% if variant.inventory_quantity <= 0 %}
-              <button class=secondary-button type="submit">PRE-ORDER</button>
+              <button class=secondary-button type="submit">PRE-ORDER
+                {{variant.inventory_quantity}}
+              </button>
             {%else%}
             <button class="secondary-button" type="submit">
               ADD TO CART
