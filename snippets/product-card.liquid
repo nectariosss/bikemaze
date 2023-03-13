@@ -82,6 +82,7 @@
               <option
                 data-price="{{ prodVariant.price }}"
                 value="{{ prodVariant.id }}"
+                id="{{ prodVariant.id }}"
                 class="select__list-item"
                 {% if allowDisabled == blank %}
                   {%- unless prodVariant.available %}{% endunless %}
@@ -143,6 +144,8 @@
 
 
 <script>
+
+const 
 
 
 
