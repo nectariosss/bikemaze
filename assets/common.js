@@ -12693,8 +12693,6 @@ document.addEventListener(
   false
 );
 
-window.alert('er')
-
 window.addEventListener("resize", () => {});
 
 document.addEventListener("DOMContentLoaded", () => {
