@@ -12667,8 +12667,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var liquid_ajax_cart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! liquid-ajax-cart */ "./node_modules/liquid-ajax-cart/liquid-ajax-cart.js");
 
 
-
-console.log("Hello");
 /**
  * Configure Liquid Ajax Cart
  */
