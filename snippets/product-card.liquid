@@ -97,6 +97,7 @@
 
 
           {% unless product.tags contains "comingsoon" %}
+          
             {% if variant.inventory_quantity <= 0 %}
               <button class=secondary-button type="submit">PRE-ORDER
               </button>
@@ -110,8 +111,8 @@
           {% endunless %}
 
           {%comment%}
-        {%endcomment%}
           {{product.variants}}
+        {%endcomment%}
         </div>
       {% endunless %}
 
