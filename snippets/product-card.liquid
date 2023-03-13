@@ -81,7 +81,7 @@
             {%- for prodVariant in product.variants -%}
               <option
                 data-price="{{ prodVariant.price }}"
-                value="{{ prodVariant.id }} 33"
+                value="{{ prodVariant.id }}"
                 id="{{ prodVariant.id }}"
                 class="select__list-item"
                 {% if allowDisabled == blank %}
