@@ -98,11 +98,13 @@
 
 
           {% unless product.tags contains "comingsoon" %}
+          <div>{{product.variants}}</div>
+
+
+          <h1>KATERINA</h1>
 
 
 
-
-          
 
             {% if variant.inventory_quantity <= 0 %}
               <button class=secondary-button type="submit">PRE-ORDER
