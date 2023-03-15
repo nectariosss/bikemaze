@@ -98,6 +98,13 @@
 
 
           {% unless product.tags contains "comingsoon" %}
+
+          {%for item in product.variants%}
+            <h1>item.</h1>
+
+
+
+          {%endfor%}
           <div>{{product.variants}}</div>
 
 
