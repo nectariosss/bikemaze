@@ -99,9 +99,10 @@
 
           {% unless product.tags contains "comingsoon" %}
 
-          
+          {% assign total = 0 %}
           {%for item in product.variants%}
-            <h1>{{item.inventory_quantity}}</h1>
+
+            to{{item.inventory_quantity}}
           {%endfor%}
 
 
