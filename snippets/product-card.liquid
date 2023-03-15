@@ -81,7 +81,7 @@
     
         <select
         style="display: none"
-         name="id" class="select-tag" id="dropdown-component" onchange="ngOnChange()">
+        name="id" class="select-tag" id="dropdown-component">
           {%- for prodVariant in product.variants -%}
             <option
               data-price="{{ prodVariant.price }}"
