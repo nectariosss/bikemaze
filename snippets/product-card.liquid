@@ -80,7 +80,7 @@
         product-card__actions--only-one {% endif %}">
     
 
-        {%comment%}
+
         <select name="id" class="select-tag" id="dropdown-component" onchange="ngOnChange()">
           {%- for prodVariant in product.variants -%}
             <option
@@ -99,7 +99,7 @@
             </option>
           {%- endfor -%}
         </select>
-      {%endcomment%}
+
 
 
           {% unless product.tags contains "comingsoon" %}
