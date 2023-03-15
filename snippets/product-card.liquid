@@ -76,13 +76,9 @@
       {% unless product.tags contains 'notifyme' and variant.inventory_quantity == 0 or variant.inventory_quantity == 0 %}
 
         <input type="hidden" name="quantity" value="1" min="1">
-        <div class="product-card__actions product-card__actions--only-one">
-
-        {%comment%}
-        {% if product.variants.size == 1 %}
-        product-card__actions--only-one
-        {% endif %}">
-        {%endcomment%}
+        <div class="product-card__actions   {% if product.variants.size == 1 %}
+        product-card__actions--only-one {% endif %}">
+    
 
         {%comment%}
         <select name="id" class="select-tag" id="dropdown-component" onchange="ngOnChange()">
