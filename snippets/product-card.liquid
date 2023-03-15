@@ -112,6 +112,7 @@
           {%for item in product.variants%}
           {%assign total = total | plus: item.inventory_quantity %}
           {%endfor%}
+          
             {% if total <= 0 %}
               <button class=secondary-button type="submit">PRE-ORDER
               </button>
