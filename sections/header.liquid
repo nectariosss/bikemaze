@@ -101,9 +101,14 @@
               </div>
             {% endif %}
             {% if section.settings.user_icon %}
+
+            {%comment%}
+          {%endcomment%}
               <a href="{% if customer %}{{ routes.account_url }}{% else %}{{ routes.account_login_url }}{% endif %}" class="header__quickaccess-item">
                 {%- render 'icon-account' -%}
               </a>
+
+
             {% endif %}
             {% if template != 'cart' %}
               {% if section.settings.cart_icon %}
