@@ -79,11 +79,9 @@
         <div class="product-card__actions   {% if product.variants.size == 1 %}
         product-card__actions--only-one {% endif %}">
     
-
-
         <select name="id" class="select-tag" id="dropdown-component" onchange="ngOnChange()">
           {%- for prodVariant in product.variants -%}
-            <option
+            <option 
               data-price="{{ prodVariant.price }}"
               value="{{ prodVariant.id}}"
               id="{{ prodVariant.id }}"
