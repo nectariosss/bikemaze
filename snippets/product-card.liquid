@@ -79,26 +79,25 @@
         <div class="product-card__actions {% if product.variants.size == 1 %}product-card__actions--only-one{% endif %}">
 
         {%comment%}
-        
+        <select name="id" class="select-tag" id="dropdown-component" onchange="ngOnChange()">
+          {%- for prodVariant in product.variants -%}
+            <option
+              data-price="{{ prodVariant.price }}"
+              value="{{ prodVariant.id}}"
+              id="{{ prodVariant.id }}"
+              class="select__list-item"
+              {% if allowDisabled == blank %}
+                {%- unless prodVariant.available %}{% endunless %}
+              {% endif %}
+              {% if product.selected_or_first_available_variant.id == prodVariant.id %}
+                selected
+              {% endif %}
+            >
+              {{ prodVariant.title }}
+            </option>
+          {%- endfor -%}
+        </select>
       {%endcomment%}
-          <select name="id" class="select-tag" id="dropdown-component" onchange="ngOnChange()">
-            {%- for prodVariant in product.variants -%}
-              <option
-                data-price="{{ prodVariant.price }}"
-                value="{{ prodVariant.id}}"
-                id="{{ prodVariant.id }}"
-                class="select__list-item"
-                {% if allowDisabled == blank %}
-                  {%- unless prodVariant.available %}{% endunless %}
-                {% endif %}
-                {% if product.selected_or_first_available_variant.id == prodVariant.id %}
-                  selected
-                {% endif %}
-              >
-                {{ prodVariant.title }}
-              </option>
-            {%- endfor -%}
-          </select>
 
 
           {% unless product.tags contains "comingsoon" %}
