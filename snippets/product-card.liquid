@@ -77,6 +77,10 @@
 
         <input type="hidden" name="quantity" value="1" min="1">
         <div class="product-card__actions {% if product.variants.size == 1 %}product-card__actions--only-one{% endif %}">
+
+        {%comment%}
+        
+      {%endcomment%}
           <select name="id" class="select-tag" id="dropdown-component" onchange="ngOnChange()">
             {%- for prodVariant in product.variants -%}
               <option
