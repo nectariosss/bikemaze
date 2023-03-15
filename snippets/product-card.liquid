@@ -79,10 +79,11 @@
         <div class="product-card__actions 
         product-card__actions--only-one">
 
-        
-      {% if product.variants.size == 1 %}
-      product-card__actions--only-one
-      {% endif %}">
+        {%comment%}
+        {% if product.variants.size == 1 %}
+        product-card__actions--only-one
+        {% endif %}">
+        {%endcomment%}
 
         {%comment%}
         <select name="id" class="select-tag" id="dropdown-component" onchange="ngOnChange()">
