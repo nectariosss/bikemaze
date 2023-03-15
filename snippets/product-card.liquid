@@ -102,7 +102,7 @@
             {% if variant.inventory_quantity <= 0 %}
               <button class=secondary-button type="submit">PRE-ORDER
               </button>
-              <div>hello</div>
+              <div>{{variant.inventory_quantity}}</div>
             {%else%}
             <button class="secondary-button" type="submit">
               ADD TO CART
