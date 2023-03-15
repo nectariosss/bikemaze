@@ -104,12 +104,12 @@
           {%assign total = total | plus: item.inventory_quantity %}
           {%endfor%}
             {% if total <= 0 %}
-              <button class=secondary-button type="submit">PRE-ORDER
-              </button>
+              <div class=secondary-button type="submit">PRE-ORDER
+              </div>
             {%else%}
-            <button class="secondary-button" type="submit">
+            <div class="secondary-button" type="submit">
               ADD TO CART
-              </button>
+              </div>
               {%endif%}
           {% else %}
             <button class="disabled" type="button">{{ 'products.labels.comingsoon' | t }}</button>
