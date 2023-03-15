@@ -99,10 +99,19 @@
 
           {% unless product.tags contains "comingsoon" %}
 
+
+
+
+          
+
             {% if variant.inventory_quantity <= 0 %}
               <button class=secondary-button type="submit">PRE-ORDER
               </button>
-              <div>{{product.available}}</div>
+
+
+
+
+
             {%else%}
             <button class="secondary-button" type="submit">
               ADD TO CART
