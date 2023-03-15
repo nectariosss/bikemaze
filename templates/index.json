@@ -1,11 +1,5 @@
 {
   "sections": {
-    "e56c9671-ada3-46a4-b58a-a5131961bbc0": {
-      "type": "marquee-left",
-      "settings": {
-        "carousel_title": "WELCOME"
-      }
-    },
     "1633298769daf14fc7": {
       "type": "hero-banner",
       "settings": {
@@ -68,7 +62,6 @@
     }
   },
   "order": [
-    "e56c9671-ada3-46a4-b58a-a5131961bbc0",
     "1633298769daf14fc7",
     "163329877533384385",
     "16335987823b33b422",
