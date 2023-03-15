@@ -104,17 +104,9 @@
           {%assign total = total | plus: item.inventory_quantity %}
           {%endfor%}
           <h1>{{total}}</h1>
-          <h1>KATERINA</h1>
-
-
-            {% if variant.inventory_quantity <= 0 %}
+            {% if total <= 0 %}
               <button class=secondary-button type="submit">PRE-ORDER
               </button>
-
-
-
-
-
             {%else%}
             <button class="secondary-button" type="submit">
               ADD TO CART
