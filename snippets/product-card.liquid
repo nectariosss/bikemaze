@@ -99,6 +99,7 @@
 
           {% unless product.tags contains "comingsoon" %}
 
+          
           {%for item in product.variants%}
             <h1>{{item.inventory_quantity}}</h1>
           {%endfor%}
