@@ -101,14 +101,11 @@
 
           {% assign total = 0 %}
           {%for item in product.variants%}
-
             total = {{item.inventory_quantity}}
           {%endfor%}
 
-
+          
           <h1>KATERINA</h1>
-
-
 
 
             {% if variant.inventory_quantity <= 0 %}
