@@ -101,7 +101,7 @@
 
           {% assign total = 0 %}
           {%for item in product.variants%}
-          total = {{item.inventory_quantity}}
+          total = total + {{item.inventory_quantity}}
           {%endfor%}
           <h1>{{total}}</h1>
           <h1>KATERINA</h1>
