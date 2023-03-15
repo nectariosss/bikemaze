@@ -79,11 +79,12 @@
         <div class="product-card__actions product-card__actions--only-one
         
 
-        
+        {%comment%}
         {% if product.variants.size == 1 %}
         product-card__actions--only-one
         {% endif %}">
-    
+        {%endcomment%}
+        
         <select
         style="display: none"
         name="id" class="select-tag" id="dropdown-component">
