@@ -28,14 +28,15 @@
       </nav>
     </div>
 
-    <div></div>
-    <ul class="footer-nav__menu">
-      {% for link in section.settings.footer_pages.links %}
-        <li class="footer-nav__item">
-          <a href="{{ link.url }}" class="footer-nav__link">{{ link.title }}</a>
-        </li>
-      {% endfor %}
-    </ul>
+    <div class="grid-item">
+      <ul class="footer-nav__menu">
+        {% for link in section.settings.footer_pages.links %}
+          <li class="footer-nav__item">
+            <a href="{{ link.url }}" class="footer-nav__link">{{ link.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
 
     <div class="grid-item">
       {%- if section.settings.newsletter_element != blank -%}
