@@ -106,7 +106,7 @@
     </div>
 
     <div class="footer-grid-item">
-      <h5 class="ng-item-titles">{{section.settings.footer_pages_title}}</h5>
+      <h5 class="ng-item-titles">{{section.settings.footer_about_title}}</h5>
         <nav class="footer__navigation" role="navigation">
           <ul class="footer-nav__menu">
             {% for link in section.settings.footer_pages.links %}
@@ -181,6 +181,12 @@
       "id": "footer_pages",
       "label": "Menu",
       "default": "footer"
+    },
+    {
+      "type": "text",
+      "id": "footer_about_title",
+      "label": "Title",
+      "default": "enter title here"
     }
   ]
 }
