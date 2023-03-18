@@ -29,6 +29,12 @@
         "carousel_b_text": "Shop New Arrivals"
       }
     },
+    "0206b531-9d1e-4b13-afcd-645a0a991f8f": {
+      "type": "marquee-right",
+      "settings": {
+        "carousel_title": "THANK YOU"
+      }
+    },
     "16335987823b33b422": {
       "type": "two-side-pictures",
       "settings": {
@@ -59,19 +65,13 @@
         "half_text_color": "#000000",
         "half_bg_color": "#e9e9e9"
       }
-    },
-    "0206b531-9d1e-4b13-afcd-645a0a991f8f": {
-      "type": "marquee-right",
-      "settings": {
-        "carousel_title": "THANK YOU"
-      }
     }
   },
   "order": [
     "1633298769daf14fc7",
     "163329877533384385",
+    "0206b531-9d1e-4b13-afcd-645a0a991f8f",
     "16335987823b33b422",
-    "16332987808e571964",
-    "0206b531-9d1e-4b13-afcd-645a0a991f8f"
+    "16332987808e571964"
   ]
 }
