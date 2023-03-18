@@ -38,6 +38,7 @@
       </ul>
     </div>
 
+    {%comment%}
     <div class="grid-item">
       {%- if section.settings.newsletter_element != blank -%}
         <div class="newsletter">
@@ -52,6 +53,8 @@
       {%- endif -%}
     </div>
   </div>
+    {%endcomment%}
+    
   {%comment%}
   <div class="footer__copyrights">
     <small>&copy; {{ 'now' | date: "%Y" }}, {{ section.settings.copyrights }}</small>
