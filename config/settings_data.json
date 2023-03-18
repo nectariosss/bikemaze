@@ -37,12 +37,10 @@
       "footer": {
         "type": "footer",
         "settings": {
+          "footer_linklist_title": "main",
           "footer_linklist": "footer",
-          "footer_pages": "footer-pages",
-          "copyrights": "",
-          "newsletter_title": "Newsletter",
-          "newsletter_element": "<div class=\"klaviyo-form-SJLAFx\"><\/div>",
-          "footer_socials": "main-menu"
+          "footer_pages_title": "information",
+          "footer_pages": "footer-pages"
         }
       },
       "ajax-cart": {
