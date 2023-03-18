@@ -49,14 +49,16 @@
     </div>
 
     <div class="grid-item">
-      <nav class="footer__navigation" role="navigation">
-      <ul class="footer-nav__menu">
-        {% for link in section.settings.footer_pages.links %}
-          <li class="footer-nav__item">
-            <a href="{{ link.url }}" class="footer-nav__link">{{ link.title }}</a>
-          </li>
-        {% endfor %}
-      </ul>
+      <h5 class="ng-item-titles">{{section.settings.footer_linklist_title}}</h5>
+        <nav class="footer__navigation" role="navigation">
+          <ul class="footer-nav__menu">
+            {% for link in section.settings.footer_pages.links %}
+              <li class="footer-nav__item">
+                <a href="{{ link.url }}" class="footer-nav__link">{{ link.title }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+      </nav>
     </div>
 
     {%comment%}
