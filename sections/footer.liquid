@@ -12,6 +12,10 @@
 
 <div class="container">
   <div class="grid-container-footer">
+
+
+
+
     <div class="grid-item">
       <nav class="footer__navigation" role="navigation">
         <ul class="footer-nav__menu">
@@ -23,6 +27,8 @@
         </ul>
       </nav>
     </div>
+
+    <div></div>
     <ul class="footer-nav__menu">
       {% for link in section.settings.footer_pages.links %}
         <li class="footer-nav__item">
@@ -30,6 +36,7 @@
         </li>
       {% endfor %}
     </ul>
+
     <div class="grid-item">
       {%- if section.settings.newsletter_element != blank -%}
         <div class="newsletter">
