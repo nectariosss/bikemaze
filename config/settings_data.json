@@ -38,6 +38,7 @@
         "type": "footer",
         "settings": {
           "footer_linklist": "footer",
+          "footer_pages": "footer-pages",
           "copyrights": "",
           "newsletter_title": "Newsletter",
           "newsletter_element": "<div class=\"klaviyo-form-SJLAFx\"><\/div>",
