@@ -43,7 +43,8 @@
           "footer_pages_title": "information",
           "footer_pages": "footer-pages",
           "footer_about_title": "about",
-          "footer_about_text": "Ut vitae dolor nulla. Ut euismod libero in odio lobortis molestie. Phasellus lectus quam,"
+          "footer_about_text": "Ut vitae dolor nulla. Ut euismod libero in odio lobortis molestie. Phasellus lectus quam,",
+          "footer_about_email": "nectarios@info.com"
         }
       },
       "ajax-cart": {
