@@ -2,12 +2,6 @@
 <script src="{{ 'js-product.min.js' | asset_url }}" defer="defer"></script>
 
 {%- assign current_variant = product.selected_or_first_available_variant -%}
-
-{% javascript %}
-
-  console.log('hett')
-  
-{% endjavascript %}
   
   
 
@@ -334,10 +328,14 @@
       console.log(product.variants)
     })
   })
-
-
 </script>
 
+
+{% javascript %}
+
+  console.log('hett')
+  
+{% endjavascript %}
 
 
 {% schema %}
