@@ -280,13 +280,13 @@
 
 
 <div hidden id="inventory-quantities">
+  <ul>
 {% for item in product.variants %}
   {% assign key = item.id | append: "," %}
   {% assign new_key = key | append: item.inventory_quantity %}
-    <ul>
       <li>{{new_key}}</li>
+    {% endfor %}
     </ul>
-{% endfor %}
 </div>
 
 <script>
