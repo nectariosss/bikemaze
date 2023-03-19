@@ -337,7 +337,6 @@
       console.log(matched_variant)
 
       inventory_number =  getQuantities(matched_variant)
-      checkPreOrder()
     })
   })
 
@@ -366,15 +365,6 @@
   }
 
   var inventory_number = getQuantities(first_matched_variant)
-
-  function checkPreOrder () {
-    var add_to_cart = document.querySelector('#Addtocart')
-    if (inventory_number <= 0 ) {
-      add_to_cart.innerHTML = "PRE-ORDER"
-    }
-  }
-
-  checkPreOrder()
   
 
 </script>
