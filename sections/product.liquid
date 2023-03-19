@@ -284,10 +284,10 @@
 {% for item in product.variants %}
   {% assign key = item.id | append: "," %}
   {% assign new_key = key | append: item.inventory_quantity %}
-  {% assign variants_object = variants_object  %}
+  {% assign variants_object = variants_object | append: new_keys %}
 {% endfor %}
 
-<h1>{{new_key}}</h1>
+<h1>{{variants_object}}</h1>
 
 
 <script>
