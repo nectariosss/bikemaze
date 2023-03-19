@@ -371,7 +371,7 @@
     var add_to_cart = document.querySelector('#AddToCart')
     console.log(add_to_cart.innerHTML)
     console.log("this is invent" + inventory_number)
-    if (String(inventory_number) = '0' ) {
+    if (Number(inventory_number) = 0 ) {
       console.log('got inside check')
       add_to_cart.innerHTML = "Pre order"
     }
