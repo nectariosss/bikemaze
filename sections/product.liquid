@@ -276,13 +276,16 @@
   </div>
 </div>
 
-{%- assign variants_object = empty_object -%}
 
-{%for item in product.variants%}
+
+
+{% assign variants_object = empty_object %}
+
+{% for item in product.variants %}
   {% assign key = item.id %}
   {% assign value = item.inventory_quantity %}
-
-{%endfor%}
+  % assign variants_object = empty_object %}
+{% endfor %}
 
 
 
