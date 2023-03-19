@@ -305,7 +305,7 @@
         return pass
       })
 
-      price.innerHTML = '{{- matched | money_without_trailing_zeros -}}'
+      price.innerHTML = matched_variant.price
       console.log(price)
       console.log(matched_variant)
 
