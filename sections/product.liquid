@@ -282,7 +282,8 @@
 <script>
 
   var product = {{product | json }}
-  var price = document.querySelector()
+  var price = document.querySelector('.price')
+  console.log(price)
 
   var selected_values = document.querySelectorAll('.variant-button input[type="radio"]').forEach(radio => {
     radio.addEventListener('change', ()=> {
