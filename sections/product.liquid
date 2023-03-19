@@ -284,10 +284,8 @@
   
   {%for item in product.variants%}
     inventories_object.id = item.id
-    inventories_object.quantity = item.inventory_quan
+    inventories_object.quantity = item.inventory_quantity
   {%endfor%}
-
-    
 
 
   var selected_values = document.querySelectorAll('.variant-button input[type="radio"]').forEach(radio => {
