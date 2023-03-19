@@ -285,7 +285,7 @@
   
   {% assign key = item.id %}
   {% assign value = item.inventory_quantity %}
-  {}
+  {% assign myobject = key | append  %}
 {% endfor %}
 
 
