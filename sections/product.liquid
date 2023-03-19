@@ -354,7 +354,7 @@
         console.log(matched_variant.id)
         console.log(quantities_id_array[i])
     
-      if (quantities_id_array[i] === matched_variant.id) {
+      if (string(quantities_id_array[i]) === matched_variant.id) {
         console.log("found it")
         actual_inventory = quantities_inv_array[i];
         }
