@@ -1,8 +1,8 @@
 {%- render 'stylesheet', name: 'product' -%}
 <script src="{{ 'js-product.min.js' | asset_url }}" defer="defer"></script>
 
-{%- comment -%}{%- assign current_variant = product.selected_or_first_available_variant -%}{%- endcomment -%}
-{%- assign current_variant = product.selected_variant -%}
+{%- assign current_variant = product.selected_or_first_available_variant -%}
+
 
 <div class="product">
   <div class="container-max product-container">
@@ -89,6 +89,9 @@
                 </div>
               {%- when 'variant_picker' -%}
                 {%- unless product.has_only_default_variant -%}
+                {%comment%}
+              important about variants
+              {%endcomment%}
                   {%- if block.settings.picker_type == 'button' -%}
                     <variant-radios
                       class="variant-button"
@@ -115,6 +118,9 @@
                           {%- endfor -%}
                         </fieldset>
                       {%- endfor -%}
+                {%comment%}
+              end of important about variants
+              {%endcomment%}
                     </variant-radios>
                   {%- else -%}
                     <variant-selects
