@@ -279,8 +279,8 @@
 {%- assign variants_object = empty_object -%}
 
 {%for item in product.variants%}
-
-  
+  {% assign key = item.id %}
+  {% assign value = item.in %}
 
 {%endfor%}
 
