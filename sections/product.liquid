@@ -279,7 +279,7 @@
 
 <script>
 
-  var product = {{product | json }}
+  var product = {{product }}
   var selected_variant =  {{product.selected_or_first_available_variant | json }}
 
   var selected_values = document.querySelectorAll('.variant-button input[type="radio"]').forEach(radio => {
@@ -322,8 +322,6 @@
       document.querySelector('#product-id').value = matched_variant.id
 
       console.log(matched_variant)
-
-      var selected_variant =  {{product.selected_or_first_available_variant.inventory_quantity | json }}
       console.log(selected_variant)
     })
   })
