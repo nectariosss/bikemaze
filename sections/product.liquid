@@ -287,14 +287,13 @@
       var selected_options = []
 
 
-      {%comment%}
-      zsfgdfsg
-      {%endcomment%}
+      //getting the selected combination of variants
       document.querySelectorAll('.variant-button input[type="radio"]:checked').forEach(radio => {
         selected_options.push(radio.value)
       })
      
      
+      //finding the combination in the product object and setting 
       var matched_variant = product.variants.find (variant => {
         var pass = true;
         for (var i = 0; i < selected_options.length; i++ ){
