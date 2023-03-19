@@ -280,7 +280,7 @@
 <script>
   var product = {{product | json }}
   var current_variant = current_variant
-  
+  console.log(current_variant)
 
   var selected_values = document.querySelectorAll('.variant-button input[type="radio"]').forEach(radio => {
     radio.addEventListener('change', ()=> {
