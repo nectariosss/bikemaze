@@ -100,7 +100,7 @@
                       {{ block.shopify_attributes }}
                     >
                       {%- for option in product.options_with_values -%}
-                        <input>
+                        <input type="hidden" name="id" value="">
                         <fieldset class="variant-button__wrapper" data-option-position="{{option.position}}">
                           <legend class="variant-button__label">{{ option.name }}</legend>
                           {%- for value in option.values -%}
