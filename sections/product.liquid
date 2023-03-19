@@ -338,7 +338,7 @@
       var quantities_id_array = [];
       var quantities_id = (document.querySelector('#inventory-quantities').querySelectorAll("li"));
       quantities_id.forEach(function(item){
-        quantities_id_array.push(item)
+        quantities_id_array.push(item.innerHTML)
       })
       console.log(quantities_id_array)
 
