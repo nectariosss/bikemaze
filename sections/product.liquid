@@ -284,8 +284,7 @@
   {% assign key = item.id | append: "," %}
   {% assign new_key = key | append: item.inventory_quantity %}
     <ul>
-      <li>  <p>{{new_key}}</p></li>
-
+      <li>{{new_key}}</li>
     </ul>
 {% endfor %}
 </div>
