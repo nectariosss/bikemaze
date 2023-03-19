@@ -335,14 +335,14 @@
 
       console.log(matched_variant)
 
-      getQuantities()
+      getQuantities(matched_variant)
       
     })
   })
 
-  function getQuantities () {
+  function getQuantities (matched_variant) {
     //getting inventory quantities......
-      
+
     var quantities_id_array = [];
     var quantities_id = (document.querySelector('#inventory-quantities').querySelectorAll("li"));
     quantities_id.forEach(function(item){
