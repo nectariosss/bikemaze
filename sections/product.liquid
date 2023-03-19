@@ -349,21 +349,12 @@
         quantities_inv_array.push(item.innerHTML)
       })
 
-      var inventory_object = {}
       var actual_inventory = ''
       for (var i = 0; i < quantities_id_array.length; i++ ){
 
       if (quantities_id_array[i] === matched_variant) {
-        actual_inventory = 
-      }
-
-
-
-
-        var item = {};
-        item.id = quantities_id_array[i];
-        item.inv = quantities_inv_array[i];
-        inventory_object[i] = item;
+        actual_inventory = quantities_inv_array[i]
+        }
       }
       console.log(inventory_object)
 
