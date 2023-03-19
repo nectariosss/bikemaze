@@ -335,33 +335,32 @@
 
       console.log(matched_variant)
       
-
-      //getting inventory quantities......
-
-      var quantities_id_array = [];
-      var quantities_id = (document.querySelector('#inventory-quantities').querySelectorAll("li"));
-      quantities_id.forEach(function(item){
-        quantities_id_array.push(item.innerHTML)
-      })
-
-      var quantities_inv_array = [];
-      var quantities_inv = (document.querySelector('#inventory-quantities').querySelectorAll("p"));
-      quantities_inv.forEach(function(item){
-        quantities_inv_array.push(item.innerHTML)
-      })
-
-      var current_inventory = ''
-      for (var i = 0; i < quantities_id_array.length; i++ ){    
-      if (String(quantities_id_array[i]) === String(matched_variant.id)) {
-        current_inventory = Number(quantities_inv_array[i]);
-        }
-      }
-      console.log("current inventory is " + current_inventory)
     })
   })
 
   function getQuantities () {
-    
+
+  //getting inventory quantities......
+
+  var quantities_id_array = [];
+  var quantities_id = (document.querySelector('#inventory-quantities').querySelectorAll("li"));
+  quantities_id.forEach(function(item){
+    quantities_id_array.push(item.innerHTML)
+  })
+
+  var quantities_inv_array = [];
+  var quantities_inv = (document.querySelector('#inventory-quantities').querySelectorAll("p"));
+  quantities_inv.forEach(function(item){
+    quantities_inv_array.push(item.innerHTML)
+  })
+
+  var current_inventory = ''
+  for (var i = 0; i < quantities_id_array.length; i++ ){    
+  if (String(quantities_id_array[i]) === String(matched_variant.id)) {
+    current_inventory = Number(quantities_inv_array[i]);
+    }
+  }
+  console.log("current inventory is " + current_inventory)
   }
 
 
