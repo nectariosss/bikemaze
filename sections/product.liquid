@@ -279,7 +279,7 @@
 
 
 
-<div hidden id="inventory_quantities">
+<div hidden id="inventory-quantities">
 {% for item in product.variants %}
   {% assign key = item.id | append: "," %}
   {% assign new_key = key | append: item.inventory_quantity %}
@@ -333,7 +333,7 @@
       console.log(matched_variant)
       console.log(variants)
 
-      document.querySelector('')
+      console.log(document.querySelector('#inventory-quantities')
 
 
 
