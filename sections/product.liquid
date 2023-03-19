@@ -293,7 +293,6 @@
 <script>
 
   var product = {{product | json }}
-  var matched_variant = product.selected_or_first_avaiable_variant.id
 
   var selected_values = document.querySelectorAll('.variant-button input[type="radio"]').forEach(radio => {
 
@@ -337,8 +336,10 @@
       console.log(matched_variant)
 
       getQuantities(matched_variant)
-      
     })
+
+
+    
   })
 
   function getQuantities (matched_variant) {
@@ -364,9 +365,6 @@
     }
     console.log("current inventory is " + current_inventory)
   }
-
-  getQuantities()
-
 </script>
 
 
