@@ -12,7 +12,7 @@
       {%- if item.product.compare_at_price != nil -%}
         <span class="cart-item__price-original">{{ item.product.compare_at_price | money }}</span>
       {%- endif -%}
-      <span class="cart-item__price-current">{{ item.product.select_or_virs | money }}</span>
+      <span class="cart-item__price-current">{{ item.product.select_or_first_available_variant.price | money }}</span>
     </div>
     <div class="cart-item__extra">
       {% unless item.product.has_only_default_variant %}
