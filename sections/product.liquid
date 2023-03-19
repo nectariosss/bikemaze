@@ -82,6 +82,8 @@
                       {{- current_variant.compare_at_price | money_without_trailing_zeros -}}
                     </span>
                   {% endif %}
+
+                  {{current_variant}}
                 </div>
               {%- when 'payment_terms' -%}
                 <div class="product-details__shopPay-terms">
