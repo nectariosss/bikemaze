@@ -284,6 +284,7 @@
   
   {%for item in product.variants%}
     inventories_object.id = item.id
+    inventories_object.quantity = item.inventory_quan
   {%endfor%}
 
     
