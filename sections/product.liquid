@@ -340,7 +340,6 @@
       quantities_id.forEach(function(item){
         quantities_id_array.push(item.innerHTML)
       })
-      console.log(quantities_id_array)
 
       var quantities_inv_array = [];
       var quantities_inv = (document.querySelector('#inventory-quantities').querySelectorAll("p"));
@@ -351,7 +350,7 @@
       var inventory_object = {}
 
       quantities_id_array.forEach(function(item){
-        inventory_object.id 
+        inventory_object.id = item
       })
 
 
