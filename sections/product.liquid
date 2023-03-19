@@ -283,7 +283,7 @@
   var inventories_object = {}
   
   {%for item in product.variants%}
-    item.inventory_quantity
+    inventories_object.id = item.id
   {%endfor%}
 
     
