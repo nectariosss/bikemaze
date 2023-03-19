@@ -366,13 +366,9 @@
   }
 
   var inventory_number = getQuantities(first_matched_variant)
-  console.log(inventory_number)
 
   function checkPreOrder (inventory_number) {
     var pre_order_warning = document.querySelector('#pre-order-warning')
-    console.log(pre_order_warning.innerHTML)
-    console.log(inventory_number)
-
     if (inventory_number <= 0 ) {
       console.log('got inside check')
       pre_order_warning.innerHTML = 'By adding to cart you are preordering this product due to stock unavailability'
@@ -381,8 +377,6 @@
       pre_order_warning.innerHTML = ''
     }
   }
-
-
   checkPreOrder(inventory_number)
 
 
