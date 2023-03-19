@@ -279,7 +279,7 @@
 
 <script>
   var product = {{product | json }}
-  console.log(product)
+  console.log(product.variants)
   
 
   var selected_values = document.querySelectorAll('.variant-button input[type="radio"]').forEach(radio => {
@@ -301,7 +301,6 @@
         }
         return pass
       })
-
 
 
       console.log(matched_variant)
