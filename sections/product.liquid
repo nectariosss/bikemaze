@@ -351,21 +351,18 @@
       })
 
       var actual_inventory = ''
-      for (var i = 0; i < quantities_id_array.length; i++ ){
-        console.log(matched_variant.id)
-        console.log(quantities_id_array[i])
-    
+      for (var i = 0; i < quantities_id_array.length; i++ ){    
       if (String(quantities_id_array[i]) === String(matched_variant.id)) {
         actual_inventory = Number(quantities_inv_array[i]);
         }
       }
-      console.log(actual_inventory)
-
     })
   })
 
 
-  window.onload(function())
+  window.onload(function(){
+    console.log('eht')
+  })
 
 
 
