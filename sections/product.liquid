@@ -336,6 +336,7 @@
       console.log(matched_variant)
       inventory_number =  getQuantities(matched_variant)
       console.log(inventory_number)
+      checkPreOrder
     })
   })
 
@@ -370,12 +371,13 @@
     var add_to_cart = document.querySelector('#Addtocart')
     if (inventory_number <= 0 ) {
       add_to_cart.innerHTML = "PRE-ORDER"
+      console.log('got inside check')
     }
   }
 
+  checkPreOrder()
 
 
-  
 </script>
 
 
