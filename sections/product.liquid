@@ -306,6 +306,7 @@
       })
 
       price.innerHTML = '{{- current_variant.price | money_without_trailing_zeros -}}'
+      console.log(price)
       console.log(matched_variant)
 
       var ng_id = document.querySelector('#product-id').value = matched_variant.id
