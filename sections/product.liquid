@@ -282,6 +282,7 @@
 <script>
 
   var product = {{product | json }}
+  var html_price = querySelector('.price').innerHTML
 
   var selected_values = document.querySelectorAll('.variant-button input[type="radio"]').forEach(radio => {
 
@@ -304,7 +305,6 @@
       })
 
       var price = matched_variant.price / 100
-      var html_price = querySelector('.price').innerHTML
 
       console.log(price)
       console.log(matched_variant)
