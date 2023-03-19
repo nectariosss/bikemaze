@@ -276,16 +276,13 @@
   </div>
 </div>
 
-{%- assign inventories_object = product.selected_or_first_available_variant -%}
+
 
 
 
 <script>
 
   var product = {{product | json }}
-  var inventories_object = {}
-  
-
 
   var selected_values = document.querySelectorAll('.variant-button input[type="radio"]').forEach(radio => {
 
