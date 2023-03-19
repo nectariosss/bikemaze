@@ -12,7 +12,7 @@
       {%- if item.product.compare_at_price != nil -%}
         <span class="cart-item__price-original">{{ item.product.compare_at_price | money }}</span>
       {%- endif -%}
-      <span class="cart-item__price-current">{{ item.product.price | money }} </span>
+      <span class="cart-item__price-current">{{ item.product.title | money }} </span>
     </div>
     <div class="cart-item__extra">
       {% unless item.product.has_only_default_variant %}
@@ -67,7 +67,4 @@
 
 <script>
 
-var product = item.procuct
-
-console.log('eheheh')
 </script>
