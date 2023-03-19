@@ -290,7 +290,7 @@
         selected_options.push(radio.value)
       })
 
-      var matched_variant = product.variants.find(variant => {
+      var matched_variant = product.variants.find (variant => {
         var pass = true;
 
         for (var i = 0; i < selected_options.length; i++ ){
@@ -302,9 +302,8 @@
         return pass
       })
 
-
       console.log(matched_variant)
-      
+
       var ng_id = document.querySelector('#product-id').value = matched_variant.id
 
       console.log(ng_id)
