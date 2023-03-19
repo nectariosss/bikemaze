@@ -279,7 +279,7 @@
 
 
 
-<div>
+<div hidden>
 {% for item in product.variants %}
   {% assign key = item.id | append: "," %}
   {% assign new_key = key | append: item.inventory_quantity %}
