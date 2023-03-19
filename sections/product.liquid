@@ -369,13 +369,13 @@
 
   function checkPreOrder (inventory_number) {
     var add_to_cart = document.querySelector('#AddToCart')
-    console.log(add_to_cart.textContent)
+    console.log(add_to_cart.innerHTML)
     console.log(inventory_number)
 
 
     if (Number(inventory_number) <= 0 ) {
       console.log('got inside check')
-      add_to_cart.textContent. = 'Pre order'
+      add_to_cart.innerHTML. = 'Pre order'
     }
   }
 
