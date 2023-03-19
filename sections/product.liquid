@@ -293,7 +293,7 @@
 
       var matched_variant = product.variants.find(variant => {
         for (var i = 0; i < selected_options.length; i++ ){
-          if (selected_options.indexOf(variant.opti))
+          if (selected_options.indexOf(variant.options[i]) === -1 )
         }
       })
 
