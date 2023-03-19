@@ -280,7 +280,7 @@
 
 {%for item in product.variants%}
   {% assign key = item.id %}
-  {% assign value = item.in %}
+  {% assign value = item.inventory_quantity %}
 
 {%endfor%}
 
