@@ -287,7 +287,7 @@
     radio.addEventListener('change', ()=> {
       var selected_options = []
       document.querySelectorAll('.variant-button input[type="radio"]:checked').forEach(radio => {
-        
+        selected_options.push(radio.value)
       })
     })
   })
