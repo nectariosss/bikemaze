@@ -222,8 +222,6 @@
                   </div>
                   <input id="product-id" type="hidden" name="id" value="{{ current_variant.id }}">
 
-                  {{current_variant.id}}
-
                   <div class="product-form__buttons">
                     <button
                       id="AddToCart"
@@ -312,7 +310,7 @@
       document.querySelector('.compare-at-price').textContent = javascript_price_compare_at_price
       
       document.querySelector('#product-id').value = matched_variant.id
-      
+
     })
   })
   
