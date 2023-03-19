@@ -304,8 +304,9 @@
       })
 
 
-
-      document.querySelector('.price').textContent = "€" + (matched_variant.price / 100)
+      var javascript_price = document.querySelector('.price').textContent
+      javascript_price = javascript_price  "€" + (matched_variant.price / 100)
+      
       
 
 
