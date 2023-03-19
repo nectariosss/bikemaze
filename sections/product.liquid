@@ -280,11 +280,11 @@
 <script>
 
   var product = {{product | json }}
+  var inventories_object = {}
 
   
   {%for item in product.variants%}
     item.inventory_quantity
-
   {%endfor%}
 
     
