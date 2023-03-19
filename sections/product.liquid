@@ -322,9 +322,9 @@
       document.querySelector('#product-id').value = matched_variant.id
 
       console.log(matched_variant)
-      
-      var selected_variant =  {{product.selected_or_first_available_variant | json }}
-      console.log(selected_variant.inventory_quantity)
+
+      var selected_variant =  {{product.selected_or_first_available_variant.inventory_quantity | json }}
+      console.log(selected_variant)
     })
   })
 </script>
