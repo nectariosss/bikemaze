@@ -65,7 +65,7 @@
 
     <div class="product__details">
       <div class="product-details">
-        {%- form 'product', product, class: 'form', id: "product-form", novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
+        {%- form 'product', product: product, class: 'form', id: "product-form", novalidate: 'novalidate', data-type: 'add-to-cart-form' -%}
           {%- for block in section.blocks -%}
             {%- case block.type -%}
               {%- when '@app' -%}
