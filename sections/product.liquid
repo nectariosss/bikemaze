@@ -301,12 +301,10 @@
     radio.addEventListener('change', ()=> {
       var selected_options = []
 
-
       //getting the selected combination of variants
       document.querySelectorAll('.variant-button input[type="radio"]:checked').forEach(radio => {
         selected_options.push(radio.value)
       })
-     
      
       //finding the combination in the product object and setting and putting it inside matched variant
       var matched_variant = product.variants.find (variant => {
@@ -374,7 +372,6 @@
   }
   checkPreOrder(inventory_number)
 </script>
-
 
 {% schema %}
 {
