@@ -100,7 +100,6 @@
                       {{ block.shopify_attributes }}
                     >
                       {%- for option in product.options_with_values -%}
-                        <input id="product-id" type="hidden" name="id" value="{{product.selected_or_first_available_variant.id}}">
                         <fieldset class="variant-button__wrapper" data-option-position="{{option.position}}">
                           <legend class="variant-button__label">{{ option.name }}</legend>
                           {%- for value in option.values -%}
@@ -224,6 +223,7 @@
 
                   <input type="hidden" name="id" value="{{ current_variant.id }}">
                   <div class="product-form__buttons">
+                    <input id="product-id" type="hidden" name="id" value="{{product.selected_or_first_available_variant.id}}">
                     <button
                       id="AddToCart"
                       type="submit"
@@ -307,7 +307,7 @@
       console.log(matched_variant)
 
       var ng-id = document.querySelector('#product-id').value = matched_variant.id
-      
+
       console.log(ng-id)
     })
   })
