@@ -283,7 +283,10 @@
 {% for item in product.variants %}
   {% assign key = item.id | append: "," %}
   {% assign new_key = key | append: item.inventory_quantity %}
-  <p>{{new_key}}</p>
+    <ul>
+      <li>  <p>{{new_key}}</p></li>
+
+    </ul>
 {% endfor %}
 </div>
 
