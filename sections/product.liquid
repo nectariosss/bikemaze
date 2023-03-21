@@ -307,6 +307,10 @@ quantity-input {
 
         <h1>{{product.metafields.custom.specification}}</h1>
 
+        <div>
+          {{product.metafields.custom.sizechart}}
+        </div>
+
         {%comment%}
             {% assign accordion_items = section.blocks | where: "type", "collapsible_tab" %}
               {%- for item in accordion_items -%}
