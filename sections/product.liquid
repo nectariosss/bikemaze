@@ -1,6 +1,15 @@
 {%- render 'stylesheet', name: 'product' -%}
 <script src="{{ 'js-product.min.js' | asset_url }}" defer="defer"></script>
 
+
+{%style%}
+
+
+{%endstyle%}
+
+
+
+
 {%- assign current_variant = product.selected_or_first_available_variant -%}
   
 <div class="product">
