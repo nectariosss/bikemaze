@@ -288,7 +288,6 @@
 
 
 
-
 <div hidden id="inventory-quantities">
   <ul>
 {% for item in product.variants %}
@@ -300,8 +299,8 @@
     </ul>
 </div>
 
-<script>
 
+<script>
   var product = {{product | json }}
   var first_matched_variant = {{product.selected_or_first_available_variant | json}}
 
