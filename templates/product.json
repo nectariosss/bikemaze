@@ -81,7 +81,7 @@
       "type": "half-media-text",
       "settings": {
         "half_image": "shopify:\/\/shop_images\/invertlogo.jpg",
-        "half_image_p": "2",
+        "half_image_p": "1",
         "half_video": "",
         "half_title": "SOMETHING ELSE",
         "half_title_tag": "h3",
