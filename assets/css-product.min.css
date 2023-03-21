@@ -406,7 +406,7 @@
 }
 .product-form .shopify-payment-button__button {
   text-transform: uppercase;
-  background-color: #795548;
+  background-color: #ff0000;
   border-radius: 0;
 }
 .product-form .shopify-payment-button__button:hover {
