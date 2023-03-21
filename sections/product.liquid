@@ -269,20 +269,20 @@
         {%- endform -%}
 
         {%comment%}
+            {%- for item in accordion_items -%}
+            <accordion-block class="product-details__description">
+              <details>
+                <summary>{{ item.settings.heading | default: item.settings.page.title }}</summary>
+                <div>
+                  {{ item.settings.content }}
+                  {{ item.settings.page.content }}
+                </div>
+              </details>
+            </accordion-block>
+          {%- endfor -%}
         {%endcomment%}
         {% assign accordion_items = section.blocks | where: "type", "collapsible_tab" %}
         <!-- [TODO] <details><summary></summary></details> - html tags can replace this -->
-        {%- for item in accordion_items -%}
-          <accordion-block class="product-details__description">
-            <details>
-              <summary>{{ item.settings.heading | default: item.settings.page.title }}</summary>
-              <div>
-                {{ item.settings.content }}
-                {{ item.settings.page.content }}
-              </div>
-            </details>
-          </accordion-block>
-        {%- endfor -%}
       </div>
     </div>
   </div>
