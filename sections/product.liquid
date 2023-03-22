@@ -345,6 +345,12 @@ quantity-input {
 
 
 <script>
+
+  //this is is the only change
+  var quantity_button = document.querySelectorAll('.quantity')
+  quantity_button.addEventListener('click', console.log('sdfsdfsdf'))
+
+  
   var product = {{product | json }}
   var first_matched_variant = {{product.selected_or_first_available_variant | json}}
 
@@ -412,12 +418,6 @@ quantity-input {
     }
     return current_inventory
   }
-
-  //this is is the only change
-  var quantity_button = document.querySelectorAll('.quantity')
-  quantity_button.addEventListener('click', console.log('sdfsdfsdf'))
-
-
 
   var inventory_number = getQuantities(first_matched_variant)
   function checkPreOrder (inventory_number) {
