@@ -1,5 +1,11 @@
 {
   "sections": {
+    "5a7a2119-7497-4943-8d97-982cf8e763bc": {
+      "type": "marquee-right",
+      "settings": {
+        "carousel_title": "add your text"
+      }
+    },
     "main": {
       "type": "product",
       "blocks": {
@@ -94,6 +100,7 @@
     }
   },
   "order": [
+    "5a7a2119-7497-4943-8d97-982cf8e763bc",
     "main",
     "product-recommendations",
     "1634690105fbe44cb6"
