@@ -350,7 +350,7 @@ quantity-input {
   var first_matched_variant = {{product.selected_or_first_available_variant | json}}
 
   document.querySelectorAll('quantity__button').forEach(button => {
-    button.addEventListener('change', ()=>{
+    button.addEventListener('click', ()=>{
       console.log('he')
     })
   })
