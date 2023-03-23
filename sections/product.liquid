@@ -349,7 +349,7 @@ quantity-input {
 
   const buttons = document.querySelectorAll(".quantity__input")
   .forEach(item => {
-    console.log('found')
+    item.addEventListener("change", console.log("found"))
     }
   )
 
