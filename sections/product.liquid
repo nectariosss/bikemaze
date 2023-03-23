@@ -353,7 +353,7 @@ quantity-input {
     item.addEventListener('change', ()=>{
       quantity_input_value = item.value
       checkPreOrder(inventory_number, quantity_input_value)
-    })
+      })
     }
   )
 
@@ -436,7 +436,6 @@ quantity-input {
       pre_order_warning.innerHTML = 'This is in stock'
     }
   }
-  
   checkPreOrder(inventory_number, quantity_input_value)
 </script>
 
