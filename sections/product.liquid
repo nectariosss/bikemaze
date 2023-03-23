@@ -352,6 +352,7 @@ quantity-input {
   .forEach(item => {
     item.addEventListener('change', ()=>{
       quantity_input_value = item.value
+      checkPreOrder(inventory_number, quantity_input_value)
     })
     }
   )
