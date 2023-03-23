@@ -396,7 +396,7 @@ quantity-input {
       //setting up the form to be the mateched variants
       document.querySelector('#product-id').value = matched_variant.id
       inventory_number =  getQuantities(matched_variant)
-      checkPreOrder(inventory_number)
+      checkPreOrder(inventory_number, quantity_input_value)
     })
   })
 
