@@ -68,7 +68,8 @@
       >
 
       {% if label != blank %}
-        if label = "almost"
+        {% if label != "almost gone"%}
+        {%endif%}
         <div class="product-card__label">
           <span>{{ label }}</span>
         </div>
