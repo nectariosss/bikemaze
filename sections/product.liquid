@@ -427,7 +427,7 @@ quantity-input {
   var inventory_number = getQuantities(first_matched_variant)
   function checkPreOrder (inventory_number) {
     var pre_order_warning = document.querySelector('#pre-order-warning')
-    if (inventory_number <= 0 || quanti ) {
+    if (inventory_number <= 0 || (quantity_input_value < inventory_number) ) {
       pre_order_warning.innerHTML = 'By adding to cart you are placing a pre-order due to stock unavailability, this will cause the deliver to be later than the average for 3 weeks.'
     }
     else {
