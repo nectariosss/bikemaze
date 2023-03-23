@@ -346,17 +346,12 @@ quantity-input {
 
 <script>
   console.log('keyy')
+
   const buttons = document.querySelectorAll(".quantity__input")
   .forEach(item => {
     console.log('found')
     }
   )
-
-  logStuff() {
-    console.log("hey")
-  }
-
-
 
   var product = {{product | json }}
   var first_matched_variant = {{product.selected_or_first_available_variant | json}}
