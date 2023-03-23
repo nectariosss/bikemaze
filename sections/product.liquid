@@ -349,7 +349,9 @@ quantity-input {
   var product = {{product | json }}
   var first_matched_variant = {{product.selected_or_first_available_variant | json}}
 
-  document.querySelectorAll('quantity__button').forEach
+  document.querySelectorAll('quantity__button').forEach(button => {
+    button.addEventListener('')
+  })
 
   var selected_values = document.querySelectorAll('.variant-button input[type="radio"]').forEach(radio => {
 
