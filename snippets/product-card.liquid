@@ -22,7 +22,7 @@
   assign variant = product.selected_or_first_available_variant
 
   if variant.inventory_quantity != 0 and variant.inventory_quantity < 5
-      assign label = 'products.labels.almostgone' | t
+      assign label_almost_gone = 'products.labels.almostgone' | t
   endif
   if  product.tags contains 'label:back-in-stock'
       assign label = 'products.labels.backinstock' | t
