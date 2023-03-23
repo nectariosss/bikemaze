@@ -345,7 +345,6 @@ quantity-input {
 
 
 <script>
-  console.log('keyy')
 
   let quantity_input_value = 1
   const buttons = document.querySelectorAll(".quantity__input")
@@ -354,7 +353,10 @@ quantity-input {
       quantity_input_value = item.value
     })
     }
-  )
+  
+
+
+
 
   var product = {{product | json }}
   var first_matched_variant = {{product.selected_or_first_available_variant | json}}
