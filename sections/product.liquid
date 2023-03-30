@@ -129,7 +129,7 @@ quantity-input {
               {%- when 'price' -%}
                 <div class="product-details__price" data-price>
 
-                <div>
+                <div class="price-pannel">
                     <span class="price {% if current_variant.compare_at_price %}sale-price{% endif %}">
                       {{- current_variant.price | money_without_trailing_zeros -}}
                     </span>
