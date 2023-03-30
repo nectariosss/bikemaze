@@ -141,7 +141,9 @@ quantity-input {
 
                     <span class="unisex-label">
                       {% for tag in product.tags %}
+                        {%if tag == "unisex"%}
                         
+                        {%endif%}
                       {% endfor %}
                     </span>
                 </div>
