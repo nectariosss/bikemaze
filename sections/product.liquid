@@ -144,13 +144,14 @@ quantity-input {
                       {{- current_variant.price | money_without_trailing_zeros -}}
                     </span>
 
-                    <span class="unisex-label">
+    
                       {% for tag in product.tags %}
                         {%if tag == "unisex"%}
+                        <span class="unisex-label">
                         UNISEX
                         {%endif%}
                       {% endfor %}
-                    </span>
+                
                 </div>
 
                   {% if current_variant.compare_at_price > 0 and block.settings.compare_price %}
