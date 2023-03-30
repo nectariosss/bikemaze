@@ -92,7 +92,7 @@ quantity-input {
       <div class="swiper product-images" data-main-images>
         <div class="swiper-wrapper">
           {%- for media in product.media -%}
-            <div class="swiper-slide product-images__item" style="height:500px">
+            <div class="swiper-slide product-images__item" style="height:800px">
               {% if media.media_type == 'video' %}
                 {{ media.preview_image | image_url: width: 1500 | image_tag: preload: true, loading: "lazy" }}
                 <span
