@@ -56,6 +56,7 @@ quantity-input {
   padding: 5px;
 }
 
+.swiper-slide.product-images__item
 
 @media only screen and (max-width: 767px) {
   h5, h1 {
@@ -92,7 +93,7 @@ quantity-input {
       <div class="swiper product-images" data-main-images>
         <div class="swiper-wrapper">
           {%- for media in product.media -%}
-            <div class="swiper-slide product-images__item" style="height:800px">
+            <div class="swiper-slide product-images__item">
               {% if media.media_type == 'video' %}
                 {{ media.preview_image | image_url: width: 1500 | image_tag: preload: true, loading: "lazy" }}
                 <span
