@@ -145,9 +145,10 @@
       
       {%assign count = 0 %}
       {%for character in {{ product.title }} %}
-        {%assign count = count + 1%}
+        {%assign count = count | plus: 1 %}
       {%endfor%}
 
+      
 
         <h2 class="h5 title">
           <a href="{{ variant.url }}">{{ product.title }}</a>
