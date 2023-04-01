@@ -142,9 +142,8 @@
       <div class="product-card__titleblock">
 
 
-      {% assign product_title = product.title %}
       {%assign count = 0 %}
-      {%for character in {{ product.title }} %}
+      {%for character in  product.title  %}
         {%assign count = count | plus: 1 %}
       {%endfor%}
 
