@@ -142,13 +142,11 @@
       <div class="product-card__titleblock">
 
 
-      
+      {}
       {%assign count = 0 %}
       {%for character in {{ product.title }} %}
         {%assign count = count | plus: 1 %}
       {%endfor%}
-
-      <p>{{count}}</p>
 
         <h2 class="h5 title">
           <a href="{{ variant.url }}">{{ product.title }}</a>
