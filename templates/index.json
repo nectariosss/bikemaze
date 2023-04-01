@@ -21,12 +21,12 @@
     "163329877533384385": {
       "type": "products-carousel",
       "settings": {
-        "carousel_title": "FEATURED",
+        "carousel_title": "NEW ARRIVALS",
         "carousel_coll": "featured",
         "carousel_coll_lm": 15,
         "carousel_desk": 4,
         "carousel_mob": 2,
-        "carousel_b_text": "SHOP FEATURED"
+        "carousel_b_text": "NEW ARRIVALS"
       }
     },
     "16335987823b33b422": {
