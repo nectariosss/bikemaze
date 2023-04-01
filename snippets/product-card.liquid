@@ -8,6 +8,14 @@
   {%- render 'product-card', product: product, without_css: true -%}
 {% endcomment %}
 
+<style>
+
+.quickShop.product-card__form {
+  flex-basis: 200px
+}
+
+</style>
+
 {%- liquid
   unless without_css
     render 'stylesheet', name: 'product-card'
