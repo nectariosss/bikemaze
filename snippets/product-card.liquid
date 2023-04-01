@@ -145,7 +145,7 @@
       
       {%assign count = 0 %}
       {%for character in {{ product.title }} %}
-        {}
+        {%assign count = count + 1%}
       {%endfor%}
 
 
