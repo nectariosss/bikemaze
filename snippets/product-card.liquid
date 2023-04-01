@@ -158,7 +158,7 @@
 
         <h2 class="h5 title">
           {%assign new_product_title = '' %}
-            {%for character in product_title%}
+            {%for character in product_title %}
               {%assign new_product_title = new_product_title | concat: character %}
             {%endfor%}
           <a href="{{ variant.url }}">{{new_product_title}}</a>
