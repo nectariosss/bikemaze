@@ -37,14 +37,14 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_linklist_title": "main",
+          "footer_linklist_title": "main Collections",
           "footer_linklist_title_second": "social",
           "footer_linklist": "footer",
           "footer_pages_title": "information",
           "footer_pages": "footer-pages",
           "footer_about_title": "about",
-          "footer_about_text": "Ut vitae dolor nulla. Ut euismod libero in odio lobortis molestie. Phasellus lectus quam,",
-          "footer_about_email": "nectarios@info.com"
+          "footer_about_text": "Experience the freedom and excitement of the open road with our high-quality motorcycle apparel and accessories.",
+          "footer_about_email": "info@bike-maze.com"
         }
       },
       "ajax-cart": {
