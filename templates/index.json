@@ -1,5 +1,11 @@
 {
   "sections": {
+    "5323a41d-fd72-48a1-b34a-199b4715600a": {
+      "type": "small-banner",
+      "settings": {
+        "carousel_title": "add your text"
+      }
+    },
     "1633298769daf14fc7": {
       "type": "hero-banner",
       "settings": {
@@ -63,6 +69,7 @@
     }
   },
   "order": [
+    "5323a41d-fd72-48a1-b34a-199b4715600a",
     "1633298769daf14fc7",
     "163329877533384385",
     "16335987823b33b422",
