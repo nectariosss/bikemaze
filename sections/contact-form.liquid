@@ -1,5 +1,43 @@
 {%- render 'stylesheet', name: 'contact-form' -%}
 
+{%style%}
+
+
+.h3 {
+  text-align: center;
+}
+
+h5 {
+  margin: 0;
+}
+
+input, textarea {
+  padding-left: 5px;
+}
+
+.contact-form__button {
+  max-width: 100%;
+}
+
+.page__title {
+  margin-bottom: 0rem;
+}
+
+.contact-form form {
+  margin-top: 0;
+}
+
+#ContactForm-email {
+  border: 1px solid black;
+}
+#ContactForm-body {
+  border: 1px solid black; 
+}
+{%endstyle%}
+
+
+
+
 <div class="container-min">
   <div class="contact-form__body">
     {%- if section.settings.title != blank -%}
@@ -34,6 +72,7 @@
           {%- case block.type -%}
             {%- when 'email' -%}
               <div class="form__field {% if block.settings.half_width %}form__field--half{% endif %}">
+                <h5>Email</h5>
                 <input
                   autocomplete="email"
                   type="email"
@@ -63,6 +102,7 @@
               </div>
             {%- when 'msg' -%}
               <div class="form__field {% if block.settings.half_width %}form__field--half{% endif %}">
+                <h5>Message</h5>
                 <textarea
                   rows="10"
                   id="{{ formID }}-body"
