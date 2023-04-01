@@ -148,16 +148,13 @@
       {%for character in string %}
         {%assign count = count | plus: 1 %}
       {%endfor%}
-      {%if count > 29%}
-      
-
-      {%endif%}
-
-      <h2>{{count}}</h2>
+      {%if count < 29%}
 
         <h2 class="h5 title">
           <a href="{{ variant.url }}">{{ product.title }}</a>
         </h2>
+
+      {%endif%}
 
 
 
