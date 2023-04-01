@@ -1,0 +1,128 @@
+{%- render 'stylesheet', name: 'products-carousel' -%}
+
+{%style%}
+
+.marquee {
+
+}
+
+
+.products-carousel__title {
+  color: white;
+  display: inline-block;
+  animation: animate 40s linear infinite;
+  animation-delay: -40s;
+}
+
+.products-carousel__title2 {
+  color: white;
+  display: inline-block;
+  animation: animate2 40s linear infinite;
+  animation-delay: -20s;
+}
+
+.products-carousel__title span {
+  padding: 0;
+  margin: 0rem 0.5rem;
+
+}
+
+.products-carousel__title2 span {
+  padding: 0;
+  margin: 0rem 0.5rem;
+}
+
+.secondary-button {
+}
+
+.h3 {
+  font-weight: 400;
+}
+
+.marquee {
+  background-color:red!important;
+  white-space: nowrap;
+  overflow: hidden;
+  padding: 0;
+}
+
+@keyframes animate {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+
+  @keyframes animate2 {
+    0% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(-200%);
+    }
+  }
+
+{%endstyle%}
+
+  <div class="container-max">    
+      {% if section.settings.carousel_title != blank %}
+        <div class="marquee">
+          <div class="products-carousel__title">
+            <span class="h3">
+              <span>{{ section.settings.carousel_title }} </span>
+              <span>{{ section.settings.carousel_title }} </span>
+              <span>{{ section.settings.carousel_title }} </span>
+              <span>{{ section.settings.carousel_title }} </span>
+              <span>{{ section.settings.carousel_title }} </span>
+              <span>{{ section.settings.carousel_title }} </span>
+            </span>
+          </div>
+
+          <div class="products-carousel__title2">
+            <span class="h3">
+              <span>{{ section.settings.carousel_title }} </span>
+              <span>{{ section.settings.carousel_title }} </span>
+              <span>{{ section.settings.carousel_title }} </span>
+              <span>{{ section.settings.carousel_title }} </span>
+              <span>{{ section.settings.carousel_title }} </span>
+              <span>{{ section.settings.carousel_title }} </span>
+            </span>
+          </div>
+        </div>
+      {% endif %}
+  </div>
+
+
+{% schema %}
+{
+  "name": "Marquee-Left",
+  "class": "marquee-left",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "carousel_title",
+      "label": "Title",
+      "default": "add your text"
+    }
+  ],
+
+  "presets": [
+    {
+    "name": "Marquee-Left",
+    "category": "Home Page"
+  }
+  ]
+}
+{% endschema %}
+
+{%comment%}
+{
+    "name": "Products Carousel",
+    "category": "Home Page"
+  }
+
+  {%endcomment%}
