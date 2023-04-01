@@ -59,40 +59,12 @@
         "half_text_color": "#ffffff",
         "half_bg_color": "#000000"
       }
-    },
-    "a4169f8f-9e9a-4fcf-a2f8-54a0cabeacc7": {
-      "type": "contact-form",
-      "blocks": {
-        "809ae430-eeed-431a-9352-8513156325c1": {
-          "type": "email",
-          "settings": {
-            "label": "",
-            "half_width": false
-          }
-        },
-        "6752a649-077d-40f0-a97a-802ca11c9271": {
-          "type": "msg",
-          "settings": {
-            "label": "",
-            "half_width": false
-          }
-        }
-      },
-      "block_order": [
-        "809ae430-eeed-431a-9352-8513156325c1",
-        "6752a649-077d-40f0-a97a-802ca11c9271"
-      ],
-      "settings": {
-        "title": "Contact form",
-        "form_id": "ContactForm"
-      }
     }
   },
   "order": [
     "1633298769daf14fc7",
     "163329877533384385",
     "16335987823b33b422",
-    "16332987808e571964",
-    "a4169f8f-9e9a-4fcf-a2f8-54a0cabeacc7"
+    "16332987808e571964"
   ]
 }
