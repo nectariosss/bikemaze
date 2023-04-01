@@ -46,7 +46,7 @@
   endif
 -%}
 <div class="product-card">
-  {% form "product", product, style='' class: 'quickShop product-card__form' %}
+  {% form "product", product, class: 'quickShop product-card__form'%}
     <div class="product-card__image">
       <div class="images">
         {%- if product.featured_media != blank -%}
