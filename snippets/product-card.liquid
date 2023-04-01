@@ -159,7 +159,7 @@
         <h2 class="h5 title">
           
           {%assign new_product_title = '' %}
-            {%for 1 in (1..29) %}
+            {%for i in (1..29) %}
               {%assign new_product_title = new_product_title | append: character %}
             {%endfor%}
           <a href="{{ variant.url }}">{{new_product_title}}</a>
