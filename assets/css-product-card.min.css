@@ -1,5 +1,5 @@
 .product-card {
-  display: flex;
+  display: grid;
 }
 @media only screen and (max-width: 767px) {
   .product-card {
