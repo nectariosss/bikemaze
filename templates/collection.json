@@ -14,9 +14,9 @@
         "collection_text_color": "#202020",
         "show_secondary_image": true,
         "show_vendor": false,
-        "enable_filtering": true,
+        "enable_filtering": false,
         "enable_sorting": true,
-        "tag_filters": "footer"
+        "tag_filters": ""
       }
     }
   },
