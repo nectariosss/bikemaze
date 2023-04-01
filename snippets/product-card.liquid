@@ -146,7 +146,7 @@
       {%assign count = 0 %}
       {%assign string = product.title | split: '' %}
       {%for character in string %}
-        {%assign count = 0 | increment %}
+        {%assign count = 0 | plus: 1 %}
       {%endfor%}
       <h2>{{count}}</h2>
 
