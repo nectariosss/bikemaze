@@ -1,11 +1,5 @@
 {
   "sections": {
-    "0206b531-9d1e-4b13-afcd-645a0a991f8f": {
-      "type": "marquee-right",
-      "settings": {
-        "carousel_title": "BIKEMAZE"
-      }
-    },
     "1633298769daf14fc7": {
       "type": "hero-banner",
       "settings": {
@@ -68,7 +62,6 @@
     }
   },
   "order": [
-    "0206b531-9d1e-4b13-afcd-645a0a991f8f",
     "1633298769daf14fc7",
     "163329877533384385",
     "16335987823b33b422",
