@@ -157,7 +157,7 @@
         {%else%}
 
         <h2 class="h5 title">
-          {%assign new_product_title = product.title | truncate %}
+          {%assign new_product_title = product.title | truncate: 29%}
           <a href="{{ variant.url }}">{{new_product_title}}</a>
         </h2>
 
