@@ -144,7 +144,7 @@
 
 
       {%assign count = 0 %}
-      {%assign string = product.title %}
+      {%assign string = product.title | split: '' %}
       {%for character in string %}
         <p>d</p>
       {%endfor%}
