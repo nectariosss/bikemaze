@@ -50,8 +50,8 @@
       "ajax-cart": {
         "type": "ajax-cart",
         "settings": {
-          "cart_title": "CART",
-          "cart_text": "shop amazing stuff here",
+          "cart_title": "SHOPPING CART",
+          "cart_text": "",
           "cart_empty": "Looks like your cart is empty..."
         }
       },
