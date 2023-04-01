@@ -4,9 +4,25 @@
       "type": "page",
       "settings": {
       }
+    },
+    "8b7eb1c8-7c94-4476-a47d-2047b725a24f": {
+      "type": "half-media-text",
+      "settings": {
+        "half_image": "shopify:\/\/shop_images\/sdf.jpg",
+        "half_image_p": "1",
+        "half_video": "",
+        "half_title": "",
+        "half_title_tag": "h2",
+        "half_text": "",
+        "half_b_text": "Shop Now",
+        "half_b_url": "",
+        "half_text_color": "#000",
+        "half_bg_color": "#fff"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "8b7eb1c8-7c94-4476-a47d-2047b725a24f"
   ]
 }
