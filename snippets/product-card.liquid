@@ -157,8 +157,9 @@
         {%else%}
 
         <h2 class="h5 title">
-          
-          {{product_title}}
+          {%for character in product_title%}
+            
+          {%endfor%}
           <a href="{{ variant.url }}">fix</a>
         </h2>
 
