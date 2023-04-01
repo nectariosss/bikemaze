@@ -76,26 +76,10 @@
         "recc_desk": 4,
         "recc_mob": 2
       }
-    },
-    "1634690105fbe44cb6": {
-      "type": "half-media-text",
-      "settings": {
-        "half_image": "shopify:\/\/shop_images\/56b28d3de618421284a148a2ecea4ba9.jpg",
-        "half_image_p": "1",
-        "half_video": "",
-        "half_title": "tell me something",
-        "half_title_tag": "h3",
-        "half_text": "<p>like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy.<\/p>",
-        "half_b_text": "",
-        "half_b_url": "",
-        "half_text_color": "#000000",
-        "half_bg_color": "#ffffff"
-      }
     }
   },
   "order": [
     "main",
-    "product-recommendations",
-    "1634690105fbe44cb6"
+    "product-recommendations"
   ]
 }
