@@ -149,7 +149,7 @@
         {%assign count = count | plus: 1 %}
       {%endfor%}
 
-      {%if count < 29%}
+      {%if count < 20%}
         <h2 class="h5 title">
           <a href="{{ variant.url }}">{{ product.title }}</a>
         </h2>
@@ -157,7 +157,7 @@
         {%else%}
 
         <h2 class="h5 title">
-          {%assign new_product_title = product.title | truncate: 29%}
+          {%assign new_product_title = product.title | truncate: 20%}
           <a href="{{ variant.url }}">{{new_product_title}}</a>
         </h2>
 
