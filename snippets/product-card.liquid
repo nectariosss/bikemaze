@@ -148,7 +148,9 @@
       {%for character in string %}
         {%assign count = count | plus: 1 %}
       {%endfor%}
-      
+      {%if count %}
+
+      {%endif%}
 
       <h2>{{count}}</h2>
 
