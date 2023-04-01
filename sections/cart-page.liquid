@@ -1,5 +1,11 @@
 {%- render 'stylesheet', name: 'cart-page' -%}
 
+
+{%style%}
+
+  
+{%endstyle%}
+
 <div class="cart" data-ajax-cart-section>
   <div class="container container-min {% if cart.item_count == 0 %}empty{% endif %}">
     <h1 class="h2 cart__title">{{ 'sections.cart.title' | t }}</h1>
