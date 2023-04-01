@@ -146,9 +146,9 @@
       {%assign count = 0 %}
       {%assign string = product.title | split: '' %}
       {%for character in string %}
-        <p>d</p>
+        {%assign count = 0 | increment %}
       {%endfor%}
-
+      
 
         <h2 class="h5 title">
           <a href="{{ variant.url }}">{{ product.title }}</a>
