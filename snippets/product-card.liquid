@@ -144,7 +144,7 @@
 
       {%assign count = 0 %}
       {%for character in  product.title  %}
-        {{ count = count | increment }}
+        {% assign count = count | increment %}
       {%endfor%}
 
       <h1>{{count}}</h1>
