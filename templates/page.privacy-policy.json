@@ -1,0 +1,28 @@
+{
+  "sections": {
+    "main": {
+      "type": "page",
+      "settings": {
+      }
+    },
+    "8b7eb1c8-7c94-4476-a47d-2047b725a24f": {
+      "type": "half-media-text",
+      "settings": {
+        "half_image": "shopify:\/\/shop_images\/sdf.jpg",
+        "half_image_p": "1",
+        "half_video": "",
+        "half_title": "Gear up...",
+        "half_title_tag": "h2",
+        "half_text": "<p>Welcome to Bikemaze, the ultimate destination for motorcycle enthusiasts and lovers of the sport. Our brand is all about providing high-quality clothing and accessories that represent the spirit and excitement of motorcycle riding. Inspired by the thrill of the open road, we aim to create a unique style that is both bold and functional! With a focus on quality and craftsmanship, our products are designed to last and stand out from the crowd. Join us on this adventure, and let Bikemaze to become a part of your lifestyle!<\/p>",
+        "half_b_text": "",
+        "half_b_url": "",
+        "half_text_color": "#000000",
+        "half_bg_color": "#ffffff"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "8b7eb1c8-7c94-4476-a47d-2047b725a24f"
+  ]
+}
