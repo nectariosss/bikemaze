@@ -161,7 +161,7 @@
         {%assign count = count | plus: 1 %}
       {%endfor%}
 
-      {%if count < 40%}
+      {%if count < 10%}
         <h2 class="h5 title">
           <a class="ng-product-card-title" href="{{ variant.url }}">{{ product.title }}</a>
         </h2>
@@ -169,7 +169,7 @@
         {%else%}
 
         <h2 class="h5 title">
-          {%assign new_product_title = product.title | truncate: 40%}
+          {%assign new_product_title = product.title | truncate: 10%}
           <a class="ng-product-card-title" href="{{ variant.url }}">{{new_product_title}}</a>
         </h2>
 
