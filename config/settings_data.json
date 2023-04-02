@@ -1,5 +1,8 @@
 {
   "current": {
+    "checkout_header_image": "shopify:\/\/shop_images\/IMG_0356.jpg",
+    "checkout_logo_image": "shopify:\/\/shop_images\/BIKEMAZE_LOGO-01.png",
+    "checkout_logo_size": "medium",
     "sections": {
       "header": {
         "type": "header",
