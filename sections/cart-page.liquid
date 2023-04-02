@@ -53,24 +53,7 @@
               </div>
               <div class="cart-item__name">
                 <h3 class="h5 product-title">
-
-                  {%assign count = 0 %}
-                  {%assign product_title = item.product.title | split: '' %}
-                  {%for character in product_title %}
-                    {%assign count = count | plus: 1 %}
-                  {%endfor%}
-
-                  {%if count < 20%}
                   <a href="{{ item.url }}">{{ item.product.title }}</a>
-
-                  {%else%}
-
-                  {%assign new_title =  item.product.title | truncate: 20%}
-                  <a href="{{ item.url }}">{{ new_title }}</a>
-                {%endif%}
-
-
-
                 </h3>
                 {% unless item.product.has_only_default_variant %}
                   <ul>
