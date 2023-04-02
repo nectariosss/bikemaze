@@ -5,16 +5,9 @@
       "settings": {
         "title": ""
       }
-    },
-    "fc405c52-5b95-4ea6-b4b6-858c07e79ce8": {
-      "type": "marquee-right",
-      "settings": {
-        "carousel_title": "Collections"
-      }
     }
   },
   "order": [
-    "main",
-    "fc405c52-5b95-4ea6-b4b6-858c07e79ce8"
+    "main"
   ]
 }
