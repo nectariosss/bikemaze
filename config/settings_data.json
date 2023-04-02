@@ -4,6 +4,12 @@
     "checkout_logo_image": "shopify:\/\/shop_images\/BIKEMAZE_LOGO-01.png",
     "checkout_logo_position": "center",
     "checkout_logo_size": "large",
+    "checkout_body_background_color": "#000000",
+    "checkout_input_background_color_mode": "transparent",
+    "checkout_sidebar_background_color": "#242424",
+    "checkout_accent_color": "#9a9a9a",
+    "checkout_button_color": "#feffff",
+    "checkout_error_color": "#ff0000",
     "sections": {
       "header": {
         "type": "header",
