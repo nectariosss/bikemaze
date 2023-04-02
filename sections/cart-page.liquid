@@ -60,8 +60,14 @@
                     {%assign count = count | plus: 1 %}
                   {%endfor%}
 
-                  
+                  {%if count < 10%}
                   <a href="{{ item.url }}">{{ item.product.title }}</a>
+
+                  {%else%}
+                  
+
+
+                {%endif%}
 
 
 
