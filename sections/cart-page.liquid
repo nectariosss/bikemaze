@@ -64,10 +64,9 @@
                   <a href="{{ item.url }}">{{ item.product.title }}</a>
 
                   {%else%}
-                  
-                  {%assign new_title =  item.product.title | truncate: 10%}
 
-
+                  {%assign new_title =  item.product.title | truncate: 20%}
+                  <a href="{{ item.url }}">{{ new_title }}</a>
                 {%endif%}
 
 
