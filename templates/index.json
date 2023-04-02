@@ -41,7 +41,7 @@
     "16335987823b33b422": {
       "type": "two-side-pictures",
       "settings": {
-        "half_image": "shopify:\/\/shop_images\/boobs.jpg",
+        "half_image": "shopify:\/\/shop_images\/image.jpg",
         "half_b_url_image": "shopify:\/\/collections",
         "half_image_2": "shopify:\/\/shop_images\/IMG_0121.jpg",
         "half_b_text_2": "shop WOMAN",
@@ -57,7 +57,7 @@
     "16332987808e571964": {
       "type": "half-media-text",
       "settings": {
-        "half_image": "shopify:\/\/shop_images\/image.jpg",
+        "half_image": "shopify:\/\/shop_images\/landscape.jpg",
         "half_image_p": "2",
         "half_video": "",
         "half_title": "Breathe life into bike culture",
