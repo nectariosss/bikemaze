@@ -1,115 +1,115 @@
 {%- render 'stylesheet', name: 'products-carousel' -%}
 
-{%style%}
+{% style %}
 
 
-.small-banner-title {
-  display: flex;
-  justify-content: center;
-  color: black;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  margin-right:30px;
-}
-
-
-.banner-item {
-  margin: 0px 10px;
-  text-align: center;
-}
-
-h5 {
-  margin: 0;
-  padding: 0;
-}
-
-@media only screen and (max-width: 767px) {
   .small-banner-title {
-    margin-right: 0px;
+    display: flex;
+    justify-content: center;
+    color: black;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    margin-right: 30px;
+  }
 
-    }
 
   .banner-item {
-    font-size: 1rem;
-    line-height: 1rem;
+    margin: 0 10px;
+    text-align: center;
+  }
+
+  h5 {
+    margin: 0;
+    padding: 0;
+  }
+
+  @media only screen and (max-width: 767px) {
+    .small-banner-title {
+      margin-right: 0;
+
     }
 
-  .banner-item-images:nth-child(1) {
-    margin-left:5px;
+    .banner-item {
+      font-size: 1rem;
+      line-height: 1rem;
+    }
+
+    .banner-item-images:nth-child(1) {
+      margin-left: 5px;
     }
   }
 
   @media only screen and (max-width: 479px) {
 
-  .banner-item {
-    font-size: 0.6rem;
-    line-height: 0.6rem;
+    .banner-item {
+      font-size: 0.6rem;
+      line-height: 0.6rem;
     }
 
     .banner-item-images:nth-child(1) {
-    margin-left:5px;
+      margin-left: 5px;
     }
-}
-
+  }
 {%endstyle%}
 
-  <div class="container-max-banner">    
-      {% if section.settings.carousel_title != blank %}
-        <div class="small-banner">
-          <div class="small-banner-title">
-            <img class="banner-item-images" width="20px" height="20x" src="https://cdn.shopify.com/s/files/1/0698/5020/2380/files/delivery.png?v=1680457257"/>
-              <h5 class="banner-item">{{ section.settings.carousel_title}} </h5>
-              {%comment%}
-              <img  class="banner-item-images"  width="20px" height="20x" src="https://cdn.shopify.com/s/files/1/0698/5020/2380/files/fast.png?v=1680457261"/>
-              <h5 class="banner-item">{{ section.settings.carousel_title2}} </h5>
-              <img  class="banner-item-images" width="20px" height="20x" src="https://cdn.shopify.com/s/files/1/0698/5020/2380/files/secure.png?v=1680457277"/>
-              <h5 class="banner-item">{{ section.settings.carousel_title3}} </h5>
-              {%endcomment%}
-          </div>
-        </div>
-      {% endif %}
-  </div>
+<div class="container-max-banner">
+  {% if section.settings.carousel_title != blank %}
+    <div class="small-banner">
+      <div class="small-banner-title">
+        <img
+          class="banner-item-images"
+          width="20px"
+          height="20x"
+          src="https://cdn.shopify.com/s/files/1/0698/5020/2380/files/delivery.png?v=1680457257" />
+        <h5 class="banner-item">{{ section.settings.carousel_title }}
+        </h5>
+        <img  class="banner-item-images"  width="20px" height="20x" src="https://cdn.shopify.com/s/files/1/0698/5020/2380/files/fast.png?v=1680457261"/>
+        <h5 class="banner-item">{{ section.settings.carousel_title2}} </h5>
+        <img  class="banner-item-images" width="20px" height="20x" src="https://cdn.shopify.com/s/files/1/0698/5020/2380/files/secure.png?v=1680457277"/>
+        <h5 class="banner-item">{{ section.settings.carousel_title3}} </h5>
+      </div>
+    </div>
+  {% endif %}
+</div>
 
 
 {% schema %}
-{
-  "name": "Small-Banner",
-  "class": "small-banner",
-  "tag": "section",
-  "settings": [
-    {
-      "type": "text",
-      "id": "carousel_title",
-      "label": "Title",
-      "default": "add your text"
-    },
-    {
-      "type": "text",
-      "id": "carousel_title2",
-      "label": "Title",
-      "default": "add your text"
-    },
-    {
-      "type": "text",
-      "id": "carousel_title3",
-      "label": "Title",
-      "default": "add your text"
-    }
-  ],
-
-  "presets": [
-    {
+  {
     "name": "Small-Banner",
-    "category": "Home Page"
+    "class": "small-banner",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "carousel_title",
+        "label": "Title",
+        "default": "add your text"
+      }, {
+        "type": "text",
+        "id": "carousel_title2",
+        "label": "Title",
+        "default": "add your text"
+      }, {
+        "type": "text",
+        "id": "carousel_title3",
+        "label": "Title",
+        "default": "add your text"
+      }
+    ],
+
+    "presets": [
+      {
+        "name": "Small-Banner",
+        "category": "Home Page"
+      }
+    ]
   }
-  ]
-}
 {% endschema %}
 
-{%comment%}
+{% comment %}
 {
-    "name": "Products Carousel",
-    "category": "Home Page"
-  }
+"name": "Products Carousel",
+"category": "Home Page"
+}
 
-  {%endcomment%}
+{% endcomment %}
