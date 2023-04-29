@@ -1,9 +1,13 @@
 {%- render 'stylesheet', name: 'products-carousel' -%}
 
 {%style%}
+  .blog-rotator {
+    display: flex;
+    flex
+  }
 {%endstyle%}
 
-<div class="">
+<div class="blog-rotator">
   {%for blog in blogs.news.articles%}
     <a href="{{blog.url}}">
       <img src="{{blog.image | img_url: 'master'}}">
