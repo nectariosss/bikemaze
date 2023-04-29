@@ -3,7 +3,9 @@
 {%style%}
 {%endstyle%}
 
-{{blogs}}
+{%for blog in blogs%}
+  <h1>sdfsdf</h1>
+{%endfor%}
 
 {% if section.settings.carousel_coll != blank %}
   {% assign limit = section.settings.carousel_coll_lm | plus: 0 %}
