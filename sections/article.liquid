@@ -43,19 +43,21 @@
       </div>
     </div>
 
-    <div class="images-rotator">
-      <img src="{{ section.settings.image_1 | img_url: 'master'}}" >
-      <img src="{{ section.settings.image_2 | img_url: 'master'}}" >
-      <img src="{{ section.settings.image_3 | img_url: 'master'}}" >
-      </div>
 
-      <style>
+    <style>
       .images-rotator {
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
       }
       </style>
+
+    <div class="images-rotator">
+      <img src="{{ section.settings.image_1 | img_url: 'master'}}" >
+      <img src="{{ section.settings.image_2 | img_url: 'master'}}" >
+      <img src="{{ section.settings.image_3 | img_url: 'master'}}" >
+    </div>
+
 
   </article>
 
