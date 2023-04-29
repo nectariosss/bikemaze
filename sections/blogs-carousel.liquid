@@ -29,6 +29,11 @@
             </span>
           </div>
         </div>
+
+        {% for blog in blogs %}
+          {{ blog.title }}
+        {% endfor %}
+        
       {% endif %}
 
       <div
