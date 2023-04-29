@@ -4,10 +4,15 @@
 {%endstyle%}
 
 {%for blog in blogs.news.articles%}
+
   <a href="{{blog.url}}">
     <img src="{{blog.image | img_url: 'master'}}">
   </a>
+
 {%endfor%}
+
+
+
 
 
 {% if section.settings.carousel_coll != blank %}
