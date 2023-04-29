@@ -42,26 +42,6 @@
         {% render 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
       </div>
     </div>
-
-
-    <style>
-      .images-rotator {
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-      }
-      </style>
-
-    <div class="images-rotator">
-      <img src="{{ section.settings.image_1 | img_url: 'master'}}" >
-      <img src="{{ section.settings.image_2 | img_url: 'master'}}" >
-      <img src="{{ section.settings.image_3 | img_url: 'master'}}" >
-    </div>
-
-    <script>
-
-    </script>
-
   </article>
 
 
@@ -81,29 +61,3 @@
   </div>
 </div>
 
-
-{%schema%} 
-{
-  "name": "Article",
-  "class": "article",
-  "tag": "section",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "image_1",
-      "label": "First Image"
-    },
-    {
-      "type": "image_picker",
-      "id": "image_2",
-      "label": "Second Image"
-    }
-    ,    {
-      "type": "image_picker",
-      "id": "image_3",
-      "label": "Third Image"
-    }
-  ]
-}
-
-{% endschema %}
