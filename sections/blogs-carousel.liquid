@@ -1,74 +1,12 @@
 {%- render 'stylesheet', name: 'products-carousel' -%}
 
 {%style%}
-
-.products-carousel__title {
-  color: white;
-  display: inline-block;
-  animation: animate 40s linear infinite;
-  animation-delay: -40s;
-}
-
-.products-carousel__title2 {
-  color: white;
-  display: inline-block;
-  animation: animate2 40s linear infinite;
-  animation-delay: -20s;
-}
-
-.products-carousel__title span {
-  padding: 0;
-  margin: 0rem 0.5rem;
-
-}
-
-.products-carousel__title2 span {
-  padding: 0;
-  margin: 0rem 0.5rem;
-}
-
-.secondary-button {
-}
-
-.h3 {
-  font-weight: 400;
-}
-
-.marquee {
-  background-color:black;
-  white-space: nowrap;
-  overflow: hidden;
-  padding: 0;
-}
-
-@keyframes animate {
-    0% {
-      transform: translateX(100%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-
-
-  @keyframes animate2 {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-200%);
-    }
-  }
-
 {%endstyle%}
 
 {% if section.settings.carousel_coll != blank %}
   {% assign limit = section.settings.carousel_coll_lm | plus: 0 %}
   <div class="container-max">
     {% if collections[section.settings.carousel_coll].products_count != 0 %}
-
-
-
 
     
       {% if section.settings.carousel_title != blank %}
@@ -90,7 +28,6 @@
               <span>{{ section.settings.carousel_title }} </span>
             </span>
           </div>
-
         </div>
       {% endif %}
 
