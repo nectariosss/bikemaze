@@ -42,22 +42,24 @@
         {% render 'social-sharing', share_title: article.title, share_permalink: article.url, share_image: article.image %}
       </div>
     </div>
+
+    <div class="images-rotator">
+      <img src="{{ section.settings.image_1 | img_url: 'master'}}" >
+      <img src="{{ section.settings.image_2 | img_url: 'master'}}" >
+      <img src="{{ section.settings.image_3 | img_url: 'master'}}" >
+      </div>
+
+      <style>
+      .images-rotator {
+        display: flex;
+        flex-direction: row;
+      }
+      </style>
+
   </article>
 
-  <div class="images-rotator">
-  <img src="{{ section.settings.image_1 | img_url: 'master'}}" >
-  <img src="{{ section.settings.image_2 | img_url: 'master'}}" >
-  <img src="{{ section.settings.image_3 | img_url: 'master'}}" >
-  </div>
 
-  <style>
 
-  .images-rotator {
-    display: flex;
-    flex-direction: row;
-  }
-
-  </style>
 
   <h2 class="h3 text-center">{{ 'blogs.article.related_articles' | t }}</h2>
   <div class="article__related-articles">
