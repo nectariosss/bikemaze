@@ -3,10 +3,7 @@
 {%style%}
 {%endstyle%}
 
-
-{% for blog in linklists %}
-
-{% endfor %}
+{{blogs}}
 
 {% if section.settings.carousel_coll != blank %}
   {% assign limit = section.settings.carousel_coll_lm | plus: 0 %}
