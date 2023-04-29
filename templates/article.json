@@ -3,7 +3,9 @@
     "main": {
       "type": "article",
       "settings": {
-        "image_1": "shopify:\/\/shop_images\/IMG_0121.jpg"
+        "image_1": "shopify:\/\/shop_images\/IMG_0121.jpg",
+        "image_2": "shopify:\/\/shop_images\/IMG_9950-2.jpg",
+        "image_3": "shopify:\/\/shop_images\/sdf.jpg"
       }
     }
   },
