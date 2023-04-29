@@ -68,6 +68,16 @@
         "half_text_color": "#ffffff",
         "half_bg_color": "#000000"
       }
+    },
+    "73c59126-69da-4262-bcf5-89877ef344dc": {
+      "type": "blogs-carousel",
+      "settings": {
+        "carousel_title": "New arrivals",
+        "carousel_coll_lm": 15,
+        "carousel_desk": 4,
+        "carousel_mob": 2,
+        "carousel_b_text": "Shop Now"
+      }
     }
   },
   "order": [
@@ -75,6 +85,7 @@
     "1633298769daf14fc7",
     "163329877533384385",
     "16335987823b33b422",
-    "16332987808e571964"
+    "16332987808e571964",
+    "73c59126-69da-4262-bcf5-89877ef344dc"
   ]
 }
