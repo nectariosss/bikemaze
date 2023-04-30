@@ -18,7 +18,7 @@
   }
   
   .arrow {
-    position: fixed;
+    position: absolute;
   }
 
   .blog-rotator {
@@ -41,7 +41,7 @@
 
 {%endstyle%}
 
-<div></div>
+<div class="blog-container">
 <span class="arrow left-arrow" id="left-arrow">
   {%- render 'icon-carousel-arrow' -%}
 </span>
@@ -68,6 +68,7 @@
   <span class="arrow right-arrow" id="right-arrow">
     {%- render 'icon-carousel-arrow' -%}
   </span>
+  </div>
 
 
 
