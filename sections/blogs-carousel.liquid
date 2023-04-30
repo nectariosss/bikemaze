@@ -70,7 +70,7 @@
     let nextDisplayIndex = displayIndex + 1;
 
     if (nextDisplayIndex === (imagesList.length - 1)) {
-      rightArrow.removeEventListener('click',()=>{});
+      nextDisplayIndex = 0;
     }
 
     imagesList[displayIndex].classList.remove('display');
