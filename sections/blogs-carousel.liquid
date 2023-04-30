@@ -87,18 +87,17 @@
     }
     imagesList[displayIndex].classList.remove('display');
     imagesList[nextDisplayIndex].classList.add('display');
-  }
-
-    if (direction === 'left') {
-      let nextDisplayIndex = displayIndex + - 1;
-      if (nextDisplayIndex < 0) {
-        nextDisplayIndex = (imagesList.length-1);
-      }
-      imagesList[displayIndex].classList.remove('display');
-      imagesList[nextDisplayIndex].classList.add('display');
-    }
-
   };
+
+  if (direction === 'left') {
+    let nextDisplayIndex = displayIndex + - 1;
+    if (nextDisplayIndex < 0) {
+      nextDisplayIndex = (imagesList.length-1);
+    }
+    imagesList[displayIndex].classList.remove('display');
+    imagesList[nextDisplayIndex].classList.add('display');
+  };
+};
 
 </script>
 
