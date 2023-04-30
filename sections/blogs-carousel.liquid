@@ -9,6 +9,7 @@
 
   .blog-description {
     position: absolute;
+    top: 50%;
     transform: translateY(60%);
     background-color: white;
   }
@@ -40,7 +41,7 @@
   <img id="left-arrow" src=""/>
     {%for blog in blogs.news.articles%}
       <div class="blog-display-images">
-        
+
         <h2 class="blog-title">{{blog.title}}</h2>
 
         <p class="blog-description">{{blog.excerpt}}</p>
