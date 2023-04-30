@@ -61,7 +61,7 @@
 
 {%endstyle%}
 
-{}
+{%if blog.news.articles%}
 <h1>News</h1>
 <div class="blog-container">
 
@@ -98,10 +98,9 @@
       </div>
     {%endfor%}
 </div>
-
   </div>
-
-
+  
+  {%endif%}
 
 <script>
   const rightArrow = document.getElementById('right-arrow');
