@@ -25,7 +25,9 @@
   <img id="left-arrow" src=""/>
   {%for blog in blogs.news.articles%}
     <a href="{{blog.url}}">
-      <img id="{{blog.id}}" src="{{blog.image | img_url: 'master'}}">
+      <img class="blog-display-images"
+      id="{{blog.id}}"
+      src="{{blog.image | img_url: 'master'}}">
     </a>
   {%endfor%}
   </div>
@@ -43,7 +45,6 @@
   function rotator() {
 
   };
-
 
 </script>
 
