@@ -42,15 +42,16 @@
 
 <div class="blog-rotator">
   <img id="left-arrow" src=""/>
-  {%for blog in blogs.news.articles%}
-    <a href="{{blog.url}}">
-      <img
-      class="blog-display-images"
-      id="{{blog.id}}"
-      src="{{blog.image | img_url: 'master'}}">
-    </a>
-  {%endfor%}
+    {%for blog in blogs.news.articles%}
+      <a href="{{blog.url}}">
+        <img
+        class="blog-display-images"
+        id="{{blog.id}}"
+        src="{{blog.image | img_url: 'master'}}">
+      </a>
+    {%endfor%}
   </div>
+
   <span class="right-arrow" id="right-arrow">
     {%- render 'icon-carousel-arrow' -%}
   </span>
