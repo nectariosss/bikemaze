@@ -64,13 +64,12 @@
   const leftArrow = document.getElementById('left-arrow');
 
   const imagesList = document.getElementsByClassName('blog-display-images');
-  console.log('run');
-  console.log(imagesList);
   imagesList[0].classList.add('display');
 
   rightArrow.addEventListener('click',()=>{
     rotator("right");
-  };
+    };
+  );
 
   function rotator(direction) {
     const imagesList = document.getElementsByClassName('blog-display-images');
