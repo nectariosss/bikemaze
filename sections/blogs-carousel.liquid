@@ -56,6 +56,15 @@
 
 <div class="blog-container">
 
+<div class="arrow-container">
+  <span class="arrow left-arrow" id="left-arrow">
+    {%- render 'icon-carousel-arrow' -%}
+  </span>
+
+  <span class="arrow right-arrow" id="right-arrow">
+    {%- render 'icon-carousel-arrow' -%}
+  </span>
+</div>
 
 
 <div class="blog-rotator">
@@ -63,18 +72,9 @@
     {%for blog in blogs.news.articles%}
       <div class="blog-display-images">
 
-      <div>
-                <div class="arrow-container">
-          <span class="arrow left-arrow" id="left-arrow">
-            {%- render 'icon-carousel-arrow' -%}
-          </span>
-
-          <span class="arrow right-arrow" id="right-arrow">
-            {%- render 'icon-carousel-arrow' -%}
-          </span>
-        </div>
+      
         <h2 class="blog-title">{{blog.title}}</h2>
-        </div>
+        
 
         {%comment%}
         <p class="blog-description">{{blog.excerpt}}</p>
