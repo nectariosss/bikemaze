@@ -74,13 +74,13 @@
   const imagesList = document.getElementsByClassName('blog-display-images');
   const currentDisplay = document.getElementsByClassName('blog-display-images display');
   let displayIndex = 0;
+  for (let i = 0; i < imagesList.length; i++) {
+    if (currentDisplay[0].classList === imagesList[i].classList) {
+      displayIndex = i
+    }
+  }
   
   if (direction === 'right') {
-    for (let i = 0; i < imagesList.length; i++) {
-      if (currentDisplay[0].classList === imagesList[i].classList) {
-        displayIndex = i
-      }
-    }
     let nextDisplayIndex = displayIndex + 1;
 
     if (nextDisplayIndex === (imagesList.length )) {
@@ -89,6 +89,21 @@
     imagesList[displayIndex].classList.remove('display');
     imagesList[nextDisplayIndex].classList.add('display');
     }
+
+    if (direction === 'left') {
+      for (let i = 0; i < imagesList.length; i++) {
+        if (currentDisplay[0].classList === imagesList[i].classList) {
+          displayIndex = i
+        }
+      }
+      let nextDisplayIndex = displayIndex + 1;
+  
+      if (nextDisplayIndex === (imagesList.length )) {
+        nextDisplayIndex = 0;
+      }
+      imagesList[displayIndex].classList.remove('display');
+      imagesList[nextDisplayIndex].classList.add('display');
+      }
 
   };
 
