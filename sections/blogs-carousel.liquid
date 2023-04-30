@@ -68,7 +68,9 @@
       }
     }
     let nextDisplayIndex = displayIndex + 1;
-    if (nextDisplayIndex ==)
+    if (nextDisplayIndex === imagesList.length) {
+      console.log('hey');
+    }
     imagesList[displayIndex].classList.remove('display');
     imagesList[nextDisplayIndex].classList.add('display');
   };
