@@ -44,13 +44,15 @@
 <div class="blog-rotator">
   <img id="left-arrow" src=""/>
     {%for blog in blogs.news.articles%}
-      <h2>{{blog.title}}</h2>
-      <a href="{{blog.url}}">
-        <img
-        class="blog-display-images"
-        id="{{blog.id}}"
-        src="{{blog.image | img_url: 'master'}}">
-      </a>
+      <div class="blog-">
+        <h2>{{blog.title}}</h2>
+        <a href="{{blog.url}}">
+          <img
+          class="blog-display-images"
+          id="{{blog.id}}"
+          src="{{blog.image | img_url: 'master'}}">
+        </a>
+      </div>
     {%endfor%}
 </div>
   <span class="right-arrow" id="right-arrow">
