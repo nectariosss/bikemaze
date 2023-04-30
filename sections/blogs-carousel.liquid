@@ -50,7 +50,7 @@
         src="{{blog.image | img_url: 'master'}}">
       </a>
     {%endfor%}
-  </div>
+</div>
 
   <span class="right-arrow" id="right-arrow">
     {%- render 'icon-carousel-arrow' -%}
@@ -66,10 +66,6 @@
 
   rightArrow.addEventListener('click',()=>{
     rotator("right");
-  };
-
-    leftArrow.addEventListener('click',()=>{
-      rotator("left");
   };
 
   function rotator(direction) {
