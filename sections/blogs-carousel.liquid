@@ -41,9 +41,11 @@
 
 {%endstyle%}
 
+<div></div>
 <span class="arrow left-arrow" id="left-arrow">
   {%- render 'icon-carousel-arrow' -%}
 </span>
+
 <div class="blog-rotator">
   <img id="left-arrow" src=""/>
     {%for blog in blogs.news.articles%}
@@ -62,6 +64,7 @@
       </div>
     {%endfor%}
 </div>
+
   <span class="arrow right-arrow" id="right-arrow">
     {%- render 'icon-carousel-arrow' -%}
   </span>
