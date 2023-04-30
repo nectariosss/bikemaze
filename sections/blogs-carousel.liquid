@@ -92,9 +92,9 @@
 
     if (direction === 'left') {
 
-      let nextDisplayIndex = displayIndex + -1;
+      let nextDisplayIndex = displayIndex + - 1;
   
-      if (nextDisplayIndex === (imagesList.length )) {
+      if (nextDisplayIndex < 0) {
         nextDisplayIndex = 0;
       }
       imagesList[displayIndex].classList.remove('display');
