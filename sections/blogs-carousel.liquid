@@ -64,10 +64,10 @@
   rightArrow.addEventListener('click',()=>{
     rotator("right");
   };
-  
+
     leftArrow.addEventListener('click',()=>{
-      rotator("right");
-  })
+      rotator("left");
+  };
 
   function rotator(direction) {
   
@@ -85,7 +85,6 @@
     if (nextDisplayIndex === (imagesList.length )) {
       nextDisplayIndex = 0;
     }
-
     imagesList[displayIndex].classList.remove('display');
     imagesList[nextDisplayIndex].classList.add('display');
     }
