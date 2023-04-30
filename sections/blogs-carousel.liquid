@@ -11,7 +11,7 @@
 <div class="blog-rotator">
   {%for blog in blogs.news.articles%}
     <a href="{{blog.url}}">
-      <img id="" src="{{blog.image | img_url: 'master'}}">
+      <img id="{{blog.id}}" src="{{blog.image | img_url: 'master'}}">
     </a>
   {%endfor%}
 </div>
