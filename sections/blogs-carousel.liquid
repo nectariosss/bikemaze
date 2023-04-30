@@ -25,7 +25,8 @@
   <img id="left-arrow" src=""/>
   {%for blog in blogs.news.articles%}
     <a href="{{blog.url}}">
-      <img class="blog-display-images"
+      <img
+      class="blog-display-images"
       id="{{blog.id}}"
       src="{{blog.image | img_url: 'master'}}">
     </a>
@@ -36,10 +37,10 @@
   </span>
 
 <script>
-  const rightArrow = document.getElementById('right-arrow')
-  console.log(rightArrow);
+  const rightArrow = document.getElementById('right-arrow');
+  const 
   rightArrow.addEventListener('click',()=>{
-    
+
   })
 
   function rotator() {
