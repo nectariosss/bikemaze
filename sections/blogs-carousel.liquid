@@ -20,11 +20,11 @@
   }
   
   .arrow-container {
-    margin-top: 0.3rem;
     width: 100%;
     z-index: 10;
     position: absolute;
     display: flex;
+    margin: auto;
     justify-content: space-between;
     align-items: center;
   }
@@ -64,15 +64,15 @@
       <div class="blog-display-images">
 
       <div>
-        <div class="arrow-container">
-  <span class="arrow left-arrow" id="left-arrow">
-    {%- render 'icon-carousel-arrow' -%}
-  </span>
+                <div class="arrow-container">
+          <span class="arrow left-arrow" id="left-arrow">
+            {%- render 'icon-carousel-arrow' -%}
+          </span>
 
-  <span class="arrow right-arrow" id="right-arrow">
-    {%- render 'icon-carousel-arrow' -%}
-  </span>
-</div>
+          <span class="arrow right-arrow" id="right-arrow">
+            {%- render 'icon-carousel-arrow' -%}
+          </span>
+        </div>
         <h2 class="blog-title">{{blog.title}}</h2>
         </div>
 
