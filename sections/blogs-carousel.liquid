@@ -63,11 +63,12 @@
     const imagesList = document.getElementsByClassName('blog-display-images');
     const currentDisplay = document.getElementsByClassName('blog-display-images display');
     const displayIndex = 0;
-    
+
     for (let i = 0; i < imagesList.length; i++) {
       if (currentDisplay === imagesList[i]) {
         console.log(i);
       }
+      console.log('iteration');
     }
     
   };
