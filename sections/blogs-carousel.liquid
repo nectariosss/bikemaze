@@ -9,12 +9,13 @@
 
 
 <div class="blog-rotator">
+  <img id="right-arrow" src=""/>
   {%for blog in blogs.news.articles%}
     <a href="{{blog.url}}">
       <img id="{{blog.id}}" src="{{blog.image | img_url: 'master'}}">
     </a>
   {%endfor%}
-  <img id="right-arroq2" src="" />
+  <img id="right-arrow" src=""/>
 </div>
 
 
