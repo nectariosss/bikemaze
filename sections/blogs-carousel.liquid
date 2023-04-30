@@ -61,11 +61,11 @@
   const imagesList = document.getElementsByClassName('blog-display-images');
   imagesList[0].classList.add('display');
 
-  for (let i = 0; i < imagesList.length; i++) {
-  }
-
   rightArrow.addEventListener('click',()=>{
     rotator("right");
+
+    rightArrow.addEventListener('click',()=>{
+      rotator("right");
   })
 
   function rotator(direction) {
