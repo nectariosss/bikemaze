@@ -63,12 +63,10 @@
     const imagesList = document.getElementsByClassName('blog-display-images');
     const currentDisplay = document.getElementsByClassName('blog-display-images display');
     const displayIndex = 0;
-
     for (let i = 0; i < imagesList.length; i++) {
       if (currentDisplay[0].classList === imagesList[i].classList) {
-        console.log(i);
+        displayIndex = i
       }
-      console.log(currentDisplay[0].classList);
     }
     
   };
