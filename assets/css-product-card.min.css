@@ -148,7 +148,7 @@
 
 .product-card__description {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   padding: 1rem 5px 8px;
 }
 @media only screen and (max-width: 767px) {
@@ -167,6 +167,7 @@
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.1875rem;
+  text-align: center;
 }
 @media only screen and (max-width: 767px) {
   .product-card__titleblock .title {
