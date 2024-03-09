@@ -173,7 +173,7 @@
         {%else%}
 
         <h2 class="h5 title">
-          {%assign new_product_title = product.title | truncate: 10%}
+          {%assign new_product_title = product.title | truncate: 50%}
           <a class="ng-product-card-title" href="{{ variant.url }}">{{new_product_title}}</a>
         </h2>
 
