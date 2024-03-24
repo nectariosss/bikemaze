@@ -11,10 +11,18 @@
   margin-right: auto;
   margin-left: auto;
 }
+
 .collections .collection-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
+
+@media screen and (max-width: 768px) {
+  .container {
+          grid-template-columns: repeat(2, 1fr);
+      }
+}
+
 .collections .collection-list__item {
   width: 25%;
 }
