@@ -12,8 +12,8 @@
   margin-left: auto;
 }
 .collections .collection-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
 }
 .collections .collection-list__item {
   width: 25%;
