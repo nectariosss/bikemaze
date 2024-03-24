@@ -33,7 +33,6 @@
   text-decoration: none;
 }
 .collections .collection-list__item img {
-  height: auto;
 }
 .collections .collection-list__item .card__text {
   padding: 1rem 0.5rem;
