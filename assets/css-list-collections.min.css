@@ -17,7 +17,7 @@
   grid-template-columns: repeat(3, 1fr);
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 991px) {
   .collections .collection-list {
       display: flex;
       flex-wrap: wrap;
