@@ -24,7 +24,6 @@
   text-decoration: none;
 }
 .collections .collection-list__item img {
-  height: 300px;
 }
 .collections .collection-list__item .card__text {
   padding: 1rem 0.5rem;
