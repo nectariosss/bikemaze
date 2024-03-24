@@ -19,7 +19,8 @@
 
 @media screen and (max-width: 768px) {
   .collections .collection-list {
-        grid-template-columns: repeat(1, 1fr);
+      display: flex;
+      flex-wrap: wrap;
     }
 }
 
